@@ -1,3 +1,9 @@
+## XI露 / v11-dew
+
+- 甲板既有湿纹亮点改为低透明度暖象牙晨露，烘焙进原贴图；保留 cusp 黎明，不增加绘制、粒子或滤镜。
+- 玩法数值、战斗、合成、存档、迁移、偏好及竖屏 notice +176px 不变。
+- CACHE `endless-sea-drift-v11-dew`；验证 `_v11dew-validation.json`，截图成功时输出 `_shot-v11dew.png` / `_shot-v11.png`，交接 `_v11dew-handoff.md`。
+
 ## XI续 / v11-after
 
 - 版签文字与边框微调为柔和黄铜色，不新增效果或布局占位。

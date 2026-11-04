@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI续 · v11-after，CACHE：`endless-sea-drift-v11-after`。版签黄铜色微调，保留玩法、存档与布局；验证见 `_v11after-handoff.md`。
+XI露 · v11-dew，CACHE：`endless-sea-drift-v11-dew`。甲板既有湿纹微光改为低透明度晨露象牙色，保留 cusp 黎明；验证见 `_v11dew-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI续; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI露; no build step.
 
 ## 本地预览
 

@@ -161,7 +161,8 @@ window.SeaArt = (() => {
           const sx=15+k*10+(j+v)%3;
           r(sx,y+12,4+(k+v)%4,2,'#766344');
           r(sx+2,y+14,3+(k+j)%3,1,'#384c46');
-          if((k+j+v)%3===0)r(sx+1,y+12,3,1,'#8caa94');
+          // Dew: translucent dawn ivory on existing wet-grain pixels, baked once.
+          if((k+j+v)%3===0)r(sx+1,y+12,3,1,'rgba(246,226,189,.38)');
         }
         const x=19+(v*17+j*13)%39;
         r(x,y+7,9,4,'#986d40');r(x+2,y+8,5,2,'#5c422d');r(x-4,y+6,12,1,'#dfb97b');r(x+3,y+11,10,1,'#dbb375');

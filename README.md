@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI灶 · v11-hearth，CACHE：`endless-sea-drift-v11-hearth`。仅降低灶沿与烟囱顶沿亮边透明度，保留 ember 炉火与全部玩法；验证见 `_v11hearth-handoff.md`。
+XI碑 · v11-slate，CACHE：`endless-sea-drift-v11-slate`。死亡画面改为冷灰石板与细刻行纹，保留丝缎黄铜质感及全部玩法；验证见 `_v11slate-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI灶; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI碑; no build step.
 
 ## 本地预览
 

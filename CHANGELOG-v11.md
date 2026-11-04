@@ -1,3 +1,9 @@
+## XI碑 / v11-slate
+
+- 死亡卡片换为冷灰石板、克制斜边与细刻行纹；统计左对齐、等宽数字与暖色首行改善扫读，保留 silk 黄铜框和重启按钮。
+- 纯 CSS，无新增动画、滤镜或依赖；全部玩法、战斗、合成、存档、迁移、偏好及 44px 触控 / 竖屏 notice +176px 保留。
+- CACHE `endless-sea-drift-v11-slate`；edition `XI碑`；验证与交接见 `_v11slate-validation.json`、`_v11slate-handoff.md`，浏览器成功时输出 `_shot-v11slate.png` / `_shot-v11.png` 及死亡画面截图。
+
 ## XI灶 / v11-hearth
 
 - 灶沿与烟囱顶沿仅降低 alpha，收敛炉火周边亮边；RGB、尺寸、绘制次数及 ember 炉火保持，无新增特效或依赖。

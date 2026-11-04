@@ -1,7 +1,7 @@
 {
   "ok": true,
-  "cache": "endless-sea-drift-v11-helm",
-  "session_id": "01a1a715-d04f-70d3-9910-dc2f320586f1",
+  "cache": "endless-sea-drift-v11-port",
+  "session_id": "01a1a719-6c55-7462-929a-6a2ba6d6f6fe",
   "features": [
     {
       "id": "cache",
@@ -484,6 +484,11 @@
       "note": "通过"
     },
     {
+      "id": "port-compact-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
       "id": "v11-reduced-motion-portrait",
       "ok": true,
       "note": "通过"
@@ -515,6 +520,11 @@
     },
     {
       "id": "browser-gold-safe-area-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "port-safe-notice-portrait",
       "ok": true,
       "note": "通过"
     },
@@ -569,6 +579,11 @@
       "note": "通过"
     },
     {
+      "id": "port-compact-small-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
       "id": "v11-reduced-motion-small-portrait",
       "ok": true,
       "note": "通过"
@@ -604,6 +619,11 @@
       "note": "通过"
     },
     {
+      "id": "port-safe-notice-small-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
       "id": "browser-death-scroll-small-portrait",
       "ok": true,
       "note": "通过"
@@ -611,9 +631,19 @@
     {
       "id": "screenshot",
       "ok": true,
-      "note": "已生成 _shot-v11helm.png / _shot-v11.png"
+      "note": "已生成 _shot-v11port.png / _shot-v11.png"
     }
   ],
   "errors": [],
-  "session_hint": "node _selftest-v10.mjs；120秒昼夜，95秒起风雨，28秒小岛/93秒沉船，180秒潮汐王。158秒商船；第2/4/6…夜雾灯船。每2秒自动存档；v8/v9验证后迁移至v10；保留v9静音偏好。"
+  "session_hint": "node _selftest-v10.mjs；120秒昼夜，95秒起风雨，28秒小岛/93秒沉船，180秒潮汐王。158秒商船；第2/4/6…夜雾灯船。每2秒自动存档；v8/v9验证后迁移至v10；保留v9静音偏好。",
+  "portraitLayout": {
+    "portrait": {
+      "height": 159,
+      "gap": 17
+    },
+    "small-portrait": {
+      "height": 159,
+      "gap": 17
+    }
+  }
 }

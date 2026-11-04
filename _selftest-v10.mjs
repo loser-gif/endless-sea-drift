@@ -3,7 +3,7 @@ import vm from 'node:vm';
 import assert from 'node:assert/strict';
 import {spawn} from 'node:child_process';
 const game=fs.readFileSync('game.js','utf8'),art=fs.readFileSync('art.js','utf8'),sw=fs.readFileSync('sw.js','utf8');
-const report={ok:false,cache:'endless-sea-drift-v11-helm',session_id:process.env.CODEX_THREAD_ID||process.env.CODEX_SESSION_ID||'local',features:[],errors:[],session_hint:'node _selftest-v10.mjs；120秒昼夜，95秒起风雨，28秒小岛/93秒沉船，180秒潮汐王。158秒商船；第2/4/6…夜雾灯船。每2秒自动存档；v8/v9验证后迁移至v10；保留v9静音偏好。'};
+const report={ok:false,cache:'endless-sea-drift-v11-port',session_id:process.env.CODEX_THREAD_ID||process.env.CODEX_SESSION_ID||'local',features:[],errors:[],session_hint:'node _selftest-v10.mjs；120秒昼夜，95秒起风雨，28秒小岛/93秒沉船，180秒潮汐王。158秒商船；第2/4/6…夜雾灯船。每2秒自动存档；v8/v9验证后迁移至v10；保留v9静音偏好。'};
 function test(id,fn){try{fn();report.features.push({id,ok:true,note:'通过'});}catch(e){report.features.push({id,ok:false,note:e.message});report.errors.push(id+': '+e.message);}}
 test('cache',()=>assert(sw.includes("const CACHE = '"+report.cache+"'")));
 for(const [id,words] of Object.entries({weather:['night','storm','dusk'],modules:['helm','canopy','stove','net','lamp','turret'],resources:['scrap','rope','nail','ammo','craft','fish'],monsters:['gnaw','flank','spit','tideking'],sites:['island','wreck']}))test(id,()=>{for(const word of words)assert(game.includes(word));if(['modules','monsters','sites'].includes(id))for(const word of words)assert(art.includes(word));});
@@ -142,12 +142,17 @@ if(chrome&&WebSocket){
    test('touch-layout-'+orientation,()=>{for(const b of JSON.parse(layout.result.value)){assert(b.w>=44&&b.h>=44,b.id+' target size');assert(b.inside,b.id+' outside viewport');assert(b.clear,b.id+' covers joystick');}});
    const instruments=await cdp('Runtime.evaluate',{expression:`JSON.stringify((()=>{const h=document.getElementById('hud').getBoundingClientRect(),n=document.getElementById('notice').getBoundingClientRect(),track=document.querySelector('.ammo-track').getBoundingClientRect();return {clear:n.top>=h.bottom||n.left>=h.right,track:track.height,chips:[...document.querySelectorAll('#inventory>span')].every(e=>e.scrollWidth<=e.clientWidth)};})())`,returnByValue:true});
    test('v11-instruments-'+orientation,()=>{const v=JSON.parse(instruments.result.value);assert(v.clear,'notice overlaps HUD');assert(v.track>=5);assert(v.chips,'inventory clipped');});
+   if(orientation!=='landscape'){
+    const port=await cdp('Runtime.evaluate',{expression:`JSON.stringify((()=>{const h=document.getElementById('hud').getBoundingClientRect(),n=document.getElementById('notice').getBoundingClientRect();return {height:h.height,gap:n.top-h.bottom};})())`,returnByValue:true});
+    const v=JSON.parse(port.result.value);(report.portraitLayout??={})[orientation]=v;
+    test('port-compact-'+orientation,()=>{assert(v.height<=168,'HUD height '+v.height);assert(v.gap>=8,'notice gap '+v.gap);});
+   }
    await cdp('Emulation.setEmulatedMedia',{features:[{name:'prefers-reduced-motion',value:'reduce'}]});
    const reduced=await cdp('Runtime.evaluate',{expression:`(()=>{const b=document.querySelector('[data-action="eat"]');b.classList.add('pressed');const t=getComputedStyle(b).transform;b.classList.remove('pressed');return t;})()`,returnByValue:true});
    test('v11-reduced-motion-'+orientation,()=>assert.equal(reduced.result.value,'none'));
    await cdp('Emulation.setEmulatedMedia',{features:[]});
    const released=await cdp('Runtime.evaluate',{expression:`document.querySelector('[data-action="eat"]').classList.contains('pressed')`,returnByValue:true});test('browser-pressed-cleared-'+orientation,()=>assert.equal(released.result.value,false));
-   if(orientation!=='landscape'){const shot=await cdp('Page.captureScreenshot',{format:'png'});fs.writeFileSync('/tmp/v10-'+orientation+'.png',Buffer.from(shot.data,'base64'));}
+   if(orientation!=='landscape'){const shot=await cdp('Page.captureScreenshot',{format:'png'});fs.writeFileSync('/tmp/v10-'+orientation+'.png',Buffer.from(shot.data,'base64'));fs.writeFileSync('_shot-v11port-'+orientation+'.png',Buffer.from(shot.data,'base64'));}
    await cdp('Runtime.evaluate',{expression:"testAPI.s.hunger=20;testAPI.updateVital('hunger');testAPI.pause()"});
    const clarity=await cdp('Runtime.evaluate',{expression:`JSON.stringify((()=>{const label=document.getElementById('hungerLabel');const c=document.querySelector('.card');c.scrollTop=c.scrollHeight;const r=c.getBoundingClientRect(),b=document.getElementById('resume').getBoundingClientRect();return {pulse:label.classList.contains('vital-pulse'),duration:getComputedStyle(label).animationDuration,text:document.getElementById('dialogText').textContent,button:b.top>=r.top&&b.bottom<=r.bottom,mute:!document.getElementById('muteToggle').hidden};})())`,returnByValue:true});
    test('browser-final-clarity-'+orientation,()=>{const v=JSON.parse(clarity.result.value);assert(v.pulse);assert.equal(v.duration,'1.2s');assert.match(v.text,/高光.*最大木筏.*连击纪录.*潮汐王.*雾灯船/);assert(v.button&&v.mute);});
@@ -165,20 +170,24 @@ if(chrome&&WebSocket){
     await cdp('Runtime.evaluate',{expression:`(()=>{testAPI.s.paused=true;testAPI.s.hunger=86;testAPI.s.thirst=92;testAPI.s.time=200;testAPI.s.supplies.ammo=12;testAPI.s.tiles.get('1,1').module='turret';testAPI.s.sites=[{kind:'fogship',x:170,y:-40,life:33,used:false,offer:2,variant:0}];testAPI.s.cargo=[];testAPI.spawnCargo(-135,20,'bottle');testAPI.spawnCargo(-115,85,'crate');testAPI.s.monsters=[];testAPI.spawnMonster('tideking');Object.assign(testAPI.s.monsters[0],{x:-75,y:-105,hp:120,phase:3,angle:.6});testAPI.showActionTip('collect');testAPI.s.paused=false;testAPI.act('collect');testAPI.showActionTip('dock');testAPI.s.paused=true;for(let i=0;i<3;i++)testAPI.updateWake(.3,1,0);testAPI.s.shots=[{fromX:0,fromY:0,x:-75,y:-105,life:.17},{fromX:40,fromY:40,x:-75,y:-105,life:.17}];testAPI.draw();})()`});
     const showcase=await cdp('Runtime.evaluate',{expression:`JSON.stringify({night:testAPI.weather().night,king:testAPI.s.monsters.some(m=>m.kind==='tideking'&&m.phase>=2),fogship:testAPI.s.sites.some(s=>s.kind==='fogship'),bottle:testAPI.s.cargo.some(c=>c.kind==='bottle'),crate:testAPI.s.cargo.some(c=>c.kind==='crate'),turret:[...testAPI.s.tiles.values()].some(t=>t.module==='turret')})`,returnByValue:true});
     test('polish-showcase',()=>{for(const [key,value] of Object.entries(JSON.parse(showcase.result.value)))assert(value,key);});
-    const shot=await cdp('Page.captureScreenshot',{format:'png'});fs.writeFileSync('_shot-v10.png',Buffer.from(shot.data,'base64'));fs.copyFileSync('_shot-v10.png','_shot-v11helm.png');fs.copyFileSync('_shot-v10.png','_shot-v11.png');}
+    const shot=await cdp('Page.captureScreenshot',{format:'png'});fs.writeFileSync('_shot-v10.png',Buffer.from(shot.data,'base64'));fs.copyFileSync('_shot-v10.png','_shot-v11port.png');fs.copyFileSync('_shot-v10.png','_shot-v11.png');}
    // Synthetic notch/home-indicator values exercise the same CSS formulas in Chromium.
    const insets=orientation==='landscape'?{top:0,right:44,bottom:21,left:44}:{top:44,right:0,bottom:34,left:0};
    const safeCSS=fs.readFileSync('styles.css','utf8').replace(/env\(safe-area-inset-(top|right|bottom|left)\)/g,(_,edge)=>insets[edge]+'px');
    await cdp('Runtime.evaluate',{expression:`(()=>{const style=document.createElement('style');style.textContent=${JSON.stringify(safeCSS)};document.head.append(style);testAPI.s.paused=false;testAPI.pause();const c=document.querySelector('.card');c.scrollTop=c.scrollHeight;})()`});
    const safeLayout=await cdp('Runtime.evaluate',{expression:`JSON.stringify((()=>{const c=document.querySelector('.card').getBoundingClientRect(),b=document.getElementById('resume').getBoundingClientRect();return {top:c.top,bottom:c.bottom,left:c.left,right:c.right,button:b.top>=c.top&&b.bottom<=c.bottom};})())`,returnByValue:true});
    test('browser-gold-safe-area-'+orientation,()=>{const v=JSON.parse(safeLayout.result.value);assert(v.top>=Math.max(16,insets.top));assert(v.bottom<=height-Math.max(16,insets.bottom));assert(v.left>=insets.left&&v.right<=width-insets.right);assert(v.button);});
+   if(orientation!=='landscape'){
+    const safePort=await cdp('Runtime.evaluate',{expression:`JSON.stringify((()=>{const h=document.getElementById('hud').getBoundingClientRect(),n=document.getElementById('notice').getBoundingClientRect();return {top:h.top,gap:n.top-h.bottom};})())`,returnByValue:true});
+    test('port-safe-notice-'+orientation,()=>{const v=JSON.parse(safePort.result.value);assert(v.top>=insets.top);assert(v.gap>=8);});
+   }
    await cdp('Runtime.evaluate',{expression:`(()=>{for(const [i,k] of ['helm','canopy','stove','net','lamp','turret'].entries())[...testAPI.s.tiles.values()].filter(t=>t.x||t.y)[i].module=k;testAPI.finish('海风记得每一次远航。'.repeat(15));})()`});
    const recap=await cdp('Runtime.evaluate',{expression:`JSON.stringify((()=>{const c=document.querySelector('.card');c.scrollTop=0;const r=c.getBoundingClientRect(),text=document.getElementById('dialogText').textContent;const top=r.top;c.scrollTop=c.scrollHeight;const b=document.getElementById('resume').getBoundingClientRect();return {top,bottom:r.bottom,scroll:c.scrollTop,overflow:getComputedStyle(c).overflowY,text,button:b.bottom<=r.bottom&&b.top>=r.top};})())`,returnByValue:true});
    test('browser-death-scroll-'+orientation,()=>{const v=JSON.parse(recap.result.value);assert(v.top>=0&&v.bottom<=height);assert.equal(v.overflow,'auto');assert(v.button);assert.match(v.text,/连击纪录/);assert.match(v.text,/最远停靠/);if(orientation==='small-portrait')assert(v.scroll>0);});
    await cdp('Runtime.evaluate',{expression:'localStorage.removeItem(testAPI.SAVE_KEY)'});
   }
-  report.features.push({id:'screenshot',ok:true,note:'已生成 _shot-v11helm.png / _shot-v11.png'});
+  report.features.push({id:'screenshot',ok:true,note:'已生成 _shot-v11port.png / _shot-v11.png'});
  }catch(e){test('browser-runtime',()=>{throw e;});}
  finally{socket?.close();browser.kill();server.kill();await new Promise(r=>setTimeout(r,500));fs.rmSync(profile,{force:true,recursive:true});}
 }else test('browser-required',()=>{throw Error('Chrome or WebSocket unavailable');});
-report.ok=report.errors.length===0;fs.writeFileSync('_v10-validation.json',JSON.stringify(report,null,2)+'\n');fs.copyFileSync('_v10-validation.json','_v11helm-validation.json');console.log(JSON.stringify(report,null,2));if(!report.ok)process.exitCode=1;
+report.ok=report.errors.length===0;fs.writeFileSync('_v10-validation.json',JSON.stringify(report,null,2)+'\n');fs.copyFileSync('_v10-validation.json','_v11port-validation.json');console.log(JSON.stringify(report,null,2));if(!report.ok)process.exitCode=1;

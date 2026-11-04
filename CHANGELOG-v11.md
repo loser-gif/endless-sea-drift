@@ -1,3 +1,10 @@
+## XI▥ / v11-port
+
+- 仅竖屏收紧标题、航程、弹药与库存行距，保留全部读数和 ≥44px 触控目标。
+- notice 偏移从 +215px 调整为 +176px，保留双行提示与刘海安全区。
+- CACHE `endless-sea-drift-v11-port`；edition `XI▥`；玩法、战斗、合成、存档、迁移、偏好与渲染预算不变。
+- 验证见 `_v11port-validation.json`、`_v11port-handoff.md`；浏览器成功时输出 `_shot-v11port.png` / `_shot-v11.png`。
+
 ## XI⎈ / v11-helm
 
 - 模块 / 炮台放置预览加暗衬与黄铜角标；中央固定炮座使用不可放置色，仅调整绘制。

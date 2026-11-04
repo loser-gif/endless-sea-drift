@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI⎈ · v11-helm，CACHE：`endless-sea-drift-v11-helm`。模块 / 炮台放置预览新增暗衬黄铜角标，下拉选择器与放置按钮采用仪表边框；保留原生选择器、≥44px 触控与竖屏 notice +215px，玩法、战斗、存档与偏好不变。
+XI▥ · v11-port，CACHE：`endless-sea-drift-v11-port`。竖屏 HUD 收紧标题与读数行距，notice 调整为 +176px；保留全部读数、≥44px 触控、安全区及原有玩法、战斗、存档与偏好。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI⎈; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI▥; no build step.
 
 ## 本地预览
 

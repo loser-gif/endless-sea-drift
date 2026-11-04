@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI板 · v11-plank，CACHE：`endless-sea-drift-v11-plank`。存活木板清晰遮罩外缘两级柔化，保留 bloom；验证见 `_v11plank-handoff.md`。
+XI罗 · v11-compass，CACHE：`endless-sea-drift-v11-compass`。航行栏留白加入静态单色罗盘针，保留原行高与布局；验证见 `_v11compass-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI板; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI罗; no build step.
 
 ## 本地预览
 

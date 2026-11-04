@@ -1,3 +1,9 @@
+## XI罗 / v11-compass
+
+- 航行等宽栏左侧留白加入静态单色罗盘针，沿用黄铜色；不占文字宽度、不增行高、动画或滤镜。
+- 玩法、战斗、合成、存档、迁移、偏好及竖屏 notice +176px 保持不变。
+- CACHE `endless-sea-drift-v11-compass`；验证与交接见 `_v11compass-validation.json`、`_v11compass-handoff.md`。
+
 ## XI板 / v11-plank
 
 - 存活木板清晰遮罩外缘增加两级窄过渡，保留原清晰核心与 bloom；扩建、拆除随当前木板集合更新。

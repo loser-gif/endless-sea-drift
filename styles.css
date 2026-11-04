@@ -441,3 +441,18 @@ button:focus-visible,.tool select:focus-visible{
 @media(forced-colors:active){
  :root{--focus-ring:Highlight}
 }
+
+/* XI罗 / Compass — a quiet monochrome needle in the existing HUD gutter.
+   Empty decoration leaves the voyage text and its line boxes unchanged. */
+#hud #voyage{position:relative}
+#hud #voyage::before{
+ content:"";
+ position:absolute;
+ left:-8px;
+ top:1px;
+ width:6px;
+ height:10px;
+ background:#c8ad6c;
+ clip-path:polygon(50% 0,100% 100%,50% 75%,0 100%);
+ pointer-events:none;
+}

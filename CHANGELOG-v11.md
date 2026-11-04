@@ -1,3 +1,9 @@
+## XI沫2 / v11-spray
+
+- 船首既有浪花尖端微调暖象牙色，共用 waterRing 略暖灰绿，与 art 泡沫色系衔接；不增加绘制、粒子或滤镜。
+- 尾流上限、生成间隔、寿命与全部玩法、存档、偏好及竖屏 notice +176px 保持不变。
+- CACHE `endless-sea-drift-v11-spray`；验证与交接见 `_v11spray-validation.json`、`_v11spray-handoff.md`。
+
 ## XI铆 / v11-rivet
 
 - HUD 原黄铜导轨两端加入 4px 静态 CSS radial 铆钉；保留导轨，不新增动画、滤镜或布局占位。

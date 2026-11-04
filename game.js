@@ -370,7 +370,7 @@
   function stamp(name,x,y,w,h) {const a=art[name];ctx.drawImage(a,Math.round(x),Math.round(y),w||a.width/(a.unit||1),h||a.height/(a.unit||1));}
   function shadow(x,y,w,h) {stamp('shadow',x-w/2,y-h/2,w,h);}
   function waterRing(x,y,r,alpha) {
-    ctx.strokeStyle=`rgba(185,211,202,${alpha*.8})`;ctx.lineWidth=1;ctx.beginPath();ctx.ellipse(x,y,r,r*.3,0,.15,Math.PI*1.8);ctx.stroke();
+    ctx.strokeStyle=`rgba(195,211,199,${alpha*.8})`;ctx.lineWidth=1;ctx.beginPath();ctx.ellipse(x,y,r,r*.3,0,.15,Math.PI*1.8);ctx.stroke();
   }
   function draw() {
     ctx.drawImage(seaBase,0,0,width,height);
@@ -410,13 +410,13 @@
       if(!s.tiles.has(key(t.x,t.y-1)))rect(x+1,y,37,2,'#e7cf94');
       if(!s.tiles.has(key(t.x,t.y+1))){
         waterRing(x+20,y+48,22,.38);
-        // A few local foam flecks, no particle simulation or unbounded allocation.
+        // Spray: warm ivory tips in the art foam/waterRing family; same flecks and draw budget.
         for(let j=0;j<3;j++){
           const phase=((time*.45+t.x*.37+j*.31)%1+1)%1;
           ctx.globalAlpha=Math.sin(phase*Math.PI)*(weather().storm?.72:.6);
           rect(Math.round(x+7+j*10+phase*4),Math.round(y+49+phase*5),5,1,'#c8d8cc');
           rect(Math.round(x+9+j*10+phase*4),Math.round(y+50+phase*5),2,1,'#82aaa7');
-          if(j===1)rect(Math.round(x+12+phase*13),Math.round(y+48+phase*4),3,1,'#e4e1ca');
+          if(j===1)rect(Math.round(x+12+phase*13),Math.round(y+48+phase*4),3,1,'#eee3ca');
         }ctx.globalAlpha=1;
       }
       if(t.hp<100){

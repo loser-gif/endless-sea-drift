@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI铆 · v11-rivet，CACHE：`endless-sea-drift-v11-rivet`。HUD 原黄铜导轨两端加入微小静态径向铆钉，布局不变；验证见 `_v11rivet-handoff.md`。
+XI沫2 · v11-spray，CACHE：`endless-sea-drift-v11-spray`。船首浪花尖端微暖，waterRing 统一柔和灰绿泡沫色系，尾流预算不变；验证见 `_v11spray-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI铆; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI沫2; no build step.
 
 ## 本地预览
 

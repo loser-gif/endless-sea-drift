@@ -1,0 +1,50 @@
+:root{color-scheme:dark;font-family:system-ui,-apple-system,"PingFang SC",sans-serif;color:#ddd9bf;background:#102f36}*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}html,body{margin:0;width:100%;height:100%;overflow:hidden;overscroll-behavior:none;touch-action:none;-webkit-user-select:none;user-select:none}button{font:inherit;color:inherit;touch-action:none;cursor:pointer;border:1px solid #69817b;background:#213d40;border-radius:6px;min-height:44px;padding:8px 12px}button:active{background:#4c6861;transform:translateY(1px)}button:focus-visible{outline:2px solid #e2c38a;outline-offset:3px}button:disabled{opacity:.4}button.primary{background:#c8b485;border-color:#decda7;color:#203538;font-weight:700}button[aria-pressed=true]{background:#567767;border-color:#bed2a8}#game{position:relative;width:100%;height:100%;height:100dvh;overflow:hidden}canvas{position:absolute;inset:0;width:100%;height:100%;image-rendering:pixelated}#hud{position:absolute;top:max(12px,env(safe-area-inset-top));left:max(16px,env(safe-area-inset-left));width:320px;padding:14px 16px;border:1px solid #78918a40;background:#102d34e8;border-radius:8px;pointer-events:none}.heading{display:flex;align-items:center;justify-content:space-between}.heading button{pointer-events:auto;font-size:12px;padding:6px 10px}.eyebrow{font-size:9px;letter-spacing:2px;color:#9bb2a9}h1{margin:4px 0 6px;font-size:23px;letter-spacing:3px}#voyage{font:11px ui-monospace,monospace;color:#a7bab0;margin-bottom:12px}.vitals{display:flex;gap:16px}.vitals label{flex:1;font-size:11px}.vitals span{float:right}progress{display:block;width:100%;height:6px;margin-top:6px;border:0;background:#29474a}progress::-webkit-progress-bar{background:#29474a}progress::-webkit-progress-value{background:#c4b17c}progress::-moz-progress-bar{background:#c4b17c}#thirst::-webkit-progress-value{background:#83b6bb}#thirst::-moz-progress-bar{background:#83b6bb}#inventory{display:flex;justify-content:space-between;margin-top:12px;font-size:11px;color:#a6b8ae}#inventory b{font:15px ui-monospace,monospace;color:#e1dac0;margin-left:4px}#notice{position:absolute;left:50%;top:max(14px,env(safe-area-inset-top));transform:translateX(-10%);max-width:40%;font-size:12px;line-height:1.6;color:#c0d0c1;background:#102d34c9;padding:9px 12px;border-radius:6px;pointer-events:none}#controls{position:absolute;inset:auto max(16px,env(safe-area-inset-right)) max(16px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left));display:flex;justify-content:space-between;align-items:flex-end;pointer-events:none}#stick{width:116px;height:116px;border:1px solid #95b1a655;border-radius:50%;background:#0e283475;position:relative;pointer-events:auto;flex-shrink:0}.cross{position:absolute;inset:0;display:grid;place-items:center;font-size:65px;font-weight:200;color:#8eaaa22b}#thumb{position:absolute;left:50%;top:50%;margin:-22px;width:44px;height:44px;border-radius:50%;background:#9bb2a882;border:1px solid #bad0bd80;pointer-events:none}#stick small{position:absolute;bottom:-4px;left:0;width:100%;text-align:center;font-size:9px;color:#b1c1b8}.actions{display:grid;grid-template-columns:repeat(2,108px);gap:7px;pointer-events:auto}.actions button{font-size:13px;min-height:44px}kbd{font:10px ui-monospace,monospace;opacity:.55;margin-left:5px}.overlay{position:absolute;inset:0;display:grid;place-items:center;background:#071f29b8;backdrop-filter:blur(4px);padding:16px;overflow:auto}.overlay[hidden]{display:none}.card{max-width:440px;width:100%;padding:28px;background:#132f35;border:1px solid #71847b;border-radius:10px;box-shadow:0 20px 80px #0005}h2{font-size:32px;letter-spacing:5px;margin:12px 0 20px}.card p{font-size:13px;line-height:1.9}.muted{color:#96aea6;font-size:11px!important}.card button{width:100%;margin-top:10px}#offline{margin-bottom:0;text-align:center}@media(orientation:portrait){#hud{right:max(16px,env(safe-area-inset-right));width:auto}#notice{top:calc(max(12px,env(safe-area-inset-top)) + 164px);left:16px;right:16px;transform:none;max-width:none;text-align:center;font-size:11px}#controls{gap:12px}.actions{grid-template-columns:repeat(2,minmax(80px,1fr));max-width:240px;flex:1}kbd{display:none}}@media(orientation:landscape) and (max-height:480px){#hud{width:276px;padding:10px}h1{font-size:18px}#voyage{margin-bottom:7px}#inventory{margin-top:8px}#stick{width:104px;height:104px}.card{padding:16px;max-width:530px}.card h2{font-size:24px;margin:6px 0}.card p{margin:6px 0;font-size:12px}.card button{margin-top:4px}#offline{display:none}}
+
+/* Warm daylight over cool water; understated glass without per-frame blur. */
+:root{color:#e6dfc8;background:#163f50}
+canvas{image-rendering:auto}
+button{border-color:#b8c6ac38;background:linear-gradient(145deg,#35545cdb,#193641e8);box-shadow:inset 0 1px #e5e1bc0d;border-radius:5px}
+button.primary{background:linear-gradient(135deg,#d7bd84,#ab915d);border-color:#f1d7a477;color:#243c43}
+#hud{background:linear-gradient(135deg,#102e3bd6,#173b46b8);border-color:#c9d2ba2b;box-shadow:0 8px 28px #09283920,inset 0 1px #ebdfbc0c}
+h1{font-weight:600;color:#ece3c7;font-size:21px}.eyebrow{color:#b1c5bc;letter-spacing:2.5px}
+#notice{background:#102e3bb8;border:1px solid #c9d2ba16;color:#d0dccb}
+#stick{background:radial-gradient(circle,#567b812e,#102e3b85);border-color:#c3d7cc40;box-shadow:inset 0 0 24px #102e3b30}
+#thumb{background:radial-gradient(circle at 30% 25%,#b9cbb49c,#527680a6);border-color:#d3ddc577;box-shadow:2px 4px 10px #082d3d44}
+.overlay{background:#09263385;backdrop-filter:none}
+.card{background:linear-gradient(145deg,#254852f5,#102e3bf5);border-color:#d0bc875c;box-shadow:0 24px 70px #061b3266,inset 0 1px #eee0b61a}
+.card h2{color:#f1dfb3;font-weight:500}.card p{color:#c5d3c9}
+progress,progress::-webkit-progress-bar{background:#73999b24}progress::-webkit-progress-value{background:linear-gradient(90deg,#9d895d,#d9be82)}
+#thirst::-webkit-progress-value{background:linear-gradient(90deg,#508c9d,#9bcac6)}
+@media(orientation:landscape) and (max-height:480px){h1{font-size:18px}#notice{font-size:11px;max-width:38%;padding:6px 9px}}
+@media(prefers-reduced-motion:reduce){button:active{transform:none}}
+@media(orientation:portrait){#hud{padding:10px 14px}#hud h1{font-size:20px;margin:3px 0 4px}#hud #voyage{margin-bottom:8px}#hud #inventory{margin-top:9px}#hud .heading button{min-height:36px}}
+
+/* V3 — golden-hour expedition glass over a deliberately coarse pixel world. */
+:root{color:#f3e2bb;background:#041d31}
+canvas{image-rendering:crisp-edges;image-rendering:pixelated}
+#hud{width:296px;padding:13px 16px;background:linear-gradient(120deg,#071923e8,#0b2838a6);border:1px solid #e3bd6955;border-top:2px solid #f2d49c;box-shadow:0 12px 30px #0005,inset 0 0 28px #92d2d408;border-radius:2px}
+h1{font-family:Georgia,"Songti SC",serif;font-size:24px;font-weight:600;letter-spacing:5px;color:#ffe5b0;text-shadow:0 2px #020d17}
+.eyebrow{font-size:9px;letter-spacing:3px;color:#cfb780}#voyage{color:#91b5bc;font-size:10px;letter-spacing:1px}
+#inventory{padding-top:9px;border-top:1px solid #ecd5a522;color:#a9c2c4}#inventory b{color:#ffe2a6}
+progress{height:5px}progress::-webkit-progress-value{background:linear-gradient(90deg,#a96337,#f6ce7b)}
+button{border-radius:2px;border-color:#aec4c03b;background:linear-gradient(135deg,#143544de,#071b2ae8);box-shadow:inset 0 1px #fbe1a51a,0 4px 12px #0003}
+button.primary{color:#241e19;background:linear-gradient(130deg,#ffe0a0,#bd8645);border-color:#fff0bc;box-shadow:0 0 20px #eeb65920,inset 0 1px #fff6cd}
+#notice{top:max(18px,env(safe-area-inset-top));left:50%;transform:translateX(-18%);background:#061925a8;border:1px solid #dfc49330;border-radius:2px;color:#e1d6b8;font-size:11px;letter-spacing:1px}
+#stick{border:1px solid #d3c48c55;background:radial-gradient(circle,#32607233,#051725a8);box-shadow:inset 0 0 0 8px #05172530,0 5px 22px #0003}
+#thumb{background:radial-gradient(circle at 30% 20%,#e6d1a2a0,#47727caa);border-color:#ecd39980}
+.actions{gap:6px;grid-template-columns:repeat(2,102px)}.actions button{font-size:12px}
+.overlay{background:radial-gradient(ellipse at 50% 40%,#07192630,#020c1cd9)}
+.card{border-radius:2px;border:1px solid #d5b57288;border-top:3px solid #ffe0a0;background:linear-gradient(145deg,#183b49f0,#061726f5);box-shadow:0 25px 80px #0009,inset 0 0 60px #e5bd6c08}
+.card h2{font-family:Georgia,"Songti SC",serif;letter-spacing:8px;color:#ffe0a0}
+@media(orientation:portrait){#hud{width:auto}#notice{top:calc(max(12px,env(safe-area-inset-top)) + 172px);left:16px;transform:none}.actions{grid-template-columns:repeat(2,minmax(80px,1fr))}}
+@media(orientation:landscape) and (max-height:480px){#hud{width:253px;padding:9px 12px}h1{font-size:19px}#inventory{padding-top:6px;margin-top:7px}#notice{max-width:38%;font-size:10px}}
+
+/* V4 — quiet brass details, crisp type and a lighter instrument panel. */
+#hud{border-top-width:1px;border-color:#d8c48a50;background:linear-gradient(125deg,#081e2be0,#0b2b38b8);box-shadow:0 8px 24px #00152240,inset 0 1px #fff0c51a}
+#hud h1{font-size:22px;letter-spacing:4px}#hud .eyebrow{font-size:8px;letter-spacing:2.4px}
+.edition{display:inline-block;margin-left:6px;padding:1px 4px;border:1px solid #e0c17b55;color:#f0d89e;letter-spacing:0;font:9px Georgia,serif}
+#inventory{border-color:#d5d9bc1f}#inventory b,.vitals span{font-variant-numeric:tabular-nums}
+#notice{border-color:#c6d5c226;color:#c8d8ce;box-shadow:inset 2px 0 #b7d0b74d}
+progress{height:4px;border-radius:1px;overflow:hidden}
+.actions button{border-color:#b2ccc43d}.actions .primary{background:linear-gradient(130deg,#f3d89c,#bc925a);box-shadow:inset 0 1px #fff0c1,0 3px 12px #071e2840}
+@media(orientation:landscape) and (max-height:480px){#hud h1{font-size:19px}}

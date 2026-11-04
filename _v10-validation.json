@@ -1,7 +1,7 @@
 {
   "ok": false,
-  "cache": "endless-sea-drift-v11-thrall",
-  "session_id": "01a1a7c3-66fc-76c2-9fed-92e791869f5e",
+  "cache": "endless-sea-drift-v11-quay",
+  "session_id": "01a1a7c6-3e2f-78f3-8959-e3564451eb44",
   "features": [
     {
       "id": "cache",
@@ -350,8 +350,8 @@
     },
     {
       "id": "browser-boot-landscape",
-      "ok": false,
-      "note": "Expected values to be strictly equal:\n\n'XI敌' !== 'XI曙'\n"
+      "ok": true,
+      "note": "通过"
     },
     {
       "id": "browser-lock-start-reachable-landscape",
@@ -455,8 +455,8 @@
     },
     {
       "id": "browser-boot-portrait",
-      "ok": false,
-      "note": "Expected values to be strictly equal:\n\n'XI敌' !== 'XI曙'\n"
+      "ok": true,
+      "note": "通过"
     },
     {
       "id": "browser-lock-start-reachable-portrait",
@@ -555,8 +555,8 @@
     },
     {
       "id": "browser-boot-small-portrait",
-      "ok": false,
-      "note": "Expected values to be strictly equal:\n\n'XI敌' !== 'XI曙'\n"
+      "ok": true,
+      "note": "通过"
     },
     {
       "id": "browser-lock-start-reachable-small-portrait",
@@ -656,17 +656,14 @@
     {
       "id": "screenshot",
       "ok": true,
-      "note": "已生成 _shot-v11thrall.png / _shot-v11.png"
+      "note": "已生成 _shot-v11quay.png / _shot-v11.png"
     }
   ],
   "errors": [
-    "browser-boot-landscape: Expected values to be strictly equal:\n\n'XI敌' !== 'XI曙'\n",
     "browser-pressed-landscape: The expression evaluated to a falsy value:\n\n  assert(pressed.result.value)\n",
     "browser-long-press-landscape: The expression evaluated to a falsy value:\n\n  assert(v.tip.includes('优先吃炖菜'))\n",
     "browser-landscape: The expression evaluated to a falsy value:\n\n  assert(value.hidden)\n",
     "browser-final-clarity-landscape: The input did not match the regular expression /高光.*最大木筏.*连击纪录.*潮汐王.*雾灯船/. Input:\n\n'已找回上次航行。继续漂流，或开始新的旅程。\\n\\n续航摘要 · 第 1 天 · 00:00 · 木筏 9 格 · 击退 0'\n",
-    "browser-boot-portrait: Expected values to be strictly equal:\n\n'XI敌' !== 'XI曙'\n",
-    "browser-boot-small-portrait: Expected values to be strictly equal:\n\n'XI敌' !== 'XI曙'\n",
     "browser-pressed-small-portrait: The expression evaluated to a falsy value:\n\n  assert(pressed.result.value)\n",
     "browser-long-press-small-portrait: The expression evaluated to a falsy value:\n\n  assert(v.tip.includes('优先吃炖菜'))\n",
     "browser-small-portrait: The expression evaluated to a falsy value:\n\n  assert(value.hidden)\n",

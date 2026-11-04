@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI雾 · v11-mist，CACHE：`endless-sea-drift-v11-mist`。远海冷色纵深与克制地平线薄雾，仅调整 art.js 氛围；玩法、存档与竖屏布局保留，验证见 `_v11mist-handoff.md`。
+XI木 · v11-grain，CACHE：`endless-sea-drift-v11-grain`。木筏板端木纹与板缝 AO 加密，仅修改缓存精灵；尺寸、玩法、存档与竖屏布局保留，验证见 `_v11grain-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI雾; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI木; no build step.
 
 ## 本地预览
 

@@ -117,6 +117,22 @@ window.SeaArt = (() => {
           const x=5+(k*19+j*13+v*17)%65,yy=y+5+(k*3+v)%8;
           r(x,yy,Math.min(76-x,3+(k*7)%18),1,['#8b633c','#cca570','#ad824b','#dfbb7c'][k%4]);
         }
+        // Grain: cached end pores and broken seam AO; keep the broad face quiet.
+        for(const end of [0,1]){
+          const edge=end?72:6;
+          r(end?70:6,y+4,3,9,'#89613c');
+          for(let k=0;k<4;k++){
+            const len=3+(k+j+v)%5,yy=y+5+k*2;
+            r(end?edge-len:edge,yy,len,1,k%2?'#765136':'#986f43');
+            r(end?edge-len-2:edge+len,yy+1,2,1,'#bb925b');
+          }
+          r(end?66:7,y+13,6,1,'#654932');
+        }
+        for(let k=0;k<5;k++){
+          const sx=15+k*10+(j+v)%3;
+          r(sx,y+13,4+(k+v)%4,1,'#90673f');
+          r(sx+2,y+14,3+(k+j)%3,1,'#614631');
+        }
         const x=19+(v*17+j*13)%39;
         r(x,y+7,9,4,'#986d40');r(x+2,y+8,5,2,'#5c422d');r(x-4,y+6,12,1,'#dfb97b');r(x+3,y+11,10,1,'#dbb375');
         for(const x of [9,68]){r(x,y+5,3,4,'#493c30');r(x,y+5,2,2,'#e4cc97');r(x+1,y+7,1,1,'#849083');}

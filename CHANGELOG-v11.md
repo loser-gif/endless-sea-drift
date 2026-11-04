@@ -1,3 +1,9 @@
+## XI木 / v11-grain
+
+- 木筏 4 张缓存板材精灵加密端部木纹与断续板缝 AO，保留中部明度、绳索及钉头；unit=2、40×52 显示尺寸不变，无新增逐帧效果。
+- CACHE `endless-sea-drift-v11-grain`；edition `XI木`。玩法、战斗、合成、存档、迁移、偏好与竖屏 notice +176px 保留。
+- 验证与限制见 `_v11grain-validation.json`、`_v11grain-handoff.md`；浏览器成功时输出 `_shot-v11grain.png` / `_shot-v11.png`。
+
 ## XI雾 / v11-mist
 
 - art.js 增加单条缓存渐变：远海冷色纵深、柔和地平线薄雾，在焦点前淡出；先于实体绘制，无新增粒子或滤镜。

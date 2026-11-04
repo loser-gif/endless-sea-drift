@@ -1,3 +1,9 @@
+## XI帆 / v11-mast
+
+- 商船与沉船帆面增加暖光褶脊、冷色折面和帆桁细边，保留原轮廓及 96×80 缓存尺寸；无新增逐帧特效、滤镜或依赖。
+- 全部玩法、战斗、合成、存档、迁移与偏好保持；44px 触控、竖屏 notice +176px、30fps 与 ≤4 声部逻辑不变。
+- CACHE `endless-sea-drift-v11-mast`；edition `XI帆`；验证见 `_v11mast-validation.json`、`_v11mast-handoff.md`，浏览器成功时输出 `_shot-v11mast.png` / `_shot-v11.png`。
+
 ## XI静 / v11-hush
 
 - 暂停卡片改为细黄铜边与深青底，减少阴影层次；标题、摘要与 CTA 分组留白，保留继续漂流、音效和新的漂流入口。

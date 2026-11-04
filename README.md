@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI静 · v11-hush，CACHE：`endless-sea-drift-v11-hush`。暂停层收敛边框与阴影，统一摘要留白和 CTA 节奏；全部玩法与竖屏布局保留，验证见 `_v11hush-handoff.md`。
+XI帆 · v11-mast，CACHE：`endless-sea-drift-v11-mast`。商船与沉船帆布增加褶皱明暗及帆桁细边，精灵尺寸与全部玩法保持；验证见 `_v11mast-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI静; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI帆; no build step.
 
 ## 本地预览
 

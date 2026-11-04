@@ -1,3 +1,9 @@
+## XI泊 / v11-moor
+
+- 木筏绳圈细化麻绳编织、内圈遮蔽与贴板接触阴影；沿用原缓存、位置与绘制次数，无新增系船柱或逐帧特效。
+- 全部玩法、战斗、合成、存档、迁移、偏好不变；保留触控 ≥44px、竖屏 notice +176px、30fps / ≤4 声部逻辑。
+- CACHE `endless-sea-drift-v11-moor`；edition `XI泊`；验证与交接见 `_v11moor-validation.json`、`_v11moor-handoff.md`。
+
 ## XI灰 / v11-ash
 
 - 风暴天空中段与海面端收敛为灰蓝色，雨线改为低饱和灰白；保留 gale slate 顶部暗色、原透明度、缓存尺寸与 52 条雨线，不增加绘制层或特效。

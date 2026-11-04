@@ -177,12 +177,29 @@ window.SeaArt = (() => {
       for(const x of [3,73]){r(x,3,3,89,'#665c43');for(let y=4;y<92;y+=4){r(x,y,2,2,'#c9be8a');r(x+1,y+2,2,1,'#e1cf99');}}
     });
     fine('rope',22,18,(g,r)=>{
+      // Moor: contact shade and twisted hemp baked into the existing 44x36 cache.
+      // Keep the coil footprint and deck draw unchanged; no extra frame-time pass.
       for(let y=0;y<27;y++)for(let x=0;x<39;x++){
         const dx=(x-20)/1.3,dy=y-14,d=Math.sqrt(dx*dx+dy*dy);
-        if(d>4&&d<13){const ring=Math.floor(d)%4;r(x+2,y+6,1,1,['#413b2c','#a58d5b','#e0c58a','#776947'][ring]);}
+        if(d>4&&d<13){
+          r(x+2,y+7,1,1,'#28332bd9');
+        }
       }
-      for(let i=0;i<15;i++){r(5+i,27+Math.floor(Math.sin(i*.25)*3),2,2,i%3?'#bb9f69':'#e0c38a');}
-      r(15,14,10,2,'#102f3a');
+      for(let y=0;y<27;y++)for(let x=0;x<39;x++){
+        const dx=(x-20)/1.3,dy=y-14,d=Math.sqrt(dx*dx+dy*dy);
+        if(d>4&&d<13){
+          const ring=Math.floor(d)%4,twist=(x+y*2)%7;
+          const hemp=dy>4?['#4b4431','#927d51','#bda573','#706345']:['#544832','#ac925f','#dec28a','#84704c'];
+          r(x+2,y+6,1,1,ring===2&&twist<2?'#a18a59':hemp[ring]);
+        }
+      }
+      for(let i=0;i<15;i++){
+        const y=27+Math.floor(Math.sin(i*.25)*3);
+        r(5+i,y+1,2,2,'#34392cd9');
+        r(5+i,y,2,1,i%3?'#b59b67':'#dfc38b');
+      }
+      // Recessed inner lip replaces the old flat blue slit.
+      r(15,14,10,2,'#343c2e');r(17,14,6,1,'#746344');
     });
     fine('lantern',14,24,(g,r)=>{
       r(8,1,12,2,'#d5be82');r(7,3,2,6,'#d5be82');r(19,3,2,6,'#485c59');

@@ -1,3 +1,9 @@
+## XI锁 / v11-lock2
+
+- 暂停按钮改用 CSS 黄铜锁图标，卡片边缘增加小型静态金属铰链，无动画、滤镜或新依赖。
+- 保留 ≥44px CTA、竖屏 notice +176px 及原有卡片滚动；玩法、战斗、合成、存档、迁移和偏好不变。
+- CACHE `endless-sea-drift-v11-lock2`；验证 `_v11lock2-validation.json`，成功截图 `_shot-v11lock2.png` / `_shot-v11.png`；交接 `_v11lock2-handoff.md`。
+
 ## XI湾港 / v11-harbor
 
 - 商船码头木缝、湿沿与货物接触阴影统一冷湿色；斜向边缘替换横亮条，保留 96×80 精灵及显示尺寸，全部烘焙进原缓存。

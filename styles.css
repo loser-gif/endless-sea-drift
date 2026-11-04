@@ -127,6 +127,10 @@ button[hidden]{display:none}
 .edition{color:#ead8ad;border-color:#c7ad7980;background:#cfa25412;padding:2px 5px}
 #pause{color:#e2d2ae;border-color:#bca171 #aa9166 #655a43 #948160;background:linear-gradient(180deg,#485047,#263638);box-shadow:inset 0 1px #f9e1b633;font-size:11px}
 #pause:active{border-color:#655a43 #948160 #bca171 #aa9166;background:linear-gradient(180deg,#203033,#394239);box-shadow:inset 0 2px 3px #06151c99}
+/* XI锁 / Lock2 — small satin lock; the button keeps its 44px touch box. */
+.pause-lock{display:inline-block;position:relative;width:8px;height:7px;margin-top:4px;border:1px solid;border-color:#e0c18b #a18452 #4d422d;background:linear-gradient(180deg,#c4a66e,#8e754d);border-radius:1px;pointer-events:none}
+.pause-lock::before{content:"";position:absolute;left:0;top:-6px;width:6px;height:6px;border:1px solid #cfb783;border-bottom:0;border-radius:4px 4px 0 0}
+.pause-lock::after{content:"";position:absolute;left:2px;top:2px;width:2px;height:2px;background:#30403d}
 #voyage{margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #c8ad6c26;color:#bdcacc;letter-spacing:.25px;font-size:10px}
 .ammo-status{margin:0 0 8px;gap:9px;font-size:11px}
 #ammoChip{min-width:76px;padding:3px 6px;border:1px solid #d8b66b4d;background:#caa35412;color:#ffe0a0;border-radius:2px;font-weight:600}
@@ -289,6 +293,7 @@ progress{height:5px;margin-top:5px;box-shadow:0 0 0 1px #d8c48a1c}
 /* XI / Crown — reuse the top brass rule and scale title tracking with type. */
 /* XI釉 / Glaze — replace satin with a static thin sheen; no backdrop sampling or new layers. */
 #overlay .card{
+ position:relative;
  border-radius:4px;
  border-top-color:#d3b781;
  border-left-color:#b59a6c;
@@ -300,6 +305,21 @@ progress{height:5px;margin-top:5px;box-shadow:0 0 0 1px #d8c48a1c}
  box-shadow:0 18px 48px #0008,inset 0 1px #e4edda30,inset 0 -1px #020e1966,inset 0 0 0 5px #081a23,inset 0 0 0 6px #bca37530;
  scrollbar-color:#8d805f #10232c;
 }
+/* Paired hinge barrels sit inside the frame gutter, clear of text and CTAs. */
+#overlay .card::before,#overlay .card::after{
+ content:"";
+ position:absolute;
+ top:18px;
+ width:6px;
+ height:24px;
+ border:1px solid;
+ border-color:#d3b781 #756448 #4d422d #b59a6c;
+ border-radius:2px;
+ background:linear-gradient(180deg,transparent 6px,#4d422d 6px 7px,transparent 7px 15px,#4d422d 15px 16px,transparent 16px),linear-gradient(90deg,#746044,#c3a574 45%,#8c744e);
+ pointer-events:none;
+}
+#overlay .card::before{left:5px}
+#overlay .card::after{right:5px}
 #overlay .card>.eyebrow{color:#c7b58e;letter-spacing:1.6px;font-weight:500}
 #overlay .card h2{letter-spacing:.14em;border-bottom-color:#c7ad7838;text-shadow:0 1px 1px #0004;padding-bottom:10px}
 #overlay .card button{min-height:44px;margin-top:10px}

@@ -1,3 +1,9 @@
+## XI静 / v11-hush
+
+- 暂停卡片改为细黄铜边与深青底，减少阴影层次；标题、摘要与 CTA 分组留白，保留继续漂流、音效和新的漂流入口。
+- 纯 CSS 调整，无新增依赖、动画或滤镜；全部玩法、存档、迁移、偏好及竖屏 notice +176px 保留。
+- CACHE `endless-sea-drift-v11-hush`；edition `XI静`；验证与交接见 `_v11hush-validation.json`、`_v11hush-handoff.md`，截图 `_shot-v11hush.png` / `_shot-v11.png`。
+
 ## XI湾 / v11-cove
 
 - 96×80 小岛精灵细化湾口湿沙层次、断续反光及岩石切面 / 贴地 AO；沿用缓存绘制，无新增逐帧特效或依赖。

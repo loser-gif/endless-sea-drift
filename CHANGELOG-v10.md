@@ -1,7 +1,18 @@
-# X★ / v10-final
+# X★ / v10-gold
 
-纯静态 Canvas PWA；无构建步骤、无新增运行依赖。CACHE：`endless-sea-drift-v10-final`。
+纯静态 Canvas PWA；无构建步骤、无新增运行依赖。CACHE：`endless-sea-drift-v10-gold`。
 Static Canvas PWA; no build step or new runtime dependencies.
+
+## Gold pass
+
+- CACHE 升为 `endless-sea-drift-v10-gold`，沿用 service worker 激活清理旧缓存与接管机制。Edition 保持 X★；存档键/版本仍为 v10，静音偏好仍为 v9。
+- 夜间潮汐王增加启动时缓存的浅金细轮廓，三阶段轻微透明度脉冲；减少动态效果时保持固定亮度。受伤怪物细血条增加深色底边，雾灯船等站点标签限制在画布边界内；原灯光亮度保留。
+- 保留 viewport-fit=cover、HUD/控制区安全边距及 ≥44px 目标；弹窗四边使用 safe-area，卡片高度扣除顶部/底部安全区，可滚动触达底部按钮。通知最多两行，支持窄屏断行。
+- 新增约3%漂浮货箱，2倍像素手绘小木箱与现有海面阴影/水环一致。打捞获得1–2份木、布或食物，两份必为不同种类；cargo 白名单增添 crate，旧存档无需新字段。
+- 暂停增加一行弹药数量与速射/弱射模式。建造中停止空闲教学替换提示，长按提示到时恢复模块成本；保持原长按不消耗资源。
+- guidance/updateVital 与标签动画监听防缺失 DOM；尾流防无效输入，原数组内清理过期水环，减少每帧分配。
+- 验证：`node _selftest-v10.mjs` 99/99 通过（含原88项），新增货箱概率边界/混合掉落/一次领取/存档、夜间轮廓/减少动态、暂停火力、建造提示恢复、缺失DOM和安全区检查。三个真实浏览器视口另注入模拟刘海/底部安全区值验证卡片及按钮位置；该项是 Chromium CSS 模拟，非真机 iOS 测试。
+- 产物：`_v10-validation.json`、`_v10gold-validation.json`、`_shot-v10.png`、`_shot-v10gold.png`。展示场景为第二夜三阶段王、雾灯船、瓶子、货箱与多炮。原 final/plus 产物不覆盖。
 
 ## Final pass
 

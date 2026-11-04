@@ -110,3 +110,9 @@ button[hidden]{display:none}
 .vitals label.vital-pulse{animation:vital-warning 1.2s ease-out 1}
 @keyframes vital-warning{45%{color:#fff0bd;text-shadow:0 0 8px #ffb87a}}
 @media(prefers-reduced-motion:reduce){.vitals label.vital-pulse{animation:none}}
+
+/* Gold: safe scrollable cards and bounded notices, including 320px portrait. */
+.overlay{padding:max(16px,env(safe-area-inset-top)) max(16px,env(safe-area-inset-right)) max(16px,env(safe-area-inset-bottom)) max(16px,env(safe-area-inset-left))}
+.card{max-height:calc(100% - 8px);max-height:calc(100dvh - max(16px,env(safe-area-inset-top)) - max(16px,env(safe-area-inset-bottom)) - 8px)}
+#notice{overflow:hidden;overflow-wrap:anywhere;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;max-height:5em}
+@media(orientation:portrait){#notice{left:max(16px,env(safe-area-inset-left));right:max(16px,env(safe-area-inset-right))}}

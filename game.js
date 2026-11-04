@@ -37,6 +37,13 @@
   {const g=art.fogship.getContext('2d');g.globalCompositeOperation='source-over';g.globalAlpha=1;g.fillStyle='#283944';g.fillRect(39,32,10,13);g.fillStyle='#d8a453';g.fillRect(40,34,8,9);g.fillStyle='#fff0b0';g.fillRect(42,35,4,6);}
   tintStamp('tideking','tideking2','#ed9e38',.24);tintStamp('tideking','tideking3','#ed4934',.38);
   for(const kind of ['island','wreck']){tintStamp(kind,kind+'1','#e7ba69',.12);tintStamp(kind,kind+'2','#8ecbc3',.16);}
+  // Padded rim mask is baked once; only its opacity changes during phase three.
+  {const base=art.tideking,u=base.unit||1,pad=2*u,c=document.createElement('canvas'),mask=document.createElement('canvas');
+    c.width=mask.width=base.width+pad*2;c.height=mask.height=base.height+pad*2;c.unit=u;
+    const g=c.getContext('2d'),m=mask.getContext('2d');m.drawImage(base,pad,pad);m.globalCompositeOperation='source-in';m.fillStyle='#d9d4a0';m.fillRect(0,0,mask.width,mask.height);
+    for(const [x,y] of DIR)g.drawImage(mask,x*u,y*u);g.globalCompositeOperation='destination-out';g.drawImage(base,pad,pad);art.kingRim=c;
+  }
+  const kingRimAlpha=(m,night,time)=>m.kind!=='tideking'||!night?0:m.phase===3&&!reducedMotion?.58+.12*Math.sin(time*2.4):.58;
   const kingStamp=m=>m.kind==='tideking'&&m.phase>=2?'tideking'+m.phase:m.kind;
   const SAVE_KEY = 'endless-sea-drift-save-v10';
   const LEGACY_KEYS=['endless-sea-drift-save-v9','endless-sea-drift-save-v8'];
@@ -94,7 +101,7 @@
   function continueSummary(){return `续航摘要 · 第 ${Math.floor(s.time/120)+1} 天 · ${clock(s.time)} · 木筏 ${s.tiles.size} 格 · 击退 ${s.kills}`;}
   function guidance(){
     // Never replace an active action/encounter notice; progress shares the existing tip index.
-    if(s.messageTime>0)return false;
+    if(!s||!$('notice')||s.building||s.messageTime>0)return false;
     if(!s.stormTipSeen&&weather().storm){s.stormTipSeen=true;say('雨棚可减风暴边缘伤 · 也可接雨水');return true;}
     if(s.time<90){
       if(s.collectedOnce&&s.craftedOnce){s.tipIndex=Math.max(3,s.tipIndex);return false;}
@@ -105,15 +112,17 @@
     return false;
   }
   function updateVital(stat){
+    if(!s||!Object.hasOwn(vitalLow,stat))return false;
     const low=s[stat]<25,label=$(stat+'Label'),crossed=low&&!vitalLow[stat];
+    if(!label){vitalLow[stat]=low;return false;}
     if(!low)label.classList.remove('vital-pulse');
     if(crossed&&!reducedMotion)label.classList.add('vital-pulse');
     label.classList.toggle('vital-low',low);vitalLow[stat]=low;return crossed&&!reducedMotion;
   }
-  function clearFeel(){wake=[];wakeTimer=0;for(const stat of ['hunger','thirst']){$(stat+'Label').classList.remove('vital-pulse');vitalLow[stat]=s[stat]<25;}}
+  function clearFeel(){wake=[];wakeTimer=0;for(const stat of ['hunger','thirst']){$(stat+'Label')?.classList.remove('vital-pulse');vitalLow[stat]=s[stat]<25;}}
   function updateWake(dt,dx,dy){
-    if(reducedMotion){wake=[];return;}
-    for(const p of wake)p.life-=dt;wake=wake.filter(p=>p.life>0);wakeTimer=Math.max(0,wakeTimer-dt);
+    if(reducedMotion||!s?.tiles||!Number.isFinite(dt)||!Number.isFinite(dx)||!Number.isFinite(dy)){wake.length=0;return;}
+    let live=0;for(const p of wake){p.life-=dt;if(p.life>0)wake[live++]=p;}wake.length=live;wakeTimer=Math.max(0,wakeTimer-dt);
     const n=Math.hypot(dx,dy);if(n<.001||wakeTimer>0)return;
     const ux=dx/n,uy=dy/n;
     let edge=s.tiles.get('0,0'),score=Infinity;
@@ -145,7 +154,7 @@
     clearInput(); resize(); hud();
   }
   function spawnCargo(x,y,kind) { s.cargo.push({x,y,kind:kind || cargoKind(),phase:Math.random()*6}); }
-  function cargoKind(){const w=weather(),r=Math.random();if(r<.04)return 'bottle';if(r<(w.night?.23:.16))return 'scrap';if(w.storm&&r<.48)return r<.32?'cloth':'wood';if(w.dusk&&r<.36)return 'food';return cycle[s.spawn++%5];}
+  function cargoKind(){const w=weather(),r=Math.random();if(r<.04)return 'bottle';if(r<.07)return 'crate';if(r<(w.night?.23:.16))return 'scrap';if(w.storm&&r<.48)return r<.32?'cloth':'wood';if(w.dusk&&r<.36)return 'food';return cycle[s.spawn++%5];}
   function candidates() {
     const out = new Map();
     if(s.tiles.size>=81) return [];
@@ -201,7 +210,7 @@
       else {s.supplies.scrap+=3;s.supplies.cloth+=2;s.supplies.wood+=4;say(['沉船日志：灯火能驱散长夜','旧货舱里还有物资','锈船钟下的补给箱','断桅上还系着归乡的绳结','船长的茶杯旁留着干粮'][site.flavor??site.variant??0]+' · 废铁 +3、布 +2、木 +4');}
     } else if(action==='collect') {
       let count=0,bottleText='';
-      s.cargo=s.cargo.filter(item=>{if(distance(item,s.player)>115)return true;if(item.kind==='bottle'){s.highlights.bottles++;const loot=['rope','nail','ammo','food'][Math.floor(Math.random()*4)];s.supplies[loot]++;bottleText=' · 漂流瓶：'+['灯火守住长夜','顺风也别忘记饮水','多座炮台能分散迎敌','雨棚能护住风暴中的筏边','舵台会把漂浮物引向你','雾夜的暖灯旁有旅人留下的补给','灶台炖菜能让一份食水更耐饿'][Math.floor(Math.random()*7)]+' · '+names[loot]+' +1';}else s.supplies[item.kind]+=item.kind==='wood'?2:1;count++;return false;});
+      s.cargo=s.cargo.filter(item=>{if(distance(item,s.player)>115)return true;if(item.kind==='bottle'){s.highlights.bottles++;const loot=['rope','nail','ammo','food'][Math.floor(Math.random()*4)];s.supplies[loot]++;bottleText=' · 漂流瓶：'+['灯火守住长夜','顺风也别忘记饮水','多座炮台能分散迎敌','雨棚能护住风暴中的筏边','舵台会把漂浮物引向你','雾夜的暖灯旁有旅人留下的补给','灶台炖菜能让一份食水更耐饿'][Math.floor(Math.random()*7)]+' · '+names[loot]+' +1';}else if(item.kind==='crate'){const kinds=['wood','cloth','food'],first=Math.floor(Math.random()*3),amount=1+Math.floor(Math.random()*2);s.supplies[kinds[first]]++;let loot=names[kinds[first]]+' +1';if(amount===2){const second=(first+1+Math.floor(Math.random()*2))%3;s.supplies[kinds[second]]++;loot+='、'+names[kinds[second]]+' +1';}bottleText+=' · 货箱：'+loot;}else s.supplies[item.kind]+=item.kind==='wood'?2:1;count++;return false;});
       if(count){s.collectedOnce=true;sfx('collect');}say(count?`打捞了 ${count} 份物资${bottleText}`:'没有够得着的物资，向筏边移动试试');
     } else if(action==='build') {
       s.building=!s.building;s.preview=candidates()[0]||[2,0];
@@ -248,7 +257,7 @@
   }
   function stats(){const modules=[...new Set([...s.tiles.values()].map(t=>t.module).filter(Boolean))].map(k=>MODULES[k].name).join('、')||'无';return `生存时长 ${clock(s.time)} · 第 ${Math.floor(s.time/120)+1} 天 · 击退 ${s.kills} · 木筏 ${s.tiles.size} 格 · 弹药余量 ${s.supplies.ammo} · 模块：${modules}`;}
   function finish(reason) {s.ended=true;s.paused=true;sfx('death');save();clearInput();showDialog('漂流终章',`${reason}\n${stats()}\n\n${highlightText()}`,'重新启航');}
-  function pause() {if(s.paused||s.ended)return;s.paused=true;save();clearInput();showDialog('暂泊片刻','海面已暂停。'+stats()+'\n\n'+pauseHighlights(),'继续漂流');}
+  function pause() {if(s.paused||s.ended)return;s.paused=true;save();clearInput();showDialog('暂泊片刻','海面已暂停。'+stats()+'\n火力 · 弹药 '+s.supplies.ammo+' · '+(s.supplies.ammo?'装弹速射':'无弹药 · 弱射')+'\n\n'+pauseHighlights(),'继续漂流');}
   function update(dt) {
     trackHighlights();saveElapsed+=dt;if(saveElapsed>=2){save();saveElapsed=0;}
     s.tipTimer-=dt;
@@ -367,7 +376,7 @@
     ctx.globalAlpha=1;
     ctx.save();ctx.translate(cx,cy);ctx.scale(scale,scale);
     for(const m of s.monsters){shadow(m.x+15,m.y+24,115,62);ctx.save();ctx.globalAlpha=.14;ctx.translate(m.x+6,m.y+22);ctx.scale(1,.32);ctx.rotate(m.angle);stamp('monster',-32,-20,64,40);ctx.restore();}
-    for(const p of s.sites){shadow(p.x,p.y+24,110,50);stamp(p.variant&&['island','wreck'].includes(p.kind)?p.kind+p.variant:p.kind,p.x-48,p.y-45,96,80);ctx.fillStyle='#f1dfb3';ctx.font='11px sans-serif';ctx.textAlign='center';ctx.fillText((p.used?'已停靠':p.kind==='island'?'小岛 · G':p.kind==='merchant'?'商船 · G':p.kind==='fogship'?'雾灯船 · G':'沉船 · G')+' '+Math.ceil(p.life)+'s',p.x,p.y-48);if(p.kind==='merchant'&&!p.used){ctx.font='10px sans-serif';ctx.fillStyle='#ffe2a6';ctx.fillText(offerText(p),p.x,p.y+43);}}
+    for(const p of s.sites){shadow(p.x,p.y+24,110,50);stamp(p.variant&&['island','wreck'].includes(p.kind)?p.kind+p.variant:p.kind,p.x-48,p.y-45,96,80);ctx.fillStyle='#f1dfb3';ctx.font='11px sans-serif';ctx.textAlign='center';ctx.fillText((p.used?'已停靠':p.kind==='island'?'小岛 · G':p.kind==='merchant'?'商船 · G':p.kind==='fogship'?'雾灯船 · G':'沉船 · G')+' '+Math.ceil(p.life)+'s',Math.max((8-cx)/scale+45,Math.min((width-8-cx)/scale-45,p.x)),Math.max((14-cy)/scale,Math.min((height-8-cy)/scale,p.y-48)));if(p.kind==='merchant'&&!p.used){ctx.font='10px sans-serif';ctx.fillStyle='#ffe2a6';ctx.fillText(offerText(p),p.x,p.y+43);}}
     for(const c of s.cargo){
       const bob=Math.round(Math.sin((reducedMotion?0:c.phase)*2)*2);
       shadow(c.x+5,c.y+11,44,20);waterRing(c.x,c.y+10,19,.24);
@@ -412,8 +421,8 @@
       waterRing(m.x,m.y+9,34,.28);
       const swim=reducedMotion?0:Math.sin(time*5+m.speed);
       ctx.save();ctx.translate(m.x,m.y+swim*1.4);ctx.rotate(m.angle);ctx.scale(1,1+swim*.025);
-      const size=m.kind==='tideking'?1.75:1;stamp(kingStamp(m),-32*size,-20*size,64*size,40*size);ctx.restore();
-      if(m.hp<m.maxHp){rect(m.x-17,m.y-30,34,2,'#224957');rect(m.x-17,m.y-30,34*m.hp/m.maxHp,2,'#e0b68a');}
+      const size=m.kind==='tideking'?1.75:1,rim=kingRimAlpha(m,weather().night,time);if(rim){ctx.globalAlpha=rim;stamp('kingRim',-34*size,-22*size,68*size,44*size);ctx.globalAlpha=1;}stamp(kingStamp(m),-32*size,-20*size,64*size,40*size);ctx.restore();
+      if(m.hp<m.maxHp){rect(m.x-18,m.y-31,36,4,'#061e2c');rect(m.x-17,m.y-30,34,2,'#45606a');rect(m.x-17,m.y-30,34*m.hp/m.maxHp,2,'#e0b68a');}
     }
     ctx.strokeStyle='#d4e5c528';ctx.lineWidth=1;ctx.setLineDash([3,7]);ctx.beginPath();ctx.arc(s.player.x,s.player.y,115,0,Math.PI*2);ctx.stroke();ctx.setLineDash([]);
     function cannon(){
@@ -486,7 +495,7 @@
       }
       if(n.sites.some(p=>typeof p.used!=='boolean'||('flavor' in p&&![0,1,2,3,4].includes(p.flavor))||('variant' in p&&![0,1,2].includes(p.variant))||('offer' in p&&![0,1,2].includes(p.offer))))return false;
       if(n.monsters.some(m=>['accelerated','enraged'].some(k=>k in m&&typeof m[k]!=='boolean')||('phase' in m&&![1,2,3].includes(m.phase))))return false;
-      if(n.cargo.some(c=>!['wood','water','food','cloth','scrap','bottle'].includes(c.kind))||n.monsters.some(m=>!['gnaw','flank','spit','tideking'].includes(m.kind))||n.sites.some(p=>!['island','wreck','merchant','fogship'].includes(p.kind)))return false;
+      if(n.cargo.some(c=>!['wood','water','food','cloth','scrap','bottle','crate'].includes(c.kind))||n.monsters.some(m=>!['gnaw','flank','spit','tideking'].includes(m.kind))||n.sites.some(p=>!['island','wreck','merchant','fogship'].includes(p.kind)))return false;
       if(!Array.isArray(n.preview)||n.preview.length!==2||!n.preview.every(Number.isInteger)||n.hunger<=0||n.thirst<=0)return false;
       if(!tiles.has(key(...cell(n.player))))return false;
       s={...n,tiles,paused:true};saveElapsed=0;clearFeel();
@@ -521,7 +530,7 @@
   $('module').addEventListener('change',()=>{if(!s.paused&&!s.ended){s.building=true;s.preview=$('module').value==='board'?(candidates()[0]||[2,0]):cell(s.player);say(MODULES[$('module').value].name+' · '+price(MODULES[$('module').value].cost));}});
   document.addEventListener('pointerdown',unlockAudio,{capture:true});document.addEventListener('keydown',unlockAudio,{capture:true});
   $('muteToggle').addEventListener('click',()=>{unlockAudio();mute(!muted);sfx('ui');});
-  for(const stat of ['hunger','thirst'])$(stat+'Label').addEventListener('animationend',()=>$(stat+'Label').classList.remove('vital-pulse'));
+  for(const stat of ['hunger','thirst'])$(stat+'Label')?.addEventListener('animationend',()=>$(stat+'Label')?.classList.remove('vital-pulse'));
   $('pause').addEventListener('click',pause);
   $('resume').addEventListener('click',()=>{unlockAudio();sfx('ui');if(s.ended){newRun();return;}s.paused=false;save();$('overlay').hidden=true;clearInput();last=performance.now();});
   $('newRun').addEventListener('click',newRun);
@@ -531,7 +540,7 @@
   document.addEventListener('contextmenu',e=>e.preventDefault());document.addEventListener('gesturestart',e=>e.preventDefault(),{passive:false});
   reset();
   if(load()){showDialog('漂流仍在继续','已找回上次航行。继续漂流，或开始新的旅程。\n\n'+continueSummary(),'继续漂流');$('newRun').hidden=false;}
-  if(new URLSearchParams(location.search).has('test'))window.testAPI={get s(){return s;},reset,act,update,weather,spawnMonster,damage,draw,serialize,save,load,newRun,pause,SAVE_KEY,PREFS_KEY,mute,readPrefs,sfx,unlockAudio,get voices(){return voices.length;},get muted(){return muted;},spawnCargo,cargoKind,lastActAt,showActionTip,highlightText,pauseHighlights,continueSummary,guidance,updateVital,updateWake,get wake(){return wake;},keys,recordKill,expireStreak,recordDock,spawnFogship,freshHighlights,kingStamp,offerFor,offerText,OFFERS,finish,quality,get audioUnlocked(){return audioContext?.state==='running';}};
+  if(new URLSearchParams(location.search).has('test'))window.testAPI={get s(){return s;},reset,act,update,weather,spawnMonster,damage,draw,serialize,save,load,newRun,pause,SAVE_KEY,PREFS_KEY,mute,readPrefs,sfx,unlockAudio,get voices(){return voices.length;},get muted(){return muted;},spawnCargo,cargoKind,lastActAt,showActionTip,highlightText,pauseHighlights,continueSummary,guidance,updateVital,updateWake,get wake(){return wake;},keys,recordKill,expireStreak,recordDock,spawnFogship,freshHighlights,kingStamp,kingRimAlpha,offerFor,offerText,OFFERS,finish,quality,get audioUnlocked(){return audioContext?.state==='running';}};
   function frame(now){const dt=Math.min((now-last)/1000,.05);last=now;if(!s.paused)update(dt);if(now-rendered>=1000/quality.fps-1){draw();rendered=now;}requestAnimationFrame(frame);}
   requestAnimationFrame(frame);
   if('serviceWorker' in navigator && window.isSecureContext){

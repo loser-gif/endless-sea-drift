@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "cache": "endless-sea-drift-v10-final",
+  "cache": "endless-sea-drift-v10-gold",
   "features": [
     {
       "id": "cache",
@@ -258,6 +258,46 @@
       "note": "通过"
     },
     {
+      "id": "gold-crate-roll-boundaries",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "gold-crate-mixed-loot-once",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "gold-crate-save-and-render",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "gold-night-king-rim",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "gold-safe-area-css",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "gold-pause-fire-mode",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "gold-build-tip-restores-cost",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "gold-optional-feel-guards",
+      "ok": true,
+      "note": "通过"
+    },
+    {
       "id": "browser-boot-landscape",
       "ok": true,
       "note": "通过"
@@ -309,6 +349,11 @@
     },
     {
       "id": "browser-save-reload-landscape",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-gold-safe-area-landscape",
       "ok": true,
       "note": "通过"
     },
@@ -373,6 +418,11 @@
       "note": "通过"
     },
     {
+      "id": "browser-gold-safe-area-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
       "id": "browser-death-scroll-portrait",
       "ok": true,
       "note": "通过"
@@ -429,6 +479,11 @@
     },
     {
       "id": "browser-save-reload-small-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-gold-safe-area-small-portrait",
       "ok": true,
       "note": "通过"
     },

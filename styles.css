@@ -79,3 +79,11 @@ button[hidden]{display:none}
  .actions button{min-height:44px;padding:4px}
  #notice{left:calc(max(16px,env(safe-area-inset-left)) + 263px);right:16px;max-width:none;font-size:10px}
 }
+
+/* IX — quiet audio and compact supplies */
+#muteToggle{min-width:88px;min-height:44px;margin:8px 0;color:#e7d8b4}
+#muteToggle[aria-pressed="true"]{opacity:.75}
+#inventory .stew{color:#efd49b}
+@media (orientation:portrait){#hud{padding:10px 12px}#inventory{gap:4px 9px;font-size:11px}}
+
+.overlay{touch-action:pan-y}.card{align-self:safe center}

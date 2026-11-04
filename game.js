@@ -18,19 +18,40 @@
   }
   makeArt();
   SeaArt.enhance(art,sprite);
-  const SAVE_KEY = 'endless-sea-drift-save-v8';
+  const SAVE_KEY = 'endless-sea-drift-save-v9';
+  const PREFS_KEY='endless-sea-drift-prefs-v9';
+  let muted=false, audioContext=null, lastSound=-Infinity;
+  const voices=[];
+  function readPrefs(){try{muted=JSON.parse(localStorage.getItem(PREFS_KEY))?.mute===true;}catch{muted=false;}return muted;}
+  function mute(value){muted=!!value;try{localStorage.setItem(PREFS_KEY,JSON.stringify({mute:muted}));}catch{}for(const v of voices.splice(0)){try{v.stop();}catch{}}updateMute();return muted;}
+  function updateMute(){$('muteToggle').textContent=muted?'音效关':'音效开';$('muteToggle').setAttribute('aria-pressed',String(muted));}
+  function unlockAudio(){try{const Audio=window.AudioContext||window.webkitAudioContext;if(!audioContext&&Audio)audioContext=new Audio();if(audioContext?.state==='suspended')audioContext.resume().catch(()=>{});}catch{}}
+  function sfx(event){
+    if(muted||!audioContext||audioContext.state!=='running')return false;
+    const now=audioContext.currentTime;if(reducedMotion&&now-lastSound<.25)return false;
+    try{
+      while(voices.length>=4)voices.shift().stop();
+      const tone=audioContext.createOscillator(),gain=audioContext.createGain();
+      const freq={collect:740,craft:560,place:220,eat:460,fire:110,weak:180,kill:880,boss:65,storm:85,ui:620,death:130}[event]||440;
+      const duration=['boss','death','storm'].includes(event)?.32:.10;
+      tone.type=['fire','weak','place'].includes(event)?'triangle':'sine';tone.frequency.setValueAtTime(freq,now);tone.frequency.exponentialRampToValueAtTime(event==='death'?40:freq*1.4,now+duration);
+      gain.gain.setValueAtTime(reducedMotion?.018:.045,now);gain.gain.exponentialRampToValueAtTime(.001,now+duration);
+      tone.connect(gain);gain.connect(audioContext.destination);tone.onended=()=>{const i=voices.indexOf(tone);if(i>=0)voices.splice(i,1);tone.disconnect();gain.disconnect();};voices.push(tone);tone.start(now);tone.stop(now+duration);lastSound=now;return true;
+    }catch{return false;}
+  }
+  readPrefs();updateMute();
   let saveElapsed = 0, storageWarned = false;
-  const TIPS = ['左下摇杆移动，右下打捞收集圈内物资', '先合成钉，再合成弹药：伤害更高、射速更快', '筏边钓鱼，暴雨接水；记得点吃、喝', '选模块后点木板改装，替换返还旧材料的一半'];
+  const TIPS = ['左下摇杆移动，右下打捞收集圈内物资', '先合成钉，再合成弹药：伤害更高、射速更快', '筏边钓鱼，暴雨接水；记得点吃、喝', '选模块后点木板改装，替换返还旧材料的一半', '暂停中可切换音效；安静漂流也能存档', '灶台可合成炖菜，吃饭时优先吃炖菜', '多座炮台分散迎敌；漂流瓶藏着补给', '商船可用木或废铁换绳钉；舵台把漂浮物引向你'];
   const MODULES = {
     board:{name:'木板',cost:{wood:2}}, helm:{name:'舵台',cost:{wood:3,rope:1}},
     canopy:{name:'雨棚',cost:{wood:2,cloth:2,rope:1}}, stove:{name:'灶台',cost:{wood:2,nail:1}},
     net:{name:'鱼网',cost:{cloth:2,rope:1}}, lamp:{name:'探照灯',cost:{scrap:2,nail:1}},
     turret:{name:'炮台位',cost:{wood:3,nail:2,rope:1}}
   };
-  const RECIPES={rope:{cloth:1,wood:1},nail:{scrap:1,wood:1},ammo:{nail:1,wood:1}};
-  const names={wood:'木',cloth:'布',scrap:'废铁',rope:'绳',nail:'钉',ammo:'弹药'};
+  const RECIPES={rope:{cloth:1,wood:1},nail:{scrap:1,wood:1},ammo:{nail:1,wood:1},stew:{food:1,water:1}};
+  const names={wood:'木',cloth:'布',scrap:'废铁',rope:'绳',nail:'钉',ammo:'弹药',food:'食物',water:'淡水',stew:'炖菜'};
   const price=cost=>Object.entries(cost).map(([k,v])=>v+names[k]).join('＋');
-  const countModule=kind=>[...s.tiles.values()].filter(t=>t.module===kind).length;
+  const countModule=kind=>{let count=0;for(const t of s.tiles.values())if(t.module===kind)count++;return count;};
   function pay(cost){if(Object.entries(cost).some(([k,v])=>s.supplies[k]<v))return false;for(const [k,v] of Object.entries(cost))s.supplies[k]-=v;return true;}
   function weather(){const phase=s.time%120;return {night:phase>=78,dusk:phase>=58&&phase<78,storm:s.time%150>=95};}
   function spawnMonster(kind){const a=Math.random()*Math.PI*2,hp=kind==='tideking'?420:kind==='gnaw'?70:55;s.monsters.push({kind,x:Math.cos(a)*330,y:Math.sin(a)*330,hp,maxHp:hp,bite:1,angle:0,speed:kind==='flank'?55:kind==='tideking'?24:32});}
@@ -42,13 +63,14 @@
   const distance = (a,b) => Math.hypot(a.x-b.x,a.y-b.y);
   const clock = t => `${String(Math.floor(t/60)).padStart(2,'0')}:${String(Math.floor(t%60)).padStart(2,'0')}`;
   function reset() {
-    s = {tiles:new Map(),player:{x:0,y:40},supplies:{wood:12,cloth:5,food:3,water:3,scrap:2,rope:0,nail:0,ammo:0},hunger:100,thirst:100,time:0,kills:0,cargo:[],monsters:[],shots:[],sites:[],siteTimer:28,siteIndex:0,bossAt:180,fishTimer:0,netTimer:18,cargoTimer:0,monsterTimer:8,fireTimer:0,spawn:0,angle:-Math.PI/2,building:false,preview:[2,0],step:0,paused:true,ended:false,message:'摇杆移动 · 靠近漂浮物后打捞',messageTime:8,tipIndex:0,tipTimer:10,bossFlash:0,killFlash:0};
+    s = {tiles:new Map(),player:{x:0,y:40},supplies:{wood:12,cloth:5,food:3,water:3,scrap:2,rope:0,nail:0,ammo:0,stew:0},hunger:100,thirst:100,time:0,kills:0,cargo:[],monsters:[],shots:[],sites:[],siteTimer:28,siteIndex:0,bossAt:180,fishTimer:0,netTimer:18,cargoTimer:0,monsterTimer:8,fireTimer:0,spawn:0,angle:-Math.PI/2,building:false,preview:[2,0],step:0,paused:true,ended:false,message:'摇杆移动 · 靠近漂浮物后打捞',messageTime:8,tipIndex:0,tipTimer:10,bossFlash:0,killFlash:0};
     saveElapsed=0;
     for(let y=-1;y<=1;y++) for(let x=-1;x<=1;x++) s.tiles.set(key(x,y),{x,y,hp:100});
     for(let i=0;i<6;i++) spawnCargo((Math.random()-.5)*180,-100-i*55);
     clearInput(); resize(); hud();
   }
-  function spawnCargo(x,y,kind) { s.cargo.push({x,y,kind:kind || (Math.random()<.12?'scrap':cycle[s.spawn++%5]),phase:Math.random()*6}); }
+  function spawnCargo(x,y,kind) { s.cargo.push({x,y,kind:kind || cargoKind(),phase:Math.random()*6}); }
+  function cargoKind(){const w=weather(),r=Math.random();if(r<.04)return 'bottle';if(r<(w.night?.23:.16))return 'scrap';if(w.storm&&r<.48)return r<.32?'cloth':'wood';if(w.dusk&&r<.36)return 'food';return cycle[s.spawn++%5];}
   function candidates() {
     const out = new Map();
     if(s.tiles.size>=81) return [];
@@ -85,8 +107,8 @@
   function act(action) {
     if(s.paused||s.ended) return;
     if(action==='craft') {
-      const kind=$('recipe').value;if(!pay(RECIPES[kind]))return say('合成需要 '+price(RECIPES[kind]));
-      s.supplies[kind]+=kind==='ammo'?4:1;say('合成'+names[kind]+' · −'+price(RECIPES[kind]));
+      const kind=$('recipe').value;if(kind==='stew'&&!countModule('stove'))return say('需要灶台');if(!pay(RECIPES[kind]))return say('合成需要 '+price(RECIPES[kind]));
+      s.supplies[kind]+=kind==='ammo'?4:1;sfx('craft');say('合成'+names[kind]+' · −'+price(RECIPES[kind]));
     } else if(action==='fish') {
       if(s.fishTimer>0)return say('收集冷却 '+Math.ceil(s.fishTimer)+' 秒');
       if(weather().storm){s.supplies.water++;s.fishTimer=12;say('接满一桶雨水 · 淡水 +1');}
@@ -95,14 +117,15 @@
         s.supplies.food++;s.fishTimer=countModule('net')?14:24;say('海鱼上钩 · 食物 +1');}
     } else if(action==='dock') {
       const site=s.sites.find(p=>distance(p,s.player)<145&&!p.used);
-      if(!site)return say('靠近小岛或沉船，再点停靠');
+      if(!site)return say('靠近小岛、沉船或商船，再点停靠');
+      if(site.kind==='merchant'){if(!pay({wood:2})&&!pay({scrap:1}))return say('商船交易需要 2木 或 1废铁');s.supplies.rope++;s.supplies.nail++;site.used=true;site.life=Math.min(site.life,7);sfx('collect');say('商船补给 · 绳 +1、钉 +1');return;}
       site.used=true;site.life=Math.min(site.life,7);
-      if(site.kind==='island'){s.supplies.water+=2;s.supplies.food+=2;for(const t of s.tiles.values())t.hp=Math.min(100,t.hp+25);say('岛上泉水与旧木匠棚 · 食水 +2，全筏修补 +25');}
-      else {s.supplies.scrap+=3;s.supplies.cloth+=2;s.supplies.wood+=4;say('沉船日志：灯火能驱散长夜 · 废铁 +3、布 +2、木 +4');}
+      if(site.kind==='island'){s.supplies.water+=2;s.supplies.food+=2;for(const t of s.tiles.values())t.hp=Math.min(100,t.hp+25);say(['岛上泉水与旧木匠棚','椰林下的清泉','渔人留下修筏工具'][Math.floor(Math.random()*3)]+' · 食水 +2，全筏修补 +25');}
+      else {s.supplies.scrap+=3;s.supplies.cloth+=2;s.supplies.wood+=4;say(['沉船日志：灯火能驱散长夜','旧货舱里还有物资','锈船钟下的补给箱'][Math.floor(Math.random()*3)]+' · 废铁 +3、布 +2、木 +4');}
     } else if(action==='collect') {
-      let count=0;
-      s.cargo=s.cargo.filter(item=>{if(distance(item,s.player)>115)return true;s.supplies[item.kind]+=item.kind==='wood'?2:1;count++;return false;});
-      say(count?`打捞了 ${count} 份物资`:'没有够得着的物资，向筏边移动试试');
+      let count=0,bottleText='';
+      s.cargo=s.cargo.filter(item=>{if(distance(item,s.player)>115)return true;if(item.kind==='bottle'){const loot=['rope','nail','ammo','food'][Math.floor(Math.random()*4)];s.supplies[loot]++;bottleText=' · 漂流瓶：'+['灯火守住长夜','顺风也别忘记饮水','多座炮台能分散迎敌'][Math.floor(Math.random()*3)]+' · '+names[loot]+' +1';}else s.supplies[item.kind]+=item.kind==='wood'?2:1;count++;return false;});
+      if(count)sfx('collect');say(count?`打捞了 ${count} 份物资${bottleText}`:'没有够得着的物资，向筏边移动试试');
     } else if(action==='build') {
       s.building=!s.building;s.preview=candidates()[0]||[2,0];
       say(s.building?'选木板铺边格；选模块点已有板 · 中央炮座不可改装':'返回移动模式');
@@ -118,12 +141,12 @@
       if(!pay(def.cost))return say(def.name+'需要 '+price(def.cost));
       if(kind==='board'){s.tiles.set(key(x,y),{x,y,hp:100});resize();}else t.module=kind;
       for(const [r,n] of Object.entries(refund))s.supplies[r]+=n;
-      say(def.name+'已固定 · −'+price(def.cost)+(old?' · 返还 '+(price(Object.fromEntries(Object.entries(refund).filter(([,n])=>n)))||'0材料'):''));
+      sfx('place');say(def.name+'已固定 · −'+price(def.cost)+(old?' · 返还 '+(price(Object.fromEntries(Object.entries(refund).filter(([,n])=>n)))||'0材料'):''));
     } else if(action==='eat'||action==='drink') {
-      const resource=action==='eat'?'food':'water', stat=action==='eat'?'hunger':'thirst';
+      const resource=action==='eat'?(s.supplies.stew>0?'stew':'food'):'water', stat=action==='eat'?'hunger':'thirst';
       if(s[stat]>=100) return say('状态已满，无需消耗');
       if(!s.supplies[resource]) return say('物资不足，去打捞一些吧');
-      const gain=action==='eat'?(countModule('stove')?48:32):38;s.supplies[resource]--;s[stat]=Math.min(100,s[stat]+gain);say((action==='eat'?'饱腹':'水分')+' +'+gain);
+      const gain=action==='eat'?(resource==='stew'?62:countModule('stove')?48:32):38;sfx('eat');s.supplies[resource]--;s[stat]=Math.min(100,s[stat]+gain);say((action==='eat'?'饱腹':'水分')+' +'+gain);
     } else if(action==='repair') {
       if(![...s.tiles.values()].some(t=>t.hp<100)) return say('所有木板完好');
       if(s.supplies.wood<1||s.supplies.cloth<1) return say('修补需要 1 木材 + 1 布料');
@@ -144,19 +167,20 @@
   function showDialog(title,text,button) {
     $('newRun').hidden=true;$('dialogTitle').textContent=title;$('dialogText').textContent=text;$('resume').textContent=button;$('overlay').hidden=false;$('resume').focus();
   }
-  function finish(reason) {s.ended=true;s.paused=true;save();clearInput();showDialog('漂流终章',`${reason} 生存 ${clock(s.time)}，击退 ${s.kills} 只海怪。`,'重新启航');}
-  function pause() {if(s.paused||s.ended)return;s.paused=true;save();clearInput();showDialog('暂泊片刻','海面已暂停，饥渴与战斗都将等待你回来。','继续漂流');}
+  function stats(){const modules=[...new Set([...s.tiles.values()].map(t=>t.module).filter(Boolean))].map(k=>MODULES[k].name).join('、')||'无';return `生存时长 ${clock(s.time)} · 第 ${Math.floor(s.time/120)+1} 天 · 击退 ${s.kills} · 木筏 ${s.tiles.size} 格 · 弹药余量 ${s.supplies.ammo} · 模块：${modules}`;}
+  function finish(reason) {s.ended=true;s.paused=true;sfx('death');save();clearInput();showDialog('漂流终章',`${reason} ${stats()}`,'重新启航');}
+  function pause() {if(s.paused||s.ended)return;s.paused=true;save();clearInput();showDialog('暂泊片刻','海面已暂停。'+stats(),'继续漂流');}
   function update(dt) {
-    saveElapsed+=dt;if(saveElapsed>=5){save();saveElapsed=0;}
+    saveElapsed+=dt;if(saveElapsed>=2){save();saveElapsed=0;}
     s.tipTimer-=dt;if(s.tipIndex<TIPS.length&&s.tipTimer<=0&&s.messageTime<=0){say(TIPS[s.tipIndex++]);s.tipTimer=16;}
     s.bossFlash=Math.max(0,s.bossFlash-dt);s.killFlash=Math.max(0,s.killFlash-dt);
-    s.time+=dt;const w=weather();s.hunger=Math.max(0,s.hunger-.40*dt);s.thirst=Math.max(0,s.thirst-.58*dt*(w.storm?1.25:1)*(countModule('canopy')?(w.storm?.5:.75):1));
+    const wasStorm=weather().storm;s.time+=dt;const w=weather();if(w.storm&&!wasStorm)sfx('storm');s.hunger=Math.max(0,s.hunger-.40*dt);s.thirst=Math.max(0,s.thirst-.58*dt*(w.storm?1.25:1)*(countModule('canopy')?(w.storm?.5:.75):1));
     s.fishTimer=Math.max(0,s.fishTimer-dt);
-    if(w.storm)for(const t of [...s.tiles.values()])if(DIR.some(([dx,dy])=>!s.tiles.has(key(t.x+dx,t.y+dy)))){damage(t,dt*.65);if(s.ended)return;}
+    if(w.storm)for(const t of [...s.tiles.values()])if(DIR.some(([dx,dy])=>!s.tiles.has(key(t.x+dx,t.y+dy)))){damage(t,dt*.65*(countModule('canopy')?.65:1));if(s.ended)return;}
     s.netTimer-=dt;if(s.netTimer<=0){if(countModule('net')){s.supplies[Math.random()<.25?'cloth':'food']++;say('鱼网收获了物资');}s.netTimer=22;}
-    s.siteTimer-=dt;if(s.siteTimer<=0){const t=nearest({x:s.siteIndex%2?500:-500,y:0});s.sites.push({kind:s.siteIndex++%2?'wreck':'island',x:t.x*CELL+(t.x>=0?95:-95),y:t.y*CELL-55,life:38,used:false});s.siteTimer=65;say('发现停靠点 · 靠近后点停靠，停留 38 秒');}
+    s.siteTimer-=dt;if(s.siteTimer<=0){const t=nearest({x:s.siteIndex%2?500:-500,y:0});s.sites.push({kind:s.siteIndex%3===2?(s.siteIndex++,'merchant'):(s.siteIndex++%2?'wreck':'island'),x:t.x*CELL+(t.x>=0?95:-95),y:t.y*CELL-55,life:38,used:false});s.siteTimer=65;say('发现停靠点 · 靠近后点停靠，停留 38 秒');}
     for(const p of s.sites){p.life-=dt;p.y+=dt*1.5;}s.sites=s.sites.filter(p=>p.life>0);
-    if(s.time>=s.bossAt&&s.monsters.length<12){spawnMonster('tideking');s.bossFlash=2.5;s.bossAt+=180;say('潮汐王现身 · 炮台将优先迎击');}
+    if(s.time>=s.bossAt&&s.monsters.length<12){spawnMonster('tideking');sfx('boss');s.bossFlash=2.5;s.bossAt+=180;say('潮汐王现身 · 炮台将优先迎击');}
     if(!s.hunger||!s.thirst){finish(!s.hunger?'食物耗尽，你已饥饿难支。':'淡水耗尽，你已口渴难支。');return;}
     s.messageTime-=dt;s.step-=dt;
     let x=Number(keys.has('KeyD')||keys.has('ArrowRight'))-Number(keys.has('KeyA')||keys.has('ArrowLeft'))+joy.x;
@@ -170,7 +194,8 @@
       }
     }
     s.cargoTimer-=dt;if(s.cargoTimer<=0){spawnCargo((Math.random()-.5)*280,-310);s.cargoTimer=w.storm?.85:1.9;}
-    for(const c of s.cargo){c.x+=5*dt;c.y+=23*dt;c.phase+=dt;}
+    const helmPull=countModule('helm')>0;
+    for(const c of s.cargo){c.x+=5*dt;if(helmPull)c.x+=Math.sign(s.player.x-c.x)*Math.min(Math.abs(s.player.x-c.x),12*dt);c.y+=23*dt;c.phase+=dt;}
     s.cargo=s.cargo.filter(c=>c.y<520);
     s.monsterTimer-=dt;
     if(s.monsterTimer<=0){
@@ -178,6 +203,12 @@
       s.monsterTimer=Math.max(4,11-s.time/45)*(w.night?.8:1);
     }
     for(const m of s.monsters) {
+      if(m.kind==='tideking'){
+        const phase=m.hp/m.maxHp<=.33?3:m.hp/m.maxHp<=.66?2:1;
+        if(phase>=2&&!m.accelerated){m.accelerated=true;say('潮汐王加速');}
+        if(phase===3&&!m.enraged){m.enraged=true;if(s.monsters.length<12)spawnMonster('gnaw');say('潮汐王狂怒');}
+        m.phase=phase;m.speed=phase>=2?24*1.35:24;
+      }
       const t=nearest(m);if(!t)break;
       const target=m.kind==='flank'?s.player:{x:t.x*CELL,y:t.y*CELL};
       const dx=target.x-m.x,dy=target.y-m.y,d=Math.hypot(dx,dy),reach=m.kind==='spit'?145:32;
@@ -186,19 +217,20 @@
       else if(m.bite<=0){
         if(m.kind==='flank'){s.hunger=Math.max(0,s.hunger-5);s.thirst=Math.max(0,s.thirst-5);}
         else {damage(t,m.kind==='tideking'?28:m.kind==='spit'?12:18);if(m.kind==='spit')s.shots.push({fromX:m.x,fromY:m.y,x:target.x,y:target.y,life:.3,acid:true});}
-        m.bite=m.kind==='spit'?2.8:1.4;if(s.ended)return;
+        m.bite=m.kind==='spit'?2.8:m.kind==='tideking'&&m.phase===3?.8:1.4;if(s.ended)return;
       }
     }
     if(!s.tiles.has(key(...cell(s.player)))){const t=nearest(s.player);s.player={x:t.x*CELL,y:t.y*CELL};}
     s.fireTimer-=dt;
     if(s.fireTimer<=0) {
       const guns=[{x:0,y:0},...[...s.tiles.values()].filter(t=>t.module==='turret').map(t=>({x:t.x*CELL,y:t.y*CELL}))];
-      let fired=false, loadedVolley=false;
+      let fired=false, loadedVolley=false;const targeted=new Set();
       for(const gun of guns){const range=265+(w.night&&countModule('lamp')?80:0);
-        const targets=s.monsters.filter(m=>distance(m,gun)<range).sort((a,b)=>((b.kind==='spit'||b.kind==='tideking')?200:0)-((a.kind==='spit'||a.kind==='tideking')?200:0)+distance(a,gun)-distance(b,gun));
-        const target=targets[0];if(!target)continue;fired=true;s.angle=Math.atan2(target.y-gun.y,target.x-gun.x);
-        s.shots.push({fromX:gun.x,fromY:gun.y,x:target.x,y:target.y,life:.16});const loaded=s.supplies.ammo>0;if(loaded){s.supplies.ammo--;loadedVolley=true;}target.hp-=loaded?38:22;
-        if(target.hp<=0){s.kills++;s.killFlash=.3;spawnCargo(target.x,target.y,'food');if(target.kind==='tideking'){s.supplies.scrap+=5;s.supplies.nail+=3;say('潮汐王退入深海 · 废铁 +5、钉 +3');}s.monsters=s.monsters.filter(m=>m!==target);}
+        let target=null,best=Infinity;
+        for(const m of s.monsters){const d=distance(m,gun);if(m.hp<=0||d>=range)continue;const score=(targeted.has(m)?10000:0)+(['spit','tideking'].includes(m.kind)?0:1000)+d;if(score<best){best=score;target=m;}}
+        if(!target)continue;targeted.add(target);fired=true;s.angle=Math.atan2(target.y-gun.y,target.x-gun.x);
+        s.shots.push({fromX:gun.x,fromY:gun.y,x:target.x,y:target.y,life:.16});const loaded=s.supplies.ammo>0;if(loaded){s.supplies.ammo--;loadedVolley=true;}sfx(loaded?'fire':'weak');target.hp-=loaded?38:22;
+        if(target.hp<=0){sfx('kill');s.kills++;s.killFlash=.3;spawnCargo(target.x,target.y,'food');if(target.kind==='tideking'){s.supplies.scrap+=5;s.supplies.nail+=3;say('潮汐王退入深海 · 废铁 +5、钉 +3');}s.monsters=s.monsters.filter(m=>m!==target);}
       }if(fired)s.fireTimer=loadedVolley?.48:.95;
     }
     for(const shot of s.shots)shot.life-=dt;s.shots=s.shots.filter(shot=>shot.life>0);
@@ -250,7 +282,7 @@
     ctx.globalAlpha=1;
     ctx.save();ctx.translate(cx,cy);ctx.scale(scale,scale);
     for(const m of s.monsters){shadow(m.x+15,m.y+24,115,62);ctx.save();ctx.globalAlpha=.14;ctx.translate(m.x+6,m.y+22);ctx.scale(1,.32);ctx.rotate(m.angle);stamp('monster',-32,-20,64,40);ctx.restore();}
-    for(const p of s.sites){shadow(p.x,p.y+24,110,50);stamp(p.kind,p.x-48,p.y-45,96,80);ctx.fillStyle='#f1dfb3';ctx.font='11px sans-serif';ctx.textAlign='center';ctx.fillText((p.used?'已停靠':p.kind==='island'?'小岛 · G':'沉船 · G')+' '+Math.ceil(p.life)+'s',p.x,p.y-48);}
+    for(const p of s.sites){shadow(p.x,p.y+24,110,50);stamp(p.kind,p.x-48,p.y-45,96,80);ctx.fillStyle='#f1dfb3';ctx.font='11px sans-serif';ctx.textAlign='center';ctx.fillText((p.used?'已停靠':p.kind==='island'?'小岛 · G':p.kind==='merchant'?'商船 · G':'沉船 · G')+' '+Math.ceil(p.life)+'s',p.x,p.y-48);}
     for(const c of s.cargo){
       const bob=Math.round(Math.sin((reducedMotion?0:c.phase)*2)*2);
       shadow(c.x+5,c.y+11,44,20);waterRing(c.x,c.y+10,19,.24);
@@ -320,7 +352,7 @@
     if(s.bossFlash>0){ctx.fillStyle='#ffddb2';ctx.font='bold 20px sans-serif';ctx.textAlign='center';ctx.fillText('潮汐王 · 深海来袭',cx,Math.max(240,cy-90));}
     if(s.killFlash>0&&!reducedMotion){ctx.strokeStyle='#ffe2a6';ctx.lineWidth=2;ctx.strokeRect(cx-16,cy-16,32,32);}
   }
-  function serialize() {return JSON.stringify({v:8,state:{...s,tiles:[...s.tiles.entries()]},module:$('module').value,recipe:$('recipe').value});}
+  function serialize() {return JSON.stringify({v:9,state:{...s,tiles:[...s.tiles.entries()]},module:$('module').value,recipe:$('recipe').value});}
   function save() {
     try {localStorage.setItem(SAVE_KEY,serialize());return true;}
     catch {if(!storageWarned){storageWarned=true;say('存档不可用 · 请保持页面开启');}return false;}
@@ -328,7 +360,7 @@
   function load() {
     try {
       const data=JSON.parse(localStorage.getItem(SAVE_KEY));
-      if(data?.v!==8||!data.state||data.state.ended!==false)return false;
+      if(data?.v!==9||!data.state||data.state.ended!==false)return false;
       const n=data.state, finite=v=>typeof v==='number'&&Number.isFinite(v);
       // Require every current state field; partial, old, and malformed saves never enter the loop.
       for(const [k,v] of Object.entries(s)) {
@@ -348,7 +380,8 @@
         if(!Array.isArray(n[list])||n[list].length>2000)return false;
         for(const item of n[list])if(!item||fields.some(f=>!finite(item[f])))return false;
       }
-      if(n.cargo.some(c=>!Object.hasOwn(s.supplies,c.kind))||n.monsters.some(m=>!['gnaw','flank','spit','tideking'].includes(m.kind))||n.sites.some(p=>!['island','wreck'].includes(p.kind)))return false;
+      if(n.monsters.some(m=>['accelerated','enraged'].some(k=>k in m&&typeof m[k]!=='boolean')||('phase' in m&&![1,2,3].includes(m.phase))))return false;
+      if(n.cargo.some(c=>!['wood','water','food','cloth','scrap','bottle'].includes(c.kind))||n.monsters.some(m=>!['gnaw','flank','spit','tideking'].includes(m.kind))||n.sites.some(p=>!['island','wreck','merchant'].includes(p.kind)))return false;
       if(!Array.isArray(n.preview)||n.preview.length!==2||!n.preview.every(Number.isInteger)||n.hunger<=0||n.thirst<=0)return false;
       if(!tiles.has(key(...cell(n.player))))return false;
       s={...n,tiles,paused:true};saveElapsed=0;
@@ -375,8 +408,10 @@
   });
   window.addEventListener('keyup',e=>keys.delete(e.code));
   $('module').addEventListener('change',()=>{if(!s.paused&&!s.ended){s.building=true;s.preview=$('module').value==='board'?(candidates()[0]||[2,0]):cell(s.player);say(MODULES[$('module').value].name+' · '+price(MODULES[$('module').value].cost));}});
+  document.addEventListener('pointerdown',unlockAudio,{capture:true});document.addEventListener('keydown',unlockAudio,{capture:true});
+  $('muteToggle').addEventListener('click',()=>{unlockAudio();mute(!muted);sfx('ui');});
   $('pause').addEventListener('click',pause);
-  $('resume').addEventListener('click',()=>{if(s.ended){newRun();return;}s.paused=false;save();$('overlay').hidden=true;clearInput();last=performance.now();});
+  $('resume').addEventListener('click',()=>{unlockAudio();sfx('ui');if(s.ended){newRun();return;}s.paused=false;save();$('overlay').hidden=true;clearInput();last=performance.now();});
   $('newRun').addEventListener('click',newRun);
   window.addEventListener('beforeunload',save);window.addEventListener('pagehide',()=>{pause();save();});
   document.addEventListener('visibilitychange',()=>{if(document.hidden){pause();save();}});window.addEventListener('blur',pause);
@@ -384,7 +419,7 @@
   document.addEventListener('contextmenu',e=>e.preventDefault());document.addEventListener('gesturestart',e=>e.preventDefault(),{passive:false});
   reset();
   if(load()){showDialog('漂流仍在继续','已找回上次航行。继续漂流，或开始新的旅程。','继续漂流');$('newRun').hidden=false;}
-  if(new URLSearchParams(location.search).has('test'))window.testAPI={get s(){return s;},reset,act,update,weather,spawnMonster,damage,draw,serialize,save,load,newRun,pause,SAVE_KEY};
+  if(new URLSearchParams(location.search).has('test'))window.testAPI={get s(){return s;},reset,act,update,weather,spawnMonster,damage,draw,serialize,save,load,newRun,pause,SAVE_KEY,PREFS_KEY,mute,readPrefs,sfx,unlockAudio,get voices(){return voices.length;},get muted(){return muted;},spawnCargo,cargoKind};
   function frame(now){const dt=Math.min((now-last)/1000,.05);last=now;if(!s.paused)update(dt);if(now-rendered>=1000/quality.fps-1){draw();rendered=now;}requestAnimationFrame(frame);}
   requestAnimationFrame(frame);
   if('serviceWorker' in navigator && window.isSecureContext){

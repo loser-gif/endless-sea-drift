@@ -1,0 +1,183 @@
+{
+  "ok": true,
+  "cache": "endless-sea-drift-v9-free",
+  "features": [
+    {
+      "id": "cache",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "weather",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "modules",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "resources",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "monsters",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "sites",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "craft-and-modules",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "weather-fishing-net",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "encounters-and-death",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "combat-and-boss-loot",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "board-limit-and-module-guard",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "long-simulation",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "touch-actions",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "save-roundtrip-and-corruption",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "module-replace-refund-center",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "ammo-damage-and-rate",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "mute-prefs-roundtrip",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "split-targets",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "king-phases",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "bottle-collect",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "merchant-trade",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "stew-cook-and-eat",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "helm-pull-canopy-storm",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "autosave-two-seconds",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "new-content-save",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "audio-voice-cap-mute-unavailable",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "reduced-audio-and-missing-audio",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "drop-bias-and-boss-cap",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-landscape",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "touch-layout-landscape",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-save-reload-landscape",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "touch-layout-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-save-reload-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "screenshot",
+      "ok": true,
+      "note": "已生成 _shot-v9.png"
+    }
+  ],
+  "errors": [],
+  "session_hint": "node _selftest-v9.mjs；120秒昼夜，95秒起风雨，28秒小岛/93秒沉船，180秒潮汐王。158秒商船。每2秒自动存档；v9独立存档，不迁移v8。"
+}

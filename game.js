@@ -70,7 +70,7 @@
   }
   readPrefs();updateMute();
   let saveElapsed = 0, storageWarned = false;
-  const TIPS = ['左下摇杆 / WASD 移动 · 走向筏边的漂浮物', '靠近漂浮物 · 点打捞收集圈内物资', '先合成钉、弹药 · 饱腹不足时点吃食物', '选模块后点木板改装，替换返还旧材料的一半', '暂停中可切换音效；安静漂流也能存档', '灶台可合成炖菜，吃饭时优先吃炖菜', '多座炮台分散迎敌；漂流瓶藏着补给', '商船可用木或废铁换绳钉；舵台把漂浮物引向你'];
+  const TIPS = ['左下摇杆 / WASD 移动 · 走向筏边的漂浮物', '靠近漂浮物 · 点打捞收集圈内物资', '先合成钉、弹药 · 饱腹不足时点吃食物', '选模块后点木板改装，替换返还旧材料的一半', '暂停中可切换音效；安静漂流也能存档', '灶台可合成炖菜，吃饭时优先吃炖菜', '多座炮台分散迎敌；漂流瓶藏着补给', '商船可用木或废铁换绳钉；舵台把漂浮物引向你', '货箱可开出木材、布料或食物，靠近后打捞', '长按按钮只看提示，不消耗物资；暂停可静音'];
   const MODULES = {
     board:{name:'木板',cost:{wood:2}}, helm:{name:'舵台',cost:{wood:3,rope:1}},
     canopy:{name:'雨棚',cost:{wood:2,cloth:2,rope:1}}, stove:{name:'灶台',cost:{wood:2,nail:1}},
@@ -201,7 +201,7 @@
         if(!edge)return say('走到筏边钓鱼，雨天可随处接水');
         s.supplies.food++;s.fishTimer=countModule('net')?14:24;say('海鱼上钩 · 食物 +1');}
     } else if(action==='dock') {
-      const site=s.sites.find(p=>distance(p,s.player)<145&&!p.used);
+      const site=s.sites.reduce((near,p)=>!p.used&&distance(p,s.player)<145&&(!near||distance(p,s.player)<distance(near,s.player))?p:near,null);
       if(!site)return say('靠近小岛、沉船、商船或雾灯船，再点停靠');
       if(site.kind==='merchant'){const offer=offerFor(site);if(!pay(offer.cost))return say('商船报价 · '+offerText(site));for(const [r,n] of Object.entries(offer.gain))s.supplies[r]+=n;s.highlights.merchants++;recordDock(site);site.used=true;site.life=Math.min(site.life,7);sfx('collect');say('商船成交 · '+offerText(site));return true;}
       recordDock(site);site.used=true;site.life=Math.min(site.life,7);
@@ -209,9 +209,9 @@
       else if(site.kind==='island'){s.supplies.water+=2;s.supplies.food+=2;for(const t of s.tiles.values())t.hp=Math.min(100,t.hp+25);say(['岛上泉水与旧木匠棚','椰林下的清泉','渔人留下修筏工具','潮池边藏着淡水罐','榕树下的篝火尚温'][site.flavor??site.variant??0]+' · 食水 +2，全筏修补 +25');}
       else {s.supplies.scrap+=3;s.supplies.cloth+=2;s.supplies.wood+=4;say(['沉船日志：灯火能驱散长夜','旧货舱里还有物资','锈船钟下的补给箱','断桅上还系着归乡的绳结','船长的茶杯旁留着干粮'][site.flavor??site.variant??0]+' · 废铁 +3、布 +2、木 +4');}
     } else if(action==='collect') {
-      let count=0,bottleText='';
-      s.cargo=s.cargo.filter(item=>{if(distance(item,s.player)>115)return true;if(item.kind==='bottle'){s.highlights.bottles++;const loot=['rope','nail','ammo','food'][Math.floor(Math.random()*4)];s.supplies[loot]++;bottleText=' · 漂流瓶：'+['灯火守住长夜','顺风也别忘记饮水','多座炮台能分散迎敌','雨棚能护住风暴中的筏边','舵台会把漂浮物引向你','雾夜的暖灯旁有旅人留下的补给','灶台炖菜能让一份食水更耐饿'][Math.floor(Math.random()*7)]+' · '+names[loot]+' +1';}else if(item.kind==='crate'){const kinds=['wood','cloth','food'],first=Math.floor(Math.random()*3),amount=1+Math.floor(Math.random()*2);s.supplies[kinds[first]]++;let loot=names[kinds[first]]+' +1';if(amount===2){const second=(first+1+Math.floor(Math.random()*2))%3;s.supplies[kinds[second]]++;loot+='、'+names[kinds[second]]+' +1';}bottleText+=' · 货箱：'+loot;}else s.supplies[item.kind]+=item.kind==='wood'?2:1;count++;return false;});
-      if(count){s.collectedOnce=true;sfx('collect');}say(count?`打捞了 ${count} 份物资${bottleText}`:'没有够得着的物资，向筏边移动试试');
+      let count=0,bottleText='',splash=null;
+      s.cargo=s.cargo.filter(item=>{if(distance(item,s.player)>115)return true;if(item.kind==='bottle'){s.highlights.bottles++;const loot=['rope','nail','ammo','food'][Math.floor(Math.random()*4)];s.supplies[loot]++;bottleText+=' · 漂流瓶：'+['灯火守住长夜','顺风也别忘记饮水','多座炮台能分散迎敌','雨棚能护住风暴中的筏边','舵台会把漂浮物引向你','雾夜的暖灯旁有旅人留下的补给','灶台炖菜能让一份食水更耐饿'][Math.floor(Math.random()*7)]+' · '+names[loot]+' +1';}else if(item.kind==='crate'){const kinds=['wood','cloth','food'],first=Math.floor(Math.random()*3),amount=1+Math.floor(Math.random()*2);s.supplies[kinds[first]]++;let loot=names[kinds[first]]+' +1';if(amount===2){const second=(first+1+Math.floor(Math.random()*2))%3;s.supplies[kinds[second]]++;loot+='、'+names[kinds[second]]+' +1';}bottleText+=' · 货箱：'+loot;}else s.supplies[item.kind]+=item.kind==='wood'?2:1;if(item.kind==='bottle'||item.kind==='crate')splash??=item;count++;return false;});
+      if(count){s.collectedOnce=true;sfx('collect');if(splash&&!reducedMotion){if(wake.length>=3)wake.shift();wake.push({x:splash.x,y:splash.y+10,life:.9});}}say(count?`打捞了 ${count} 份物资${bottleText}`:'没有够得着的物资，向筏边移动试试');
     } else if(action==='build') {
       s.building=!s.building;s.preview=candidates()[0]||[2,0];
       say(s.building?'选木板铺边格；选模块点已有板 · 中央炮座不可改装':'返回移动模式');

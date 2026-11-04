@@ -1,3 +1,12 @@
+## Lock pass
+
+- X★ / v10-lock：CACHE `endless-sea-drift-v10-lock`；v10 存档、v9 静音偏好、30fps 与最多4声部保持不变。
+- 修复货箱与漂流瓶同次打捞时文案被覆盖；停靠选择范围内最近的未领取站点，支持雾灯船与商船同时存在。保留仅 `?test` 暴露 testAPI，并新增正式入口检查。
+- 启航增加两句短说明，TIPS 增加两条货箱/长按/静音提示。特殊物资每次打捞只触发一个柔和水环，复用最多3个、0.9秒消退的尾流；减少动态效果时关闭。
+- 验证：`node _selftest-v10.mjs` 108/108 通过，保留原99项；包含混合打捞顺序、最近停靠、水环上限/减少动态、正式入口无 testAPI，以及三个视口启航按钮滚动触达。两份验证 JSON 均为 `ok:true`。
+- README 增加中英近况、游玩地址与简明操作。截图展示第二夜三阶段潮汐王、雾灯船、瓶子、货箱与多炮；输出通用及 lock 验证/截图，保留既有 gold 产物。
+- Fixed mixed collection messages and nearest docking; added compact onboarding and a bounded collection splash. Save compatibility, combat and rendering budgets remain unchanged. Optional extra boss-death text omitted; physical iOS/Safari validation remains outstanding.
+
 # X★ / v10-gold
 
 纯静态 Canvas PWA；无构建步骤、无新增运行依赖。CACHE：`endless-sea-drift-v10-gold`。

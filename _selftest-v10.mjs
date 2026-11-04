@@ -3,7 +3,7 @@ import vm from 'node:vm';
 import assert from 'node:assert/strict';
 import {spawn} from 'node:child_process';
 const game=fs.readFileSync('game.js','utf8'),art=fs.readFileSync('art.js','utf8'),sw=fs.readFileSync('sw.js','utf8');
-const report={ok:false,cache:'endless-sea-drift-v10-gold',features:[],errors:[],session_hint:'node _selftest-v10.mjs；120秒昼夜，95秒起风雨，28秒小岛/93秒沉船，180秒潮汐王。158秒商船；第2/4/6…夜雾灯船。每2秒自动存档；v8/v9验证后迁移至v10；保留v9静音偏好。'};
+const report={ok:false,cache:'endless-sea-drift-v10-lock',session_id:process.env.CODEX_SESSION_ID||'local',features:[],errors:[],session_hint:'node _selftest-v10.mjs；120秒昼夜，95秒起风雨，28秒小岛/93秒沉船，180秒潮汐王。158秒商船；第2/4/6…夜雾灯船。每2秒自动存档；v8/v9验证后迁移至v10；保留v9静音偏好。'};
 function test(id,fn){try{fn();report.features.push({id,ok:true,note:'通过'});}catch(e){report.features.push({id,ok:false,note:e.message});report.errors.push(id+': '+e.message);}}
 test('cache',()=>assert(sw.includes("const CACHE = '"+report.cache+"'")));
 for(const [id,words] of Object.entries({weather:['night','storm','dusk'],modules:['helm','canopy','stove','net','lamp','turret'],resources:['scrap','rope','nail','ammo','craft','fish'],monsters:['gnaw','flank','spit','tideking'],sites:['island','wreck']}))test(id,()=>{for(const word of words)assert(game.includes(word));if(['modules','monsters','sites'].includes(id))for(const word of words)assert(art.includes(word));});
@@ -77,6 +77,11 @@ test('gold-safe-area-css',()=>{const css=fs.readFileSync('styles.css','utf8');as
 test('gold-pause-fire-mode',()=>{for(const ammo of [0,7]){reset();a.s.supplies.ammo=ammo;a.pause();assert(node('dialogText').textContent.includes('火力 · 弹药 '+ammo+' · '+(ammo?'装弹速射':'无弹药 · 弱射')));}});
 test('gold-build-tip-restores-cost',()=>{reset();a.s.building=true;assert(a.showActionTip('eat'));assert.match(node('notice').textContent,/优先吃炖菜/);a.s.messageTime=0;a.s.tipTimer=0;assert.equal(a.guidance(),false);a.update(.01);act('collect');a.s.messageTime=0;a.update(.25);assert.match(node('notice').textContent,/建造：木板 \/ 2木/);});
 test('gold-optional-feel-guards',()=>{reset();const get=sandbox.document.getElementById;try{sandbox.document.getElementById=id=>['notice','hungerLabel'].includes(id)?null:get(id);a.s.messageTime=0;assert.equal(a.guidance(),false);a.s.hunger=20;assert.equal(a.updateVital('hunger'),false);assert.equal(a.updateVital('unknown'),false);a.updateWake(.1,NaN,0);assert.equal(a.wake.length,0);}finally{sandbox.document.getElementById=get;}});
+test('lock-opening-and-tips',()=>{const html=fs.readFileSync('index.html','utf8');assert.match(html,/雾灯船可停靠领补给，货箱靠近打捞/);assert.match(html,/长按按钮看提示，轻触开启音效/);const tips=vm.runInNewContext(game.match(/const TIPS = (\[.*?\]);/)[1]);assert.equal(tips.length,10);assert(tips[8].includes('货箱'));assert(tips[9].includes('静音')&&tips[9].includes('不消耗'));});
+test('lock-mixed-collect-order-and-splash',()=>{for(const kinds of [['crate','bottle'],['bottle','crate']]){reset();a.s.cargo=[];for(const kind of kinds)a.spawnCargo(0,40,kind);act('collect');assert.match(a.s.message,/打捞了 2 份物资/);assert.match(a.s.message,/货箱：.*\+1/);assert.match(a.s.message,/漂流瓶：.*\+1/);assert.equal(a.wake.length,1);assert.equal(a.wake[0].life,.9);assert.equal(a.s.cargo.length,0);a.updateWake(1,0,0);assert.equal(a.wake.length,0);act('collect');assert.equal(a.wake.length,0);}});
+test('lock-splash-cap-and-reduced-motion',()=>{reset();a.s.cargo=[];for(let i=0;i<5;i++){a.spawnCargo(0,40,'crate');act('collect');}assert.equal(a.wake.length,3);const b={...sandbox,matchMedia:()=>({matches:true})};b.window=b;vm.createContext(b);vm.runInContext(game,b);b.testAPI.s.paused=false;b.testAPI.s.cargo=[];b.testAPI.spawnCargo(0,40,'bottle');b.testAPI.act('collect');assert.equal(b.testAPI.wake.length,0);});
+test('lock-nearest-dock-both-orders',()=>{for(const nearKind of ['fogship','merchant'])for(const reverse of [false,true]){reset();a.s.sites=[{kind:nearKind,x:10,y:40,life:30,used:false,offer:0},{kind:nearKind==='fogship'?'merchant':'fogship',x:100,y:40,life:30,used:false,offer:0}];const [near,far]=a.s.sites;if(reverse)a.s.sites.reverse();act('dock');assert(near.used);assert(!far.used);act('dock');assert(far.used);act('dock');assert.match(a.s.message,/靠近/);}});
+test('lock-no-api-without-test',()=>{for(const search of ['', '?contest=1']){const b={...sandbox,location:{search}};delete b.testAPI;b.window=b;vm.createContext(b);vm.runInContext(game,b);assert(!Object.hasOwn(b,'testAPI'));}});
 // Real-time CDP smoke test, using the system undici WebSocket (no install).
 const chrome=['/opt/ungoogled-chromium/chrome','/usr/bin/chromium','/usr/bin/google-chrome'].find(fs.existsSync);
 const {createRequire}=await import('node:module');const require=createRequire(import.meta.url);
@@ -94,12 +99,16 @@ if(chrome&&WebSocket){
   socket.onmessage=e=>{const m=JSON.parse(e.data);if(m.id){const p=pending.get(m.id);if(p){clearTimeout(p.timer);pending.delete(m.id);m.error?p.reject(Error(JSON.stringify(m.error))):p.resolve(m.result);}}else if(m.method==='Runtime.exceptionThrown')errors.push(m.params.exceptionDetails.text);};
   const cdp=(method,params={})=>new Promise((resolve,reject)=>{const id=++serial;const timer=setTimeout(()=>{pending.delete(id);reject(Error('CDP timeout: '+method));},10000);pending.set(id,{resolve,reject,timer});socket.send(JSON.stringify({id,method,params}));});
   await cdp('Page.enable');await cdp('Runtime.enable');
+  await cdp('Page.navigate',{url:'http://127.0.0.1:18747/index.html'});await new Promise(r=>setTimeout(r,1000));
+  const production=await cdp('Runtime.evaluate',{expression:"!Object.hasOwn(window,'testAPI')",returnByValue:true});test('browser-lock-no-test-api',()=>assert.equal(production.result.value,true));
   for(const [orientation,width,height] of [['landscape',844,390],['portrait',390,844],['small-portrait',320,568]]){
    errors.length=0;await cdp('Emulation.setDeviceMetricsOverride',{width,height,deviceScaleFactor:1,mobile:true});
    await cdp('Page.navigate',{url:'http://127.0.0.1:18747/index.html?test'});
    await new Promise(r=>setTimeout(r,1000));
    const boot=await cdp('Runtime.evaluate',{expression:'JSON.stringify({hint:!document.getElementById("audioUnlock").hidden,edition:document.querySelector(".edition").textContent,api:!!window.testAPI})',returnByValue:true});
    test('browser-boot-'+orientation,()=>{const b=JSON.parse(boot.result.value);assert(b.hint);assert(b.api);assert.equal(b.edition,'X★');});
+   await cdp('Runtime.evaluate',{expression:"document.getElementById('resume').scrollIntoView({block:'nearest'})"});
+   const visibleStart=await cdp('Runtime.evaluate',{expression:"(()=>{const b=document.getElementById('resume').getBoundingClientRect(),c=document.querySelector('.card').getBoundingClientRect();return b.top>=c.top&&b.bottom<=c.bottom&&b.top>=0&&b.bottom<=innerHeight})()",returnByValue:true});test('browser-lock-start-reachable-'+orientation,()=>assert.equal(visibleStart.result.value,true));
    const resumeRect=await cdp('Runtime.evaluate',{expression:'JSON.stringify((()=>{const r=document.getElementById("resume").getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2};})())',returnByValue:true});
    const point=JSON.parse(resumeRect.result.value);
    await cdp('Input.dispatchMouseEvent',{type:'mousePressed',...point,button:'left',clickCount:1});await cdp('Input.dispatchMouseEvent',{type:'mouseReleased',...point,button:'left',clickCount:1});
@@ -136,7 +145,7 @@ if(chrome&&WebSocket){
    await cdp('Runtime.evaluate',{expression:'document.getElementById("resume").click()',userGesture:true});
    if(orientation==='landscape'){
     await cdp('Runtime.evaluate',{expression:`(()=>{testAPI.s.paused=true;testAPI.s.hunger=86;testAPI.s.thirst=92;testAPI.s.time=200;testAPI.s.supplies.ammo=12;testAPI.s.tiles.get('1,1').module='turret';testAPI.s.sites=[{kind:'fogship',x:170,y:-40,life:33,used:false,offer:2,variant:0}];testAPI.s.cargo=[];testAPI.spawnCargo(-135,20,'bottle');testAPI.spawnCargo(-115,85,'crate');testAPI.s.monsters=[];testAPI.spawnMonster('tideking');Object.assign(testAPI.s.monsters[0],{x:-75,y:-105,hp:120,phase:3,angle:.6});testAPI.showActionTip('collect');testAPI.s.paused=false;testAPI.act('collect');testAPI.showActionTip('dock');testAPI.s.paused=true;for(let i=0;i<3;i++)testAPI.updateWake(.3,1,0);testAPI.s.shots=[{fromX:0,fromY:0,x:-75,y:-105,life:.17},{fromX:40,fromY:40,x:-75,y:-105,life:.17}];testAPI.draw();})()`});
-    const shot=await cdp('Page.captureScreenshot',{format:'png'});fs.writeFileSync('_shot-v10.png',Buffer.from(shot.data,'base64'));fs.copyFileSync('_shot-v10.png','_shot-v10gold.png');}
+    const shot=await cdp('Page.captureScreenshot',{format:'png'});fs.writeFileSync('_shot-v10.png',Buffer.from(shot.data,'base64'));fs.copyFileSync('_shot-v10.png','_shot-v10lock.png');}
    // Synthetic notch/home-indicator values exercise the same CSS formulas in Chromium.
    const insets=orientation==='landscape'?{top:0,right:44,bottom:21,left:44}:{top:44,right:0,bottom:34,left:0};
    const safeCSS=fs.readFileSync('styles.css','utf8').replace(/env\(safe-area-inset-(top|right|bottom|left)\)/g,(_,edge)=>insets[edge]+'px');
@@ -152,4 +161,4 @@ if(chrome&&WebSocket){
  }catch(e){test('browser-runtime',()=>{throw e;});}
  finally{socket?.close();browser.kill();server.kill();await new Promise(r=>setTimeout(r,500));fs.rmSync(profile,{force:true,recursive:true});}
 }else test('browser-required',()=>{throw Error('Chrome or WebSocket unavailable');});
-report.ok=report.errors.length===0;fs.writeFileSync('_v10-validation.json',JSON.stringify(report,null,2)+'\n');fs.copyFileSync('_v10-validation.json','_v10gold-validation.json');console.log(JSON.stringify(report,null,2));if(!report.ok)process.exitCode=1;
+report.ok=report.errors.length===0;fs.writeFileSync('_v10-validation.json',JSON.stringify(report,null,2)+'\n');fs.copyFileSync('_v10-validation.json','_v10lock-validation.json');console.log(JSON.stringify(report,null,2));if(!report.ok)process.exitCode=1;

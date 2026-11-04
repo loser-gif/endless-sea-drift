@@ -2,6 +2,12 @@
 
 纯 HTML / CSS / JavaScript + Canvas 2D，无构建工具、第三方依赖、字体或 CDN。上级 Godot 原型保持独立。推荐现代 iOS Safari，横竖屏均可玩。
 
+## 近况 / Latest
+
+X★ · v10-lock，CACHE：`endless-sea-drift-v10-lock`。在线游玩：https://loser-gif.github.io/endless-sea-drift/ 。本轮修复混合打捞提示与最近停靠，补充启航说明和柔和收集水环；保留 v10 存档与 v9 静音偏好。
+
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition X★; no build step.
+
 ## 本地预览
 
 在此目录运行：

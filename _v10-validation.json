@@ -1,6 +1,7 @@
 {
   "ok": true,
-  "cache": "endless-sea-drift-v10-gold",
+  "cache": "endless-sea-drift-v10-lock",
+  "session_id": "01a1a649-d9a2-79f2-aab9-f284c49b1722",
   "features": [
     {
       "id": "cache",
@@ -298,7 +299,42 @@
       "note": "通过"
     },
     {
+      "id": "lock-opening-and-tips",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "lock-mixed-collect-order-and-splash",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "lock-splash-cap-and-reduced-motion",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "lock-nearest-dock-both-orders",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "lock-no-api-without-test",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-lock-no-test-api",
+      "ok": true,
+      "note": "通过"
+    },
+    {
       "id": "browser-boot-landscape",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-lock-start-reachable-landscape",
       "ok": true,
       "note": "通过"
     },
@@ -368,6 +404,11 @@
       "note": "通过"
     },
     {
+      "id": "browser-lock-start-reachable-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
       "id": "browser-audio-unlock-portrait",
       "ok": true,
       "note": "通过"
@@ -429,6 +470,11 @@
     },
     {
       "id": "browser-boot-small-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-lock-start-reachable-small-portrait",
       "ok": true,
       "note": "通过"
     },

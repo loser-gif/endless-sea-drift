@@ -122,8 +122,8 @@ button[hidden]{display:none}
 #hud{--hud-brass-light:#e0c18b;--hud-brass-mid:#a18452;--hud-brass-dark:#4d422d;padding:10px 12px;border-color:var(--hud-brass-mid);border-top:2px solid var(--hud-brass-light);border-left-color:var(--hud-brass-mid);border-right-color:var(--hud-brass-dark);border-bottom-color:var(--hud-brass-dark);background:linear-gradient(115deg,#2b332cf5,#101f25e8);box-shadow:0 6px 20px #0005,inset 0 2px 4px #020e1970,inset 0 -1px #e0c18b18}
 /* XI / Ink — measured tracking and label weights; retain sizes and line boxes. */
 #hud h1{margin:3px 0 5px;color:#ffe6b7;letter-spacing:3px;font-size:22px}
-/* XI / Brim — a painted brass lip, without changing heading geometry. */
-#hud .eyebrow{font-size:8px;letter-spacing:1.5px;font-weight:500;color:#cdb889;background:linear-gradient(180deg,#c5a46b80 0 1px,#06192380 1px 2px,transparent 2px)}
+/* XI / Brink — soften Brim’s painted brass lip; retain heading geometry. */
+#hud .eyebrow{font-size:8px;letter-spacing:1.5px;font-weight:500;color:#cdb889;background:linear-gradient(180deg,#d2b47a70 0 1px,#06192370 1px 2px,transparent 2px)}
 .edition{color:#ead8ad;border-color:#c7ad7980;background:#cfa25412;padding:2px 5px}
 #pause{color:#e2d2ae;border-color:#bca171 #aa9166 #655a43 #948160;background:linear-gradient(180deg,#485047,#263638);box-shadow:inset 0 1px #f9e1b633;font-size:11px}
 #pause:active{border-color:#655a43 #948160 #bca171 #aa9166;background:linear-gradient(180deg,#203033,#394239);box-shadow:inset 0 2px 3px #06151c99}

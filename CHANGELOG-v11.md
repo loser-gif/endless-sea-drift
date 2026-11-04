@@ -1,3 +1,9 @@
+## XI沿 / v11-brink
+
+- 沿用 Brim 的两条 1px 色带，微调 HUD 眉题顶部黄铜亮边与暗缝，无新增效果层，标题几何不变。
+- 全部玩法、战斗、合成、存档、迁移、偏好与竖屏 notice +176px 不变，保留触控 ≥44px、30fps 与 ≤4 声部预算。
+- CACHE `endless-sea-drift-v11-brink`；验证 `_v11brink-validation.json`，浏览器成功时截图 `_shot-v11brink.png` / `_shot-v11.png`；交接 `_v11brink-handoff.md`。
+
 ## XI烬 / v11-ember2
 
 - 灶台余烬第二轮收敛：仅降低缓存精灵两级炉火透明度，保留暖色炉芯、尺寸与既有灯晕，无新增效果层。

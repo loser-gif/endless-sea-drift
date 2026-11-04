@@ -4,7 +4,8 @@ window.SeaArt = (() => {
   const surface=(w,h)=>{const c=document.createElement('canvas');c.width=w;c.height=h;return c;};
   const poly=(g,pts,c)=>{g.fillStyle=c;g.beginPath();pts.forEach(([x,y],i)=>i?g.lineTo(x,y):g.moveTo(x,y));g.closePath();g.fill();};
   // Pixel-rasterized swells share the same small, broken clusters as the sprites.
-  const palette={brass:'#e0c28a',light:'#ffe6ab',shade:'#1b3037',wet:'#213634'};
+  // Cusp: soft dawn brass and ivory rims; reuse existing sprite pixels and draw budget.
+  const palette={brass:'#ddbe91',light:'#f6e2bd',shade:'#1b3037',wet:'#213634'};
   const waves=[],foam=[];
   for(let v=0;v<6;v++){
     const c=surface(192,48),g=c.getContext('2d');
@@ -391,8 +392,8 @@ window.SeaArt = (() => {
   }
   function atmosphere(g,w,h,t,weather,lamp,cx,cy,scale){
     g.save();
-    // Existing wash only: muted amber dusk, slate-teal night, deeper storm below.
-    g.fillStyle=weather.night?'#202e38':'#b68a58';g.globalAlpha=weather.night?(lamp?.29:.40):weather.dusk?.15:0;g.fillRect(0,0,w,h);
+    // Cusp: dusk shares the sandy dawn rim family; preserve wash opacity and night.
+    g.fillStyle=weather.night?'#202e38':'#b58e68';g.globalAlpha=weather.night?(lamp?.29:.40):weather.dusk?.15:0;g.fillRect(0,0,w,h);
     if(weather.night){g.globalAlpha=.54;g.drawImage(vignette,0,0,w,h);}
     // Restrain the existing deck bounce; keep the ember hue and halo footprint.
     if(weather.night&&lamp){g.globalAlpha=.48;g.drawImage(halo,cx-110*scale,cy-110*scale,220*scale,220*scale);}

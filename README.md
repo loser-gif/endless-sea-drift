@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI釉 · v11-glaze，CACHE：`endless-sea-drift-v11-glaze`。弹层卡片采用克制静态薄釉与细内缘光泽，禁用背景模糊，保留全部玩法和竖屏布局；验证见 `_v11glaze-handoff.md`。
+XI曙 · v11-cusp，CACHE：`endless-sea-drift-v11-cusp`。共享轮廓光微调为晨曦柔金与暖象牙色，黄昏罩染统一沙金色系，保留全部玩法和竖屏布局；验证见 `_v11cusp-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI釉; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI曙; no build step.
 
 ## 本地预览
 

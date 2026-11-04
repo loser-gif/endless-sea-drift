@@ -1,7 +1,7 @@
 {
   "ok": false,
-  "cache": "endless-sea-drift-v11-glaze",
-  "session_id": "01a1a7b4-2bf6-7230-bcb0-856c313869da",
+  "cache": "endless-sea-drift-v11-cusp",
+  "session_id": "01a1a7c0-8e0d-7650-acb1-ff38239d500b",
   "features": [
     {
       "id": "cache",
@@ -344,13 +344,377 @@
       "note": "通过"
     },
     {
-      "id": "browser-runtime",
+      "id": "browser-lock-no-test-api",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-boot-landscape",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-lock-start-reachable-landscape",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-audio-unlock-landscape",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-pressed-landscape",
       "ok": false,
-      "note": "Chrome debugging endpoint unavailable: [29:29:1105/020417.801973:FATAL:content/browser/sandbox_host_linux.cc:41] Check failed: . shutdown: Operation not permitted (1)\n"
+      "note": "The expression evaluated to a falsy value:\n\n  assert(pressed.result.value)\n"
+    },
+    {
+      "id": "browser-short-press-landscape",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-long-press-landscape",
+      "ok": false,
+      "note": "The expression evaluated to a falsy value:\n\n  assert(v.tip.includes('优先吃炖菜'))\n"
+    },
+    {
+      "id": "browser-landscape",
+      "ok": false,
+      "note": "The expression evaluated to a falsy value:\n\n  assert(value.hidden)\n"
+    },
+    {
+      "id": "touch-layout-landscape",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "v11-instruments-landscape",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "v11-reduced-motion-landscape",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-pressed-cleared-landscape",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-final-clarity-landscape",
+      "ok": false,
+      "note": "The input did not match the regular expression /高光.*最大木筏.*连击纪录.*潮汐王.*雾灯船/. Input:\n\n'已找回上次航行。继续漂流，或开始新的旅程。\\n\\n续航摘要 · 第 1 天 · 00:00 · 木筏 9 格 · 击退 0'\n"
+    },
+    {
+      "id": "browser-final-pulse-ends-landscape",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-save-reload-landscape",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "polish-overlay-buttons-landscape",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "polish-showcase",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "gale-storm-night",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "gale-storm-day",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-gold-safe-area-landscape",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "notch-audio-chrome-landscape",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-death-scroll-landscape",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-boot-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-lock-start-reachable-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-audio-unlock-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-pressed-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-short-press-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-long-press-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "touch-layout-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "v11-instruments-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "port-compact-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "v11-reduced-motion-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-pressed-cleared-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-final-clarity-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-final-pulse-ends-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-save-reload-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "polish-overlay-buttons-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-gold-safe-area-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "port-safe-notice-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "notch-audio-chrome-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-death-scroll-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-boot-small-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-lock-start-reachable-small-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-audio-unlock-small-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-pressed-small-portrait",
+      "ok": false,
+      "note": "The expression evaluated to a falsy value:\n\n  assert(pressed.result.value)\n"
+    },
+    {
+      "id": "browser-short-press-small-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-long-press-small-portrait",
+      "ok": false,
+      "note": "The expression evaluated to a falsy value:\n\n  assert(v.tip.includes('优先吃炖菜'))\n"
+    },
+    {
+      "id": "browser-small-portrait",
+      "ok": false,
+      "note": "The expression evaluated to a falsy value:\n\n  assert(value.hidden)\n"
+    },
+    {
+      "id": "touch-layout-small-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "v11-instruments-small-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "port-compact-small-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "v11-reduced-motion-small-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-pressed-cleared-small-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-final-clarity-small-portrait",
+      "ok": false,
+      "note": "The input did not match the regular expression /高光.*最大木筏.*连击纪录.*潮汐王.*雾灯船/. Input:\n\n'昼夜风雨，打捞与钓鱼补给；雨天可接水。自动炮迎击海怪，第三分钟潮汐王来袭。摇杆 / WASD 移动，打捞圈内收集物资。选木板铺边格，选模块点已有板改装。合成绳、钉、弹药；靠近岛屿沉船可停靠。及时吃喝；修补消耗 1 木材 + 1 布料。雾灯船可停靠领补给，货箱靠近打捞。长按按钮看提示，轻触开启音效。横屏视野更开阔 · 竖屏同样可玩Safari 分享 → 添加到主屏幕'\n"
+    },
+    {
+      "id": "browser-final-pulse-ends-small-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-save-reload-small-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "polish-overlay-buttons-small-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-gold-safe-area-small-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "port-safe-notice-small-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "notch-audio-chrome-small-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-death-scroll-small-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "screenshot",
+      "ok": true,
+      "note": "已生成 _shot-v11cusp.png / _shot-v11.png"
     }
   ],
   "errors": [
-    "browser-runtime: Chrome debugging endpoint unavailable: [29:29:1105/020417.801973:FATAL:content/browser/sandbox_host_linux.cc:41] Check failed: . shutdown: Operation not permitted (1)\n"
+    "browser-pressed-landscape: The expression evaluated to a falsy value:\n\n  assert(pressed.result.value)\n",
+    "browser-long-press-landscape: The expression evaluated to a falsy value:\n\n  assert(v.tip.includes('优先吃炖菜'))\n",
+    "browser-landscape: The expression evaluated to a falsy value:\n\n  assert(value.hidden)\n",
+    "browser-final-clarity-landscape: The input did not match the regular expression /高光.*最大木筏.*连击纪录.*潮汐王.*雾灯船/. Input:\n\n'已找回上次航行。继续漂流，或开始新的旅程。\\n\\n续航摘要 · 第 1 天 · 00:00 · 木筏 9 格 · 击退 0'\n",
+    "browser-pressed-small-portrait: The expression evaluated to a falsy value:\n\n  assert(pressed.result.value)\n",
+    "browser-long-press-small-portrait: The expression evaluated to a falsy value:\n\n  assert(v.tip.includes('优先吃炖菜'))\n",
+    "browser-small-portrait: The expression evaluated to a falsy value:\n\n  assert(value.hidden)\n",
+    "browser-final-clarity-small-portrait: The input did not match the regular expression /高光.*最大木筏.*连击纪录.*潮汐王.*雾灯船/. Input:\n\n'昼夜风雨，打捞与钓鱼补给；雨天可接水。自动炮迎击海怪，第三分钟潮汐王来袭。摇杆 / WASD 移动，打捞圈内收集物资。选木板铺边格，选模块点已有板改装。合成绳、钉、弹药；靠近岛屿沉船可停靠。及时吃喝；修补消耗 1 木材 + 1 布料。雾灯船可停靠领补给，货箱靠近打捞。长按按钮看提示，轻触开启音效。横屏视野更开阔 · 竖屏同样可玩Safari 分享 → 添加到主屏幕'\n"
   ],
-  "session_hint": "node _selftest-v10.mjs；120秒昼夜，95秒起风雨，28秒小岛/93秒沉船，180秒潮汐王。158秒商船；第2/4/6…夜雾灯船。每2秒自动存档；v8/v9验证后迁移至v10；保留v9静音偏好。"
+  "session_hint": "node _selftest-v10.mjs；120秒昼夜，95秒起风雨，28秒小岛/93秒沉船，180秒潮汐王。158秒商船；第2/4/6…夜雾灯船。每2秒自动存档；v8/v9验证后迁移至v10；保留v9静音偏好。",
+  "notchLayout": {
+    "landscape": {
+      "top": 8,
+      "bottom": 40,
+      "left": 354.984375,
+      "right": 489,
+      "gap": 24,
+      "noticeRight": 800,
+      "animation": "none",
+      "pointer": "none",
+      "clipped": false
+    },
+    "portrait": {
+      "top": 52,
+      "bottom": 84,
+      "left": 127.984375,
+      "right": 262,
+      "gap": 106.078125,
+      "noticeRight": 374,
+      "animation": "none",
+      "pointer": "none",
+      "clipped": false
+    },
+    "small-portrait": {
+      "top": 52,
+      "bottom": 84,
+      "left": 92.984375,
+      "right": 227,
+      "gap": 8,
+      "noticeRight": 304,
+      "animation": "none",
+      "pointer": "none",
+      "clipped": false
+    }
+  },
+  "portraitLayout": {
+    "portrait": {
+      "height": 151,
+      "gap": 25,
+      "offset": 176
+    },
+    "small-portrait": {
+      "height": 151,
+      "gap": 25,
+      "offset": 176
+    }
+  }
 }

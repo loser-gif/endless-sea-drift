@@ -36,7 +36,7 @@ window.SeaArt = (() => {
   }
   const halo=surface(64,64),hg=halo.getContext('2d'),rad=hg.createRadialGradient(32,32,0,32,32,32);
   rad.addColorStop(0,'#ffedbc88');rad.addColorStop(.22,'#ffc77844');rad.addColorStop(1,'#e9cb8200');hg.fillStyle=rad;hg.fillRect(0,0,64,64);
-  let bloom,bg,depth,dg,mask,vignette,fw=0,fh=0,focus=.5;
+  let bloom,bg,depth,dg,mask,vignette,seaMist,fw=0,fh=0,focus=.5;
   function resize(w,h,focusY=h*.5) {
     fw=w;fh=h;focus=focusY/h;
     bloom=surface(Math.ceil(w/8),Math.ceil(h/8));bg=bloom.getContext('2d');
@@ -44,6 +44,12 @@ window.SeaArt = (() => {
     mask=surface(depth.width,depth.height);const m=mask.getContext('2d'),a=m.createLinearGradient(0,0,0,mask.height);
     a.addColorStop(0,'#000');a.addColorStop(Math.max(.03,focus-.36),'#0006');a.addColorStop(Math.max(.05,focus-.20),'#0000');
     a.addColorStop(Math.min(.85,focus+.21),'#0000');a.addColorStop(Math.min(.96,focus+.43),'#0006');a.addColorStop(1,'#000e');m.fillStyle=a;m.fillRect(0,0,mask.width,mask.height);
+    // One cached distance wash: pale horizon, cool sea shoulder, clear focal water.
+    // Draw before world sprites so even expanded rafts and distant cargo stay crisp.
+    seaMist=surface(1,128);const mg=seaMist.getContext('2d'),mist=mg.createLinearGradient(0,0,0,128);
+    mist.addColorStop(0,'#b8c9bd24');mist.addColorStop(.22,'#9bbab31c');
+    mist.addColorStop(.60,'#315e6814');mist.addColorStop(1,'#315e6800');
+    mg.fillStyle=mist;mg.fillRect(0,0,1,128);
     vignette=surface(96,64);const vg=vignette.getContext('2d'),vr=vg.createRadialGradient(48,32,12,48,32,55);
     // Slate-teal shadow keeps the warm rims in the same light family as the HUD brass.
     vr.addColorStop(0,'#202e3800');vr.addColorStop(.55,'#202e3818');vr.addColorStop(1,'#202e38bb');vg.fillStyle=vr;vg.fillRect(0,0,96,64);
@@ -81,6 +87,10 @@ window.SeaArt = (() => {
       if(i%3===0)glow(x,y,20+d*30,alpha*.7);
     }
     g.globalAlpha=1;
+    // Static, bounded atmosphere; fade out above the focal band, without a hard horizon.
+    g.save();g.imageSmoothingEnabled=true;
+    g.drawImage(seaMist,0,0,w,Math.max(1,h*(focus-.20)));
+    g.restore();
   }
   function finish(g,tiles,cx=0,cy=0,scale=1) {
     // Downsample once, then alpha-mask into the far/near bands. No filter or readback.

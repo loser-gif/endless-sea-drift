@@ -1,3 +1,9 @@
+## XI雾 / v11-mist
+
+- art.js 增加单条缓存渐变：远海冷色纵深、柔和地平线薄雾，在焦点前淡出；先于实体绘制，无新增粒子或滤镜。
+- CACHE `endless-sea-drift-v11-mist`；edition `XI雾`。玩法数值、战斗、合成、存档、迁移、偏好及竖屏 notice +176px 保留。
+- 验证与限制见 `_v11mist-validation.json`、`_v11mist-handoff.md`；浏览器成功时输出 `_shot-v11mist.png` / `_shot-v11.png`。
+
 ## XI印 / v11-seal
 
 - 晨间封版自审，仅同步版本标记与验证产物路径；保留现有 UI 美术、竖屏提示与触控布局。

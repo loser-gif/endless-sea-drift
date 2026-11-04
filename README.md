@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI印 · v11-seal，CACHE：`endless-sea-drift-v11-seal`。晨间封版自审，保留现有 UI 美术、竖屏提示、≥44px 触控及全部玩法、存档与偏好；验证与限制见 `_v11seal-handoff.md`。
+XI雾 · v11-mist，CACHE：`endless-sea-drift-v11-mist`。远海冷色纵深与克制地平线薄雾，仅调整 art.js 氛围；玩法、存档与竖屏布局保留，验证见 `_v11mist-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI印; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI雾; no build step.
 
 ## 本地预览
 

@@ -358,6 +358,9 @@ window.SeaArt = (() => {
       // Hearth: soften the stove and chimney rims; preserve ember fire and geometry.
       if(kind==='stove'){r(9,16,23,23,'#53666a');r(9,15,23,3,'#c0b797cc');r(23,3,6,14,'#395460');r(23,3,7,2,'#b4bca5bf');r(13,25,14,11,'#172e36');r(15,28,10,6,'#d5884de6');r(18,26,4,7,'#ffe1a0d9');}
       if(kind==='net'){r(5,8,3,30,'#c2a777');r(32,8,3,30,'#c2a777');for(let i=0;i<6;i++){r(8+i*4,13,1,24,'#a8c2ad');r(8,13+i*4,25,1,'#6d9991');}r(17,22,9,4,'#d3d7ac');r(14,20,3,8,'#92b5ac');}
+      // Lumen: broken lamp bounce on the wet timber foot, baked into the same sprite.
+      // Keep the cool lower bevel, pole occlusion and all ember/glass alphas intact.
+      if(kind==='lamp'){r(23,35,7,1,'#c4a36b');r(24,37,4,1,'#ad905e');r(14,37,3,1,'#ad905e');}
       if(kind==='lamp'){r(18,14,4,25,'#b19b6e');r(12,3,18,16,'#375360');r(13,4,15,2,'#d2b370e6');r(13,6,2,10,'#b49c64d9');r(16,7,13,8,'#f5d999d9');r(18,8,10,5,'#fff2c7cc');r(12,19,17,3,'#182f3c');}
       if(kind==='turret'){g.drawImage(art.turret,3,12,34,34);g.drawImage(art.barrel,18,18,24,10);}
     });

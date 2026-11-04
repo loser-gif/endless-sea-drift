@@ -173,9 +173,9 @@ progress{height:5px;margin-top:5px;box-shadow:0 0 0 1px #d8c48a1c}
 .tool{color:#c4b284;letter-spacing:.5px}
 .tool select{color:#f1dfb9;background:linear-gradient(135deg,#303b37,#142832);border-color:#c1a66e66;padding:5px;font-size:13px;box-shadow:inset 0 1px #f6dcad14;letter-spacing:0}
 
-/* XI舵 — static brass rim and machined thumb; retain all touch geometry. */
-#stick{border:1px solid #b49a65;background:radial-gradient(circle at 40% 32%,#35505a99,#091d2bcc 70%);box-shadow:0 0 0 2px #071923cc,inset 0 0 0 2px #b49a6580,inset 0 0 0 5px #071923b3,0 4px 10px #0005}
-#thumb{background:linear-gradient(145deg,#e5dbc0 0%,#a6aaa0 28%,#6d7e7d 49%,#b8b7a0 52%,#526568 82%,#344b51 100%);border-color:#ecdbad #9a956f #746644 #c1b389;box-shadow:inset 0 0 0 2px #e6d6a533,0 0 0 2px #071923b3,0 3px 6px #0006}
+/* XI舵2 — restrained brass rim and satin metal thumb; retain all touch geometry. */
+#stick{border:1px solid #aa905e;background:radial-gradient(circle at 40% 32%,#304b5599,#091d2bcc 70%);box-shadow:0 0 0 2px #071923cc,inset 0 0 0 2px #b49a6566,inset 0 0 0 5px #071923b3,0 4px 10px #0005}
+#thumb{background:linear-gradient(145deg,#d9d2bb 0%,#a5aaa2 28%,#768581 46%,#a3ac9e 57%,#526568 82%,#344b51 100%);border-color:#decda4 #918c6d #746644 #b7a980;box-shadow:inset 0 0 0 2px #e6d6a526,0 0 0 2px #071923b3,0 3px 6px #0006}
 #stick small{color:#e3d8ba;text-shadow:0 1px 2px #020b13,0 0 4px #020b13}
 @media(orientation:landscape) and (max-height:480px){
  #hud{width:253px;padding:8px 10px}#hud h1{font-size:19px}
@@ -232,8 +232,8 @@ progress{height:5px;margin-top:5px;box-shadow:0 0 0 1px #d8c48a1c}
 .tool select{border-top-color:#c9ab73;border-left-color:#a78b5d;border-right-color:#675c46;border-bottom-color:#675c46;box-shadow:inset 0 1px #ffe3ac29,inset 1px 0 #ffe3ac12,inset 0 -3px #020e1966;background-color:#182d33}
 .tool select option{color:#f1dfb9;background-color:#182d33}
 .actions [data-action="craft"],.actions [data-action="build"]{box-shadow:inset 0 1px #e9ce9826,inset 0 -2px #020e1959,0 3px 9px #0003}
-#stick{border-top-color:#f0d39b;border-bottom-color:#8e754b}
-#thumb{border-bottom-color:#967f55}
+#stick{border-top-color:#d8ba82;border-bottom-color:#806b48}
+#thumb{border-bottom-color:#887650}
 @media(orientation:landscape){#hud{box-shadow:0 6px 20px #0005,inset 0 2px 4px #020e1999,inset 0 -1px #e0c18b18,inset 0 0 0 3px #071923,inset 0 0 0 4px #a184521c}}
 
 /* XI / Gilt — quieter pauses, an airy recap and legible night instruments. */

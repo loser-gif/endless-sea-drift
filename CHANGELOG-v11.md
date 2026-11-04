@@ -1,3 +1,9 @@
+## XI舵2 / v11-tack2
+
+- 摇杆黄铜环与金属头第二轮：收敛环缘高光与内圈亮度，柔化金属头斜向亮带；仅调整既有 CSS 色值与渐变，不增效果层。
+- 44px 摇杆头、触控范围、竖屏 notice +176px / HUD 保留；玩法、战斗、合成、存档、迁移、偏好、30fps / ≤4 声部不变。
+- CACHE `endless-sea-drift-v11-tack2`；验证 `_v11tack2-validation.json`，浏览器成功时截图 `_shot-v11tack2.png` / `_shot-v11.png`；交接 `_v11tack2-handoff.md`。
+
 ## XI辉2 / v11-lumen2
 
 - 湿甲板灯光回照第二轮：收敛灯座三段缓存暖色反光，使亮部贴合湿木底色；保留余烬、灯芯与夜间光晕，不新增层、粒子或滤镜。

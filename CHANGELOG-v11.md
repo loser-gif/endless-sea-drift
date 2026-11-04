@@ -1,3 +1,9 @@
+## XI印 / v11-seal
+
+- 晨间封版自审，仅同步版本标记与验证产物路径；保留现有 UI 美术、竖屏提示与触控布局。
+- CACHE `endless-sea-drift-v11-seal`；edition `XI印`。全部玩法数值、战斗、合成、存档、迁移、偏好及帧率 / 声部上限不变。
+- 验证与限制见 `_v11seal-validation.json`、`_v11seal-handoff.md`；浏览器成功时生成 `_shot-v11seal.png` / `_shot-v11.png`。
+
 ## XI彡 / v11-silk
 
 - CSS 微调浮层卡片：柔和缎面、细黄铜内框、主按钮高光；终章统计增加行纹底衬、等宽数字与换行保护，保留全部 CTA 和滚动可达性。

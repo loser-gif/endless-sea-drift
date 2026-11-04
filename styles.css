@@ -143,13 +143,13 @@ button[hidden]{display:none}
 .vitals label.vital-low,.vitals label.vital-low span{color:#ffc09c}
 progress{height:5px;margin-top:5px;box-shadow:0 0 0 1px #d8c48a1c}
 #inventory{grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;margin-top:8px;padding-top:7px;border-color:#d8b67c38;font-size:10px}
-/* XI / Vault — satin brass faces; bevels stay inside the existing chip boxes. */
-#inventory>span{display:flex;align-items:baseline;justify-content:space-between;gap:2px;padding:3px 4px;background:linear-gradient(180deg,#293b39,#142a31);border:1px solid;border-color:#95815c #485147 #3c4942 #786d51;border-radius:2px;box-shadow:inset 0 1px #ffe3ac18,inset 0 -1px #020e1966;white-space:nowrap;color:#bcc5b7;font-weight:500;letter-spacing:.1px}
+/* XI / Vault2 — quiet material bevels, warmer ammo and stew; preserve chip geometry and layer count. */
+#inventory>span{display:flex;align-items:baseline;justify-content:space-between;gap:2px;padding:3px 4px;background:linear-gradient(180deg,#263735,#172b30);border:1px solid;border-color:#756f55 #414d45 #35433e #64634e;border-radius:2px;box-shadow:inset 0 1px #ffe3ac12,inset 0 -1px #020e1959;white-space:nowrap;color:#bcc5b7;font-weight:500;letter-spacing:.1px}
 #inventory b{color:#ffebbf;font-size:13px;margin:0;font-weight:600;letter-spacing:0}
-#inventory>span:nth-child(n+6){border-top-color:#b09a6b}
-#inventory>span:last-child{background:linear-gradient(180deg,#3b4032,#202f2f);border-color:#baa071 #706347 #60563f #99845b}
-/* XI / Opal — warm glazed stew face; retain Vault bevels and chip geometry. */
-#inventory>span.stew{background:linear-gradient(180deg,#4a4232,#302f29);border-color:#c0a477 #786849 #62553e #a18a60}
+#inventory>span:nth-child(n+6){border-top-color:#918261}
+#inventory>span:last-child{background:linear-gradient(180deg,#343c31,#202f2f);border-color:#a18b62 #655c45 #504b3a #867653}
+/* XI / Vault2 — stew keeps the warmest face without a brighter outer glow. */
+#inventory>span.stew{background:linear-gradient(180deg,#443d30,#2d2f29);border-color:#b39a70 #716248 #594f3c #95815c}
 #notice{border-color:#c4a46b45;background:#0b202ce6;box-shadow:inset 2px 0 #d4b57880,0 3px 12px #0003;color:#f0dfbc;text-shadow:0 1px 2px #020b13e6}
 .card{padding:24px;border-color:#b8965d9e;border-top:3px solid #f6d69a;background:linear-gradient(100deg,#b7945710,transparent 45%),repeating-linear-gradient(0deg,transparent 0 5px,#e9c88b03 6px 7px),linear-gradient(145deg,#34362efc,#18292dfc 55%,#101e29fc);box-shadow:0 24px 70px #000b,0 0 0 3px #05121c80,inset 0 1px #fff1c342,inset 0 0 36px #050e1938}
 .card>.eyebrow{display:block;font:9px Georgia,"Songti SC",serif;line-height:1.5;letter-spacing:2px;color:#cfb883}

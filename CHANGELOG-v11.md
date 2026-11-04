@@ -1,3 +1,9 @@
+## XI库2 / v11-vault2
+
+- 背包物品格第二轮倒角层级：普通材料压低亮边，弹药与炖菜保留暖色辨识；直接调整既有渐变与内阴影，不增效果层。
+- 保留全部玩法、战斗、合成、存档、迁移与偏好；44px 触控网格、竖屏 notice +176px 与 HUD 布局不变。
+- CACHE `endless-sea-drift-v11-vault2`；验证 `_v11vault2-validation.json`，浏览器成功时截图 `_shot-v11vault2.png` / `_shot-v11.png`；交接 `_v11vault2-handoff.md`。
+
 ## XI窗2 / v11-pane2
 
 - 音频提示牌与音效开关弱化亮边，移除渐变与装饰阴影，保留开／关文字、焦点及全部控件。

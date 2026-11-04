@@ -174,8 +174,9 @@ window.SeaArt = (() => {
     fine('lantern',14,24,(g,r)=>{
       r(8,1,12,2,'#d5be82');r(7,3,2,6,'#d5be82');r(19,3,2,6,'#485c59');
       poly(g,[[6,10],[12,6],[18,6],[23,11],[23,37],[19,42],[6,40],[4,35],[4,13]],'#293e43');
-      r(6,12,14,3,'#d2b370');r(7,17,12,17,'#db9349');r(9,18,8,12,'#ffdb86');r(11,19,4,9,'#fff2c4');
-      r(6,15,2,22,'#b49c64');r(18,15,2,22,'#635f46');r(6,35,15,3,'#dec28a');r(8,40,13,2,'#8a8c68');
+      // Lantern: warm brass lip and quieter ember glass, baked into the existing sprite.
+      r(6,12,14,3,'#d2b370e6');r(7,17,12,17,'#db9349e6');r(9,18,8,12,'#ffdb86d9');r(11,19,4,9,'#fff2c4cc');
+      r(6,15,2,22,'#c2a46de6');r(18,15,2,22,'#635f46');r(6,35,15,3,'#c6a975d9');r(8,40,13,2,'#8a8c68');
     });
     fine('player',28,36,(g,r)=>{
       // Explorer: hat crown/brim, hair, collar, scarf, split coat, belt and boots.
@@ -323,7 +324,7 @@ window.SeaArt = (() => {
       if(kind==='canopy'){r(5,14,3,27,'#af9261');r(32,14,3,27,'#af9261');poly(g,[[2,15],[11,3],[28,3],[38,15],[35,20],[4,20]],'#487d80');r(9,6,22,3,'#b9d2bd');r(4,16,31,3,'#d5caa0');r(13,8,2,8,'#86afa5');}
       if(kind==='stove'){r(9,16,23,23,'#53666a');r(9,15,23,3,'#c0b797');r(23,3,6,14,'#395460');r(23,3,7,2,'#b4bca5');r(13,25,14,11,'#172e36');r(15,28,10,6,'#d5884de6');r(18,26,4,7,'#ffe1a0d9');}
       if(kind==='net'){r(5,8,3,30,'#c2a777');r(32,8,3,30,'#c2a777');for(let i=0;i<6;i++){r(8+i*4,13,1,24,'#a8c2ad');r(8,13+i*4,25,1,'#6d9991');}r(17,22,9,4,'#d3d7ac');r(14,20,3,8,'#92b5ac');}
-      if(kind==='lamp'){r(18,14,4,25,'#b19b6e');r(12,3,18,16,'#375360');r(13,4,15,2,palette.brass);r(16,7,13,8,'#f5d999e6');r(18,8,10,5,'#fff2c7d9');r(12,19,17,3,'#182f3c');}
+      if(kind==='lamp'){r(18,14,4,25,'#b19b6e');r(12,3,18,16,'#375360');r(13,4,15,2,'#d2b370e6');r(13,6,2,10,'#b49c64d9');r(16,7,13,8,'#f5d999d9');r(18,8,10,5,'#fff2c7cc');r(12,19,17,3,'#182f3c');}
       if(kind==='turret'){g.drawImage(art.turret,3,12,34,34);g.drawImage(art.barrel,18,18,24,10);}
     });
     make('island',96,80,(g,r)=>{poly(g,[[3,53],[22,34],[64,32],[91,52],[82,67],[39,75],[9,66]],'#638f86');poly(g,[[9,50],[29,30],[62,32],[86,50],[73,63],[29,66]],'#d3bb80');poly(g,[[18,46],[32,29],[61,31],[74,47],[52,57],[26,54]],'#637e53');r(44,17,5,30,'#9c794e');poly(g,[[44,19],[22,13],[11,22],[38,17],[31,5],[48,13],[62,7],[74,16],[52,16],[64,27]],'#426e58');r(44,18,2,25,'#dfc08a');r(25,49,12,6,'#83b9ad');
@@ -358,7 +359,8 @@ window.SeaArt = (() => {
     // Existing wash only: muted amber dusk, slate-teal night, deeper storm below.
     g.fillStyle=weather.night?'#202e38':'#b68a58';g.globalAlpha=weather.night?(lamp?.29:.40):weather.dusk?.15:0;g.fillRect(0,0,w,h);
     if(weather.night){g.globalAlpha=.54;g.drawImage(vignette,0,0,w,h);}
-    if(weather.night&&lamp){g.globalAlpha=.58;g.drawImage(halo,cx-110*scale,cy-110*scale,220*scale,220*scale);}
+    // Restrain the existing deck bounce; keep the ember hue and halo footprint.
+    if(weather.night&&lamp){g.globalAlpha=.48;g.drawImage(halo,cx-110*scale,cy-110*scale,220*scale,220*scale);}
     if(weather.storm){
       g.globalAlpha=.26;g.fillStyle='#192d35';g.fillRect(0,0,w,h);
       g.globalAlpha=.29;g.fillStyle='#bdcfc4';

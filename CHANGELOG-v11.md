@@ -1,3 +1,9 @@
+## XI灯 / v11-lantern
+
+- 灯笼 / 探照灯黄铜边框与灯芯透明度微调，既有夜间甲板暖光 alpha 从 .58 收敛至 .48；保留 ember 暖色，无新增逐帧光效层。
+- CACHE `endless-sea-drift-v11-lantern`；edition `XI灯`。玩法、战斗、合成、存档、迁移、偏好及竖屏 notice +176px 保留。
+- 验证报告 `_v11lantern-validation.json`；浏览器成功时生成 `_shot-v11lantern.png` / `_shot-v11.png`，详见 `_v11lantern-handoff.md`。
+
 ## XI盐 / v11-brine
 
 - 木板接缝湿木微反光、断续盐壳水线及商船 / 沉船盐斑烘焙进现有精灵；沿用青灰海色与淡盐绿，不增加逐帧图层、粒子或滤镜。

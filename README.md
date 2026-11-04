@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI盐 · v11-brine，CACHE：`endless-sea-drift-v11-brine`。现有木板与船体缓存加入断续水线盐壳、接缝湿木微反光，沿用潮色体系；玩法、存档及竖屏 notice +176px 保留，验证见 `_v11brine-handoff.md`。
+XI灯 · v11-lantern，CACHE：`endless-sea-drift-v11-lantern`。灯笼 / 探照灯黄铜边框与灯芯透明度微调，收敛夜间甲板暖光，沿用 ember 色系；玩法、存档及竖屏 notice +176px 保留，验证见 `_v11lantern-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI盐; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI灯; no build step.
 
 ## 本地预览
 

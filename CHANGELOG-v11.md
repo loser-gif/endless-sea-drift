@@ -1,3 +1,9 @@
+## XI湾 / v11-cove
+
+- 96×80 小岛精灵细化湾口湿沙层次、断续反光及岩石切面 / 贴地 AO；沿用缓存绘制，无新增逐帧特效或依赖。
+- CACHE `endless-sea-drift-v11-cove`；edition `XI湾`。全部玩法、存档、迁移、偏好及 44px 触控 / 竖屏 notice +176px 保持不变。
+- 验证见 `_v11cove-validation.json`、`_v11cove-handoff.md`；浏览器成功时输出 `_shot-v11cove.png` / `_shot-v11.png`。
+
 ## XI檐 / v11-brim
 
 - HUD eyebrow 增添细黄铜檐线；暂停按钮改为明暗金属斜边，按下时底面与阴影内凹。纯 CSS，不改变尺寸或新增动画、滤镜。

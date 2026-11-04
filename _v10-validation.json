@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "cache": "endless-sea-drift-v10-plus",
+  "cache": "endless-sea-drift-v10-final",
   "features": [
     {
       "id": "cache",
@@ -213,6 +213,51 @@
       "note": "通过"
     },
     {
+      "id": "final-pause-live-highlights",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "final-continue-summary",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "final-wake-cap-motion-expiry",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "final-guidance-progress-and-quiet",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "final-first-storm-tip-once",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "final-vital-crossing",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "final-reduced-feel",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "final-additive-defaults-and-rejection",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "final-first-king-stew-once",
+      "ok": true,
+      "note": "通过"
+    },
+    {
       "id": "browser-boot-landscape",
       "ok": true,
       "note": "通过"
@@ -249,6 +294,16 @@
     },
     {
       "id": "browser-pressed-cleared-landscape",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-final-clarity-landscape",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-final-pulse-ends-landscape",
       "ok": true,
       "note": "通过"
     },
@@ -303,6 +358,16 @@
       "note": "通过"
     },
     {
+      "id": "browser-final-clarity-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-final-pulse-ends-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
       "id": "browser-save-reload-portrait",
       "ok": true,
       "note": "通过"
@@ -349,6 +414,16 @@
     },
     {
       "id": "browser-pressed-cleared-small-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-final-clarity-small-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-final-pulse-ends-small-portrait",
       "ok": true,
       "note": "通过"
     },

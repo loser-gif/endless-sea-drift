@@ -5,6 +5,7 @@
   const CELL = 40, DIR = [[0,-1],[1,0],[0,1],[-1,0]], cycle = ['wood','water','wood','food','cloth'];
   // Full CSS-resolution focal plane; half-unit authored pixel sprites, bounded 30fps.
   const art = {}, reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  let wake=[], wakeTimer=0, vitalLow={hunger:false,thirst:false};
   let seaBase, atmosphere, edgeFlashes=[], hudTime = 0, rendered = 0;
   const quality = {pixel: 1, fps: 30};
   function sprite(name,w,h,paint) {
@@ -62,7 +63,7 @@
   }
   readPrefs();updateMute();
   let saveElapsed = 0, storageWarned = false;
-  const TIPS = ['左下摇杆移动，右下打捞收集圈内物资', '先合成钉，再合成弹药：伤害更高、射速更快', '筏边钓鱼，暴雨接水；记得点吃、喝', '选模块后点木板改装，替换返还旧材料的一半', '暂停中可切换音效；安静漂流也能存档', '灶台可合成炖菜，吃饭时优先吃炖菜', '多座炮台分散迎敌；漂流瓶藏着补给', '商船可用木或废铁换绳钉；舵台把漂浮物引向你'];
+  const TIPS = ['左下摇杆 / WASD 移动 · 走向筏边的漂浮物', '靠近漂浮物 · 点打捞收集圈内物资', '先合成钉、弹药 · 饱腹不足时点吃食物', '选模块后点木板改装，替换返还旧材料的一半', '暂停中可切换音效；安静漂流也能存档', '灶台可合成炖菜，吃饭时优先吃炖菜', '多座炮台分散迎敌；漂流瓶藏着补给', '商船可用木或废铁换绳钉；舵台把漂浮物引向你'];
   const MODULES = {
     board:{name:'木板',cost:{wood:2}}, helm:{name:'舵台',cost:{wood:3,rope:1}},
     canopy:{name:'雨棚',cost:{wood:2,cloth:2,rope:1}}, stove:{name:'灶台',cost:{wood:2,nail:1}},
@@ -89,6 +90,39 @@
   }
   function trackHighlights(){const h=s.highlights;h.maxTiles=Math.max(h.maxTiles,s.tiles.size);h.totalKills=Math.max(h.totalKills,s.kills);h.longestSurvival=Math.max(h.longestSurvival,s.time);}
   function highlightText(){trackHighlights();const h=s.highlights;return `高光 · 最大木筏 ${h.maxTiles} 格 · 击退 ${h.totalKills}\n最长漂流 ${clock(h.longestSurvival)} · 潮汐王 ${h.bossesSlain}\n连击纪录 ${h.bestKillStreak} · 最远停靠 ${Math.round(h.farthestSite)}\n雾灯船 ${h.fogships} · 漂流瓶 ${h.bottles} · 商船交易 ${h.merchants} · 炖菜 ${h.stewEaten}`;}
+  function pauseHighlights(){trackHighlights();const h=s.highlights;return `高光 · 最大木筏 ${h.maxTiles} 格 · 击退 ${h.totalKills} · 连击纪录 ${h.bestKillStreak} · 潮汐王 ${h.bossesSlain} · 雾灯船 ${h.fogships}`;}
+  function continueSummary(){return `续航摘要 · 第 ${Math.floor(s.time/120)+1} 天 · ${clock(s.time)} · 木筏 ${s.tiles.size} 格 · 击退 ${s.kills}`;}
+  function guidance(){
+    // Never replace an active action/encounter notice; progress shares the existing tip index.
+    if(s.messageTime>0)return false;
+    if(!s.stormTipSeen&&weather().storm){s.stormTipSeen=true;say('雨棚可减风暴边缘伤 · 也可接雨水');return true;}
+    if(s.time<90){
+      if(s.collectedOnce&&s.craftedOnce){s.tipIndex=Math.max(3,s.tipIndex);return false;}
+      if(s.collectedOnce&&s.tipIndex<2)s.tipIndex=2;
+      if(s.tipIndex>=3)return false;
+    }else s.tipIndex=Math.max(3,s.tipIndex);
+    if(s.tipIndex<TIPS.length&&s.tipTimer<=0){say(TIPS[s.tipIndex++]);s.tipTimer=16;return true;}
+    return false;
+  }
+  function updateVital(stat){
+    const low=s[stat]<25,label=$(stat+'Label'),crossed=low&&!vitalLow[stat];
+    if(!low)label.classList.remove('vital-pulse');
+    if(crossed&&!reducedMotion)label.classList.add('vital-pulse');
+    label.classList.toggle('vital-low',low);vitalLow[stat]=low;return crossed&&!reducedMotion;
+  }
+  function clearFeel(){wake=[];wakeTimer=0;for(const stat of ['hunger','thirst']){$(stat+'Label').classList.remove('vital-pulse');vitalLow[stat]=s[stat]<25;}}
+  function updateWake(dt,dx,dy){
+    if(reducedMotion){wake=[];return;}
+    for(const p of wake)p.life-=dt;wake=wake.filter(p=>p.life>0);wakeTimer=Math.max(0,wakeTimer-dt);
+    const n=Math.hypot(dx,dy);if(n<.001||wakeTimer>0)return;
+    const ux=dx/n,uy=dy/n;
+    let edge=s.tiles.get('0,0'),score=Infinity;
+    for(const t of s.tiles.values()){const d=t.x*ux+t.y*uy;if(d<score){score=d;edge=t;}}
+    if(!edge)return;
+    // Put the trail just beyond the trailing raft edge, never on top of the deck.
+    if(wake.length>=3)wake.shift();
+    wake.push({x:edge.x*CELL-ux*32,y:edge.y*CELL-uy*32+8,life:.9});wakeTimer=.3;
+  }
   const RECIPES={rope:{cloth:1,wood:1},nail:{scrap:1,wood:1},ammo:{nail:1,wood:1},stew:{food:1,water:1}};
   const names={wood:'木',cloth:'布',scrap:'废铁',rope:'绳',nail:'钉',ammo:'弹药',food:'食物',water:'淡水',stew:'炖菜'};
   const price=cost=>Object.entries(cost).map(([k,v])=>v+names[k]).join('＋');
@@ -104,8 +138,8 @@
   const distance = (a,b) => Math.hypot(a.x-b.x,a.y-b.y);
   const clock = t => `${String(Math.floor(t/60)).padStart(2,'0')}:${String(Math.floor(t%60)).padStart(2,'0')}`;
   function reset() {
-    s = {fogshipDay:0,phaseFlash:0,phaseFlashKind:1,ammoWarned:false,highlights:freshHighlights(),fireInterval:.95,tiles:new Map(),player:{x:0,y:40},supplies:{wood:12,cloth:5,food:3,water:3,scrap:2,rope:0,nail:0,ammo:0,stew:0},hunger:100,thirst:100,time:0,kills:0,cargo:[],monsters:[],shots:[],sites:[],siteTimer:28,siteIndex:0,bossAt:180,fishTimer:0,netTimer:18,cargoTimer:0,monsterTimer:8,fireTimer:0,spawn:0,angle:-Math.PI/2,building:false,preview:[2,0],step:0,paused:true,ended:false,message:'摇杆移动 · 靠近漂浮物后打捞',messageTime:8,tipIndex:0,tipTimer:10,bossFlash:0,killFlash:0};
-    lastActAt.clear();saveElapsed=0;
+    s = {collectedOnce:false,craftedOnce:false,stormTipSeen:false,fogshipDay:0,phaseFlash:0,phaseFlashKind:1,ammoWarned:false,highlights:freshHighlights(),fireInterval:.95,tiles:new Map(),player:{x:0,y:40},supplies:{wood:12,cloth:5,food:3,water:3,scrap:2,rope:0,nail:0,ammo:0,stew:0},hunger:100,thirst:100,time:0,kills:0,cargo:[],monsters:[],shots:[],sites:[],siteTimer:28,siteIndex:0,bossAt:180,fishTimer:0,netTimer:18,cargoTimer:0,monsterTimer:8,fireTimer:0,spawn:0,angle:-Math.PI/2,building:false,preview:[2,0],step:0,paused:true,ended:false,message:'摇杆移动 · 靠近漂浮物后打捞',messageTime:8,tipIndex:0,tipTimer:10,bossFlash:0,killFlash:0};
+    lastActAt.clear();saveElapsed=0;clearFeel();
     for(let y=-1;y<=1;y++) for(let x=-1;x<=1;x++) s.tiles.set(key(x,y),{x,y,hp:100});
     for(let i=0;i<6;i++) spawnCargo((Math.random()-.5)*180,-100-i*55);
     clearInput(); resize(); hud();
@@ -150,7 +184,7 @@
     const now=performance.now();if(now-(lastActAt.get(action)??-Infinity)<180)return false;lastActAt.set(action,now);
     if(action==='craft') {
       const kind=$('recipe').value;if(kind==='stew'&&!countModule('stove'))return say('需要灶台');if(!pay(RECIPES[kind]))return say('合成需要 '+price(RECIPES[kind]));
-      s.supplies[kind]+=kind==='ammo'?4:1;sfx('craft');say('合成'+names[kind]+' · −'+price(RECIPES[kind]));
+      s.craftedOnce=true;s.supplies[kind]+=kind==='ammo'?4:1;sfx('craft');say('合成'+names[kind]+' · −'+price(RECIPES[kind]));
     } else if(action==='fish') {
       if(s.fishTimer>0)return say('收集冷却 '+Math.ceil(s.fishTimer)+' 秒');
       if(weather().storm){s.supplies.water++;s.fishTimer=12;say('接满一桶雨水 · 淡水 +1');}
@@ -168,7 +202,7 @@
     } else if(action==='collect') {
       let count=0,bottleText='';
       s.cargo=s.cargo.filter(item=>{if(distance(item,s.player)>115)return true;if(item.kind==='bottle'){s.highlights.bottles++;const loot=['rope','nail','ammo','food'][Math.floor(Math.random()*4)];s.supplies[loot]++;bottleText=' · 漂流瓶：'+['灯火守住长夜','顺风也别忘记饮水','多座炮台能分散迎敌','雨棚能护住风暴中的筏边','舵台会把漂浮物引向你','雾夜的暖灯旁有旅人留下的补给','灶台炖菜能让一份食水更耐饿'][Math.floor(Math.random()*7)]+' · '+names[loot]+' +1';}else s.supplies[item.kind]+=item.kind==='wood'?2:1;count++;return false;});
-      if(count)sfx('collect');say(count?`打捞了 ${count} 份物资${bottleText}`:'没有够得着的物资，向筏边移动试试');
+      if(count){s.collectedOnce=true;sfx('collect');}say(count?`打捞了 ${count} 份物资${bottleText}`:'没有够得着的物资，向筏边移动试试');
     } else if(action==='build') {
       s.building=!s.building;s.preview=candidates()[0]||[2,0];
       say(s.building?'选木板铺边格；选模块点已有板 · 中央炮座不可改装':'返回移动模式');
@@ -199,7 +233,7 @@
     hud();return true;
   }
   function hud() {
-    for(const stat of ['hunger','thirst']) {$ (stat).value=s[stat];$(stat+'Text').textContent=Math.ceil(s[stat]);}
+    for(const stat of ['hunger','thirst']) {$ (stat).value=s[stat];$(stat+'Text').textContent=Math.ceil(s[stat]);updateVital(stat);}
     for(const r of Object.keys(s.supplies)) $(r).textContent=s.supplies[r];
     $('voyage').textContent=`第 ${String(Math.floor(s.time/120)+1).padStart(2,'0')} 天 · ${weather().night?'夜':weather().dusk?'黄昏':'昼'}${weather().storm?' / 暴风雨':''} · ${clock(s.time)} · ${s.tiles.size} 格 · 击退 ${s.kills} · ${s.supplies.ammo?'装弹速射':'无弹药 · 弱射'}`;
     $('fish').textContent=weather().storm?'接雨水'+(s.fishTimer>0?' '+Math.ceil(s.fishTimer):''):'钓鱼'+(s.fishTimer>0?' '+Math.ceil(s.fishTimer):'');
@@ -214,10 +248,10 @@
   }
   function stats(){const modules=[...new Set([...s.tiles.values()].map(t=>t.module).filter(Boolean))].map(k=>MODULES[k].name).join('、')||'无';return `生存时长 ${clock(s.time)} · 第 ${Math.floor(s.time/120)+1} 天 · 击退 ${s.kills} · 木筏 ${s.tiles.size} 格 · 弹药余量 ${s.supplies.ammo} · 模块：${modules}`;}
   function finish(reason) {s.ended=true;s.paused=true;sfx('death');save();clearInput();showDialog('漂流终章',`${reason}\n${stats()}\n\n${highlightText()}`,'重新启航');}
-  function pause() {if(s.paused||s.ended)return;s.paused=true;save();clearInput();showDialog('暂泊片刻','海面已暂停。'+stats(),'继续漂流');}
+  function pause() {if(s.paused||s.ended)return;s.paused=true;save();clearInput();showDialog('暂泊片刻','海面已暂停。'+stats()+'\n\n'+pauseHighlights(),'继续漂流');}
   function update(dt) {
     trackHighlights();saveElapsed+=dt;if(saveElapsed>=2){save();saveElapsed=0;}
-    s.tipTimer-=dt;if(s.tipIndex<TIPS.length&&s.tipTimer<=0&&s.messageTime<=0){say(TIPS[s.tipIndex++]);s.tipTimer=16;}
+    s.tipTimer-=dt;
     s.phaseFlash=Math.max(0,s.phaseFlash-dt);s.bossFlash=Math.max(0,s.bossFlash-dt);s.killFlash=Math.max(0,s.killFlash-dt);
     const wasStorm=weather().storm;s.time+=dt;const w=weather();if(w.storm&&!wasStorm)sfx('storm');s.hunger=Math.max(0,s.hunger-.40*dt);s.thirst=Math.max(0,s.thirst-.58*dt*(w.storm?1.25:1)*(countModule('canopy')?(w.storm?.5:.75):1));
     expireStreak();spawnFogship();if(s.supplies.ammo>0)s.ammoWarned=false;
@@ -231,6 +265,7 @@
     s.messageTime-=dt;s.step-=dt;
     let x=Number(keys.has('KeyD')||keys.has('ArrowRight'))-Number(keys.has('KeyA')||keys.has('ArrowLeft'))+joy.x;
     let y=Number(keys.has('KeyS')||keys.has('ArrowDown'))-Number(keys.has('KeyW')||keys.has('ArrowUp'))+joy.y;
+    const previousX=s.player.x,previousY=s.player.y;
     const norm=Math.hypot(x,y);if(norm>1){x/=norm;y/=norm;}
     if(s.building) {
       if(norm>.25&&s.step<=0){const axis=Math.abs(x)>Math.abs(y)?0:1;s.preview[axis]=Math.max(-42,Math.min(42,s.preview[axis]+Math.sign(axis===0?x:y)));s.step=.17;}
@@ -239,6 +274,7 @@
         const p={x:s.player.x+dx,y:s.player.y+dy};if(s.tiles.has(key(...cell(p))))s.player=p;
       }
     }
+    updateWake(dt,s.player.x-previousX,s.player.y-previousY);
     s.cargoTimer-=dt;if(s.cargoTimer<=0){spawnCargo((Math.random()-.5)*280,-310);s.cargoTimer=w.storm?.85:1.9;}
     const helmPull=countModule('helm')>0;
     for(const c of s.cargo){c.x+=5*dt;if(helmPull)c.x+=Math.sign(s.player.x-c.x)*Math.min(Math.abs(s.player.x-c.x),12*dt);c.y+=23*dt;c.phase+=dt;}
@@ -277,10 +313,11 @@
         for(const m of s.monsters){const d=distance(m,gun);if(m.hp<=0||d>=range)continue;const score=(targeted.has(m)?10000:0)+(['spit','tideking'].includes(m.kind)?0:1000)+d;if(score<best){best=score;target=m;}}
         if(!target)continue;targeted.add(target);fired=true;s.angle=Math.atan2(target.y-gun.y,target.x-gun.x);
         s.shots.push({fromX:gun.x,fromY:gun.y,x:target.x,y:target.y,life:.20,boss:target.kind==='tideking'});const loaded=s.supplies.ammo>0;if(loaded){s.supplies.ammo--;loadedVolley=true;if(s.supplies.ammo===0&&!s.ammoWarned){s.ammoWarned=true;say('弹药用尽 · 弱射中');}}sfx(loaded?'fire':'weak');target.hp-=loaded?38:22;
-        if(target.hp<=0){sfx('kill');s.kills++;recordKill();s.killFlash=.3;spawnCargo(target.x,target.y,'food');if(target.kind==='tideking'){s.highlights.bossesSlain++;s.supplies.scrap+=5;s.supplies.nail+=3;say('潮汐王退入深海 · 废铁 +5、钉 +3');}s.monsters=s.monsters.filter(m=>m!==target);}
+        if(target.hp<=0){sfx('kill');s.kills++;recordKill();s.killFlash=.3;spawnCargo(target.x,target.y,'food');if(target.kind==='tideking'){s.highlights.bossesSlain++;s.supplies.scrap+=5;s.supplies.nail+=3;const first=s.highlights.bossesSlain===1;if(first)s.supplies.stew++;say('潮汐王退入深海 · 废铁 +5、钉 +3'+(first?' · 首胜炖菜 +1':''));}s.monsters=s.monsters.filter(m=>m!==target);}
       }if(fired)s.fireTimer=s.fireInterval=loadedVolley?.48:.95;
     }
     for(const shot of s.shots)shot.life-=dt;s.shots=s.shots.filter(shot=>shot.life>0);
+    guidance();
     hudTime-=dt;if(hudTime<=0){hud();hudTime=.1;}
   }
   function resize() {
@@ -335,9 +372,10 @@
       const bob=Math.round(Math.sin((reducedMotion?0:c.phase)*2)*2);
       shadow(c.x+5,c.y+11,44,20);waterRing(c.x,c.y+10,19,.24);
       ctx.save();ctx.translate(c.x,c.y+bob);ctx.rotate(Math.sin((reducedMotion?0:c.phase)*1.6)*.065);
-      if(c.kind==='bottle'){ctx.scale(1.18,1.18);}stamp(c.kind,-16,-20);ctx.restore();
+      if(c.kind==='bottle'){ctx.scale(1.18,1.18);}stamp(c.kind,-16,-20);if(c.kind==='bottle'&&(weather().dusk||weather().night)){rect(-5,-5,2,11,'#ecffda');rect(-2,-13,3,2,'#d7f7dc');}ctx.restore();
       waterRing(c.x-2,c.y+12,23+Math.sin(time*2+(reducedMotion?0:c.phase))*3,.13);
     }
+    for(const p of wake)waterRing(p.x,p.y,18+(1-p.life/.9)*15,.3*p.life/.9);
     for(const t of s.tiles.values()){shadow(t.x*40+16,t.y*40+29,80,63);rect(t.x*40-15,t.y*40+16,44,20,'#021e2b80');}
     for(const t of s.tiles.values()){
       const x=t.x*40-20,y=t.y*40-20;
@@ -394,7 +432,7 @@
       for(let i=0;i<5;i++){const a=i*2.4;rect(shot.x+Math.cos(a)*11,shot.y+Math.sin(a)*8,3,2,'#def4df');}
     }
     ctx.globalAlpha=1;ctx.restore();
-    for(const p of s.sites)if(p.kind==='fogship')SeaArt.glow(cx+(p.x-3)*scale,cy+(p.y-9)*scale,30*scale,p.used?.25:.8);
+    for(const p of s.sites)if(p.kind==='fogship'&&weather().night)SeaArt.glow(cx+(p.x-3)*scale,cy+(p.y-9)*scale,30*scale,p.used?.25:.8);
     for(const shot of s.shots)SeaArt.glow(cx+shot.x*scale,cy+shot.y*scale,35,shot.life/.16);
     if(s.tiles.has('-1,-1'))SeaArt.glow(cx-43*scale,cy-41*scale,25*scale,.6);
     SeaArt.glow(cx-45*scale,cy-58*scale,55*scale,.18);
@@ -421,7 +459,7 @@
         if(data.v===8){if(n.supplies&&!('stew' in n.supplies))n.supplies.stew=0;for(const k of ['bossFlash','killFlash'])if(!(k in n))n[k]=0;}
         if(Array.isArray(n.sites))for(const p of n.sites){if(p&& !('variant' in p))p.variant=0;if(p&& !('offer' in p))p.offer=0;}
       }
-      for(const [k,v] of Object.entries({fogshipDay:0,phaseFlash:0,phaseFlashKind:1,ammoWarned:false}))if(!(k in n))n[k]=v;
+      for(const [k,v] of Object.entries({collectedOnce:false,craftedOnce:false,stormTipSeen:n.time>=150,fogshipDay:0,phaseFlash:0,phaseFlashKind:1,ammoWarned:false}))if(!(k in n))n[k]=v;
       if(n.highlights&&typeof n.highlights==='object')for(const k of ['killStreak','bestKillStreak','lastKillAt','farthestSite','fogships'])if(!(k in n.highlights))n.highlights[k]=0;
       if(!Number.isInteger(n.fogshipDay)||n.fogshipDay<0||n.phaseFlash<0||![1,2,3].includes(n.phaseFlashKind))return false;
       // Defaults never repair an existing invalid value. Validate before changing live state or storage.
@@ -451,7 +489,7 @@
       if(n.cargo.some(c=>!['wood','water','food','cloth','scrap','bottle'].includes(c.kind))||n.monsters.some(m=>!['gnaw','flank','spit','tideking'].includes(m.kind))||n.sites.some(p=>!['island','wreck','merchant','fogship'].includes(p.kind)))return false;
       if(!Array.isArray(n.preview)||n.preview.length!==2||!n.preview.every(Number.isInteger)||n.hunger<=0||n.thirst<=0)return false;
       if(!tiles.has(key(...cell(n.player))))return false;
-      s={...n,tiles,paused:true};saveElapsed=0;
+      s={...n,tiles,paused:true};saveElapsed=0;clearFeel();
       $('module').value=Object.hasOwn(MODULES,data.module)?data.module:'board';$('recipe').value=Object.hasOwn(RECIPES,data.recipe)?data.recipe:'rope';
       lastActAt.clear();clearInput();resize();hud();if(data.v<10)save();return true;
     } catch {return false;}
@@ -483,6 +521,7 @@
   $('module').addEventListener('change',()=>{if(!s.paused&&!s.ended){s.building=true;s.preview=$('module').value==='board'?(candidates()[0]||[2,0]):cell(s.player);say(MODULES[$('module').value].name+' · '+price(MODULES[$('module').value].cost));}});
   document.addEventListener('pointerdown',unlockAudio,{capture:true});document.addEventListener('keydown',unlockAudio,{capture:true});
   $('muteToggle').addEventListener('click',()=>{unlockAudio();mute(!muted);sfx('ui');});
+  for(const stat of ['hunger','thirst'])$(stat+'Label').addEventListener('animationend',()=>$(stat+'Label').classList.remove('vital-pulse'));
   $('pause').addEventListener('click',pause);
   $('resume').addEventListener('click',()=>{unlockAudio();sfx('ui');if(s.ended){newRun();return;}s.paused=false;save();$('overlay').hidden=true;clearInput();last=performance.now();});
   $('newRun').addEventListener('click',newRun);
@@ -491,8 +530,8 @@
   window.addEventListener('resize',resize);window.visualViewport?.addEventListener('resize',resize);
   document.addEventListener('contextmenu',e=>e.preventDefault());document.addEventListener('gesturestart',e=>e.preventDefault(),{passive:false});
   reset();
-  if(load()){showDialog('漂流仍在继续','已找回上次航行。继续漂流，或开始新的旅程。','继续漂流');$('newRun').hidden=false;}
-  if(new URLSearchParams(location.search).has('test'))window.testAPI={get s(){return s;},reset,act,update,weather,spawnMonster,damage,draw,serialize,save,load,newRun,pause,SAVE_KEY,PREFS_KEY,mute,readPrefs,sfx,unlockAudio,get voices(){return voices.length;},get muted(){return muted;},spawnCargo,cargoKind,lastActAt,showActionTip,highlightText,recordKill,expireStreak,recordDock,spawnFogship,freshHighlights,kingStamp,offerFor,offerText,OFFERS,finish,quality,get audioUnlocked(){return audioContext?.state==='running';}};
+  if(load()){showDialog('漂流仍在继续','已找回上次航行。继续漂流，或开始新的旅程。\n\n'+continueSummary(),'继续漂流');$('newRun').hidden=false;}
+  if(new URLSearchParams(location.search).has('test'))window.testAPI={get s(){return s;},reset,act,update,weather,spawnMonster,damage,draw,serialize,save,load,newRun,pause,SAVE_KEY,PREFS_KEY,mute,readPrefs,sfx,unlockAudio,get voices(){return voices.length;},get muted(){return muted;},spawnCargo,cargoKind,lastActAt,showActionTip,highlightText,pauseHighlights,continueSummary,guidance,updateVital,updateWake,get wake(){return wake;},keys,recordKill,expireStreak,recordDock,spawnFogship,freshHighlights,kingStamp,offerFor,offerText,OFFERS,finish,quality,get audioUnlocked(){return audioContext?.state==='running';}};
   function frame(now){const dt=Math.min((now-last)/1000,.05);last=now;if(!s.paused)update(dt);if(now-rendered>=1000/quality.fps-1){draw();rendered=now;}requestAnimationFrame(frame);}
   requestAnimationFrame(frame);
   if('serviceWorker' in navigator && window.isSecureContext){

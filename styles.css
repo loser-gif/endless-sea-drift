@@ -104,3 +104,9 @@ button[hidden]{display:none}
 .card{max-height:calc(100% - 8px);max-height:calc(100dvh - 40px);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
 @media(orientation:portrait){#hud{padding-top:5px;padding-bottom:5px}.ammo-status{margin-bottom:3px}}
 @media(prefers-reduced-motion:reduce){#audioUnlock{animation:none}.actions button.pressed{transform:none}}
+
+/* X★ — one warning per downward crossing; persistent color remains readable. */
+.vitals label.vital-low{color:#f0a88c}
+.vitals label.vital-pulse{animation:vital-warning 1.2s ease-out 1}
+@keyframes vital-warning{45%{color:#fff0bd;text-shadow:0 0 8px #ffb87a}}
+@media(prefers-reduced-motion:reduce){.vitals label.vital-pulse{animation:none}}

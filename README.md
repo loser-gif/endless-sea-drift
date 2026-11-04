@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI飓 · v11-gale，CACHE：`endless-sea-drift-v11-gale`。风暴天空统一黎明石板灰蓝色系，保留 52 组雨线与全部玩法；验证见 `_v11gale-handoff.md`。
+XI灶 · v11-hearth，CACHE：`endless-sea-drift-v11-hearth`。仅降低灶沿与烟囱顶沿亮边透明度，保留 ember 炉火与全部玩法；验证见 `_v11hearth-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI飓; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI灶; no build step.
 
 ## 本地预览
 

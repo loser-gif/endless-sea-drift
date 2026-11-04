@@ -1,3 +1,9 @@
+## XI灶 / v11-hearth
+
+- 灶沿与烟囱顶沿仅降低 alpha，收敛炉火周边亮边；RGB、尺寸、绘制次数及 ember 炉火保持，无新增特效或依赖。
+- 全部玩法、战斗、合成、存档、迁移、偏好不变；保留 44px 触控、竖屏 notice +176px、30fps 与 ≤4 声部逻辑。
+- CACHE `endless-sea-drift-v11-hearth`；edition `XI灶`；验证与交接见 `_v11hearth-validation.json`、`_v11hearth-handoff.md`，浏览器成功时输出 `_shot-v11hearth.png` / `_shot-v11.png`。
+
 ## XI飓 / v11-gale
 
 - 风暴罩染改为缓存石板灰蓝渐变，雨线调为冷灰；与黎明阴影色系统一，保留原强度、52 组雨线和速度，无新增绘制层、滤镜或依赖。

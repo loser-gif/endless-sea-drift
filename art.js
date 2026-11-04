@@ -343,7 +343,8 @@ window.SeaArt = (() => {
       r(8,34,2,2,palette.brass);r(31,38,2,2,palette.shade);
       if(kind==='helm'){r(18,19,5,19,'#987344');g.strokeStyle=palette.brass;g.lineWidth=3;g.strokeRect(9,8,23,21);r(18,4,4,30,palette.brass);r(5,17,31,3,palette.light);r(17,16,6,5,'#46646c');}
       if(kind==='canopy'){r(5,14,3,27,'#af9261');r(32,14,3,27,'#af9261');poly(g,[[2,15],[11,3],[28,3],[38,15],[35,20],[4,20]],'#487d80');r(9,6,22,3,'#b9d2bd');r(4,16,31,3,'#d5caa0');r(13,8,2,8,'#86afa5');}
-      if(kind==='stove'){r(9,16,23,23,'#53666a');r(9,15,23,3,'#c0b797');r(23,3,6,14,'#395460');r(23,3,7,2,'#b4bca5');r(13,25,14,11,'#172e36');r(15,28,10,6,'#d5884de6');r(18,26,4,7,'#ffe1a0d9');}
+      // Hearth: soften the stove and chimney rims; preserve ember fire and geometry.
+      if(kind==='stove'){r(9,16,23,23,'#53666a');r(9,15,23,3,'#c0b797cc');r(23,3,6,14,'#395460');r(23,3,7,2,'#b4bca5bf');r(13,25,14,11,'#172e36');r(15,28,10,6,'#d5884de6');r(18,26,4,7,'#ffe1a0d9');}
       if(kind==='net'){r(5,8,3,30,'#c2a777');r(32,8,3,30,'#c2a777');for(let i=0;i<6;i++){r(8+i*4,13,1,24,'#a8c2ad');r(8,13+i*4,25,1,'#6d9991');}r(17,22,9,4,'#d3d7ac');r(14,20,3,8,'#92b5ac');}
       if(kind==='lamp'){r(18,14,4,25,'#b19b6e');r(12,3,18,16,'#375360');r(13,4,15,2,'#d2b370e6');r(13,6,2,10,'#b49c64d9');r(16,7,13,8,'#f5d999d9');r(18,8,10,5,'#fff2c7cc');r(12,19,17,3,'#182f3c');}
       if(kind==='turret'){g.drawImage(art.turret,3,12,34,34);g.drawImage(art.barrel,18,18,24,10);}

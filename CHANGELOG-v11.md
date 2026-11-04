@@ -1,3 +1,9 @@
+## XI⎈ / v11-helm
+
+- 模块 / 炮台放置预览加暗衬与黄铜角标；中央固定炮座使用不可放置色，仅调整绘制。
+- 原生建造 / 配方选择器与放置按钮增加仪表边框；触控尺寸、竖屏 notice +215px 与玩法数据保持不变。
+- CACHE `endless-sea-drift-v11-helm`；验证与截图路径改为 `_v11helm-validation.json`、`_shot-v11helm.png`（兼容 `_shot-v11.png`）。
+
 ## XI∽ / v11-tide
 
 - 白浪尖端由 `#e0e4c4` 收敛为尾流环同系 `#ccdebe`（204,222,190）；保留静水区跳过与最多 18 次绘制。

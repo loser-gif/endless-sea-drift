@@ -426,7 +426,16 @@
     SeaArt.deck(ctx,art,s.tiles,time);
     if(s.building){
       for(const [x,y] of candidates()){rect(x*40-18,y*40-18,36,36,'#89bca63b');rect(x*40-6,y*40-1,12,2,'#c8e2b5');rect(x*40-1,y*40-6,2,12,'#c8e2b5');}
-      ctx.strokeStyle=($('module').value==='board'?canBuild(...s.preview):s.tiles.has(key(...s.preview)))?'#f3dba3':'#eb8974';ctx.lineWidth=2;ctx.strokeRect(s.preview[0]*40-19,s.preview[1]*40-19,38,38);
+      // Static instrument rim: placement feedback only; no gameplay state changes.
+      const [px,py]=s.preview,rx=px*40-19,ry=py*40-19;
+      const ready=(px!==0||py!==0)&&($('module').value==='board'?canBuild(px,py):s.tiles.has(key(px,py)));
+      const rim=ready?'#f3dba3':'#eb8974';
+      ctx.save();ctx.strokeStyle='#071923';ctx.lineWidth=4;ctx.strokeRect(rx,ry,38,38);
+      ctx.strokeStyle=rim;ctx.lineWidth=1;ctx.strokeRect(rx,ry,38,38);
+      for(const dx of [0,1])for(const dy of [0,1]){
+        rect(rx+dx*32,ry+dy*36,6,2,rim);rect(rx+dx*36,ry+dy*32,2,6,rim);
+      }
+      ctx.restore();
     }
     for(const m of s.monsters){
       waterRing(m.x,m.y+9,34,.28);

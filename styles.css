@@ -442,7 +442,7 @@ progress{height:5px;margin-top:5px;box-shadow:0 0 0 1px #d8c48a1c}
 .vitals progress::-webkit-progress-value,.vitals #thirst::-webkit-progress-value{background:radial-gradient(circle at center,var(--vital-bead) 0 .7px,var(--vital-halo) 1.25px,transparent 2px) right center/5px 5px no-repeat,var(--vital-fill);box-shadow:inset 0 1px 0 #fff4d926}
 .vitals progress::-moz-progress-bar,.vitals #thirst::-moz-progress-bar{background:radial-gradient(circle at center,var(--vital-bead) 0 .7px,var(--vital-halo) 1.25px,transparent 2px) right center/5px 5px no-repeat,var(--vital-fill);box-shadow:inset 0 1px 0 #fff4d926}
 
-/* XI航 / Warp — mono voyage plaque and distance recap; retain line boxes and gilt digits. */
+/* XI航2 / Warp II — quieter neutral mono plaque; retain line boxes and gilt digits. */
 #hud #voyage,
 #overlay[data-view="pause"] #dialogText,
 #overlay[data-view="death"] #dialogText{
@@ -451,8 +451,8 @@ progress{height:5px;margin-top:5px;box-shadow:0 0 0 1px #d8c48a1c}
  font-kerning:none;
 }
 #hud #voyage{
- background:#c8ad6c0a;
- border-bottom-color:#c8ad6c40;
+ background:#b8b7ae0d;
+ border-bottom-color:#b8b7ae33;
  border-radius:2px;
 }
 

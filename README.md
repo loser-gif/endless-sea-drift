@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI珠2 · v11-bead2，CACHE：`endless-sea-drift-v11-bead2`。收紧饱腹 / 淡水珠光并区分冷暖，保留轨道几何、玩法与竖屏 notice +176px；验证见 `_v11bead2-handoff.md`。
+XI航2 · v11-warp2，CACHE：`endless-sea-drift-v11-warp2`。航程等宽牌匾第二轮：中性灰底与细边收敛，保留鎏金数字、玩法与竖屏 notice +176px；验证见 `_v11warp2-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI隙2; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI航2; no build step.
 
 ## 本地预览
 

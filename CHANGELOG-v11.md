@@ -1,3 +1,9 @@
+## XI湾港 / v11-harbor
+
+- 商船码头木缝、湿沿与货物接触阴影统一冷湿色；斜向边缘替换横亮条，保留 96×80 精灵及显示尺寸，全部烘焙进原缓存。
+- 玩法、战斗、合成、存档、迁移、偏好及竖屏 notice +176px 不变，无新增逐帧效果。
+- CACHE `endless-sea-drift-v11-harbor`；验证 `_v11harbor-validation.json`，成功截图 `_shot-v11harbor.png` / `_shot-v11.png`；交接 `_v11harbor-handoff.md`。
+
 ## XI铜 / v11-brass2
 
 - HUD 面板、导轨与原有铆钉共用黄铜明暗色，替换既有底色与边缘色；不增加效果层，保持几何尺寸。

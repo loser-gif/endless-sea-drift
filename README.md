@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI铜 · v11-brass2，CACHE：`endless-sea-drift-v11-brass2`。HUD 黄铜面板与顶轨铆钉统一色系，保持布局与全部玩法；验证见 `_v11brass2-handoff.md`。
+XI湾港 · v11-harbor，CACHE：`endless-sea-drift-v11-harbor`。商船湿码头、木缝与货物接触阴影统一冷湿色，保持尺寸与全部玩法；验证见 `_v11harbor-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI铜; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI湾港; no build step.
 
 ## 本地预览
 

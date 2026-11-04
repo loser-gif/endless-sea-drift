@@ -1,3 +1,9 @@
+## XI釉 / v11-glaze
+
+- 弹层卡片替换为低透明度静态薄釉渐变与细内缘光泽，保留黄铜框、终章冷灰色与文字对比；标准 / WebKit 背景滤镜均禁用，无新增图层、动画或依赖。
+- 全部玩法、战斗、合成、存档、迁移、偏好不变；保留 44px 触控、竖屏 notice +176px、30fps / ≤4 声部逻辑。
+- CACHE `endless-sea-drift-v11-glaze`；edition `XI釉`；验证与交接见 `_v11glaze-validation.json`、`_v11glaze-handoff.md`。
+
 ## XI航 / v11-warp
 
 - 航程栏加入低对比铭牌底色，航程与暂停／终章距离统计统一等宽、齐宽数字；保留鎏金数字、字号和间距，纯 CSS，无新增特效或依赖。

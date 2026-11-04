@@ -1,3 +1,9 @@
+## XI淤 / v11-silt
+
+- 木筏附近浅水渐变改为低饱和沙绿淤色，向外融入青蓝海水；复用原缓存、形状与绘制次数，无新增粒子、滤镜或动画。
+- 全部玩法、战斗、合成、存档、迁移、偏好不变；保留触控 ≥44px、竖屏 notice +176px、30fps / ≤4 声部。
+- CACHE `endless-sea-drift-v11-silt`；edition `XI淤`；验证与交接见 `_v11silt-validation.json`、`_v11silt-handoff.md`。
+
 ## XI瞳 / v11-iris
 
 - 按钮、静音与选择器统一 2px 黄铜 focus-visible 轮廓及 2px 外间距；强制配色使用系统 Highlight，不增加动画、阴影或布局尺寸。

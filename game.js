@@ -346,7 +346,9 @@
     ocean.addColorStop(0,'#7e9d8e');ocean.addColorStop(.22,'#367e80');ocean.addColorStop(.58,'#145365');ocean.addColorStop(1,'#102630');
     g.fillStyle=ocean;g.fillRect(0,0,width,height);
     const pool=g.createRadialGradient(cx-width*.12,cy-height*.05,0,cx-width*.12,cy-height*.05,width*.48);
-    pool.addColorStop(0,'#4fb2a13d');pool.addColorStop(.45,'#207d8220');pool.addColorStop(1,'#062b3a00');g.fillStyle=pool;g.fillRect(0,0,width,height);
+    // Silt: muted sand-green shallows near the raft, fading into the cool sea.
+    // Reuse the existing cached pool, with unchanged geometry and draw budget.
+    pool.addColorStop(0,'#aaa47745');pool.addColorStop(.45,'#648a7028');pool.addColorStop(1,'#062b3a00');g.fillStyle=pool;g.fillRect(0,0,width,height);
     atmosphere=document.createElement('canvas');atmosphere.width=seaBase.width;atmosphere.height=seaBase.height;
     const a=atmosphere.getContext('2d'), glow=a.createRadialGradient(width*.2,0,0,width*.2,0,height*.85);
     a.scale(atmosphere.width/width,atmosphere.height/height);

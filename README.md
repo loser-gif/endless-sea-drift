@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI缆2 · v11-cord2，CACHE：`endless-sea-drift-v11-cord2`。加深木筏绑绳、绳圈湿润接触阴影，保留尺寸与绘制预算；验证见 `_v11cord2-handoff.md`。
+XI窗2 · v11-pane2，CACHE：`endless-sea-drift-v11-pane2`。音频牌匾与开关收敛为低亮细边、平整青灰底，保留全部控件；验证见 `_v11pane2-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI缆2; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI窗2; no build step.
 
 ## 本地预览
 

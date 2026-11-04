@@ -1,3 +1,9 @@
+## XI窗2 / v11-pane2
+
+- 音频提示牌与音效开关弱化亮边，移除渐变与装饰阴影，保留开／关文字、焦点及全部控件。
+- 全部玩法、战斗、合成、存档、迁移、偏好及竖屏 notice +176px 保留；无新增特效、依赖或构建。
+- CACHE `endless-sea-drift-v11-pane2`；验证 `_v11pane2-validation.json`，浏览器成功时截图 `_shot-v11pane2.png` / `_shot-v11.png`；交接 `_v11pane2-handoff.md`。
+
 ## XI缆2 / v11-cord2
 
 - 加深木筏绑绳背光侧、板缝与绳圈内缘的湿润接触阴影，下段绳股转为灰绿；复用既有像素与缓存，尺寸不变。

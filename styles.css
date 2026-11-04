@@ -220,9 +220,9 @@ progress{height:5px;margin-top:5px;box-shadow:0 0 0 1px #d8c48a1c}
 #overlay[data-view="pause"] .card h2{font-weight:500;color:#e6d4ad}
 #overlay[data-view="death"] .card>.eyebrow{color:#c5a08a}
 #overlay[data-view="death"] .card h2{font-weight:600;color:#e5c29f}
-/* XI / Pane — a quiet inset audio control, with explicit text in both states. */
-#muteToggle{border-color:#778477 #3e514e #344946 #69766a;background:linear-gradient(180deg,#243936,#192e32);color:#d0d6c5;box-shadow:inset 0 1px #e8dec512}
-#muteToggle[aria-pressed="true"]{color:#d6c5a5;border-color:#948360 #5e5c48 #505342 #807557;background:linear-gradient(180deg,#343d32,#232f2d);box-shadow:inset 2px 0 #a9946a}
+/* XI / Pane2 — flat, quiet audio controls; preserve text, focus and geometry. */
+#muteToggle{border-color:#52645e;background:#1b3032;color:#d0d6c5;box-shadow:none}
+#muteToggle[aria-pressed="true"]{color:#d6c5a5;border-color:#676c59;background:#283530;box-shadow:none}
 #muteToggle:active{background:#2e4140}
 
 #newRun{border-color:#ae967066;color:#cdbb9d}
@@ -399,7 +399,7 @@ progress{height:5px;margin-top:5px;box-shadow:0 0 0 1px #d8c48a1c}
 }
 .actions button:disabled{transform:none}
 
-/* XI刘 — bounded audio plaque and notch clearance; no extra effects. */
+/* XI窗2 — quiet audio plaque; retain bounded geometry and notch clearance. */
 #audioUnlock{
  top:calc(env(safe-area-inset-top) + 8px);
  left:max(16px,env(safe-area-inset-left));
@@ -414,10 +414,11 @@ progress{height:5px;margin-top:5px;box-shadow:0 0 0 1px #d8c48a1c}
  line-height:16px;
  padding:7px 12px;
  border-radius:3px;
- border-color:#c7ad79 #72674d #625b46 #a3946b;
- background:linear-gradient(180deg,#35413b,#172b30);
- color:#ead8ad;
- box-shadow:inset 0 1px #f4dfae26;
+ border-color:#596a60;
+ background:#1b3032;
+ color:#cbd1be;
+ text-shadow:none;
+ box-shadow:none;
  animation:none;
 }
 /* The status is pointer-transparent; the card remains independently scrollable. */

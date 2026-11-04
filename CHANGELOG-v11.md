@@ -1,3 +1,9 @@
+## XI瞳 / v11-iris
+
+- 按钮、静音与选择器统一 2px 黄铜 focus-visible 轮廓及 2px 外间距；强制配色使用系统 Highlight，不增加动画、阴影或布局尺寸。
+- 全部玩法、战斗、合成、存档、迁移、偏好不变；触控 ≥44px、竖屏 notice +176px、30fps / ≤4 声部保留。
+- CACHE `endless-sea-drift-v11-iris`；edition `XI瞳`；验证与交接见 `_v11iris-validation.json`、`_v11iris-handoff.md`。
+
 ## XI哑 / v11-mute
 
 - 卡片辅助文字统一使用 `--text-muted` 灰绿色，提亮以保留深色卡片上的阅读对比度；不新增特效或改变布局。

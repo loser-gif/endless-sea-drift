@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI哑 · v11-mute，CACHE：`endless-sea-drift-v11-mute`。卡片辅助文字统一为共享灰绿色，保留对比度与全部玩法；验证见 `_v11mute-handoff.md`。
+XI瞳 · v11-iris，CACHE：`endless-sea-drift-v11-iris`。统一 2px 黄铜键盘焦点环，适配系统强制配色；验证见 `_v11iris-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI哑; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI瞳; no build step.
 
 ## 本地预览
 

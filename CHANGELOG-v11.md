@@ -1,3 +1,9 @@
+## XI潮 / v11-tide3
+
+- 统一 brine 盐痕与 tide2 水线：木筏、商船、沉船盐斑收敛为灰绿与浅象牙，尾沫衔接远处浪尖；仅改色，不增绘制层。
+- 保留全部玩法、战斗、合成、存档、迁移、偏好及竖屏 notice +176px；触控、30fps 与 ≤4 声部预算不变。
+- CACHE `endless-sea-drift-v11-tide3`；验证 `_v11tide3-validation.json`，成功截图 `_shot-v11tide3.png` / `_shot-v11.png`；交接 `_v11tide3-handoff.md`。
+
 ## XI亮 / v11-gleam
 
 - 水面左肩微高光贴合断续浪冠，统一浪尖与白沫的柔象牙色，收弱背光侧亮边；复用六张浪形缓存，不增绘制层。

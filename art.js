@@ -180,9 +180,9 @@ window.SeaArt = (() => {
       }
       for(let k=0;k<8;k++){
         const x=8+k*8, y=84+(k+v)%3, len=3+(k+v)%3;
-        r(x,y-1,len+1,3,'#40534b');
-        r(x,y,len,1,'#9caa8f');
-        if((k+v)%3===0)r(x+1,y-1,2,1,'#c9d8b1');
+        r(x,y-1,len+1,3,'#405650');
+        r(x,y,len,1,'#9eafa3');
+        if((k+v)%3===0)r(x+1,y-1,2,1,'#cdd6c4');
         r(x+2,y+4,2,2,'#294b50');
       }
       r(2,74,74,1,'#d9c08a');r(1,2,2,70,'#f0d394');r(77,2,2,94,'#1c3036');
@@ -392,7 +392,7 @@ window.SeaArt = (() => {
       poly(g,[[29,67],[72,62],[72,65],[29,70]],palette.wet);
       poly(g,[[36,67],[64,64],[64,65],[36,68]],'#52746a');
       // Sparse salt flecks sit above the wet foot, in the sea's muted foam family.
-      for(let k=0;k<5;k++){const x=34+k*7,y=65-Math.floor(k*.8);r(x,y,3,1,'#84998a');if(k%2===0)r(x+1,y-1,1,1,'#afbea0');}
+      for(let k=0;k<5;k++){const x=34+k*7,y=65-Math.floor(k*.8);r(x,y,3,1,'#899e95');if(k%2===0)r(x+1,y-1,1,1,'#bac9bb');}
     });
     make('scrap',32,32,(g,r)=>{poly(g,[[4,19],[12,6],[25,9],[29,23],[18,29]],'#304d58');r(9,13,17,7,'#8d9990');r(10,12,16,2,'#e1d3a3');r(13,20,5,6,'#b67b52');r(20,9,3,18,'#53747c');});
     for(const kind of ['gnaw','flank','spit','tideking'])make(kind,64,40,(g,r)=>{
@@ -480,7 +480,7 @@ window.SeaArt = (() => {
       poly(g,[[9,34],[28,44],[28,46],[10,36]],palette.brass);r(10,36,1,4,palette.light);
       poly(g,[[30,70],[75,58],[75,61],[30,73]],palette.wet);
       poly(g,[[37,69],[65,62],[65,63],[37,70]],'#467573');
-      for(let k=0;k<5;k++){const x=35+k*7,y=68-k*2;r(x,y,3,1,'#9caa8f');if(k%2===0)r(x+1,y-1,1,1,'#c9d8b1');}
+      for(let k=0;k<5;k++){const x=35+k*7,y=68-k*2;r(x,y,3,1,'#9eafa3');if(k%2===0)r(x+1,y-1,1,1,'#cdd6c4');}
     });
   }
   function atmosphere(g,w,h,t,weather,lamp,cx,cy,scale){

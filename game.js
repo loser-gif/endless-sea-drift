@@ -402,9 +402,9 @@
       stamp('board'+((t.x*3+t.y+400)%4),x,y);
       if(!s.tiles.has(key(t.x-1,t.y))){rect(x,y+2,2,33,'#d9c38e');}
       if(!s.tiles.has(key(t.x,t.y+1))){
-        rect(x+3,y+51,34,1,'#5a898c99');
-        rect(x+2,y+36,36,2,'#172f31');rect(x+4,y+38,31,1,'#adbfb4');
-        ctx.globalAlpha=.25+.12*Math.sin(time*1.8+t.x);rect(x+5,y+46,27,1,'#a5cebf');ctx.globalAlpha=1;
+        rect(x+3,y+51,34,1,'#608d8999');
+        rect(x+2,y+36,36,2,'#172f31');rect(x+4,y+38,31,1,'#bac9bb');
+        ctx.globalAlpha=.25+.12*Math.sin(time*1.8+t.x);rect(x+5,y+46,27,1,'#afc8bc');ctx.globalAlpha=1;
       }
       if(!s.tiles.has(key(t.x+1,t.y)))rect(x+38,y+3,2,44,'#0c2834b0');
       if(!s.tiles.has(key(t.x,t.y-1)))rect(x+1,y,37,2,'#e7cf94');
@@ -414,9 +414,9 @@
         for(let j=0;j<3;j++){
           const phase=((time*.45+t.x*.37+j*.31)%1+1)%1;
           ctx.globalAlpha=Math.sin(phase*Math.PI)*(weather().storm?.72:.6);
-          rect(Math.round(x+7+j*10+phase*4),Math.round(y+49+phase*5),5,1,'#c8d8cc');
-          rect(Math.round(x+9+j*10+phase*4),Math.round(y+50+phase*5),2,1,'#82aaa7');
-          if(j===1)rect(Math.round(x+12+phase*13),Math.round(y+48+phase*4),3,1,'#d5e6df');
+          rect(Math.round(x+7+j*10+phase*4),Math.round(y+49+phase*5),5,1,'#bfcec2');
+          rect(Math.round(x+9+j*10+phase*4),Math.round(y+50+phase*5),2,1,'#82a8a3');
+          if(j===1)rect(Math.round(x+12+phase*13),Math.round(y+48+phase*4),3,1,'#e4e3cf');
         }ctx.globalAlpha=1;
       }
       if(t.hp<100){

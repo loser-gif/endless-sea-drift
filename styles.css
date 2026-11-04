@@ -93,7 +93,7 @@ button[hidden]{display:none}
 #audioUnlock[hidden]{display:none}
 .ammo-status{display:flex;align-items:center;gap:8px;margin:-5px 0 8px;color:#eacb8e;font:10px ui-monospace,monospace}
 #ammoChip[data-mode="empty"]{color:#f0a88c}.ammo-track{width:48px;height:2px;background:#d8c48a22;overflow:hidden}#ammoCooldown{display:block;width:100%;height:100%;background:#eacb8e;transform-origin:left}
-#dialogText{white-space:pre-line;font-size:13px;line-height:1.8}
+#dialogText{white-space:pre-line;font-size:13px;line-height:1.8;color:#d8d9c5;font-variant-numeric:tabular-nums}
 @media(orientation:portrait){#hud{padding:7px 10px}#hud h1{font-size:18px;margin:1px 0 3px}#hud #voyage{font-size:9px;letter-spacing:0;margin-bottom:7px}#hud #inventory{grid-template-columns:repeat(5,minmax(0,1fr));gap:3px 5px;font-size:10px;padding-top:5px;margin-top:6px}#inventory b{font-size:12px;margin-left:2px}.vitals{gap:12px}.vitals label{font-size:10px}.ammo-status{margin:0 0 5px}#notice{top:calc(max(12px,env(safe-area-inset-top)) + 174px);padding:6px 9px;font-size:10px;letter-spacing:0}}
 @media(orientation:portrait) and (max-height:700px){.actions{grid-template-columns:repeat(3,minmax(44px,1fr));gap:4px}.actions .tool:first-child{grid-column:span 2}.actions button{font-size:11px}.tool select{font-size:11px}#notice{font-size:10px}#controls{bottom:max(10px,env(safe-area-inset-bottom))}}
 
@@ -141,12 +141,12 @@ progress{height:5px;margin-top:5px;box-shadow:0 0 0 1px #d8c48a1c}
 #notice{border-color:#c4a46b45;background:#0b202ce6;box-shadow:inset 2px 0 #d4b57880,0 3px 12px #0003;color:#e5d9bb}
 .card{padding:24px;border-color:#b8965d9e;border-top:3px solid #f1ce8b;background:linear-gradient(100deg,#b7945710,transparent 45%),repeating-linear-gradient(0deg,transparent 0 5px,#e9c88b03 6px 7px),linear-gradient(145deg,#34362efc,#18292dfc 55%,#101e29fc);box-shadow:0 24px 70px #000b,0 0 0 3px #05121c80,inset 0 1px #fff1c329,inset 0 0 36px #050e1938}
 .card>.eyebrow{font:9px Georgia,"Songti SC",serif;letter-spacing:2px;color:#cfb883}
-.card h2{font-size:30px;letter-spacing:5px;margin:9px 0 14px;color:#ffe1a5;text-shadow:0 2px 2px #0006}
+.card h2{font-size:30px;letter-spacing:5px;margin:9px 0 14px;color:#ffe1a5;text-shadow:0 2px 2px #0006;padding-bottom:8px;border-bottom:1px solid #c5a56b38}
 .card p{color:#d0d2bf;line-height:1.85}.card .muted{color:#a1afa8}
 #resume{min-height:48px;font-weight:700;letter-spacing:2px;background:linear-gradient(120deg,#ffe8b5,#d4ad69 65%,#b88b4b);border-color:#ffe7ae;box-shadow:inset 0 1px #fff5d4,0 4px 16px #0005}
 #muteToggle{background:#07182040;border-color:#b6b59c33;color:#acbcb5;box-shadow:none;font-size:12px;margin:8px 0 0}
 #muteToggle[aria-pressed="true"]{opacity:1;color:#d6b88d;border-color:#c2a16a66;background:#b58c4314}
-#newRun{background:transparent;border-color:#ba8c6d80;color:#e1b39b;box-shadow:none;font-size:12px}
+#newRun{margin-top:8px;background:transparent;border-color:#ba8c6d80;color:#e1b39b;box-shadow:none;font-size:12px}
 .actions button{color:#dedac4;background:linear-gradient(150deg,#273d40f5,#10252ff5);border-color:#bbac8059;box-shadow:inset 0 1px #fce5b418,0 3px 9px #0004}
 .actions [data-action="repair"],.actions [data-action="eat"],.actions [data-action="drink"]{background:linear-gradient(145deg,#3a4a45f5,#1b3239f5);border-color:#c4bd8e70;color:#f0e2c3}
 .actions [data-action="craft"],.actions [data-action="build"]{background:linear-gradient(#182c34f5,#0c202bf5);color:#b9c4bc}

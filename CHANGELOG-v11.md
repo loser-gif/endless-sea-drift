@@ -1,3 +1,13 @@
+## XI★ / v11-polish
+
+- 外缘木板下补 1px 冷青水线；仅暴雨时略提高现有筏边泡沫透明度，不增粒子。
+- 弹层标题增加细分隔线，航程高光使用等宽数字；新的漂流按钮与静音保持 8px 间距，保留滚动与安全区。
+- HUD 黄铜层级、v11-art 架构、玩法数值、战斗/合成、v10 存档、v9 偏好、30fps 与四音轨上限不变。
+- CACHE `endless-sea-drift-v11-polish`；edition `XI★`。
+- Validation: `node _selftest-v10.mjs` → 122/122；`_v11polish-validation.json` ok:true；`_shot-v11polish.png` / `_shot-v11.png`。
+- Screenshot capture retains the night / phase-3 tideking / fogship / bottle / crate / multi-turret scene, adds scene assertions, and writes `_shot-v11polish.png` + `_shot-v11.png` on successful browser execution.
+- Cut: extra HUD contrast (existing DOM panel remains readable above the canvas vignette). Real iOS Safari device validation remains outstanding.
+
 ## XI·A / v11-art
 
 - 海面增加 6 张缓存白浪簇，减少散碎焦散纹理；远景浪槽加深、筏边泡沫改为短像素簇。

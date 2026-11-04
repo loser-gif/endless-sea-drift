@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI·A · v11-art，CACHE：`endless-sea-drift-v11-art`。稀疏白浪、深浅海面与柔和景深；木板、模块与炮台统一暖黄铜/冷青阴影，夜色与像素短雨更克制。Sparse foam, sea depth, shared timber/brass light and restrained weather. 玩法、v10 存档、v9 静音偏好与 v11-ui 布局保持不变。在线游玩：https://loser-gif.github.io/endless-sea-drift/ 。
+XI★ · v11-polish，CACHE：`endless-sea-drift-v11-polish`。筏边冷青水线、暴雨泡沫与弹层细节收尾，夜航展示更新；玩法、v10 存档、v9 偏好与 v11 架构不变。在线游玩：https://loser-gif.github.io/endless-sea-drift/ 。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI·A; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI★; no build step.
 
 ## 本地预览
 

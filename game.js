@@ -391,6 +391,7 @@
       stamp('board'+((t.x*3+t.y+400)%4),x,y);
       if(!s.tiles.has(key(t.x-1,t.y))){rect(x,y+2,2,33,'#d9c38e');}
       if(!s.tiles.has(key(t.x,t.y+1))){
+        rect(x+3,y+51,34,1,'#548e8c80');
         rect(x+2,y+36,36,2,'#172f31');rect(x+4,y+38,31,1,'#b6c3a1');
         ctx.globalAlpha=.25+.12*Math.sin(time*1.8+t.x);rect(x+5,y+46,27,1,'#9de0cd');ctx.globalAlpha=1;
       }
@@ -401,7 +402,7 @@
         // A few local foam flecks, no particle simulation or unbounded allocation.
         for(let j=0;j<3;j++){
           const phase=((time*.45+t.x*.37+j*.31)%1+1)%1;
-          ctx.globalAlpha=Math.sin(phase*Math.PI)*.6;
+          ctx.globalAlpha=Math.sin(phase*Math.PI)*(weather().storm?.72:.6);
           rect(Math.round(x+7+j*10+phase*4),Math.round(y+49+phase*5),5,1,'#c5dfca');
           rect(Math.round(x+9+j*10+phase*4),Math.round(y+50+phase*5),2,1,'#7eb4ad');
           if(j===1)rect(Math.round(x+12+phase*13),Math.round(y+48+phase*4),3,1,'#eee6bd');

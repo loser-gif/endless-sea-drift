@@ -1,7 +1,7 @@
 {
   "ok": true,
-  "cache": "endless-sea-drift-v11-art",
-  "session_id": "01a1a6de-2b5c-79c3-9300-f584808ffe33",
+  "cache": "endless-sea-drift-v11-polish",
+  "session_id": "01a1a6e2-470c-7193-9a99-f42f6e93de77",
   "features": [
     {
       "id": "cache",
@@ -419,6 +419,16 @@
       "note": "通过"
     },
     {
+      "id": "polish-overlay-buttons-landscape",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "polish-showcase",
+      "ok": true,
+      "note": "通过"
+    },
+    {
       "id": "browser-gold-safe-area-landscape",
       "ok": true,
       "note": "通过"
@@ -495,6 +505,11 @@
     },
     {
       "id": "browser-save-reload-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "polish-overlay-buttons-portrait",
       "ok": true,
       "note": "通过"
     },
@@ -579,6 +594,11 @@
       "note": "通过"
     },
     {
+      "id": "polish-overlay-buttons-small-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
       "id": "browser-gold-safe-area-small-portrait",
       "ok": true,
       "note": "通过"
@@ -591,7 +611,7 @@
     {
       "id": "screenshot",
       "ok": true,
-      "note": "已生成 _shot-v10.png"
+      "note": "已生成 _shot-v11polish.png / _shot-v11.png"
     }
   ],
   "errors": [],

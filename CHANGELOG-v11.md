@@ -1,3 +1,9 @@
+## XI辉2 / v11-lumen2
+
+- 湿甲板灯光回照第二轮：收敛灯座三段缓存暖色反光，使亮部贴合湿木底色；保留余烬、灯芯与夜间光晕，不新增层、粒子或滤镜。
+- 全部玩法、战斗、合成、存档、迁移、偏好、30fps / ≤4 声部保留；≥44px 触控、竖屏 notice +176px 与 HUD 布局不变。
+- CACHE `endless-sea-drift-v11-lumen2`；验证 `_v11lumen2-validation.json`，浏览器成功时截图 `_shot-v11lumen2.png` / `_shot-v11.png`；交接 `_v11lumen2-handoff.md`。
+
 ## XI浪2 / v11-crest2
 
 - 浪尖镜面高光第二轮：收敛既有浪纹亮肩，象牙亮点以肩部权重平方渐隐；保留断续像素、六张缓存尺寸与逐帧绘制预算，不增效果层。

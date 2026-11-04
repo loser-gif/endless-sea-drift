@@ -419,8 +419,8 @@ window.SeaArt = (() => {
       // Ember2: soften cached ember spill, retaining the brighter hearth core.
       if(kind==='stove'){r(9,16,23,23,'#af9261');r(9,15,23,3,palette.brass);r(23,3,6,14,'#987344');r(23,3,7,2,palette.light);r(13,25,14,11,palette.shade);r(15,28,10,6,'#d5884dcc');r(18,26,4,7,'#ffe1a0c7');}
       if(kind==='net'){r(5,8,3,30,palette.brass);r(32,8,3,30,palette.brass);for(let i=0;i<6;i++){r(8+i*4,13,1,24,'#af9261');r(8,13+i*4,25,1,'#987344');}r(17,22,9,4,palette.brass);r(14,20,3,8,palette.light);}
-      // Retain the subdued flare glass and cached timber bounce.
-      if(kind==='lamp'){r(23,35,7,1,'#c4a36b');r(24,37,4,1,'#ad905e');r(14,37,3,1,'#ad905e');}
+      // Lumen2: settle the wet timber bounce into the grain; retain ember glass.
+      if(kind==='lamp'){r(23,35,7,1,'#b99a69');r(24,37,4,1,'#a3875d');r(14,37,3,1,'#a3875d');}
       if(kind==='lamp'){r(18,14,4,25,'#af9261');r(12,3,18,16,'#987344');r(13,4,15,2,palette.brass);r(13,6,2,10,palette.brass);r(16,7,13,8,'#f5d999a6');r(21,9,3,4,'#fff2c7bf');r(12,19,17,3,palette.shade);}
       if(kind==='turret'){g.drawImage(art.turret,3,12,34,34);g.drawImage(art.barrel,18,18,24,10);}
     });

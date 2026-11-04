@@ -1,3 +1,9 @@
+## XI航 / v11-warp
+
+- 航程栏加入低对比铭牌底色，航程与暂停／终章距离统计统一等宽、齐宽数字；保留鎏金数字、字号和间距，纯 CSS，无新增特效或依赖。
+- 全部玩法、战斗、合成、存档、迁移、偏好不变；保留 44px 触控、竖屏 notice +176px、30fps / ≤4 声部逻辑。
+- CACHE `endless-sea-drift-v11-warp`；edition `XI航`；验证与交接见 `_v11warp-validation.json`、`_v11warp-handoff.md`。
+
 ## XI珠 / v11-bead
 
 - 饱腹、淡水进度条加入末端静态珠光与内凹轨道，保留暖金 / 青蓝填充和 5px 高度；纯 CSS，无新增动画、滤镜或依赖。

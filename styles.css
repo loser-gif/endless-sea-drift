@@ -57,3 +57,25 @@ progress{height:4px;border-radius:1px;overflow:hidden}
 .actions .tool:first-child{grid-column:span 2}
 @media(orientation:portrait){#notice{top:calc(max(12px,env(safe-area-inset-top)) + 195px)}.actions{grid-template-columns:repeat(3,minmax(0,1fr));max-width:300px;gap:5px}.actions button{padding:5px 3px;font-size:11px;min-height:44px}#stick{width:82px;height:82px}#controls{gap:10px;left:max(10px,env(safe-area-inset-left));right:max(10px,env(safe-area-inset-right))}}
 @media(orientation:landscape) and (max-height:480px){.actions{grid-template-columns:repeat(3,96px);gap:4px}.actions button{min-height:40px;padding:5px}#inventory{gap:4px}#notice{left:44%;max-width:52%;transform:none}}
+
+/* VIII — separate thumb zones; every interactive target is at least 44px. */
+button, .actions button, #hud .heading button, .tool select{min-height:44px;min-width:44px;touch-action:manipulation}
+#stick,canvas{touch-action:none}
+.actions{grid-template-columns:repeat(3,100px);gap:6px;max-width:none}
+.tool select{font-size:14px}.tool{font-size:11px}
+#inventory .empty,#inventory .empty b{color:#ffbd91}
+button[hidden]{display:none}
+@media(orientation:portrait){
+ #controls{align-items:flex-end;gap:12px}
+ #stick{width:90px;height:90px;margin-bottom:8px}
+ .actions{flex:0 1 252px;width:calc(100% - 102px);grid-template-columns:repeat(2,minmax(44px,1fr));gap:5px}
+ .actions .tool:first-child{grid-column:auto}
+ .actions button{font-size:12px;padding:5px 2px}
+ .tool select{font-size:12px}
+ #notice{top:calc(max(12px,env(safe-area-inset-top)) + 207px)}
+}
+@media(orientation:landscape) and (max-height:480px){
+ .actions{grid-template-columns:repeat(3,94px);gap:4px}
+ .actions button{min-height:44px;padding:4px}
+ #notice{left:calc(max(16px,env(safe-area-inset-left)) + 263px);right:16px;max-width:none;font-size:10px}
+}

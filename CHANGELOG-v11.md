@@ -1,3 +1,9 @@
+## XI束 / v11-bind
+
+- 夜间自查：建造／配方下拉框共用按钮的暖金色键盘焦点框；仅统一静态 UI 色彩，不增加特效或改变布局。
+- 全部玩法、战斗、合成、存档、迁移、偏好不变；保留 44px 触控、竖屏 notice +176px、30fps / ≤4 声部逻辑。
+- CACHE `endless-sea-drift-v11-bind`；edition `XI束`；验证与交接见 `_v11bind-validation.json`、`_v11bind-handoff.md`。
+
 ## XI浪 / v11-crest
 
 - 既有六张浪纹缓存的亮点收束至左肩，改为短小、渐隐的暖色镜面高光；不增加逐帧绘制、缓存、粒子、滤镜或依赖。

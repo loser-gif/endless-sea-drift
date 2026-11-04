@@ -1,3 +1,9 @@
+## XI隙2 / v11-rift2
+
+- 加深 HUD 与卡片内凹接缝 AO，直接调整 CSS inset 阴影；保留布局，不增滤镜、动画或依赖。
+- 全部玩法数值、战斗、合成、存档、迁移与偏好不变；44px 触控及竖屏 notice +176px 保留。
+- CACHE `endless-sea-drift-v11-rift2`；验证 `_v11rift2-validation.json`，截图 `_shot-v11rift2.png` / `_shot-v11.png`；交接 `_v11rift2-handoff.md`。
+
 ## XI库2 / v11-vault2
 
 - 背包物品格第二轮倒角层级：普通材料压低亮边，弹药与炖菜保留暖色辨识；直接调整既有渐变与内阴影，不增效果层。

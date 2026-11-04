@@ -119,7 +119,7 @@ button[hidden]{display:none}
 
 /* XI / UI — brass expedition instruments and warm timber panels. */
 /* XI / Brass2 — satin face and rail share the existing rivet palette; geometry unchanged. */
-#hud{--hud-brass-light:#e0c18b;--hud-brass-mid:#a18452;--hud-brass-dark:#4d422d;padding:10px 12px;border-color:var(--hud-brass-mid);border-top:2px solid var(--hud-brass-light);border-left-color:var(--hud-brass-mid);border-right-color:var(--hud-brass-dark);border-bottom-color:var(--hud-brass-dark);background:linear-gradient(115deg,#2b332cf5,#101f25e8);box-shadow:0 6px 20px #0005,inset 0 2px 4px #020e1970,inset 0 -1px #e0c18b18}
+#hud{--hud-brass-light:#e0c18b;--hud-brass-mid:#a18452;--hud-brass-dark:#4d422d;padding:10px 12px;border-color:var(--hud-brass-mid);border-top:2px solid var(--hud-brass-light);border-left-color:var(--hud-brass-mid);border-right-color:var(--hud-brass-dark);border-bottom-color:var(--hud-brass-dark);background:linear-gradient(115deg,#2b332cf5,#101f25e8);box-shadow:0 6px 20px #0005,inset 0 2px 4px #020e1999,inset 0 -1px #e0c18b18}
 /* XI / Ink — measured tracking and label weights; retain sizes and line boxes. */
 #hud h1{margin:3px 0 5px;color:#ffe6b7;letter-spacing:3px;font-size:22px}
 /* XI / Brink — soften Brim’s painted brass lip; retain heading geometry. */
@@ -234,7 +234,7 @@ progress{height:5px;margin-top:5px;box-shadow:0 0 0 1px #d8c48a1c}
 .actions [data-action="craft"],.actions [data-action="build"]{box-shadow:inset 0 1px #e9ce9826,inset 0 -2px #020e1959,0 3px 9px #0003}
 #stick{border-top-color:#f0d39b;border-bottom-color:#8e754b}
 #thumb{border-bottom-color:#967f55}
-@media(orientation:landscape){#hud{box-shadow:0 6px 20px #0005,inset 0 2px 4px #020e1970,inset 0 -1px #e0c18b18,inset 0 0 0 3px #071923,inset 0 0 0 4px #a184521c}}
+@media(orientation:landscape){#hud{box-shadow:0 6px 20px #0005,inset 0 2px 4px #020e1999,inset 0 -1px #e0c18b18,inset 0 0 0 3px #071923,inset 0 0 0 4px #a184521c}}
 
 /* XI / Gilt — quieter pauses, an airy recap and legible night instruments. */
 #overlay[data-view="death"] #dialogText{padding:8px 4px 18px;line-height:2.05;color:#d4d5c3}
@@ -242,7 +242,7 @@ progress{height:5px;margin-top:5px;box-shadow:0 0 0 1px #d8c48a1c}
 #overlay[data-view="death"] #resume{margin-top:16px}
 /* XI静2 / Hush2 — flat pause surface; preserve action hierarchy and geometry. */
 #overlay[data-view="pause"]{background:#071b25cc}
-#overlay[data-view="pause"] .card{padding:28px;border:1px solid #65736a;border-top-color:#8c9078;background:#192d31;box-shadow:0 12px 28px #0005}
+#overlay[data-view="pause"] .card{padding:28px;border:1px solid #65736a;border-top-color:#8c9078;background:#192d31;box-shadow:0 12px 28px #0005,inset 0 2px 4px #020e1980}
 #overlay[data-view="pause"] .card>.eyebrow{color:#a5b3aa;letter-spacing:1.4px}
 #overlay[data-view="pause"] .card h2{margin:12px 0 20px;padding-bottom:16px;border-bottom-color:transparent;letter-spacing:.12em;text-shadow:none}
 #overlay[data-view="pause"] #dialogText{color:#c3ccc1;line-height:2;padding-bottom:20px;border-bottom-color:#a8b6a51f;overflow-wrap:anywhere}
@@ -292,6 +292,7 @@ progress{height:5px;margin-top:5px;box-shadow:0 0 0 1px #d8c48a1c}
 /* XI / Rail2 — refine the existing brass bevel; keep Silk sheen and layer count. */
 /* XI / Silk — quiet satin cards and a ruled voyage recap; layout stays scrollable. */
 /* XI / Crown — reuse the top brass rule and scale title tracking with type. */
+/* XI隙2 / Rift2 — deepen existing inset seam AO; preserve frame and layout. */
 /* XI缎 / Satin — soften the existing sheen and top glint; no extra layers. */
 #overlay .card{
  position:relative;
@@ -303,7 +304,7 @@ progress{height:5px;margin-top:5px;box-shadow:0 0 0 1px #d8c48a1c}
  background:linear-gradient(125deg,#e3eee008,transparent 52%,#c5dcd003 78%,transparent),linear-gradient(160deg,#293b37f5,#122630f7 78%);
  -webkit-backdrop-filter:none;
  backdrop-filter:none;
- box-shadow:0 18px 48px #0008,inset 0 1px #ead9b224,inset 0 -1px #020e1970,inset 0 0 0 5px #081a23,inset 0 0 0 6px #bca37538;
+ box-shadow:0 18px 48px #0008,inset 0 1px #ead9b224,inset 0 2px 4px 5px #020e1980,inset 0 0 0 5px #06151e,inset 0 0 0 6px #bca37538;
  scrollbar-color:#8d805f #10232c;
 }
 /* Paired hinge barrels sit inside the frame gutter, clear of text and CTAs. */
@@ -338,7 +339,7 @@ progress{height:5px;margin-top:5px;box-shadow:0 0 0 1px #d8c48a1c}
  border-right-color:#535f63;
  border-bottom-color:#657071;
  background:linear-gradient(125deg,#e0e8e408,transparent 52%,#c2d3d703 78%,transparent),linear-gradient(160deg,#354047f5,#1c2b34f7 78%);
- box-shadow:0 18px 48px #0008,inset 0 1px #dfe8e018,inset 0 -1px #07121b66,inset 0 0 0 5px #14232c,inset 0 0 0 6px #aeb4ad30;
+ box-shadow:0 18px 48px #0008,inset 0 1px #dfe8e018,inset 0 2px 4px 5px #07121b99,inset 0 0 0 5px #101e27,inset 0 0 0 6px #aeb4ad30;
 }
 #overlay[data-view="death"] .card>.eyebrow{color:#b9beb5}
 #overlay[data-view="death"] .card h2{margin-bottom:14px;color:#e2d3b5;border-bottom-color:#b6b6a638}

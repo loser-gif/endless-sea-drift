@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI库2 · v11-vault2，CACHE：`endless-sea-drift-v11-vault2`。背包普通材料格收敛倒角亮边，弹药与炖菜保留暖色层级，44px 触控网格及布局不变；验证见 `_v11vault2-handoff.md`。
+XI隙2 · v11-rift2，CACHE：`endless-sea-drift-v11-rift2`。加深面板内凹接缝 AO，保留布局、44px 触控与竖屏 notice +176px；验证见 `_v11rift2-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI库2; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI隙2; no build step.
 
 ## 本地预览
 

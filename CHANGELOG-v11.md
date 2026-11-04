@@ -1,3 +1,9 @@
+## XI龙 / v11-keel
+
+- 木筏湿木底缘、船底 AO 与窄接触暗边烘焙进原有四张木板精灵，统一青灰材质；轮廓、尺寸及逐帧绘制预算不变。
+- CACHE `endless-sea-drift-v11-keel`；edition `XI龙`。玩法、战斗、合成、存档、迁移、偏好及竖屏 notice +176px 保留。
+- 验证报告 `_v11keel-validation.json`；浏览器成功时生成 `_shot-v11keel.png` / `_shot-v11.png`，详见 `_v11keel-handoff.md`。
+
 ## XI灯 / v11-lantern
 
 - 灯笼 / 探照灯黄铜边框与灯芯透明度微调，既有夜间甲板暖光 alpha 从 .58 收敛至 .48；保留 ember 暖色，无新增逐帧光效层。

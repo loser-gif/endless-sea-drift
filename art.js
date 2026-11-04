@@ -159,7 +159,11 @@ window.SeaArt = (() => {
         if((k+v)%3===0)r(x+1,y-1,2,1,'#c9d8b1');
         r(x+2,y+4,2,2,'#294b50');
       }
-      r(2,74,74,1,'#d9c08a');r(1,2,2,70,'#f0d394');r(77,2,2,94,'#1c3036');r(4,98,72,4,'#142831');
+      r(2,74,74,1,'#d9c08a');r(1,2,2,70,'#f0d394');r(77,2,2,94,'#1c3036');
+      // Keel: cached wet timber rolls into cool under-hull AO and a narrow contact edge.
+      // Stay inside the old opaque foot (and 80x104 cache); no silhouette or draw-cost growth.
+      r(4,94,72,4,'#243b3d');r(6,94,68,1,'#36504b');
+      r(4,98,72,2,'#192f34');r(4,100,72,2,'#10262e');
       // Lashings are braided pixel strands, not thick vertical outlines.
       for(const x of [3,73]){r(x,3,3,89,'#665c43');for(let y=4;y<92;y+=4){r(x,y,2,2,'#c9be8a');r(x+1,y+2,2,1,'#e1cf99');}}
     });

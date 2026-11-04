@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI灯 · v11-lantern，CACHE：`endless-sea-drift-v11-lantern`。灯笼 / 探照灯黄铜边框与灯芯透明度微调，收敛夜间甲板暖光，沿用 ember 色系；玩法、存档及竖屏 notice +176px 保留，验证见 `_v11lantern-handoff.md`。
+XI龙 · v11-keel，CACHE：`endless-sea-drift-v11-keel`。木筏接触暗边与船底 AO 统一为湿木青灰层次，尺寸及逐帧预算不变；玩法、存档及竖屏 notice +176px 保留，验证见 `_v11keel-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI灯; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI龙; no build step.
 
 ## 本地预览
 

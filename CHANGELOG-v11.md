@@ -1,3 +1,11 @@
+## XI☾ / v11-night
+
+- 小岛 / 沉船 / 商船在既有 make() 内增加克制的左上黄铜高光与冷色湿边，沿用 module / crate 材质；96×80、unit 与显示尺寸不变。
+- 雾灯船现有灯框增加 1px 暖黄铜顶边 / 左边，保留 glow 调用。
+- 暂停 / 结算卡片原 3px 顶轨略提亮；notice 字面与阴影略暖，保留滚动、安全区和竖屏 +228px。
+- CACHE `endless-sea-drift-v11-night`；edition `XI☾`。玩法、战斗、合成、迁移、v10 存档、v9 偏好、30fps、四声部与 ≥44px 目标不变；无新增粒子、依赖或构建。
+- Validation: `node _selftest-v10.mjs` → 122/122；`_v11night-validation.json` ok:true；`_shot-v11night.png` / `_shot-v11.png`。
+
 ## XI◇ / v11-glow
 
 - 货箱 / 漂流瓶沿用 module_* 左上黄铜高光、右下冷色湿边；现有 make() 内细化，两者均为 2x authoring，显示尺寸不变，无新增 sprite 或粒子层。

@@ -34,7 +34,7 @@
     const g=c.getContext('2d');g.drawImage(base,0,0);g.globalCompositeOperation='source-atop';g.globalAlpha=alpha;g.fillStyle=color;g.fillRect(0,0,c.width,c.height);art[name]=c;
   }
   tintStamp('merchant','fogship','#82b9de',.40);
-  {const g=art.fogship.getContext('2d');g.globalCompositeOperation='source-over';g.globalAlpha=1;g.fillStyle='#283944';g.fillRect(39,32,10,13);g.fillStyle='#d8a453';g.fillRect(40,34,8,9);g.fillStyle='#fff0b0';g.fillRect(42,35,4,6);}
+  {const g=art.fogship.getContext('2d');g.globalCompositeOperation='source-over';g.globalAlpha=1;g.fillStyle='#283944';g.fillRect(39,32,10,13);g.fillStyle='#e2bb78';g.fillRect(39,32,10,1);g.fillRect(39,33,1,10);g.fillStyle='#d8a453';g.fillRect(40,34,8,9);g.fillStyle='#fff0b0';g.fillRect(42,35,4,6);}
   tintStamp('tideking','tideking2','#ed9e38',.24);tintStamp('tideking','tideking3','#ed4934',.38);
   for(const kind of ['island','wreck']){tintStamp(kind,kind+'1','#e7ba69',.12);tintStamp(kind,kind+'2','#8ecbc3',.16);}
   // Padded rim mask is baked once; only its opacity changes during phase three.

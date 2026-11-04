@@ -1,3 +1,9 @@
+## XI✧ / v11-ember
+
+- 仅 art.js 透明度微调：灯芯 / 炉火收敛，夜间灯晕减弱、原暗角略加深，改善 HUD 背景对比；无新增层。
+- CACHE `endless-sea-drift-v11-ember`；edition `XI✧`。保留 port 竖屏 notice 覆盖、触控、安全区、全部玩法数值、存档与偏好。
+- 验证见 `_v11ember-validation.json`、`_v11ember-handoff.md`；浏览器成功时生成 `_shot-v11ember.png` / `_shot-v11.png`。
+
 ## XI▥ / v11-port
 
 - 仅竖屏收紧标题、航程、弹药与库存行距，保留全部读数和 ≥44px 触控目标。

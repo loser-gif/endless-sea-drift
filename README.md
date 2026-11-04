@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI▥ · v11-port，CACHE：`endless-sea-drift-v11-port`。竖屏 HUD 收紧标题与读数行距，notice 调整为 +176px；保留全部读数、≥44px 触控、安全区及原有玩法、战斗、存档与偏好。
+XI✧ · v11-ember，CACHE：`endless-sea-drift-v11-ember`。仅调整灯芯、炉火、夜间灯晕与暗角透明度；保留竖屏提示间距、≥44px 触控及全部玩法、存档与偏好。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI▥; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI✧; no build step.
 
 ## 本地预览
 

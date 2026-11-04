@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI片2 · v11-shard2，CACHE：`endless-sea-drift-v11-shard2`。沉船湿木 AO 第二轮：收敛木肋亮面、压深冷色侧面与浸水接触阴影，保留全部尺寸；验证见 `_v11shard2-handoff.md`。
+XI哑2 · v11-mute2，CACHE：`endless-sea-drift-v11-mute2`。次要文字第二轮统一灰绿墨色，保留数值与警告层级、可读对比度及全部布局；验证见 `_v11mute2-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI片2; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI哑2; no build step.
 
 ## 本地预览
 

@@ -1,3 +1,9 @@
+## XI哑2 / v11-mute2
+
+- 次要文字第二轮：卡片提示、航程、物资名称、状态与工具标签共用灰绿墨色；保留数值与警告色，仅改 CSS 色值，不增加特效。
+- 全部玩法、战斗、合成、存档、迁移、偏好保留；≥44px 触控、竖屏 notice +176px / HUD、30fps / ≤4 声部不变。
+- CACHE `endless-sea-drift-v11-mute2`；验证 `_v11mute2-validation.json`，浏览器成功时截图 `_shot-v11mute2.png` / `_shot-v11.png`；交接 `_v11mute2-handoff.md`。
+
 ## XI片2 / v11-shard2
 
 - 沉船湿木 AO 第二轮：微调既有木肋亮面、冷色侧面与湿脚填色；3×17 木肋、96×80 精灵及绘制次数不变，无新增特效。

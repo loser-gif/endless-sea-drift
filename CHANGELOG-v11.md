@@ -1,3 +1,9 @@
+## XI极 / v11-aurora
+
+- 夜间远景增加极轻的冷色地平线渐变，复用原夜色色调层；保留 veil 雾幕，不增加粒子、滤镜或绘制层。
+- 全部玩法数值、战斗、合成、存档、迁移、偏好及竖屏 notice +176px 保持不变。
+- CACHE `endless-sea-drift-v11-aurora`；验证与交接见 `_v11aurora-validation.json`、`_v11aurora-handoff.md`；主截图保留夜景。
+
 ## XI玺 / v11-seal2
 
 - 黎明前封版自审：同步 CACHE、edition 与自检产物路径，不新增画面特效。

@@ -40,7 +40,7 @@ window.SeaArt = (() => {
   }
   const halo=surface(64,64),hg=halo.getContext('2d'),rad=hg.createRadialGradient(32,32,0,32,32,32);
   rad.addColorStop(0,'#ffedbc88');rad.addColorStop(.22,'#ffc77844');rad.addColorStop(1,'#e9cb8200');hg.fillStyle=rad;hg.fillRect(0,0,64,64);
-  let bloom,bg,depth,dg,mask,vignette,seaMist,stormSky,fw=0,fh=0,focus=.5;
+  let bloom,bg,depth,dg,mask,vignette,seaMist,stormSky,nightWash,fw=0,fh=0,focus=.5;
   function resize(w,h,focusY=h*.5) {
     fw=w;fh=h;focus=focusY/h;
     bloom=surface(Math.ceil(w/8),Math.ceil(h/8));bg=bloom.getContext('2d');
@@ -62,6 +62,11 @@ window.SeaArt = (() => {
     mg.bezierCurveTo(118,50,119,39,128,37);mg.bezierCurveTo(134,36,136,25,143,23);
     mg.bezierCurveTo(150,18,154,33,160,34);mg.bezierCurveTo(169,34,170,46,184,55);
     mg.closePath();mg.fill();
+    // Aurora: a very soft cool horizon within the existing night wash.
+    // Cache gradient on resize; keep veil mist, focal tint and per-frame pass count.
+    nightWash=mg.createLinearGradient(0,0,0,Math.max(1,h*(focus-.20)));
+    nightWash.addColorStop(0,'#202e38');nightWash.addColorStop(.22,'#2b3d46');
+    nightWash.addColorStop(.46,'#263740');nightWash.addColorStop(.70,'#202e38');nightWash.addColorStop(1,'#202e38');
     // Ash: muted ash-blue sky over the retained gale slate base, cached on resize.
     // Same single overlay pass and opacity; no extra clouds, filters or rain.
     stormSky=surface(96,64);const sg=stormSky.getContext('2d'),sky=sg.createLinearGradient(0,0,0,64);
@@ -457,8 +462,8 @@ window.SeaArt = (() => {
     // Veil: thinner night wash and edge shade, without adding a pale fog layer.
     // Haze: a 2.8% warm-grey daylight grade reuses this existing wash.
     // Dusk2: softer sand-ivory wash joins the cusp brass/ivory dawn family.
-    // Reuse the same pass and opacity; keep dawn, night and storm layers unchanged.
-    g.fillStyle=weather.night?'#202e38':weather.dusk?'#b79b7c':'#d3d1b7';g.globalAlpha=weather.night?(lamp?.25:.35):weather.dusk?.15:weather.storm?0:.028;g.fillRect(0,0,w,h);
+    // Reuse the same pass and opacity; keep dawn and storm layers unchanged.
+    g.fillStyle=weather.night?nightWash:weather.dusk?'#b79b7c':'#d3d1b7';g.globalAlpha=weather.night?(lamp?.25:.35):weather.dusk?.15:weather.storm?0:.028;g.fillRect(0,0,w,h);
     if(weather.night){g.globalAlpha=.48;g.drawImage(vignette,0,0,w,h);}
     // Restrain the existing deck bounce; keep the ember hue and halo footprint.
     if(weather.night&&lamp){g.globalAlpha=.48;g.drawImage(halo,cx-110*scale,cy-110*scale,220*scale,220*scale);}

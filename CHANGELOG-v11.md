@@ -1,3 +1,9 @@
+## XI弹 / v11-spark
+
+- 弹药铭牌改为青灰黄铜面与明暗斜边，冷却条复用凹槽和低亮黄铜填充；保留空弹药暖铜警示，无新增动画或滤镜。
+- CACHE `endless-sea-drift-v11-spark`；edition `XI弹`。玩法、战斗、合成、存档、迁移、偏好及竖屏 notice +176px 保留。
+- 验证报告 `_v11spark-validation.json`；浏览器成功时生成 `_shot-v11spark.png` / `_shot-v11.png`，详见 `_v11spark-handoff.md`。
+
 ## XI冠 / v11-crown
 
 - 卡片标题改为随字号缩放的字距，窄屏进一步收紧；复用既有顶边作柔和黄铜冠线，保留 Silk 缎面、阴影及滚动布局。

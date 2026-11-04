@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI冠 · v11-crown，CACHE：`endless-sea-drift-v11-crown`。卡片标题字距随字号收敛，复用柔和黄铜冠线，保留 Silk 缎面静感；玩法、存档及竖屏 notice +176px 保留，验证见 `_v11crown-handoff.md`。
+XI弹 · v11-spark，CACHE：`endless-sea-drift-v11-spark`。弹药铭牌与冷却槽统一青灰黄铜面，保留空弹药暖铜警示；玩法、存档及竖屏 notice +176px 保留，验证见 `_v11spark-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI冠; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI弹; no build step.
 
 ## 本地预览
 

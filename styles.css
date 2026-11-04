@@ -128,9 +128,10 @@ button[hidden]{display:none}
 .ammo-status{margin:0 0 8px;gap:9px;font-size:11px}
 #ammoChip{min-width:76px;padding:3px 6px;border:1px solid #d8b66b4d;background:#caa35412;color:#ffe0a0;border-radius:2px;font-weight:600}
 #ammoChip[data-mode="empty"]{color:#ffd1ac;border-color:#d9a06e99;background:#643e2e80;box-shadow:inset 2px 0 #e0b17d;text-shadow:0 1px 1px #10232c}
-.ammo-track{height:5px;width:64px;border-radius:2px;background:#020e19;box-shadow:0 0 0 1px #d8c48a33}
-#ammoCooldown{background:linear-gradient(90deg,#b18346,#ffe0a0)}
-#ammoChip[data-mode="empty"] + .ammo-track #ammoCooldown{background:linear-gradient(90deg,#a6644c,#eab196)}
+/* XI / Spark — recessed brass gauge; preserve geometry and transform-only fill. */
+.ammo-track{height:5px;width:64px;border-radius:2px;background:#071923;box-shadow:0 0 0 1px #a78b5d66,inset 0 1px #020c1499}
+#ammoCooldown{background:linear-gradient(180deg,#d7bb82,#ac8951);box-shadow:inset 0 -1px #66533280}
+#ammoChip[data-mode="empty"] + .ammo-track #ammoCooldown{background:linear-gradient(180deg,#e0a17d,#ac7054)}
 .vitals{gap:14px}.vitals label{color:#b4c4bd;font-size:10px}.vitals span{color:#f5e3bf;font:11px ui-monospace,monospace}
 .vitals label.vital-low,.vitals label.vital-low span{color:#ffc09c}
 progress{height:5px;margin-top:5px;box-shadow:0 0 0 1px #d8c48a1c}
@@ -186,7 +187,7 @@ progress{height:5px;margin-top:5px;box-shadow:0 0 0 1px #d8c48a1c}
 
 /* XI▽ — recessed timber panels and compact brass instruments. */
 .card{background:repeating-linear-gradient(0deg,#c5a16a04 0 1px,transparent 1px 5px),linear-gradient(115deg,#303b35,#10232e 76%);box-shadow:0 25px 60px #0009,inset 0 1px #ffe3ac38,inset 0 0 0 5px #081923,inset 0 0 0 6px #b4935c40,inset 0 -9px 18px #020e1940}
-#ammoChip{border-color:#c2a16a75;background:linear-gradient(135deg,#3b4031,#142832);box-shadow:inset 0 1px #ffe3ac25,inset 0 -2px #020e1966}
+#ammoChip{border-color:#a78b5d;background:linear-gradient(180deg,#35403a,#1a2e32);box-shadow:inset 0 1px #ffe3ac20,inset 0 -2px #020e1966}
 .tool select{border-color:#c2a16a80;border-bottom-color:#796543;box-shadow:inset 0 1px #ffe3ac29,inset 1px 0 #ffe3ac0c,inset 0 -2px #020e1966}
 @media(orientation:portrait){
  #hud{padding:4px 9px}
@@ -210,8 +211,8 @@ progress{height:5px;margin-top:5px;box-shadow:0 0 0 1px #d8c48a1c}
 #muteToggle{border-color:#a6b5aa29;color:#a7b7ae}
 #muteToggle[aria-pressed="true"]{color:#c2b398;border-color:#b5a07555;background:#a48b4310}
 #newRun{border-color:#ae967066;color:#cdbb9d}
-#ammoChip[data-mode="loaded"]{color:#f6dc9e;border-color:#c6a15f99;background:linear-gradient(135deg,#494731,#1c3032);box-shadow:inset 2px 0 #c5a064,inset 0 1px #ffe3ac29,inset 0 -2px #020e1966}
-#ammoChip[data-mode="empty"]{color:#ffd0b1;border-color:#b87c5e;background:linear-gradient(135deg,#51372d,#2b292a);box-shadow:inset 2px 0 #e0a17d,inset 0 1px #ffd5b31a,inset 0 -2px #020e1966}
+#ammoChip[data-mode="loaded"]{color:#f3dba3;border-color:#b59a6c #756343 #756343 #a78b5d;background:linear-gradient(180deg,#3e4538,#1c3032);box-shadow:inset 2px 0 #b99b61,inset 0 1px #ffe3ac20,inset 0 -2px #020e1966}
+#ammoChip[data-mode="empty"]{color:#ffd0b1;border-color:#c08b6c #825c49 #825c49 #b87c5e;background:linear-gradient(180deg,#513b30,#2b292a);box-shadow:inset 2px 0 #e0a17d,inset 0 1px #ffd5b31a,inset 0 -2px #020e1966}
 .tool select{border-top-color:#c9ab73;border-left-color:#a78b5d;border-right-color:#675c46;border-bottom-color:#675c46;box-shadow:inset 0 1px #ffe3ac29,inset 1px 0 #ffe3ac12,inset 0 -3px #020e1966;background-color:#182d33}
 .tool select option{color:#f1dfb9;background-color:#182d33}
 .actions [data-action="craft"],.actions [data-action="build"]{box-shadow:inset 0 1px #e9ce9826,inset 0 -2px #020e1959,0 3px 9px #0003}

@@ -120,11 +120,18 @@ window.SeaArt = (() => {
     dg.globalCompositeOperation='source-over';dg.clearRect(0,0,depth.width,depth.height);
     dg.imageSmoothingEnabled=true;dg.drawImage(g.canvas,0,0,depth.width,depth.height);
     dg.globalCompositeOperation='destination-in';dg.drawImage(mask,0,0);
-    // Clear every surviving board, including expanded rafts. Padding covers upsampling.
+    // Plank: soften only the outside of each living board's clear region.
+    // Two low-resolution alpha steps retain the old fully clear core and padding.
+    // Use the current tile map so removed boards leave no stale clear patches.
+    dg.globalCompositeOperation='destination-out';
     if(tiles)for(const tile of tiles.values()){
       const x=(cx+(tile.x*40-20)*scale)*depth.width/fw,y=(cy+(tile.y*40-20)*scale)*depth.height/fh;
-      dg.clearRect(Math.floor(x)-2,Math.floor(y)-2,Math.ceil(40*scale*depth.width/fw)+5,Math.ceil(52*scale*depth.height/fh)+5);
+      const left=Math.floor(x)-2,top=Math.floor(y)-2,w=Math.ceil(40*scale*depth.width/fw)+5,h=Math.ceil(52*scale*depth.height/fh)+5;
+      dg.fillStyle='rgba(0,0,0,.25)';dg.fillRect(left-2,top-2,w+4,h+4);
+      dg.fillStyle='rgba(0,0,0,.5)';dg.fillRect(left-1,top-1,w+2,h+2);
+      dg.clearRect(left,top,w,h);
     }
+    dg.globalCompositeOperation='source-over';
     g.save();g.imageSmoothingEnabled=true;g.drawImage(depth,0,0,fw,fh);
     g.globalCompositeOperation='screen';g.globalAlpha=.65;g.drawImage(bloom,-4,-2,fw+8,fh+4);g.restore();
   }

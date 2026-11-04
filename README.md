@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI极 · v11-aurora，CACHE：`endless-sea-drift-v11-aurora`。夜间地平线极轻冷边，保留 veil 雾幕与原绘制层数；验证见 `_v11aurora-handoff.md`。
+XI板 · v11-plank，CACHE：`endless-sea-drift-v11-plank`。存活木板清晰遮罩外缘两级柔化，保留 bloom；验证见 `_v11plank-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI极; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI板; no build step.
 
 ## 本地预览
 

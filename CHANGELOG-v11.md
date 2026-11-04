@@ -1,3 +1,9 @@
+## XI板 / v11-plank
+
+- 存活木板清晰遮罩外缘增加两级窄过渡，保留原清晰核心与 bloom；扩建、拆除随当前木板集合更新。
+- 全部玩法数值、战斗、合成、存档、迁移、偏好及竖屏 notice +176px 不变；无新依赖、粒子或滤镜。
+- CACHE `endless-sea-drift-v11-plank`；验证与交接见 `_v11plank-validation.json`、`_v11plank-handoff.md`。
+
 ## XI极 / v11-aurora
 
 - 夜间远景增加极轻的冷色地平线渐变，复用原夜色色调层；保留 veil 雾幕，不增加粒子、滤镜或绘制层。

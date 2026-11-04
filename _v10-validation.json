@@ -1,7 +1,7 @@
 {
   "ok": false,
-  "cache": "endless-sea-drift-v11-aurora",
-  "session_id": "01a1a820-2dd3-77a0-88f5-a2e5639fc940",
+  "cache": "endless-sea-drift-v11-plank",
+  "session_id": "01a1a829-0342-7351-bfd3-e453dbc647e3",
   "features": [
     {
       "id": "cache",
@@ -40,6 +40,11 @@
     },
     {
       "id": "v11-art-expanded-board-mask",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "v11-plank-live-edge-and-bloom",
       "ok": true,
       "note": "通过"
     },
@@ -671,7 +676,7 @@
     {
       "id": "screenshot",
       "ok": true,
-      "note": "已生成 _shot-v11aurora.png / _shot-v11.png"
+      "note": "已生成 _shot-v11plank.png / _shot-v11.png"
     }
   ],
   "errors": [

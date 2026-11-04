@@ -1,3 +1,9 @@
+## XI汐 / v11-tide2
+
+- crest 后第二遍泡沫尖端与水线调色：柔和象牙亮点、灰青接水边；只改颜色，保留原形状、透明度、动画与绘制预算。
+- 全部玩法、战斗、合成、存档、迁移、偏好不变；保留触控 ≥44px、竖屏 notice +176px、30fps / ≤4 声部。
+- CACHE `endless-sea-drift-v11-tide2`；edition `XI汐`；验证与交接见 `_v11tide2-validation.json`、`_v11tide2-handoff.md`。
+
 ## XI符 / v11-glyph
 
 - 模块图标统一黄铜实心面、暗色凹槽与克制高光，沿用炮塔色系；保留舵轮轮廓、建造预览、原缓存尺寸与灯芯透明度。

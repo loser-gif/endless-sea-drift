@@ -1,3 +1,9 @@
+## XI舵 / v11-tack
+
+- 摇杆黄铜外圈与金属拇指更新静态渐变、边框及阴影，不新增动画、滤镜或依赖；保留 44px 拇指与既有触控尺寸。
+- 全部玩法、战斗、合成、存档、迁移、偏好不变；竖屏 notice +176px、30fps / ≤4 声部逻辑不变。
+- CACHE `endless-sea-drift-v11-tack`；edition `XI舵`；验证与交接见 `_v11tack-validation.json`、`_v11tack-handoff.md`。
+
 ## XI辉 / v11-lumen
 
 - 灯具湿木底座增加三段微小暖色回照，烘入既有精灵；保留冷色湿边、灯杆遮挡及余烬透明度，不新增逐帧绘制、粒子或滤镜。

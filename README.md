@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI辉 · v11-lumen，CACHE：`endless-sea-drift-v11-lumen`。灯具湿木底座增加细小断续暖色回照，保留余烬透明度及全部玩法；验证见 `_v11lumen-handoff.md`。
+XI舵 · v11-tack，CACHE：`endless-sea-drift-v11-tack`。摇杆黄铜外圈与金属拇指采用静态 CSS，保留 44px 拇指及全部玩法；验证见 `_v11tack-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI辉; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI舵; no build step.
 
 ## 本地预览
 

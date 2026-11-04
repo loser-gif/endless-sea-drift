@@ -1,7 +1,7 @@
 {
   "ok": false,
-  "cache": "endless-sea-drift-v11-lumen",
-  "session_id": "01a1a7d2-0a71-7510-ae1f-78197da56d1f",
+  "cache": "endless-sea-drift-v11-tack",
+  "session_id": "01a1a7d4-e25b-77a1-bca3-efd186466c89",
   "features": [
     {
       "id": "cache",
@@ -389,6 +389,11 @@
       "note": "通过"
     },
     {
+      "id": "tack-thumb-size-landscape",
+      "ok": true,
+      "note": "通过"
+    },
+    {
       "id": "v11-instruments-landscape",
       "ok": true,
       "note": "通过"
@@ -494,6 +499,11 @@
       "note": "通过"
     },
     {
+      "id": "tack-thumb-size-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
       "id": "v11-instruments-portrait",
       "ok": true,
       "note": "通过"
@@ -594,6 +604,11 @@
       "note": "通过"
     },
     {
+      "id": "tack-thumb-size-small-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
       "id": "v11-instruments-small-portrait",
       "ok": true,
       "note": "通过"
@@ -656,7 +671,7 @@
     {
       "id": "screenshot",
       "ok": true,
-      "note": "已生成 _shot-v11lumen.png / _shot-v11.png"
+      "note": "已生成 _shot-v11tack.png / _shot-v11.png"
     }
   ],
   "errors": [

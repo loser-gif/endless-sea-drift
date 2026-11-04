@@ -1,3 +1,9 @@
+## XI敌2 / v11-thrall2
+
+- 敌方边光第二轮：降低基础精灵背缘、鳍缘、齿缘及四种敌人的局部高光，保留眼部与类型识别色；只换缓存色值，像素位置、尺寸与绘制次数不变。
+- 全部玩法、战斗、合成、存档、迁移、偏好、30fps / ≤4 声部保留；≥44px 触控、竖屏 notice +176px 与 HUD 布局不变。
+- CACHE `endless-sea-drift-v11-thrall2`；验证 `_v11thrall2-validation.json`，浏览器成功时截图 `_shot-v11thrall2.png` / `_shot-v11.png`；交接 `_v11thrall2-handoff.md`。
+
 ## XI曙2 / v11-cusp2
 
 - 晨曦轮廓光第二轮：共享柔金稍降饱和度、暖象牙收敛亮度，保留冷海面与既有黎明罩染；仅替换缓存精灵色值，不增加绘制层、滤镜或粒子。

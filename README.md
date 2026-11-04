@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI曙2 · v11-cusp2，CACHE：`endless-sea-drift-v11-cusp2`。晨曦轮廓光第二轮：柔金与暖象牙收敛，保留黎明、玩法与竖屏 notice +176px；验证见 `_v11cusp2-handoff.md`。
+XI敌2 · v11-thrall2，CACHE：`endless-sea-drift-v11-thrall2`。敌方边光第二轮：收敛背缘、齿缘与冠沿，保留尺寸、识别色、玩法与竖屏 notice +176px；验证见 `_v11thrall2-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI曙2; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI敌2; no build step.
 
 ## 本地预览
 

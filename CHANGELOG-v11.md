@@ -1,3 +1,9 @@
+## XI冠 / v11-crown
+
+- 卡片标题改为随字号缩放的字距，窄屏进一步收紧；复用既有顶边作柔和黄铜冠线，保留 Silk 缎面、阴影及滚动布局。
+- CACHE `endless-sea-drift-v11-crown`；edition `XI冠`。玩法、战斗、合成、存档、迁移、偏好及竖屏 notice +176px 保留。
+- 验证报告 `_v11crown-validation.json`；浏览器成功时生成 `_shot-v11crown.png` / `_shot-v11.png`，详见 `_v11crown-handoff.md`。
+
 ## XI龙 / v11-keel
 
 - 木筏湿木底缘、船底 AO 与窄接触暗边烘焙进原有四张木板精灵，统一青灰材质；轮廓、尺寸及逐帧绘制预算不变。

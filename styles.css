@@ -289,21 +289,21 @@ progress{height:5px;margin-top:5px;box-shadow:0 0 0 1px #d8c48a1c}
  #notice{top:calc(max(12px,env(safe-area-inset-top)) + 176px)}
 }
 
-/* XI / Rail — directional brass bevels reuse the satin frame; geometry stays fixed. */
+/* XI / Rail2 — refine the existing brass bevel; keep Silk sheen and layer count. */
 /* XI / Silk — quiet satin cards and a ruled voyage recap; layout stays scrollable. */
 /* XI / Crown — reuse the top brass rule and scale title tracking with type. */
 /* XI缎 / Satin — soften the existing sheen and top glint; no extra layers. */
 #overlay .card{
  position:relative;
  border-radius:4px;
- border-top-color:#d3b781;
- border-left-color:#b59a6c;
- border-right-color:#756448;
- border-bottom-color:#806b49;
+ border-top-color:#d8bc86;
+ border-left-color:#baa071;
+ border-right-color:#706047;
+ border-bottom-color:#776548;
  background:linear-gradient(125deg,#e3eee008,transparent 52%,#c5dcd003 78%,transparent),linear-gradient(160deg,#293b37f5,#122630f7 78%);
  -webkit-backdrop-filter:none;
  backdrop-filter:none;
- box-shadow:0 18px 48px #0008,inset 0 1px #e4edda18,inset 0 -1px #020e1966,inset 0 0 0 5px #081a23,inset 0 0 0 6px #bca37530;
+ box-shadow:0 18px 48px #0008,inset 0 1px #ead9b224,inset 0 -1px #020e1970,inset 0 0 0 5px #081a23,inset 0 0 0 6px #bca37538;
  scrollbar-color:#8d805f #10232c;
 }
 /* Paired hinge barrels sit inside the frame gutter, clear of text and CTAs. */

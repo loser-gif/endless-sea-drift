@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI舵2 · v11-tack2，CACHE：`endless-sea-drift-v11-tack2`。摇杆黄铜环与金属头第二轮：收敛环缘亮度、柔化金属亮带，不增效果层；44px 摇杆头与竖屏 notice +176px 保留，验证见 `_v11tack2-handoff.md`。
+XI箱2 · v11-crate2，CACHE：`endless-sea-drift-v11-crate2`。货箱 AO 与黄铜锁扣第二轮：接缝冷影、锁扣暖面与收敛亮沿；缓存及显示尺寸不变，验证见 `_v11crate2-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI舵2; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI箱2; no build step.
 
 ## 本地预览
 

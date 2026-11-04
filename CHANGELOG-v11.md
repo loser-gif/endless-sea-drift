@@ -1,3 +1,9 @@
+## XI箱2 / v11-crate2
+
+- 货箱 AO 与黄铜锁扣第二轮：调整既有接缝及斜撑接触阴影，冷色锁座衬托暖铜面，收敛锁扣亮沿；64×64 缓存、32px 显示尺寸与绘制层数不变。
+- 全部玩法、战斗、合成、存档、迁移、偏好保留；≥44px 触控、竖屏 notice +176px / HUD、30fps / ≤4 声部不变。
+- CACHE `endless-sea-drift-v11-crate2`；验证 `_v11crate2-validation.json`，浏览器成功时截图 `_shot-v11crate2.png` / `_shot-v11.png`；交接 `_v11crate2-handoff.md`。
+
 ## XI舵2 / v11-tack2
 
 - 摇杆黄铜环与金属头第二轮：收敛环缘高光与内圈亮度，柔化金属头斜向亮带；仅调整既有 CSS 色值与渐变，不增效果层。

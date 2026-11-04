@@ -486,16 +486,16 @@ window.SeaArt = (() => {
   }
   function atmosphere(g,w,h,t,weather,lamp,cx,cy,scale){
     g.save();
-    // Veil: thinner night wash and edge shade, without adding a pale fog layer.
+    // Veil2: soften the existing night veil again; retain gradients and pass count.
     // Haze: a 2.8% warm-grey daylight grade reuses this existing wash.
     // Dusk2: softer sand-ivory wash joins the cusp brass/ivory dawn family.
-    // Reuse the same pass and opacity; keep dawn and storm layers unchanged.
-    g.fillStyle=weather.night?nightWash:weather.dusk?'#b79b7c':'#d3d1b7';g.globalAlpha=weather.night?(lamp?.25:.35):weather.dusk?.15:weather.storm?0:.028;g.fillRect(0,0,w,h);
-    if(weather.night){g.globalAlpha=.48;g.drawImage(vignette,0,0,w,h);}
+    // Keep dusk/day opacity; night storm softening reuses the existing sky pass.
+    g.fillStyle=weather.night?nightWash:weather.dusk?'#b79b7c':'#d3d1b7';g.globalAlpha=weather.night?(lamp?.23:.32):weather.dusk?.15:weather.storm?0:.028;g.fillRect(0,0,w,h);
+    if(weather.night){g.globalAlpha=.44;g.drawImage(vignette,0,0,w,h);}
     // Restrain the existing deck bounce; keep the ember hue and halo footprint.
     if(weather.night&&lamp){g.globalAlpha=.48;g.drawImage(halo,cx-110*scale,cy-110*scale,220*scale,220*scale);}
     if(weather.storm){
-      g.globalAlpha=weather.night?.22:.26;g.drawImage(stormSky,0,0,w,h);
+      g.globalAlpha=weather.night?.20:.26;g.drawImage(stormSky,0,0,w,h);
       // Ash-grey rain shares the sky's subdued slate family and existing pixel strokes.
       g.globalAlpha=.29;g.fillStyle='#c3c7c8';
       for(let i=0;i<52;i++){

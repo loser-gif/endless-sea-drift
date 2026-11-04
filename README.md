@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI敌2 · v11-thrall2，CACHE：`endless-sea-drift-v11-thrall2`。敌方边光第二轮：收敛背缘、齿缘与冠沿，保留尺寸、识别色、玩法与竖屏 notice +176px；验证见 `_v11thrall2-handoff.md`。
+XI纱2 · v11-veil2，CACHE：`endless-sea-drift-v11-veil2`。夜雾薄纱第二轮：小幅降低既有夜色、暗角与风雨夜罩染透明度，不新增绘制层；玩法与竖屏 notice +176px 保留，验证见 `_v11veil2-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI敌2; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI纱2; no build step.
 
 ## 本地预览
 

@@ -1,3 +1,9 @@
+## XI远 / v11-loom
+
+- 复用远海雾幕缓存：低对比远岛柔边、岛脚渐隐与远海雾色层次；不增精灵、逐帧绘制、滤镜或粒子。
+- CACHE `endless-sea-drift-v11-loom`；edition `XI远`。玩法、战斗、合成、存档、迁移、偏好及竖屏 notice +176px 保留。
+- 验证与限制见 `_v11loom-validation.json`、`_v11loom-handoff.md`；浏览器成功时生成 `_shot-v11loom.png` / `_shot-v11.png`。
+
 ## XI沫 / v11-foam
 
 - art.js 仅微调现有泡沫尖端暖白与木筏水线盐灰；像素位置、透明度、缓存与逐帧绘制预算不变，无新增特效。

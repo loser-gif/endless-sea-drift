@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI沫 · v11-foam，CACHE：`endless-sea-drift-v11-foam`。泡沫尖端暖白、木筏水线盐灰微调，仅改 art.js 色值；绘制预算、玩法、存档及竖屏 notice +176px 保留，验证见 `_v11foam-handoff.md`。
+XI远 · v11-loom，CACHE：`endless-sea-drift-v11-loom`。复用远海雾幕缓存绘制柔边远岛与海雾层次，不增精灵或逐帧绘制；玩法、存档及竖屏 notice +176px 保留，验证见 `_v11loom-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI沫; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI远; no build step.
 
 ## 本地预览
 

@@ -1,0 +1,356 @@
+{
+  "ok": false,
+  "cache": "endless-sea-drift-v11-loom",
+  "session_id": "01a1a746-9fa8-7872-8e5c-42cb8f60a990",
+  "features": [
+    {
+      "id": "cache",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "weather",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "modules",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "resources",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "monsters",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "sites",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "v11-art-smoke",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "v11-art-expanded-board-mask",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "v11-art-reduced-time",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "craft-and-modules",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "weather-fishing-net",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "encounters-and-death",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "combat-and-boss-loot",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "board-limit-and-module-guard",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "long-simulation",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "touch-actions",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "save-roundtrip-and-corruption",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "module-replace-refund-center",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "ammo-damage-and-rate",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "mute-prefs-roundtrip",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "split-targets",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "king-phases",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "bottle-collect",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "merchant-trade",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "stew-cook-and-eat",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "helm-pull-canopy-storm",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "v11-storage-contract",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "autosave-two-seconds",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "new-content-save",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "audio-voice-cap-mute-unavailable",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "reduced-audio-and-missing-audio",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "drop-bias-and-boss-cap",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "edition-and-audio-hint",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "debounce-180ms",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "action-tips",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "tinted-phase-render",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "merchant-offers-rotate-persist",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "highlights-persist-and-death",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "ammo-chip-and-gun-indicators",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "legacy-migration-validated",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "plus-streak-timeout-roundtrip",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "plus-fogship-night-dock-save",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "plus-v10-additive-defaults-validation",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "plus-phase-and-empty-ammo-cues",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "plus-audio-announcement-once",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "plus-fogship-automatic-and-expiry",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "final-pause-live-highlights",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "final-continue-summary",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "final-wake-cap-motion-expiry",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "final-guidance-progress-and-quiet",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "final-first-storm-tip-once",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "final-vital-crossing",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "final-reduced-feel",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "final-additive-defaults-and-rejection",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "final-first-king-stew-once",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "gold-crate-roll-boundaries",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "gold-crate-mixed-loot-once",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "gold-crate-save-and-render",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "gold-night-king-rim",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "gold-safe-area-css",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "gold-pause-fire-mode",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "gold-build-tip-restores-cost",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "gold-optional-feel-guards",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "lock-opening-and-tips",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "lock-mixed-collect-order-and-splash",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "lock-splash-cap-and-reduced-motion",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "lock-nearest-dock-both-orders",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "lock-no-api-without-test",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-required",
+      "ok": false,
+      "note": "Chrome or WebSocket unavailable"
+    }
+  ],
+  "errors": [
+    "browser-required: Chrome or WebSocket unavailable"
+  ],
+  "session_hint": "node _selftest-v10.mjs；120秒昼夜，95秒起风雨，28秒小岛/93秒沉船，180秒潮汐王。158秒商船；第2/4/6…夜雾灯船。每2秒自动存档；v8/v9验证后迁移至v10；保留v9静音偏好。"
+}

@@ -46,10 +46,18 @@ window.SeaArt = (() => {
     a.addColorStop(Math.min(.85,focus+.21),'#0000');a.addColorStop(Math.min(.96,focus+.43),'#0006');a.addColorStop(1,'#000e');m.fillStyle=a;m.fillRect(0,0,mask.width,mask.height);
     // One cached distance wash: pale horizon, cool sea shoulder, clear focal water.
     // Draw before world sprites so even expanded rafts and distant cargo stay crisp.
-    seaMist=surface(1,128);const mg=seaMist.getContext('2d'),mist=mg.createLinearGradient(0,0,0,128);
-    mist.addColorStop(0,'#b8c9bd24');mist.addColorStop(.22,'#9bbab31c');
-    mist.addColorStop(.60,'#315e6814');mist.addColorStop(1,'#315e6800');
-    mg.fillStyle=mist;mg.fillRect(0,0,1,128);
+    seaMist=surface(192,128);const mg=seaMist.getContext('2d'),mist=mg.createLinearGradient(0,0,0,128);
+    mist.addColorStop(0,'#b8c9bd28');mist.addColorStop(.22,'#a5bdb52a');
+    mist.addColorStop(.46,'#8fafa51c');mist.addColorStop(.70,'#315e6810');mist.addColorStop(1,'#315e6800');
+    mg.fillStyle=mist;mg.fillRect(0,0,192,128);
+    // One distant landform baked into the same wash, never a gameplay site/sprite.
+    // Low-resolution interpolation softens its ridge; the foot dissolves into sea haze.
+    const land=mg.createLinearGradient(0,19,0,56);
+    land.addColorStop(0,'#557a792e');land.addColorStop(.48,'#557a7938');land.addColorStop(1,'#557a7900');
+    mg.fillStyle=land;mg.beginPath();mg.moveTo(108,55);
+    mg.bezierCurveTo(118,50,119,39,128,37);mg.bezierCurveTo(134,36,136,25,143,23);
+    mg.bezierCurveTo(150,18,154,33,160,34);mg.bezierCurveTo(169,34,170,46,184,55);
+    mg.closePath();mg.fill();
     vignette=surface(96,64);const vg=vignette.getContext('2d'),vr=vg.createRadialGradient(48,32,12,48,32,55);
     // Slate-teal shadow keeps the warm rims in the same light family as the HUD brass.
     vr.addColorStop(0,'#202e3800');vr.addColorStop(.55,'#202e3818');vr.addColorStop(1,'#202e38bb');vg.fillStyle=vr;vg.fillRect(0,0,96,64);

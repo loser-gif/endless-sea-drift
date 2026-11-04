@@ -1,3 +1,9 @@
+## XI刘 / v11-notch
+
+- 音效提示改为克制的黄铜铭牌，限制安全区宽度、允许换行；未解锁时卡片为提示留空，横屏通知避开右侧刘海。
+- 纯 CSS；保留竖屏 notice +176px、44px 触控与全部玩法、存档、迁移、偏好、30fps / ≤4 声部逻辑。
+- CACHE `endless-sea-drift-v11-notch`；edition `XI刘`；验证与交接见 `_v11notch-validation.json`、`_v11notch-handoff.md`。
+
 ## XI碑 / v11-slate
 
 - 死亡卡片换为冷灰石板、克制斜边与细刻行纹；统计左对齐、等宽数字与暖色首行改善扫读，保留 silk 黄铜框和重启按钮。

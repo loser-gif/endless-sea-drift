@@ -368,3 +368,36 @@ progress{height:5px;margin-top:5px;box-shadow:0 0 0 1px #d8c48a1c}
  box-shadow:inset 3px 0 #d8bc7e,inset 0 2px 3px #05141c99;
 }
 .actions button:disabled{transform:none}
+
+/* XI刘 — bounded audio plaque and notch clearance; no extra effects. */
+#audioUnlock{
+ top:calc(env(safe-area-inset-top) + 8px);
+ left:max(16px,env(safe-area-inset-left));
+ right:max(16px,env(safe-area-inset-right));
+ width:fit-content;
+ max-width:calc(100% - max(16px,env(safe-area-inset-left)) - max(16px,env(safe-area-inset-right)));
+ margin-inline:auto;
+ transform:none;
+ white-space:normal;
+ overflow-wrap:anywhere;
+ text-align:center;
+ line-height:16px;
+ padding:7px 12px;
+ border-radius:3px;
+ border-color:#c7ad79 #72674d #625b46 #a3946b;
+ background:linear-gradient(180deg,#35413b,#172b30);
+ color:#ead8ad;
+ box-shadow:inset 0 1px #f4dfae26;
+ animation:none;
+}
+/* The status is pointer-transparent; the card remains independently scrollable. */
+#audioUnlock:not([hidden])~.overlay{
+ padding-top:calc(max(16px,env(safe-area-inset-top)) + 44px);
+}
+#audioUnlock:not([hidden])~.overlay .card{
+ max-height:calc(100% - 8px);
+ max-height:calc(100dvh - max(16px,env(safe-area-inset-top)) - max(16px,env(safe-area-inset-bottom)) - 52px);
+}
+@media(orientation:landscape){
+ #notice{right:max(16px,env(safe-area-inset-right))}
+}

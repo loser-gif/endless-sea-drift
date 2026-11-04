@@ -1,7 +1,7 @@
 {
-  "ok": true,
-  "cache": "endless-sea-drift-v11-slate",
-  "session_id": "01a1a795-712c-7742-a170-ead79a1000db",
+  "ok": false,
+  "cache": "endless-sea-drift-v11-notch",
+  "session_id": "01a1a79a-99a4-75b0-bec5-a337f8b78f90",
   "features": [
     {
       "id": "cache",
@@ -365,8 +365,8 @@
     },
     {
       "id": "browser-pressed-landscape",
-      "ok": true,
-      "note": "通过"
+      "ok": false,
+      "note": "The expression evaluated to a falsy value:\n\n  assert(pressed.result.value)\n"
     },
     {
       "id": "browser-short-press-landscape",
@@ -375,13 +375,13 @@
     },
     {
       "id": "browser-long-press-landscape",
-      "ok": true,
-      "note": "通过"
+      "ok": false,
+      "note": "The expression evaluated to a falsy value:\n\n  assert(v.tip.includes('优先吃炖菜'))\n"
     },
     {
       "id": "browser-landscape",
-      "ok": true,
-      "note": "通过"
+      "ok": false,
+      "note": "The expression evaluated to a falsy value:\n\n  assert(value.hidden)\n"
     },
     {
       "id": "touch-layout-landscape",
@@ -405,8 +405,8 @@
     },
     {
       "id": "browser-final-clarity-landscape",
-      "ok": true,
-      "note": "通过"
+      "ok": false,
+      "note": "The input did not match the regular expression /高光.*最大木筏.*连击纪录.*潮汐王.*雾灯船/. Input:\n\n'已找回上次航行。继续漂流，或开始新的旅程。\\n\\n续航摘要 · 第 1 天 · 00:00 · 木筏 9 格 · 击退 0'\n"
     },
     {
       "id": "browser-final-pulse-ends-landscape",
@@ -440,6 +440,11 @@
     },
     {
       "id": "browser-gold-safe-area-landscape",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "notch-audio-chrome-landscape",
       "ok": true,
       "note": "通过"
     },
@@ -539,6 +544,11 @@
       "note": "通过"
     },
     {
+      "id": "notch-audio-chrome-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
       "id": "browser-death-scroll-portrait",
       "ok": true,
       "note": "通过"
@@ -560,8 +570,8 @@
     },
     {
       "id": "browser-pressed-small-portrait",
-      "ok": true,
-      "note": "通过"
+      "ok": false,
+      "note": "The expression evaluated to a falsy value:\n\n  assert(pressed.result.value)\n"
     },
     {
       "id": "browser-short-press-small-portrait",
@@ -570,13 +580,13 @@
     },
     {
       "id": "browser-long-press-small-portrait",
-      "ok": true,
-      "note": "通过"
+      "ok": false,
+      "note": "The expression evaluated to a falsy value:\n\n  assert(v.tip.includes('优先吃炖菜'))\n"
     },
     {
       "id": "browser-small-portrait",
-      "ok": true,
-      "note": "通过"
+      "ok": false,
+      "note": "The expression evaluated to a falsy value:\n\n  assert(value.hidden)\n"
     },
     {
       "id": "touch-layout-small-portrait",
@@ -605,8 +615,8 @@
     },
     {
       "id": "browser-final-clarity-small-portrait",
-      "ok": true,
-      "note": "通过"
+      "ok": false,
+      "note": "The input did not match the regular expression /高光.*最大木筏.*连击纪录.*潮汐王.*雾灯船/. Input:\n\n'昼夜风雨，打捞与钓鱼补给；雨天可接水。自动炮迎击海怪，第三分钟潮汐王来袭。摇杆 / WASD 移动，打捞圈内收集物资。选木板铺边格，选模块点已有板改装。合成绳、钉、弹药；靠近岛屿沉船可停靠。及时吃喝；修补消耗 1 木材 + 1 布料。雾灯船可停靠领补给，货箱靠近打捞。长按按钮看提示，轻触开启音效。横屏视野更开阔 · 竖屏同样可玩Safari 分享 → 添加到主屏幕'\n"
     },
     {
       "id": "browser-final-pulse-ends-small-portrait",
@@ -634,6 +644,11 @@
       "note": "通过"
     },
     {
+      "id": "notch-audio-chrome-small-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
       "id": "browser-death-scroll-small-portrait",
       "ok": true,
       "note": "通过"
@@ -641,11 +656,55 @@
     {
       "id": "screenshot",
       "ok": true,
-      "note": "已生成 _shot-v11slate.png / _shot-v11.png"
+      "note": "已生成 _shot-v11notch.png / _shot-v11.png"
     }
   ],
-  "errors": [],
+  "errors": [
+    "browser-pressed-landscape: The expression evaluated to a falsy value:\n\n  assert(pressed.result.value)\n",
+    "browser-long-press-landscape: The expression evaluated to a falsy value:\n\n  assert(v.tip.includes('优先吃炖菜'))\n",
+    "browser-landscape: The expression evaluated to a falsy value:\n\n  assert(value.hidden)\n",
+    "browser-final-clarity-landscape: The input did not match the regular expression /高光.*最大木筏.*连击纪录.*潮汐王.*雾灯船/. Input:\n\n'已找回上次航行。继续漂流，或开始新的旅程。\\n\\n续航摘要 · 第 1 天 · 00:00 · 木筏 9 格 · 击退 0'\n",
+    "browser-pressed-small-portrait: The expression evaluated to a falsy value:\n\n  assert(pressed.result.value)\n",
+    "browser-long-press-small-portrait: The expression evaluated to a falsy value:\n\n  assert(v.tip.includes('优先吃炖菜'))\n",
+    "browser-small-portrait: The expression evaluated to a falsy value:\n\n  assert(value.hidden)\n",
+    "browser-final-clarity-small-portrait: The input did not match the regular expression /高光.*最大木筏.*连击纪录.*潮汐王.*雾灯船/. Input:\n\n'昼夜风雨，打捞与钓鱼补给；雨天可接水。自动炮迎击海怪，第三分钟潮汐王来袭。摇杆 / WASD 移动，打捞圈内收集物资。选木板铺边格，选模块点已有板改装。合成绳、钉、弹药；靠近岛屿沉船可停靠。及时吃喝；修补消耗 1 木材 + 1 布料。雾灯船可停靠领补给，货箱靠近打捞。长按按钮看提示，轻触开启音效。横屏视野更开阔 · 竖屏同样可玩Safari 分享 → 添加到主屏幕'\n"
+  ],
   "session_hint": "node _selftest-v10.mjs；120秒昼夜，95秒起风雨，28秒小岛/93秒沉船，180秒潮汐王。158秒商船；第2/4/6…夜雾灯船。每2秒自动存档；v8/v9验证后迁移至v10；保留v9静音偏好。",
+  "notchLayout": {
+    "landscape": {
+      "top": 8,
+      "bottom": 40,
+      "left": 354.984375,
+      "right": 489,
+      "gap": 24,
+      "noticeRight": 800,
+      "animation": "none",
+      "pointer": "none",
+      "clipped": false
+    },
+    "portrait": {
+      "top": 52,
+      "bottom": 84,
+      "left": 127.984375,
+      "right": 262,
+      "gap": 106.078125,
+      "noticeRight": 374,
+      "animation": "none",
+      "pointer": "none",
+      "clipped": false
+    },
+    "small-portrait": {
+      "top": 52,
+      "bottom": 84,
+      "left": 92.984375,
+      "right": 227,
+      "gap": 8,
+      "noticeRight": 304,
+      "animation": "none",
+      "pointer": "none",
+      "clipped": false
+    }
+  },
   "portraitLayout": {
     "portrait": {
       "height": 151,

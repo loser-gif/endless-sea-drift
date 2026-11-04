@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI碑 · v11-slate，CACHE：`endless-sea-drift-v11-slate`。死亡画面改为冷灰石板与细刻行纹，保留丝缎黄铜质感及全部玩法；验证见 `_v11slate-handoff.md`。
+XI刘 · v11-notch，CACHE：`endless-sea-drift-v11-notch`。完善刘海安全区与音效解锁提示，保留竖屏 notice +176px 及全部玩法；验证见 `_v11notch-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI碑; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI刘; no build step.
 
 ## 本地预览
 

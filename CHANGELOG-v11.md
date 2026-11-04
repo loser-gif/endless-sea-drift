@@ -1,3 +1,9 @@
+## XI彡 / v11-silk
+
+- CSS 微调浮层卡片：柔和缎面、细黄铜内框、主按钮高光；终章统计增加行纹底衬、等宽数字与换行保护，保留全部 CTA 和滚动可达性。
+- CACHE `endless-sea-drift-v11-silk`；edition `XI彡`。玩法、战斗、合成、存档、迁移、偏好及竖屏提示布局不变。
+- 验证见 `_v11silk-validation.json`、`_v11silk-handoff.md`；浏览器成功时生成 `_shot-v11silk.png` / `_shot-v11.png`。
+
 ## XI⬡ / v11-reef
 
 - 仅岛屿、沉船、商船缓存精灵补湿润接触阴影、湿木缝与断续黄铜边缘微光；保留 96×80 尺寸，无新增逐帧效果。

@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI⬡ · v11-reef，CACHE：`endless-sea-drift-v11-reef`。仅岛屿、沉船、商船精灵补湿润接触阴影与黄铜边缘微光，尺寸不变；保留竖屏提示、≥44px 触控及全部玩法、存档与偏好。
+XI彡 · v11-silk，CACHE：`endless-sea-drift-v11-silk`。浮层卡片柔和缎面与细黄铜内框，终章统计增加行纹底衬与清晰行距；保留 CTA、竖屏提示、≥44px 触控及全部玩法、存档与偏好。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI⬡; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI彡; no build step.
 
 ## 本地预览
 

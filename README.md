@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI舵 · v11-tack，CACHE：`endless-sea-drift-v11-tack`。摇杆黄铜外圈与金属拇指采用静态 CSS，保留 44px 拇指及全部玩法；验证见 `_v11tack-handoff.md`。
+XI箱 · v11-crate，CACHE：`endless-sea-drift-v11-crate`。货箱精灵补充木板接缝 AO 与黄铜锁扣，保留原尺寸及全部玩法；验证见 `_v11crate-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI舵; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI箱; no build step.
 
 ## 本地预览
 

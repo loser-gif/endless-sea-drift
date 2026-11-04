@@ -1,3 +1,9 @@
+## XI箱 / v11-crate
+
+- 货箱缓存精灵补充木板接缝、压条接触 AO 与黄铜锁扣；保留 64×64 缓存、unit=2 及原轮廓，不增加逐帧特效。
+- 全部玩法、战斗、合成、存档、迁移、偏好不变；保留触控尺寸、竖屏 notice +176px、30fps / ≤4 声部逻辑。
+- CACHE `endless-sea-drift-v11-crate`；edition `XI箱`；验证与交接见 `_v11crate-validation.json`、`_v11crate-handoff.md`。
+
 ## XI舵 / v11-tack
 
 - 摇杆黄铜外圈与金属拇指更新静态渐变、边框及阴影，不新增动画、滤镜或依赖；保留 44px 拇指与既有触控尺寸。

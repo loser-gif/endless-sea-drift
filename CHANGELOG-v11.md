@@ -1,3 +1,9 @@
+## XI续 / v11-after
+
+- 版签文字与边框微调为柔和黄铜色，不新增效果或布局占位。
+- 全部玩法数值、战斗、合成、存档、迁移、偏好及竖屏 notice +176px 保持不变。
+- CACHE `endless-sea-drift-v11-after`；自测报告 `_v11after-validation.json`，成功时截图 `_shot-v11after.png` / `_shot-v11.png`；交接见 `_v11after-handoff.md`。
+
 ## XI终 / v11-final
 
 - 晨间最终封版：更新版签与离线缓存，不追加视觉效果。

@@ -1,3 +1,9 @@
+## XI片 / v11-shard
+
+- 沉船五根断木保留原 3×17 轮廓，收敛木色亮面、加入窄侧阴影与冷青湿暗木脚，与 reef 水浸暗部统一；沿用 96×80 缓存。
+- 全部玩法、战斗、合成、存档、迁移、偏好不变；保留触控 ≥44px、竖屏 notice +176px、30fps / ≤4 声部。
+- CACHE `endless-sea-drift-v11-shard`；edition `XI片`；验证与交接见 `_v11shard-validation.json`、`_v11shard-handoff.md`。
+
 ## XI汐 / v11-tide2
 
 - crest 后第二遍泡沫尖端与水线调色：柔和象牙亮点、灰青接水边；只改颜色，保留原形状、透明度、动画与绘制预算。

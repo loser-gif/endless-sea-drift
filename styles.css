@@ -98,7 +98,7 @@ button[hidden]{display:none}
 @media(orientation:portrait) and (max-height:700px){.actions{grid-template-columns:repeat(3,minmax(44px,1fr));gap:4px}.actions .tool:first-child{grid-column:span 2}.actions button{font-size:11px}.tool select{font-size:11px}#notice{font-size:10px}#controls{bottom:max(10px,env(safe-area-inset-bottom))}}
 
 /* X+ — one gentle invitation, tactile actions and bounded recap scrolling. */
-#audioUnlock{border-color:#ffe1a5;color:#fff0c9;animation:audio-invitation 1.2s ease-out 1}
+#audioUnlock{border-radius:999px;border-color:#d9b578;background:linear-gradient(135deg,#493f2df5,#172b30fa);color:#fff0c9;text-shadow:0 1px 2px #07151d;box-shadow:0 3px 14px #0007,inset 0 1px #ffe4ab26;animation:audio-invitation 1.2s ease-out 1}
 @keyframes audio-invitation{50%{box-shadow:0 0 22px #f6cf8170;border-color:#fff4d7}}
 .actions button.pressed{transform:translateY(1px);border-color:#ffe1a5;box-shadow:inset 0 0 14px #f1d19a38}
 .card{max-height:calc(100% - 8px);max-height:calc(100dvh - 40px);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
@@ -126,7 +126,7 @@ button[hidden]{display:none}
 #voyage{margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #c8ad6c26;color:#bdcacc;letter-spacing:.4px;font-size:10px}
 .ammo-status{margin:0 0 8px;gap:9px;font-size:11px}
 #ammoChip{min-width:76px;padding:3px 6px;border:1px solid #d8b66b4d;background:#caa35412;color:#ffe0a0;border-radius:2px;font-weight:600}
-#ammoChip[data-mode="empty"]{color:#ffc1a0;border-color:#c58a655c;background:#8d48351c}
+#ammoChip[data-mode="empty"]{color:#ffd1ac;border-color:#d9a06e99;background:#643e2e80;box-shadow:inset 2px 0 #e0b17d;text-shadow:0 1px 1px #10232c}
 .ammo-track{height:5px;width:64px;border-radius:2px;background:#020e19;box-shadow:0 0 0 1px #d8c48a33}
 #ammoCooldown{background:linear-gradient(90deg,#b18346,#ffe0a0)}
 #ammoChip[data-mode="empty"] + .ammo-track #ammoCooldown{background:linear-gradient(90deg,#a6644c,#eab196)}

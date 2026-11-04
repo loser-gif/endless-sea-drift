@@ -1,3 +1,11 @@
+## XI◇ / v11-glow
+
+- 货箱 / 漂流瓶沿用 module_* 左上黄铜高光、右下冷色湿边；现有 make() 内细化，两者均为 2x authoring，显示尺寸不变，无新增 sprite 或粒子层。
+- 站点名称 / 商船报价增加深色分离描边与暖色字面；save/restore 隔离状态，原字号与位置不变。
+- audioUnlock 改为黄铜色胶囊，隐藏行为不变；empty 弱射提示提高字面、边框与底色对比，仍使用原 data-mode。
+- CACHE `endless-sea-drift-v11-glow`；edition `XI◇`。玩法、战斗、合成、v10 存档、v9 偏好、30fps、四声部、44px 目标、安全区及 XI 竖屏 notice +228px 保留；kill-flash / phaseFlash 未改。
+- Validation: `node _selftest-v10.mjs` → 122/122；`_v11glow-validation.json` ok:true；`_shot-v11glow.png` / `_shot-v11.png`。
+
 ## XI◆ / v11-finish
 
 - 首领入场标题：深色隔离描边、细黄铜边与暖象牙字面，柔和阴影；绘制状态局部保存/恢复。

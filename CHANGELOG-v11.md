@@ -1,3 +1,9 @@
+## XI尾 / v11-wake2
+
+- 船尾既有 3×1 泡沫尖端由暖象牙改为低饱和冷青白，保留 Spray 的数量、尺寸、透明度与节奏，无新增效果层。
+- 全部玩法、战斗、合成、存档、迁移、偏好及竖屏 notice +176px 不变，沿用 30fps 与 ≤4 声部预算。
+- CACHE `endless-sea-drift-v11-wake2`；验证 `_v11wake2-validation.json`，浏览器成功时截图 `_shot-v11wake2.png` / `_shot-v11.png`；交接 `_v11wake2-handoff.md`。
+
 ## XI金2 / v11-gilt2
 
 - 航程与已装弹读数微调暖金色，复用单层暗色文字阴影；保留空弹警示、Warp 等宽数字与原有尺寸。

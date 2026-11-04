@@ -410,13 +410,13 @@
       if(!s.tiles.has(key(t.x,t.y-1)))rect(x+1,y,37,2,'#e7cf94');
       if(!s.tiles.has(key(t.x,t.y+1))){
         waterRing(x+20,y+48,22,.38);
-        // Spray: warm ivory tips in the art foam/waterRing family; same flecks and draw budget.
+        // Wake2: cool foam tip against the wet stern; same flecks and draw budget.
         for(let j=0;j<3;j++){
           const phase=((time*.45+t.x*.37+j*.31)%1+1)%1;
           ctx.globalAlpha=Math.sin(phase*Math.PI)*(weather().storm?.72:.6);
           rect(Math.round(x+7+j*10+phase*4),Math.round(y+49+phase*5),5,1,'#c8d8cc');
           rect(Math.round(x+9+j*10+phase*4),Math.round(y+50+phase*5),2,1,'#82aaa7');
-          if(j===1)rect(Math.round(x+12+phase*13),Math.round(y+48+phase*4),3,1,'#eee3ca');
+          if(j===1)rect(Math.round(x+12+phase*13),Math.round(y+48+phase*4),3,1,'#d5e6df');
         }ctx.globalAlpha=1;
       }
       if(t.hp<100){

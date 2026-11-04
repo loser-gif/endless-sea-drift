@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI金2 · v11-gilt2，CACHE：`endless-sea-drift-v11-gilt2`。航程与弹药数字第二轮暖金细化，保留 Warp 等宽数字、竖屏布局及全部玩法；验证见 `_v11gilt2-handoff.md`。
+XI尾 · v11-wake2，CACHE：`endless-sea-drift-v11-wake2`。船尾泡沫尖端转为冷青白，沿用 Spray 的细碎浪花与绘制预算，全部玩法及竖屏布局不变；验证见 `_v11wake2-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI金2; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI尾; no build step.
 
 ## 本地预览
 

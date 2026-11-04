@@ -29,8 +29,8 @@ window.SeaArt = (() => {
     for(let j=0;j<4;j++){
       const x=3+j*11,y=4+(j+v)%3;
       fg.fillStyle='#328f94';fg.fillRect(x-1,y+1,8,3);
-      fg.fillStyle='#a6cfc0';fg.fillRect(x,y,5+j%2,1);
-      fg.fillStyle='#ccdebe';fg.fillRect(x+1,y-1,3,1);
+      fg.fillStyle='#b4cec0';fg.fillRect(x,y,5+j%2,1);
+      fg.fillStyle='#e2d9b9';fg.fillRect(x+1,y-1,3,1);
     }
     foam.push(f);
   }
@@ -138,7 +138,7 @@ window.SeaArt = (() => {
         for(const x of [9,68]){r(x,y+5,3,4,'#493c30');r(x,y+5,2,2,'#e4cc97');r(x+1,y+7,1,1,'#849083');}
       }
       // End grain, salt stain, and reflected teal on the wet vertical edge.
-      for(let y=75;y<98;y+=4){r(4,y,71,2,y<84?'#735133':'#203c43');r(9+v*3,y,44-v*5,1,y<84?'#b79460':'#3b6568');}
+      for(let y=75;y<98;y+=4){r(4,y,71,2,y<84?'#735133':'#203c43');r(9+v*3,y,44-v*5,1,y<84?'#bca77e':'#507270');}
       r(2,74,74,1,'#d9c08a');r(1,2,2,70,'#f0d394');r(77,2,2,94,'#1c3036');r(4,98,72,4,'#142831');
       // Lashings are braided pixel strands, not thick vertical outlines.
       for(const x of [3,73]){r(x,3,3,89,'#665c43');for(let y=4;y<92;y+=4){r(x,y,2,2,'#c9be8a');r(x+1,y+2,2,1,'#e1cf99');}}

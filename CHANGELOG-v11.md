@@ -1,3 +1,9 @@
+## XI沫 / v11-foam
+
+- art.js 仅微调现有泡沫尖端暖白与木筏水线盐灰；像素位置、透明度、缓存与逐帧绘制预算不变，无新增特效。
+- CACHE `endless-sea-drift-v11-foam`；edition `XI沫`。玩法、战斗、合成、存档、迁移、偏好及竖屏 notice +176px 保留。
+- 验证与限制见 `_v11foam-validation.json`、`_v11foam-handoff.md`；浏览器成功时生成 `_shot-v11foam.png` / `_shot-v11.png`。
+
 ## XI墨 / v11-ink
 
 - CSS 微调眉题、航程与库存标签字距 / 字重，数字保持等宽与独立字距；不改字号、行高、盒尺寸或特效。

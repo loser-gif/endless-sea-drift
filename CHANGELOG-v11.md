@@ -1,3 +1,9 @@
+## XI霾 / v11-haze
+
+- 晴朗日间复用现有调色层，加入 2.8% 暖灰薄霾，柔化午间明暗；保留远景雾范围、夜色、暮色与风暴，不增加粒子、滤镜或绘制层。
+- 全部玩法、战斗、合成、存档、迁移与偏好不变；保留触控 ≥44px、竖屏 notice +176px、30fps / ≤4 声部。
+- CACHE `endless-sea-drift-v11-haze`；edition `XI霾`；验证与交接见 `_v11haze-validation.json`、`_v11haze-handoff.md`。
+
 ## XI钉 / v11-bolt
 
 - 模块底座两处钉栓细化左上微高光与暗侧，复用原精灵缓存；保留现有 unit=2 精灵，无新增逐帧特效。

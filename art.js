@@ -449,7 +449,9 @@ window.SeaArt = (() => {
   function atmosphere(g,w,h,t,weather,lamp,cx,cy,scale){
     g.save();
     // Veil: thinner night wash and edge shade, without adding a pale fog layer.
-    g.fillStyle=weather.night?'#202e38':'#b58e68';g.globalAlpha=weather.night?(lamp?.25:.35):weather.dusk?.15:0;g.fillRect(0,0,w,h);
+    // Haze: a 2.8% warm-grey daylight grade reuses this existing wash.
+    // Keep the distant mist footprint and night/dusk/storm treatment unchanged.
+    g.fillStyle=weather.night?'#202e38':weather.dusk?'#b58e68':'#d3d1b7';g.globalAlpha=weather.night?(lamp?.25:.35):weather.dusk?.15:weather.storm?0:.028;g.fillRect(0,0,w,h);
     if(weather.night){g.globalAlpha=.48;g.drawImage(vignette,0,0,w,h);}
     // Restrain the existing deck bounce; keep the ember hue and halo footprint.
     if(weather.night&&lamp){g.globalAlpha=.48;g.drawImage(halo,cx-110*scale,cy-110*scale,220*scale,220*scale);}

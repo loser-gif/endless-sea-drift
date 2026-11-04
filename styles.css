@@ -118,7 +118,8 @@ button[hidden]{display:none}
 @media(orientation:portrait){#notice{left:max(16px,env(safe-area-inset-left));right:max(16px,env(safe-area-inset-right))}}
 
 /* XI / UI — brass expedition instruments and warm timber panels. */
-#hud{padding:10px 12px;border-color:#bd96576b;border-top:2px solid #dfbd82;border-left-color:#ad905e;border-right-color:#695b40;border-bottom-color:#756143;background:linear-gradient(115deg,#142b30f5,#091e29e8);box-shadow:0 6px 20px #0005,inset 0 2px 4px #020e1970,inset 0 -1px #d8c49318}
+/* XI / Brass2 — satin face and rail share the existing rivet palette; geometry unchanged. */
+#hud{--hud-brass-light:#e0c18b;--hud-brass-mid:#a18452;--hud-brass-dark:#4d422d;padding:10px 12px;border-color:var(--hud-brass-mid);border-top:2px solid var(--hud-brass-light);border-left-color:var(--hud-brass-mid);border-right-color:var(--hud-brass-dark);border-bottom-color:var(--hud-brass-dark);background:linear-gradient(115deg,#2b332cf5,#101f25e8);box-shadow:0 6px 20px #0005,inset 0 2px 4px #020e1970,inset 0 -1px #e0c18b18}
 /* XI / Ink — measured tracking and label weights; retain sizes and line boxes. */
 #hud h1{margin:3px 0 5px;color:#ffe6b7;letter-spacing:3px;font-size:22px}
 /* XI / Brim — a painted brass lip, without changing heading geometry. */
@@ -229,7 +230,7 @@ progress{height:5px;margin-top:5px;box-shadow:0 0 0 1px #d8c48a1c}
 .actions [data-action="craft"],.actions [data-action="build"]{box-shadow:inset 0 1px #e9ce9826,inset 0 -2px #020e1959,0 3px 9px #0003}
 #stick{border-top-color:#f0d39b;border-bottom-color:#8e754b}
 #thumb{border-bottom-color:#967f55}
-@media(orientation:landscape){#hud{box-shadow:0 6px 20px #0005,inset 0 2px 4px #020e1970,inset 0 -1px #d8c49318,inset 0 0 0 3px #071923,inset 0 0 0 4px #c29d601c}}
+@media(orientation:landscape){#hud{box-shadow:0 6px 20px #0005,inset 0 2px 4px #020e1970,inset 0 -1px #e0c18b18,inset 0 0 0 3px #071923,inset 0 0 0 4px #a184521c}}
 
 /* XI / Gilt — quieter pauses, an airy recap and legible night instruments. */
 #overlay[data-view="death"] #dialogText{padding:8px 4px 18px;line-height:2.05;color:#d4d5c3}
@@ -461,6 +462,6 @@ button:focus-visible,.tool select:focus-visible{
 #hud::before{
  content:"";position:absolute;top:-2px;left:5px;right:5px;height:4px;
  pointer-events:none;
- background:radial-gradient(circle at 2px 2px,#e0c18b 0 .6px,#a18452 .7px 1.3px,#4d422d 1.4px 1.8px,transparent 2px) left center / 4px 4px no-repeat,
- radial-gradient(circle at 2px 2px,#e0c18b 0 .6px,#a18452 .7px 1.3px,#4d422d 1.4px 1.8px,transparent 2px) right center / 4px 4px no-repeat;
+ background:radial-gradient(circle at 2px 2px,var(--hud-brass-light) 0 .6px,var(--hud-brass-mid) .7px 1.3px,var(--hud-brass-dark) 1.4px 1.8px,transparent 2px) left center / 4px 4px no-repeat,
+ radial-gradient(circle at 2px 2px,var(--hud-brass-light) 0 .6px,var(--hud-brass-mid) .7px 1.3px,var(--hud-brass-dark) 1.4px 1.8px,transparent 2px) right center / 4px 4px no-repeat;
 }

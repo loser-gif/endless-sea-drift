@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI龙2 · v11-keel2，CACHE：`endless-sea-drift-v11-keel2`。船底接触 AO 加深，保留单位尺寸与既有绘制预算；验证见 `_v11keel2-handoff.md`。
+XI静2 · v11-hush2，CACHE：`endless-sea-drift-v11-hush2`。暂停层第二轮降噪：纯色底面、轻边框与单层阴影，保留 CTA 与触控间距；验证见 `_v11hush2-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI龙2; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI静2; no build step.
 
 ## 本地预览
 

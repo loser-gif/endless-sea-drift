@@ -1,3 +1,9 @@
+## XI静2 / v11-hush2
+
+- 暂停层第二轮降噪：纯色底面、减弱边框与单层阴影，隐去标题分隔线；保留暖色主 CTA、按钮尺寸及间距。
+- 全部玩法数值、战斗、合成、存档、迁移、偏好与竖屏 notice +176px 不变；无新增依赖、动画或滤镜。
+- CACHE `endless-sea-drift-v11-hush2`；验证 `_v11hush2-validation.json`，成功截图 `_shot-v11hush2.png` / `_shot-v11.png`；交接 `_v11hush2-handoff.md`。
+
 ## XI龙2 / v11-keel2
 
 - 船底接触 AO 第二轮加深：仅调整缓存船板底部四条既有色带，收暗湿木过渡与接触边，保留轮廓、单位尺寸及绘制次数。

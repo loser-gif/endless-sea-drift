@@ -240,13 +240,13 @@ progress{height:5px;margin-top:5px;box-shadow:0 0 0 1px #d8c48a1c}
 #overlay[data-view="death"] #dialogText{padding:8px 4px 18px;line-height:2.05;color:#d4d5c3}
 #overlay[data-view="death"] .card h2{margin-bottom:18px}
 #overlay[data-view="death"] #resume{margin-top:16px}
-/* XI / Hush — quiet pause surface and measured reading / action rhythm. */
+/* XI静2 / Hush2 — flat pause surface; preserve action hierarchy and geometry. */
 #overlay[data-view="pause"]{background:#071b25cc}
-#overlay[data-view="pause"] .card{padding:28px;border:1px solid #887e61;border-top-color:#b8a47a;background:linear-gradient(160deg,#263630,#142830 78%);box-shadow:0 16px 40px #0007,inset 0 1px #dbc59420}
-#overlay[data-view="pause"] .card>.eyebrow{color:#adb9aa;letter-spacing:1.4px}
-#overlay[data-view="pause"] .card h2{margin:12px 0 20px;padding-bottom:16px;border-bottom-color:#c5a56b26;letter-spacing:.12em;text-shadow:none}
-#overlay[data-view="pause"] #dialogText{color:#c3ccc1;line-height:2;padding-bottom:20px;border-bottom-color:#c5a56b26;overflow-wrap:anywhere}
-#overlay[data-view="pause"] .card #resume{min-height:48px;margin-top:20px;box-shadow:inset 0 1px #fff1ca50}
+#overlay[data-view="pause"] .card{padding:28px;border:1px solid #65736a;border-top-color:#8c9078;background:#192d31;box-shadow:0 12px 28px #0005}
+#overlay[data-view="pause"] .card>.eyebrow{color:#a5b3aa;letter-spacing:1.4px}
+#overlay[data-view="pause"] .card h2{margin:12px 0 20px;padding-bottom:16px;border-bottom-color:transparent;letter-spacing:.12em;text-shadow:none}
+#overlay[data-view="pause"] #dialogText{color:#c3ccc1;line-height:2;padding-bottom:20px;border-bottom-color:#a8b6a51f;overflow-wrap:anywhere}
+#overlay[data-view="pause"] .card #resume{min-height:48px;margin-top:20px;box-shadow:none}
 #overlay[data-view="pause"] .card #muteToggle{margin-top:12px;background:#13282c;border-color:#76827466;box-shadow:none}
 #overlay[data-view="pause"] .card #muteToggle[aria-pressed="true"]{color:#dcc9a3;border-color:#a18d6266;background:#30392f}
 #overlay[data-view="pause"] .card #newRun{margin-top:12px;border-color:#ae96704d}

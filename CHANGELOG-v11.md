@@ -1,3 +1,10 @@
+## XI≋ / v11-wake
+
+- `waterRing` 单像素泡沫由冷绿转暖灰绿，透明度系数 0.7 → 0.8，让暗青海面上的打捞浪花与筏尾波更清楚；原有线性消退、0.9 秒寿命与 ≤3 上限不变。
+- 潮汐王缓存夜间轮廓略暖为 `#e4d3a0`；保留原有 phase 3 呼吸透明度与 reduced-motion 行为。普通怪物 stamp / shadow 未改。
+- CACHE `endless-sea-drift-v11-wake`；edition `XI≋`。仅 canvas 配色 / 透明度微调；无新增 draw call、实体或粒子系统；CSS、notice +228px、安全区、≥44px、HP / AI、v10 存档、v9 偏好、30fps 与四声部上限不变。
+- Validation: `node _selftest-v10.mjs` → 122/122；`_v11wake-validation.json` ok:true；`_shot-v11wake.png` / `_shot-v11.png`。
+
 ## XI▣ / v11-chrome
 
 - 首启 / 暂停卡片眉题改为独立行并微调行高；静音上方增加细弱分隔，启航 / 继续仍为卡片唯一亮色主按钮。

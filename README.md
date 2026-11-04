@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI▣ · v11-chrome，CACHE：`endless-sea-drift-v11-chrome`。首启 / 暂停卡片眉题节奏与静音分隔、竖屏物资边框和航程对比、摇杆标签与暂停黄铜边微调；PWA 主题 / 启动背景统一 #0b202c；玩法、v10 存档、v9 偏好与 v11 架构不变。在线游玩：https://loser-gif.github.io/endless-sea-drift/ 。
+XI≋ · v11-wake，CACHE：`endless-sea-drift-v11-wake`。水环 / 打捞浪花 / 筏尾波的单像素泡沫边略暖、透明度略提；潮汐王夜间缓存轮廓偏暖黄铜色；保留 chrome UI 与 #0b202c PWA 主题；玩法、v10 存档、v9 偏好与 v11 架构不变。在线游玩：https://loser-gif.github.io/endless-sea-drift/ 。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI▣; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI≋; no build step.
 
 ## 本地预览
 

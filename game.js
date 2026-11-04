@@ -40,7 +40,7 @@
   // Padded rim mask is baked once; only its opacity changes during phase three.
   {const base=art.tideking,u=base.unit||1,pad=2*u,c=document.createElement('canvas'),mask=document.createElement('canvas');
     c.width=mask.width=base.width+pad*2;c.height=mask.height=base.height+pad*2;c.unit=u;
-    const g=c.getContext('2d'),m=mask.getContext('2d');m.drawImage(base,pad,pad);m.globalCompositeOperation='source-in';m.fillStyle='#d9d4a0';m.fillRect(0,0,mask.width,mask.height);
+    const g=c.getContext('2d'),m=mask.getContext('2d');m.drawImage(base,pad,pad);m.globalCompositeOperation='source-in';m.fillStyle='#e4d3a0';m.fillRect(0,0,mask.width,mask.height);
     for(const [x,y] of DIR)g.drawImage(mask,x*u,y*u);g.globalCompositeOperation='destination-out';g.drawImage(base,pad,pad);art.kingRim=c;
   }
   const kingRimAlpha=(m,night,time)=>m.kind!=='tideking'||!night?0:m.phase===3&&!reducedMotion?.58+.12*Math.sin(time*2.4):.58;
@@ -367,7 +367,7 @@
   function stamp(name,x,y,w,h) {const a=art[name];ctx.drawImage(a,Math.round(x),Math.round(y),w||a.width/(a.unit||1),h||a.height/(a.unit||1));}
   function shadow(x,y,w,h) {stamp('shadow',x-w/2,y-h/2,w,h);}
   function waterRing(x,y,r,alpha) {
-    ctx.strokeStyle=`rgba(164,214,198,${alpha*.7})`;ctx.lineWidth=1;ctx.beginPath();ctx.ellipse(x,y,r,r*.3,0,.15,Math.PI*1.8);ctx.stroke();
+    ctx.strokeStyle=`rgba(204,222,190,${alpha*.8})`;ctx.lineWidth=1;ctx.beginPath();ctx.ellipse(x,y,r,r*.3,0,.15,Math.PI*1.8);ctx.stroke();
   }
   function draw() {
     ctx.drawImage(seaBase,0,0,width,height);

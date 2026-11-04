@@ -143,6 +143,8 @@ progress{height:5px;margin-top:5px;box-shadow:0 0 0 1px #d8c48a1c}
 #inventory b{color:#ffebbf;font-size:13px;margin:0;font-weight:600;letter-spacing:0}
 #inventory>span:nth-child(n+6){border-top-color:#b09a6b}
 #inventory>span:last-child{background:linear-gradient(180deg,#3b4032,#202f2f);border-color:#baa071 #706347 #60563f #99845b}
+/* XI / Opal — warm glazed stew face; retain Vault bevels and chip geometry. */
+#inventory>span.stew{background:linear-gradient(180deg,#4a4232,#302f29);border-color:#c0a477 #786849 #62553e #a18a60}
 #notice{border-color:#c4a46b45;background:#0b202ce6;box-shadow:inset 2px 0 #d4b57880,0 3px 12px #0003;color:#f0dfbc;text-shadow:0 1px 2px #020b13e6}
 .card{padding:24px;border-color:#b8965d9e;border-top:3px solid #f6d69a;background:linear-gradient(100deg,#b7945710,transparent 45%),repeating-linear-gradient(0deg,transparent 0 5px,#e9c88b03 6px 7px),linear-gradient(145deg,#34362efc,#18292dfc 55%,#101e29fc);box-shadow:0 24px 70px #000b,0 0 0 3px #05121c80,inset 0 1px #fff1c342,inset 0 0 36px #050e1938}
 .card>.eyebrow{display:block;font:9px Georgia,"Songti SC",serif;line-height:1.5;letter-spacing:2px;color:#cfb883}

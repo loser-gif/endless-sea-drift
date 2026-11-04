@@ -1,3 +1,9 @@
+## XI欧 / v11-opal
+
+- 背包炖菜增加暖琥珀专属底色与黄铜边色，沿用 vault 斜边、内阴影和尺寸；仅 CSS 调色，无新增动画或特效。
+- 全部玩法、战斗、合成、存档、迁移、偏好及触控布局不变，保留竖屏 notice +176px。
+- CACHE `endless-sea-drift-v11-opal`；edition `XI欧`；验证与交接见 `_v11opal-validation.json`、`_v11opal-handoff.md`。
+
 ## XI缆 / v11-cord
 
 - 筏板绑绳增加窄接触 AO，跨板缝处略深；烘焙到原有四张缓存精灵，绳股宽度、筏板尺寸与逐帧绘制次数不变。

@@ -252,7 +252,8 @@
     $('ammo').parentElement?.classList.toggle('empty',s.supplies.ammo===0);
     $('build').setAttribute('aria-pressed',String(s.building));$('place').disabled=!s.building;
   }
-  function showDialog(title,text,button) {
+  function showDialog(title,text,button,view=s.ended?'death':'pause') {
+    $('overlay').dataset.view=view;
     $('newRun').hidden=true;$('dialogTitle').textContent=title;$('dialogText').textContent=text;$('resume').textContent=button;$('overlay').hidden=false;$('resume').focus();
   }
   function stats(){const modules=[...new Set([...s.tiles.values()].map(t=>t.module).filter(Boolean))].map(k=>MODULES[k].name).join('、')||'无';return `生存时长 ${clock(s.time)} · 第 ${Math.floor(s.time/120)+1} 天 · 击退 ${s.kills} · 木筏 ${s.tiles.size} 格 · 弹药余量 ${s.supplies.ammo} · 模块：${modules}`;}
@@ -557,7 +558,7 @@
   window.addEventListener('resize',resize);window.visualViewport?.addEventListener('resize',resize);
   document.addEventListener('contextmenu',e=>e.preventDefault());document.addEventListener('gesturestart',e=>e.preventDefault(),{passive:false});
   reset();
-  if(load()){showDialog('漂流仍在继续','已找回上次航行。继续漂流，或开始新的旅程。\n\n'+continueSummary(),'继续漂流');$('newRun').hidden=false;}
+  if(load()){showDialog('漂流仍在继续','已找回上次航行。继续漂流，或开始新的旅程。\n\n'+continueSummary(),'继续漂流','start');$('newRun').hidden=false;}
   if(new URLSearchParams(location.search).has('test'))window.testAPI={get s(){return s;},reset,act,update,weather,spawnMonster,damage,draw,serialize,save,load,newRun,pause,SAVE_KEY,PREFS_KEY,mute,readPrefs,sfx,unlockAudio,get voices(){return voices.length;},get muted(){return muted;},spawnCargo,cargoKind,lastActAt,showActionTip,highlightText,pauseHighlights,continueSummary,guidance,updateVital,updateWake,get wake(){return wake;},keys,recordKill,expireStreak,recordDock,spawnFogship,freshHighlights,kingStamp,kingRimAlpha,offerFor,offerText,OFFERS,finish,quality,get audioUnlocked(){return audioContext?.state==='running';}};
   function frame(now){const dt=Math.min((now-last)/1000,.05);last=now;if(!s.paused)update(dt);if(now-rendered>=1000/quality.fps-1){draw();rendered=now;}requestAnimationFrame(frame);}
   requestAnimationFrame(frame);

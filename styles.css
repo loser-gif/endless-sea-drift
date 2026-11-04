@@ -194,3 +194,26 @@ progress{height:5px;margin-top:5px;box-shadow:0 0 0 1px #d8c48a1c}
  .ammo-status{margin-bottom:4px;gap:7px}
  #notice{top:calc(max(12px,env(safe-area-inset-top)) + 215px)}
 }
+
+/* XI▤ — machined brass rails; the depth layout and ocean clearance stay fixed. */
+.card{border-top-color:#ffe2a8;border-left-color:#bc985e;border-right-color:#756343;box-shadow:0 25px 60px #0009,inset 0 2px #fff0c25c,inset 0 0 0 5px #081923,inset 0 0 0 6px #c29d6066,inset 0 0 0 8px #07172166,inset 0 -9px 18px #020e1940}
+.card>.eyebrow{color:#bea87b;font-weight:600}
+.card h2{font-weight:600;border-bottom-color:#c5a56b4d}
+.card p,#dialogText{color:#bcc8bf}
+.card .muted{color:#97aaa5}
+#overlay[data-view="start"] .card h2{color:#ffe5b3}
+#overlay[data-view="pause"] .card>.eyebrow{color:#a8b8ad}
+#overlay[data-view="pause"] .card h2{font-weight:500;color:#e6d4ad}
+#overlay[data-view="death"] .card>.eyebrow{color:#c5a08a}
+#overlay[data-view="death"] .card h2{font-weight:600;color:#e5c29f}
+#muteToggle{border-color:#a6b5aa29;color:#a7b7ae}
+#muteToggle[aria-pressed="true"]{color:#c2b398;border-color:#b5a07555;background:#a48b4310}
+#newRun{border-color:#ae967066;color:#cdbb9d}
+#ammoChip[data-mode="loaded"]{color:#f6dc9e;border-color:#c6a15f99;background:linear-gradient(135deg,#494731,#1c3032);box-shadow:inset 2px 0 #c5a064,inset 0 1px #ffe3ac29,inset 0 -2px #020e1966}
+#ammoChip[data-mode="empty"]{color:#ffd0b1;border-color:#b87c5e;background:linear-gradient(135deg,#51372d,#2b292a);box-shadow:inset 2px 0 #e0a17d,inset 0 1px #ffd5b31a,inset 0 -2px #020e1966}
+.tool select{border-top-color:#c9ab73;border-left-color:#a78b5d;border-right-color:#675c46;border-bottom-color:#675c46;box-shadow:inset 0 1px #ffe3ac29,inset 1px 0 #ffe3ac12,inset 0 -3px #020e1966;background-color:#182d33}
+.tool select option{color:#f1dfb9;background-color:#182d33}
+.actions [data-action="craft"],.actions [data-action="build"]{box-shadow:inset 0 1px #e9ce9826,inset 0 -2px #020e1959,0 3px 9px #0003}
+#stick{border-top-color:#f0d39b;border-bottom-color:#8e754b}
+#thumb{border-bottom-color:#967f55}
+@media(orientation:landscape){#hud{box-shadow:0 6px 20px #0005,inset 0 1px #fff0bd26,inset 0 0 0 3px #071923,inset 0 0 0 4px #c29d6026}}

@@ -384,7 +384,9 @@ window.SeaArt = (() => {
       r(6,33,28,1,palette.brass);r(6,34,1,5,palette.light);
       r(8,36,24,1,'#bd955e');r(10,38,19,1,'#6d5138');
       r(6,40,29,2,'#1c3036');r(8,40,23,1,'#3b6568');
-      r(8,34,2,2,palette.brass);r(31,38,2,2,palette.shade);
+      // Bolt: two inset nail heads; tiny upper-left glints baked into the foot.
+      r(8,34,2,2,palette.shade);r(8,34,1,1,palette.light);
+      r(31,38,2,2,palette.shade);r(31,38,1,1,palette.brass);
       // Glyph: solid brass faces share the turret palette; dark cuts retain each silhouette.
       // Keep the helm hub/spokes and all sprite bounds for the existing build preview.
       if(kind==='helm'){r(18,19,5,19,'#987344');r(8,7,25,23,palette.brass);r(12,11,17,15,palette.shade);r(9,8,23,2,palette.light);r(18,4,4,30,palette.brass);r(5,17,31,3,palette.brass);r(17,16,6,5,'#987344');r(18,16,4,1,palette.light);}

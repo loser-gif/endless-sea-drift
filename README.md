@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI淤 · v11-silt，CACHE：`endless-sea-drift-v11-silt`。木筏附近浅水加入克制沙绿淤色，复用原水面缓存与绘制预算；验证见 `_v11silt-handoff.md`。
+XI钉 · v11-bolt，CACHE：`endless-sea-drift-v11-bolt`。模块底座钉栓加入克制微高光，复用原精灵缓存、保留 unit=2 精灵；验证见 `_v11bolt-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI淤; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI钉; no build step.
 
 ## 本地预览
 

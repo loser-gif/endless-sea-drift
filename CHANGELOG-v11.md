@@ -1,3 +1,9 @@
+## XI钉 / v11-bolt
+
+- 模块底座两处钉栓细化左上微高光与暗侧，复用原精灵缓存；保留现有 unit=2 精灵，无新增逐帧特效。
+- 全部玩法、战斗、合成、存档、迁移与偏好不变；保留触控 ≥44px、竖屏 notice +176px、30fps / ≤4 声部。
+- CACHE `endless-sea-drift-v11-bolt`；edition `XI钉`；验证与交接见 `_v11bolt-validation.json`、`_v11bolt-handoff.md`。
+
 ## XI淤 / v11-silt
 
 - 木筏附近浅水渐变改为低饱和沙绿淤色，向外融入青蓝海水；复用原缓存、形状与绘制次数，无新增粒子、滤镜或动画。

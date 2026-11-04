@@ -1,3 +1,9 @@
+## XI浪2 / v11-crest2
+
+- 浪尖镜面高光第二轮：收敛既有浪纹亮肩，象牙亮点以肩部权重平方渐隐；保留断续像素、六张缓存尺寸与逐帧绘制预算，不增效果层。
+- 全部玩法、战斗、合成、存档、迁移、偏好、30fps / ≤4 声部保留；≥44px 触控、竖屏 notice +176px 与 HUD 布局不变。
+- CACHE `endless-sea-drift-v11-crest2`；验证 `_v11crest2-validation.json`，浏览器成功时截图 `_shot-v11crest2.png` / `_shot-v11.png`；交接 `_v11crest2-handoff.md`。
+
 ## XI纱2 / v11-veil2
 
 - 夜雾薄纱第二轮：仅小幅降低既有有灯／无灯夜色、夜间暗角与风雨夜罩染 alpha；渐变、光晕、白昼与绘制层数不变。

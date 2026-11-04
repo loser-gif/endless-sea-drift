@@ -4,7 +4,7 @@
 
 ## 近况 / Latest
 
-XI纱2 · v11-veil2，CACHE：`endless-sea-drift-v11-veil2`。夜雾薄纱第二轮：小幅降低既有夜色、暗角与风雨夜罩染透明度，不新增绘制层；玩法与竖屏 notice +176px 保留，验证见 `_v11veil2-handoff.md`。
+XI浪2 · v11-crest2，CACHE：`endless-sea-drift-v11-crest2`。浪尖镜面高光第二轮：收敛缓存浪纹亮肩，象牙亮点向肩部中心柔和集中，不新增绘制层；玩法与竖屏 notice +176px 保留，验证见 `_v11crest2-handoff.md`。
 
 摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI纱2; no build step.
 

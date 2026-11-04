@@ -4,8 +4,9 @@ window.SeaArt = (() => {
   const surface=(w,h)=>{const c=document.createElement('canvas');c.width=w;c.height=h;return c;};
   const poly=(g,pts,c)=>{g.fillStyle=c;g.beginPath();pts.forEach(([x,y],i)=>i?g.lineTo(x,y):g.moveTo(x,y));g.closePath();g.fill();};
   // Pixel-rasterized swells share the same small, broken clusters as the sprites.
-  // Cusp: soft dawn brass and ivory rims; reuse existing sprite pixels and draw budget.
-  const palette={brass:'#ddbe91',light:'#f6e2bd',shade:'#1b3037',wet:'#213634'};
+  // Cusp2: quieter sunrise brass and warm ivory; retain cool shadows and dawn wash.
+  // Recolor existing cached rim pixels only: no extra light pass or sprite geometry.
+  const palette={brass:'#d8b996',light:'#f1dfc2',shade:'#1b3037',wet:'#213634'};
   const waterLight='#e4e3cf';
   const waves=[],foam=[];
   for(let v=0;v<6;v++){

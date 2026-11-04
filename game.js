@@ -379,11 +379,11 @@
     for(const m of s.monsters){shadow(m.x+15,m.y+24,115,62);ctx.save();ctx.globalAlpha=.14;ctx.translate(m.x+6,m.y+22);ctx.scale(1,.32);ctx.rotate(m.angle);stamp('monster',-32,-20,64,40);ctx.restore();}
     for(const p of s.sites){
       shadow(p.x,p.y+24,110,50);stamp(p.variant&&['island','wreck'].includes(p.kind)?p.kind+p.variant:p.kind,p.x-48,p.y-45,96,80);
-      ctx.save();ctx.font='11px sans-serif';ctx.textAlign='center';ctx.lineJoin='round';ctx.lineWidth=3;ctx.strokeStyle='#10232c';ctx.fillStyle='#ffe6b7';
+      ctx.save();ctx.font='11px sans-serif';ctx.textAlign='center';ctx.lineJoin='round';ctx.lineWidth=3.5;ctx.strokeStyle='#06131c';ctx.fillStyle='#fff0cc';
       const label=(p.used?'已停靠':p.kind==='island'?'小岛 · G':p.kind==='merchant'?'商船 · G':p.kind==='fogship'?'雾灯船 · G':'沉船 · G')+' '+Math.ceil(p.life)+'s';
       const labelX=Math.max((8-cx)/scale+45,Math.min((width-8-cx)/scale-45,p.x)),labelY=Math.max((14-cy)/scale,Math.min((height-8-cy)/scale,p.y-48));
       ctx.strokeText(label,labelX,labelY);ctx.fillText(label,labelX,labelY);
-      if(p.kind==='merchant'&&!p.used){ctx.font='10px sans-serif';ctx.fillStyle='#ffe2a6';const offer=offerText(p);ctx.strokeText(offer,p.x,p.y+43);ctx.fillText(offer,p.x,p.y+43);}
+      if(p.kind==='merchant'&&!p.used){ctx.font='10px sans-serif';ctx.fillStyle='#ffebbf';const offer=offerText(p);ctx.strokeText(offer,p.x,p.y+43);ctx.fillText(offer,p.x,p.y+43);}
       ctx.restore();
     }
     for(const c of s.cargo){
@@ -463,7 +463,7 @@
       ctx.save();ctx.font='bold 20px sans-serif';ctx.textAlign='center';ctx.lineJoin='round';
       // Dark separation, a fine brass rim, then a warm ivory face.
       ctx.shadowColor='#020b13';ctx.shadowBlur=8;ctx.shadowOffsetY=3;
-      ctx.strokeStyle='#071723';ctx.lineWidth=5;ctx.strokeText(title,cx,titleY);
+      ctx.strokeStyle='#06131c';ctx.lineWidth=5;ctx.strokeText(title,cx,titleY);
       ctx.shadowBlur=0;ctx.shadowOffsetY=0;ctx.strokeStyle='#a77e43';ctx.lineWidth=2;ctx.strokeText(title,cx,titleY);
       ctx.fillStyle='#fff0cc';ctx.fillText(title,cx,titleY);ctx.restore();
     }

@@ -217,3 +217,15 @@ progress{height:5px;margin-top:5px;box-shadow:0 0 0 1px #d8c48a1c}
 #stick{border-top-color:#f0d39b;border-bottom-color:#8e754b}
 #thumb{border-bottom-color:#967f55}
 @media(orientation:landscape){#hud{box-shadow:0 6px 20px #0005,inset 0 1px #fff0bd26,inset 0 0 0 3px #071923,inset 0 0 0 4px #c29d6026}}
+
+/* XI / Gilt — quieter pauses, an airy recap and legible night instruments. */
+#overlay[data-view="death"] #dialogText{padding:8px 4px 18px;line-height:2.05;color:#d4d5c3}
+#overlay[data-view="death"] .card h2{margin-bottom:18px}
+#overlay[data-view="death"] #resume{margin-top:16px}
+#overlay[data-view="pause"] .card{border-top-color:#c2b18b;box-shadow:0 25px 60px #0009,inset 0 1px #e1d4b42e,inset 0 0 0 5px #081923,inset 0 0 0 6px #b4935c40,inset 0 -9px 18px #020e1940}
+#overlay[data-view="pause"] .card h2{border-bottom-color:#c5a56b30}
+#overlay[data-view="pause"] #dialogText{color:#b6c3bb;line-height:1.95;padding-bottom:16px}
+#hud #voyage{font-weight:500;font-variant-numeric:tabular-nums;color:#dbe0d5;text-shadow:0 1px 1px #020c14}
+#inventory b{color:#fff0cc;text-shadow:0 1px 1px #020c14}
+#inventory .empty b{color:#ffd0b1}
+#ammoChip{font-variant-numeric:tabular-nums;text-shadow:0 1px 1px #020c14}

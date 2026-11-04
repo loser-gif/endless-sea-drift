@@ -400,10 +400,11 @@
         waterRing(x+20,y+48,22,.38);
         // A few local foam flecks, no particle simulation or unbounded allocation.
         for(let j=0;j<3;j++){
-          const phase=(time*.65+t.x*.37+j*.31)%1;
+          const phase=((time*.45+t.x*.37+j*.31)%1+1)%1;
           ctx.globalAlpha=Math.sin(phase*Math.PI)*.6;
-          rect(x+7+j*11+phase*5,y+49+phase*7,4-phase*2,1,'#dcf6d8');
-          if(j===1)rect(x+12+phase*13,y+45-Math.sin(phase*Math.PI)*7,1,2,'#fff2cb');
+          rect(Math.round(x+7+j*10+phase*4),Math.round(y+49+phase*5),5,1,'#c5dfca');
+          rect(Math.round(x+9+j*10+phase*4),Math.round(y+50+phase*5),2,1,'#7eb4ad');
+          if(j===1)rect(Math.round(x+12+phase*13),Math.round(y+48+phase*4),3,1,'#eee6bd');
         }ctx.globalAlpha=1;
       }
       if(t.hp<100){
@@ -445,7 +446,7 @@
     for(const shot of s.shots)SeaArt.glow(cx+shot.x*scale,cy+shot.y*scale,35,shot.life/.16);
     if(s.tiles.has('-1,-1'))SeaArt.glow(cx-43*scale,cy-41*scale,25*scale,.6);
     SeaArt.glow(cx-45*scale,cy-58*scale,55*scale,.18);
-    ctx.globalAlpha=weather().night?.18:1;ctx.drawImage(atmosphere,0,0,width,height);ctx.globalAlpha=1;SeaArt.finish(ctx);SeaArt.atmosphere(ctx,width,height,time,weather(),countModule('lamp')>0,cx,cy,scale);
+    ctx.globalAlpha=weather().night?.18:1;ctx.drawImage(atmosphere,0,0,width,height);ctx.globalAlpha=1;SeaArt.finish(ctx,s.tiles,cx,cy,scale);SeaArt.atmosphere(ctx,width,height,time,weather(),countModule('lamp')>0,cx,cy,scale);
     if(s.phaseFlash>0&&!reducedMotion){ctx.globalAlpha=Math.min(1,s.phaseFlash/.65);ctx.fillStyle=edgeFlashes[s.phaseFlashKind];ctx.fillRect(0,0,width,height);ctx.globalAlpha=1;}
     if(s.bossFlash>0){ctx.fillStyle='#ffddb2';ctx.font='bold 20px sans-serif';ctx.textAlign='center';ctx.fillText('潮汐王 · 深海来袭',cx,Math.max(240,cy-90));}
     if(s.killFlash>0&&!reducedMotion){ctx.strokeStyle='#ffe2a6';ctx.lineWidth=2;ctx.strokeRect(cx-16,cy-16,32,32);}

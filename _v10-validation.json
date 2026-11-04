@@ -1,7 +1,7 @@
 {
   "ok": true,
-  "cache": "endless-sea-drift-v11-ui",
-  "session_id": "01a1a6d9-c732-7172-a967-96376dc76efe",
+  "cache": "endless-sea-drift-v11-art",
+  "session_id": "01a1a6de-2b5c-79c3-9300-f584808ffe33",
   "features": [
     {
       "id": "cache",
@@ -30,6 +30,21 @@
     },
     {
       "id": "sites",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "v11-art-smoke",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "v11-art-expanded-board-mask",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "v11-art-reduced-time",
       "ok": true,
       "note": "通过"
     },

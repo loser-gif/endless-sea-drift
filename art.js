@@ -1,10 +1,11 @@
 'use strict';
-// v6: authored pixel materials, cached lighting, and bounded Canvas 2D depth layers.
+// XI·A: cached pixel materials, sparse foam, and bounded Canvas 2D light.
 window.SeaArt = (() => {
   const surface=(w,h)=>{const c=document.createElement('canvas');c.width=w;c.height=h;return c;};
   const poly=(g,pts,c)=>{g.fillStyle=c;g.beginPath();pts.forEach(([x,y],i)=>i?g.lineTo(x,y):g.moveTo(x,y));g.closePath();g.fill();};
   // Pixel-rasterized swells share the same small, broken clusters as the sprites.
-  const waves=[];
+  const palette={brass:'#e0c28a',light:'#ffe6ab',shade:'#1b3037',wet:'#213634'};
+  const waves=[],foam=[];
   for(let v=0;v<6;v++){
     const c=surface(192,48),g=c.getContext('2d');
     // A translucent shoulder above a deep trough gives each swell volume.
@@ -24,17 +25,27 @@ window.SeaArt = (() => {
       if((x*7+v)%31<4){g.globalAlpha=a*.32;g.fillStyle='#c9d8b1';g.fillRect(x,y-1,3,1);}
     }
     waves.push(c);
+    const f=surface(48,12),fg=f.getContext('2d');
+    for(let j=0;j<4;j++){
+      const x=3+j*11,y=4+(j+v)%3;
+      fg.fillStyle='#328f94';fg.fillRect(x-1,y+1,8,3);
+      fg.fillStyle='#a6cfc0';fg.fillRect(x,y,5+j%2,1);
+      fg.fillStyle='#e0e4c4';fg.fillRect(x+1,y-1,3,1);
+    }
+    foam.push(f);
   }
   const halo=surface(64,64),hg=halo.getContext('2d'),rad=hg.createRadialGradient(32,32,0,32,32,32);
   rad.addColorStop(0,'#ffedbc88');rad.addColorStop(.22,'#ffc77844');rad.addColorStop(1,'#e9cb8200');hg.fillStyle=rad;hg.fillRect(0,0,64,64);
-  let bloom,bg,depth,dg,mask,fw=0,fh=0,focus=.5;
+  let bloom,bg,depth,dg,mask,vignette,fw=0,fh=0,focus=.5;
   function resize(w,h,focusY=h*.5) {
     fw=w;fh=h;focus=focusY/h;
     bloom=surface(Math.ceil(w/8),Math.ceil(h/8));bg=bloom.getContext('2d');
     depth=surface(Math.ceil(w/6),Math.ceil(h/6));dg=depth.getContext('2d');
     mask=surface(depth.width,depth.height);const m=mask.getContext('2d'),a=m.createLinearGradient(0,0,0,mask.height);
-    a.addColorStop(0,'#000');a.addColorStop(Math.max(.03,focus-.32),'#0009');a.addColorStop(Math.max(.05,focus-.20),'#0000');
-    a.addColorStop(Math.min(.85,focus+.21),'#0000');a.addColorStop(Math.min(.96,focus+.39),'#0009');a.addColorStop(1,'#000e');m.fillStyle=a;m.fillRect(0,0,mask.width,mask.height);
+    a.addColorStop(0,'#000');a.addColorStop(Math.max(.03,focus-.36),'#0006');a.addColorStop(Math.max(.05,focus-.20),'#0000');
+    a.addColorStop(Math.min(.85,focus+.21),'#0000');a.addColorStop(Math.min(.96,focus+.43),'#0006');a.addColorStop(1,'#000e');m.fillStyle=a;m.fillRect(0,0,mask.width,mask.height);
+    vignette=surface(96,64);const vg=vignette.getContext('2d'),vr=vg.createRadialGradient(48,32,12,48,32,55);
+    vr.addColorStop(0,'#10243b00');vr.addColorStop(.55,'#10243b18');vr.addColorStop(1,'#10243bbb');vg.fillStyle=vr;vg.fillRect(0,0,96,64);
   }
   function glow(x,y,size,alpha=.4) {bg.globalAlpha=alpha;bg.drawImage(halo,(x-size)/8,(y-size*.6)/8,size/4,size*.15);}
   function ocean(g,w,h,t) {
@@ -44,12 +55,19 @@ window.SeaArt = (() => {
       const x=((i*139.7+t*(3+d*4))%(w+size))-size,y=(d*(h+80)+t*(1+d*2))%(h+80)-40;
       // Quiet focal water: detail and contrast increase outside the raft silhouette.
       const quiet=Math.abs(x+size*.5-w*.5)<w*.16&&Math.abs(y-h*focus)<h*.21;
-      g.globalAlpha=quiet?.38:.85;g.drawImage(waves[i%6],Math.round(x),Math.round(y),size,14+d*45);
+      g.globalAlpha=quiet?.30:y<h*(focus-.20)?.96:.82;g.drawImage(waves[i%6],Math.round(x),Math.round(y),size,14+d*45);
+    }
+    // Fixed cache budget: distant whitecaps stay outside the quiet focal water.
+    for(let i=0;i<18;i++){
+      const x=(i*137+t*5)%(w+60)-60,y=(i*79) % h;
+      if(Math.abs(x+24-w*.5)<w*.21&&Math.abs(y-h*focus)<h*.24)continue;
+      g.globalAlpha=.16+.10*(.5+.5*Math.sin(t*.4+i));
+      g.drawImage(foam[i%foam.length],Math.round(x),y,48,12);
     }
     // Broken caustics, confined to the lit left shoulder of the focal plane.
-    for(let i=0;i<64;i++){
+    for(let i=0;i<32;i++){
       const x=(i*97.13+t*4)%w,y=h*.27+(i*43.77)%(h*.55);
-      const a=.09+.07*Math.sin(t*.7+i);g.globalAlpha=a;g.fillStyle='#8ed4b7';
+      const a=.06+.04*Math.sin(t*.7+i);g.globalAlpha=a;g.fillStyle='#8ed4b7';
       for(let j=0;j<13;j++){const xx=x+j*3,yy=y+Math.round(Math.sin(j*.55+i+t*.3)*5);g.fillRect(Math.round(xx),Math.round(yy),3,1);if(j>4&&j<11)g.fillRect(Math.round(xx+3),Math.round(yy+9-j*.4),2,1);}
     }
     for(let i=0;i<75;i++){
@@ -61,12 +79,17 @@ window.SeaArt = (() => {
     }
     g.globalAlpha=1;
   }
-  function finish(g) {
+  function finish(g,tiles,cx=0,cy=0,scale=1) {
     // Downsample once, then alpha-mask into the far/near bands. No filter or readback.
     // The focal band (including all initial raft boards) has exactly zero blur alpha.
     dg.globalCompositeOperation='source-over';dg.clearRect(0,0,depth.width,depth.height);
     dg.imageSmoothingEnabled=true;dg.drawImage(g.canvas,0,0,depth.width,depth.height);
     dg.globalCompositeOperation='destination-in';dg.drawImage(mask,0,0);
+    // Clear every surviving board, including expanded rafts. Padding covers upsampling.
+    if(tiles)for(const tile of tiles.values()){
+      const x=(cx+(tile.x*40-20)*scale)*depth.width/fw,y=(cy+(tile.y*40-20)*scale)*depth.height/fh;
+      dg.clearRect(Math.floor(x)-2,Math.floor(y)-2,Math.ceil(40*scale*depth.width/fw)+5,Math.ceil(52*scale*depth.height/fh)+5);
+    }
     g.save();g.imageSmoothingEnabled=true;g.drawImage(depth,0,0,fw,fh);
     g.globalCompositeOperation='screen';g.globalAlpha=.65;g.drawImage(bloom,-4,-2,fw+8,fh+4);g.restore();
   }
@@ -87,7 +110,7 @@ window.SeaArt = (() => {
       }
       // End grain, salt stain, and reflected teal on the wet vertical edge.
       for(let y=75;y<98;y+=4){r(4,y,71,2,y<84?'#795535':'#284647');r(9+v*3,y,44-v*5,1,y<84?'#b79460':'#467573');}
-      r(2,74,74,1,'#d9c08a');r(1,2,2,70,'#f0d394');r(77,2,2,94,'#213634');r(4,98,72,4,'#092736');
+      r(2,74,74,1,'#d9c08a');r(1,2,2,70,'#f0d394');r(77,2,2,94,'#213634');r(4,98,72,4,palette.shade);
       // Lashings are braided pixel strands, not thick vertical outlines.
       for(const x of [3,73]){r(x,3,3,89,'#665c43');for(let y=4;y<92;y+=4){r(x,y,2,2,'#c9be8a');r(x+1,y+2,2,1,'#e1cf99');}}
     });
@@ -138,13 +161,13 @@ window.SeaArt = (() => {
       r(27,29,28,23,'#82958c');r(31,24,18,3,'#ded9b3');r(27,30,3,21,'#e5d7ac');r(31,54,18,3,'#456369');r(50,30,5,23,'#415d65');
       for(let i=0;i<5;i++){r(17+i*9,21,3,1,'#a99465');r(14,32+i*5,2,1,'#9e946e');}
       r(30,33,2,9,'#99b3a5');r(46,33,2,17,'#375765');r(31,48,5,1,'#e9dfb4');
-      r(34,26,11,26,'#c2c4a8');r(37,29,5,23,'#8b9e96');r(34,26,2,23,'#f0dfb0');
+      r(34,26,11,26,'#c2c4a8');r(37,29,5,23,'#8b9e96');r(34,26,2,23,palette.light);
       for(let i=0;i<7;i++){r(21+i*5,59,2,3,'#b6aa7f');r(59,27+i*4,3,1,'#8a967e');}
     });
     fine('barrel',40,16,(g,r)=>{
-      poly(g,[[3,7],[12,5],[70,5],[77,9],[77,24],[69,27],[10,25],[3,20]],'#16303b');
-      r(8,8,63,13,'#4a6d76');r(8,8,63,3,'#c4cbb3');r(9,11,61,2,'#829d9b');r(10,19,61,3,'#2c4d5e');r(71,10,4,12,'#0b2433');r(71,9,2,2,'#9aaf9f');
-      for(const x of [17,53]){r(x,3,6,24,'#76603c');r(x,3,5,3,'#f4d293');r(x,7,2,15,'#c7a36a');r(x+4,8,2,17,'#46504a');r(x+2,12,1,2,'#fae5ac');}
+      poly(g,[[3,7],[12,5],[70,5],[77,9],[77,24],[69,27],[10,25],[3,20]],palette.shade);
+      r(8,8,63,13,'#4a6d76');r(8,8,63,3,'#c4cbb3');r(9,11,61,2,'#829d9b');r(10,19,61,3,'#2c4d5e');r(71,10,4,12,palette.shade);r(71,9,2,2,'#9aaf9f');
+      for(const x of [17,53]){r(x,3,6,24,'#76603c');r(x,3,5,3,palette.brass);r(x,7,2,15,'#c7a36a');r(x+4,8,2,17,'#46504a');r(x+2,12,1,2,palette.light);}
       r(26,9,24,1,'#f1e9c1');r(30,14,19,1,'#63858b');r(32,22,16,1,'#193d4e');
     });
     for(const kind of ['wood','water','food','cloth'])fine(kind,32,32,(g,r)=>{
@@ -198,7 +221,7 @@ window.SeaArt = (() => {
       poly(g,[[9,19],[40,13],[56,23],[25,31]],'#c8aa70');
       poly(g,[[9,19],[25,31],[25,56],[9,44]],'#715538');
       poly(g,[[25,31],[56,23],[56,48],[25,56]],'#997344');
-      r(12,24,3,19,'#c6a06a');r(26,33,3,20,'#e0bd7e');r(51,27,3,21,'#5a4935');
+      r(12,24,3,19,'#c6a06a');r(26,33,2,20,palette.brass);r(51,27,3,21,'#5a4935');
       poly(g,[[29,47],[50,28],[52,32],[31,51]],'#d1ac70');
       r(18,23,4,3,'#efe0a4');r(32,36,3,3,'#384b49');r(46,43,3,3,'#384b49');
     });
@@ -211,15 +234,20 @@ window.SeaArt = (() => {
       if(kind==='gnaw'){for(let i=0;i<4;i++)r(49+i*3,24,2,5,'#f1dfb0');}
       if(kind==='flank'){poly(g,[[14,15],[27,0],[35,14]],'#b46c52');poly(g,[[24,25],[39,39],[39,25]],'#c28a61');r(29,12,14,2,'#ebbe84');}
       if(kind==='spit'){poly(g,[[27,10],[34,2],[43,11]],'#879b58');r(46,19,15,8,'#80974e');r(49,20,10,2,'#d8e6a5');r(57,23,6,2,'#e0ec83');}
-      if(kind==='tideking'){poly(g,[[22,12],[24,0],[31,6],[36,0],[41,7],[48,2],[47,14]],'#ba975e');r(27,10,20,3,'#ffe1a1');r(34,16,16,2,'#8562a2');r(50,16,5,3,'#f5b2b7');}
+      if(kind==='tideking'){poly(g,[[22,12],[24,0],[31,6],[36,0],[41,7],[48,2],[47,14]],'#ba975e');r(27,10,20,2,palette.light);r(34,16,16,2,'#8562a2');r(50,16,5,3,'#f5b2b7');}
     });
     for(const kind of ['helm','canopy','stove','net','lamp','turret'])make('module_'+kind,40,48,(g,r)=>{
-      r(5,34,31,8,'#102c38');r(7,33,26,2,'#af9666');
-      if(kind==='helm'){r(18,19,5,19,'#987344');g.strokeStyle='#d8b777';g.lineWidth=3;g.strokeRect(9,8,23,21);r(18,4,4,30,'#d8b777');r(5,17,31,3,'#edcc8f');r(17,16,6,5,'#46646c');}
+      // Shared timber foot, lit from upper left, with a cool wet lower bevel.
+      r(5,33,31,10,palette.shade);r(6,33,29,6,'#987344');
+      r(6,33,28,1,palette.brass);r(6,34,1,5,palette.light);
+      r(8,36,24,1,'#bd955e');r(10,38,19,1,'#6d5138');
+      r(6,40,29,2,palette.wet);r(8,40,23,1,'#467573');
+      r(8,34,2,2,palette.brass);r(31,38,2,2,palette.shade);
+      if(kind==='helm'){r(18,19,5,19,'#987344');g.strokeStyle=palette.brass;g.lineWidth=3;g.strokeRect(9,8,23,21);r(18,4,4,30,palette.brass);r(5,17,31,3,palette.light);r(17,16,6,5,'#46646c');}
       if(kind==='canopy'){r(5,14,3,27,'#af9261');r(32,14,3,27,'#af9261');poly(g,[[2,15],[11,3],[28,3],[38,15],[35,20],[4,20]],'#487d80');r(9,6,22,3,'#b9d2bd');r(4,16,31,3,'#d5caa0');r(13,8,2,8,'#86afa5');}
       if(kind==='stove'){r(9,16,23,23,'#53666a');r(9,15,23,3,'#c0b797');r(23,3,6,14,'#395460');r(23,3,7,2,'#b4bca5');r(13,25,14,11,'#172e36');r(15,28,10,6,'#d5884d');r(18,26,4,7,'#ffe1a0');}
       if(kind==='net'){r(5,8,3,30,'#c2a777');r(32,8,3,30,'#c2a777');for(let i=0;i<6;i++){r(8+i*4,13,1,24,'#a8c2ad');r(8,13+i*4,25,1,'#6d9991');}r(17,22,9,4,'#d3d7ac');r(14,20,3,8,'#92b5ac');}
-      if(kind==='lamp'){r(18,14,4,25,'#b19b6e');r(12,3,18,16,'#375360');r(13,4,15,2,'#e5c38b');r(16,7,13,8,'#f5d999');r(18,8,10,5,'#fff2c7');r(12,19,17,3,'#182f3c');}
+      if(kind==='lamp'){r(18,14,4,25,'#b19b6e');r(12,3,18,16,'#375360');r(13,4,15,2,palette.brass);r(16,7,13,8,'#f5d999');r(18,8,10,5,'#fff2c7');r(12,19,17,3,'#182f3c');}
       if(kind==='turret'){g.drawImage(art.turret,3,12,34,34);g.drawImage(art.barrel,18,18,24,10);}
     });
     make('island',96,80,(g,r)=>{poly(g,[[3,53],[22,34],[64,32],[91,52],[82,67],[39,75],[9,66]],'#638f86');poly(g,[[9,50],[29,30],[62,32],[86,50],[73,63],[29,66]],'#d3bb80');poly(g,[[18,46],[32,29],[61,31],[74,47],[52,57],[26,54]],'#637e53');r(44,17,5,30,'#9c794e');poly(g,[[44,19],[22,13],[11,22],[38,17],[31,5],[48,13],[62,7],[74,16],[52,16],[64,27]],'#426e58');r(44,18,2,25,'#dfc08a');r(25,49,12,6,'#83b9ad');});
@@ -227,9 +255,17 @@ window.SeaArt = (() => {
   }
   function atmosphere(g,w,h,t,weather,lamp,cx,cy,scale){
     g.save();
-    g.fillStyle=weather.night?'#03102c':'#b96b45';g.globalAlpha=weather.night?(lamp?.30:.48):weather.dusk?.20:0;g.fillRect(0,0,w,h);
+    g.fillStyle=weather.night?'#10243b':'#bd7946';g.globalAlpha=weather.night?(lamp?.26:.40):weather.dusk?.17:0;g.fillRect(0,0,w,h);
+    if(weather.night){g.globalAlpha=.48;g.drawImage(vignette,0,0,w,h);}
     if(weather.night&&lamp){g.globalAlpha=.8;g.drawImage(halo,cx-110*scale,cy-110*scale,220*scale,220*scale);}
-    if(weather.storm){g.globalAlpha=.22;g.fillStyle='#14283f';g.fillRect(0,0,w,h);g.globalAlpha=.35;g.strokeStyle='#c1dcda';g.lineWidth=1;g.beginPath();for(let i=0;i<65;i++){const x=(i*79+t*130)%w,y=(i*113+t*210)%h;g.moveTo(x,y);g.lineTo(x-6,y+15);}g.stroke();}g.restore();
+    if(weather.storm){
+      g.globalAlpha=.26;g.fillStyle='#14283f';g.fillRect(0,0,w,h);
+      g.globalAlpha=.29;g.fillStyle='#b1cfca';
+      for(let i=0;i<52;i++){
+        const x=Math.round((i*79+t*130)%w),y=Math.round((i*113+t*210)%h);
+        g.fillRect(x,y,1,3);g.fillRect(x-1,y+4,1,2);
+      }
+    }g.restore();
   }
 
   function deck(g,art,tiles,t){
@@ -246,5 +282,5 @@ window.SeaArt = (() => {
       }
     }
   }
-  return {resize,ocean,glow,finish,enhance:(art,sprite)=>{enhance(art,sprite);playArt(art,sprite);},deck,atmosphere};
+  return {get waveCacheLength(){return waves.length;},resize,ocean,glow,finish,enhance:(art,sprite)=>{enhance(art,sprite);playArt(art,sprite);},deck,atmosphere};
 })();

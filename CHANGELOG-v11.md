@@ -1,3 +1,9 @@
+## XI敌 / v11-thrall
+
+- 敌方基础精灵与各类型的边光收敛为低饱和象牙、海灰色，保留轮廓、像素位置、尺寸与缓存；无新增绘制层、滤镜或粒子。
+- 全部玩法、战斗、合成、存档、迁移、偏好不变；保留 44px 触控、竖屏 notice +176px、30fps / ≤4 声部逻辑。
+- CACHE `endless-sea-drift-v11-thrall`；edition `XI敌`；验证与交接见 `_v11thrall-validation.json`、`_v11thrall-handoff.md`。
+
 ## XI曙 / v11-cusp
 
 - 共享精灵边光微调为晨曦柔金与暖象牙色，黄昏罩染统一沙金色系；沿用原像素、透明度与缓存，无新增图层、粒子、滤镜或依赖。

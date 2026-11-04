@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI曙 · v11-cusp，CACHE：`endless-sea-drift-v11-cusp`。共享轮廓光微调为晨曦柔金与暖象牙色，黄昏罩染统一沙金色系，保留全部玩法和竖屏布局；验证见 `_v11cusp-handoff.md`。
+XI敌 · v11-thrall，CACHE：`endless-sea-drift-v11-thrall`。敌方精灵边光收敛为低饱和象牙与海灰色，保留尺寸、全部玩法和竖屏布局；验证见 `_v11thrall-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI曙; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI敌; no build step.
 
 ## 本地预览
 

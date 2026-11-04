@@ -1,3 +1,9 @@
+## XI雾2 / v11-mist2
+
+- 地平线薄雾第二轮柔化：收平缓存雾层顶部亮度峰值，微降中下段透明度，保留远岛与清晰焦点水域；无新增效果层或绘制次数。
+- 全部玩法、战斗、合成、存档、迁移、偏好与竖屏 notice +176px 不变，保留触控 ≥44px、30fps 与 ≤4 声部预算。
+- CACHE `endless-sea-drift-v11-mist2`；验证 `_v11mist2-validation.json`，浏览器成功时截图 `_shot-v11mist2.png` / `_shot-v11.png`；交接 `_v11mist2-handoff.md`。
+
 ## XI沫3 / v11-foam3
 
 - 泡沫尖端第三轮微暖：仅调整缓存泡沫中层与尖端颜色，保留喷溅尾迹、像素形状及绘制预算。

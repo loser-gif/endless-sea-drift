@@ -48,11 +48,11 @@ window.SeaArt = (() => {
     mask=surface(depth.width,depth.height);const m=mask.getContext('2d'),a=m.createLinearGradient(0,0,0,mask.height);
     a.addColorStop(0,'#000');a.addColorStop(Math.max(.03,focus-.36),'#0006');a.addColorStop(Math.max(.05,focus-.20),'#0000');
     a.addColorStop(Math.min(.85,focus+.21),'#0000');a.addColorStop(Math.min(.96,focus+.43),'#0006');a.addColorStop(1,'#000e');m.fillStyle=a;m.fillRect(0,0,mask.width,mask.height);
-    // One cached distance wash: pale horizon, cool sea shoulder, clear focal water.
+    // Mist2: soften the existing distance wash; flatten the pale crest and thin its tail.
     // Draw before world sprites so even expanded rafts and distant cargo stay crisp.
     seaMist=surface(192,128);const mg=seaMist.getContext('2d'),mist=mg.createLinearGradient(0,0,0,128);
-    mist.addColorStop(0,'#b8c9bd28');mist.addColorStop(.22,'#a5bdb52a');
-    mist.addColorStop(.46,'#8fafa51c');mist.addColorStop(.70,'#315e6810');mist.addColorStop(1,'#315e6800');
+    mist.addColorStop(0,'#b8c9bd26');mist.addColorStop(.22,'#a5bdb526');
+    mist.addColorStop(.46,'#8fafa518');mist.addColorStop(.70,'#315e680c');mist.addColorStop(1,'#315e6800');
     mg.fillStyle=mist;mg.fillRect(0,0,192,128);
     // One distant landform baked into the same wash, never a gameplay site/sprite.
     // Loom2: soften the ridge at cache time; preserve the loom mist underneath.

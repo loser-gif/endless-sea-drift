@@ -4,7 +4,7 @@
 
 ## 近况 / Latest
 
-XI沫3 · v11-foam3，CACHE：`endless-sea-drift-v11-foam3`。泡沫尖端第三轮微暖，仅调缓存颜色，保留喷溅尾迹、玩法及竖屏布局；验证见 `_v11foam3-handoff.md`。
+XI雾2 · v11-mist2，CACHE：`endless-sea-drift-v11-mist2`。地平线薄雾第二轮柔化，仅收敛既有缓存雾层，保留玩法及竖屏布局；验证见 `_v11mist2-handoff.md`。
 
 摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI沫3; no build step.
 

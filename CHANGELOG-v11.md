@@ -1,3 +1,9 @@
+## XI飓 / v11-gale
+
+- 风暴罩染改为缓存石板灰蓝渐变，雨线调为冷灰；与黎明阴影色系统一，保留原强度、52 组雨线和速度，无新增绘制层、滤镜或依赖。
+- 全部玩法、战斗、合成、存档、迁移、偏好不变；保留 44px 触控、竖屏 notice +176px、30fps 与 ≤4 声部逻辑。
+- CACHE `endless-sea-drift-v11-gale`；edition `XI飓`；验证与交接见 `_v11gale-validation.json`、`_v11gale-handoff.md`，浏览器成功时输出 `_shot-v11gale.png` / `_shot-v11.png`。
+
 ## XI闩 / v11-latch
 
 - 主次按钮采用黄铜 / 青灰金属斜边，按压时反转明暗并收紧为内凹阴影；保留扩建选中态与焦点提示，尺寸不变。

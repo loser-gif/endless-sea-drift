@@ -1,7 +1,7 @@
 {
   "ok": true,
-  "cache": "endless-sea-drift-v11-latch",
-  "session_id": "01a1a77e-c129-7752-91a1-e9c09308bcc1",
+  "cache": "endless-sea-drift-v11-gale",
+  "session_id": "01a1a78e-d60f-71f1-9114-b6b6379631f6",
   "features": [
     {
       "id": "cache",
@@ -429,6 +429,16 @@
       "note": "通过"
     },
     {
+      "id": "gale-storm-night",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "gale-storm-day",
+      "ok": true,
+      "note": "通过"
+    },
+    {
       "id": "browser-gold-safe-area-landscape",
       "ok": true,
       "note": "通过"
@@ -631,7 +641,7 @@
     {
       "id": "screenshot",
       "ok": true,
-      "note": "已生成 _shot-v11latch.png / _shot-v11.png"
+      "note": "已生成 _shot-v11gale.png / _shot-v11.png"
     }
   ],
   "errors": [],

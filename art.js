@@ -36,7 +36,7 @@ window.SeaArt = (() => {
   }
   const halo=surface(64,64),hg=halo.getContext('2d'),rad=hg.createRadialGradient(32,32,0,32,32,32);
   rad.addColorStop(0,'#ffedbc88');rad.addColorStop(.22,'#ffc77844');rad.addColorStop(1,'#e9cb8200');hg.fillStyle=rad;hg.fillRect(0,0,64,64);
-  let bloom,bg,depth,dg,mask,vignette,seaMist,fw=0,fh=0,focus=.5;
+  let bloom,bg,depth,dg,mask,vignette,seaMist,stormSky,fw=0,fh=0,focus=.5;
   function resize(w,h,focusY=h*.5) {
     fw=w;fh=h;focus=focusY/h;
     bloom=surface(Math.ceil(w/8),Math.ceil(h/8));bg=bloom.getContext('2d');
@@ -58,6 +58,11 @@ window.SeaArt = (() => {
     mg.bezierCurveTo(118,50,119,39,128,37);mg.bezierCurveTo(134,36,136,25,143,23);
     mg.bezierCurveTo(150,18,154,33,160,34);mg.bezierCurveTo(169,34,170,46,184,55);
     mg.closePath();mg.fill();
+    // Gale: replace the flat storm wash with the dawn slate family, cached on resize.
+    // Same single overlay pass and opacity; no extra clouds, filters or rain.
+    stormSky=surface(96,64);const sg=stormSky.getContext('2d'),sky=sg.createLinearGradient(0,0,0,64);
+    sky.addColorStop(0,'#202e38');sky.addColorStop(.55,'#293c45');sky.addColorStop(1,'#20363d');
+    sg.fillStyle=sky;sg.fillRect(0,0,96,64);
     vignette=surface(96,64);const vg=vignette.getContext('2d'),vr=vg.createRadialGradient(48,32,12,48,32,55);
     // Slate-teal shadow keeps the warm rims in the same light family as the HUD brass.
     vr.addColorStop(0,'#202e3800');vr.addColorStop(.55,'#202e3818');vr.addColorStop(1,'#202e38bb');vg.fillStyle=vr;vg.fillRect(0,0,96,64);
@@ -391,8 +396,8 @@ window.SeaArt = (() => {
     // Restrain the existing deck bounce; keep the ember hue and halo footprint.
     if(weather.night&&lamp){g.globalAlpha=.48;g.drawImage(halo,cx-110*scale,cy-110*scale,220*scale,220*scale);}
     if(weather.storm){
-      g.globalAlpha=.26;g.fillStyle='#192d35';g.fillRect(0,0,w,h);
-      g.globalAlpha=.29;g.fillStyle='#bdcfc4';
+      g.globalAlpha=.26;g.drawImage(stormSky,0,0,w,h);
+      g.globalAlpha=.29;g.fillStyle='#bdc9ce';
       for(let i=0;i<52;i++){
         const x=Math.round((i*79+t*130)%w),y=Math.round((i*113+t*210)%h);
         g.fillRect(x,y,1,3);g.fillRect(x-1,y+4,1,2);

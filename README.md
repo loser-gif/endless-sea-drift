@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI泊2 · v11-moor2，CACHE：`endless-sea-drift-v11-moor2`。系泊绳圈 AO 第二轮：压深圈间与绳尾接触阴影、收敛麻绳亮沿，保留缓存与显示尺寸；验证见 `_v11moor2-handoff.md`。
+XI焰2 · v11-flare2，CACHE：`endless-sea-drift-v11-flare2`。灯火克制第二轮：仅收敛吊灯与灯模块玻璃、火芯 alpha，保留缓存尺寸与绘制次数，无新增粒子；验证见 `_v11flare2-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI泊2; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI焰2; no build step.
 
 ## 本地预览
 

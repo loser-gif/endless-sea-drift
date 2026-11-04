@@ -228,8 +228,8 @@ window.SeaArt = (() => {
     fine('lantern',14,24,(g,r)=>{
       r(8,1,12,2,'#d5be82');r(7,3,2,6,'#d5be82');r(19,3,2,6,'#485c59');
       poly(g,[[6,10],[12,6],[18,6],[23,11],[23,37],[19,42],[6,40],[4,35],[4,13]],'#293e43');
-      // Flare: restrained glass alpha and a small warm wick, baked into the existing sprite.
-      r(6,12,14,3,'#d2b370e6');r(7,17,12,17,'#db9349bf');r(9,21,8,9,'#ffdb86b3');r(12,23,2,6,'#fff2c4bf');
+      // Flare2: ease glass and wick alpha again within the same cached pixels.
+      r(6,12,14,3,'#d2b370e6');r(7,17,12,17,'#db9349ad');r(9,21,8,9,'#ffdb869e');r(12,23,2,6,'#fff2c4ad');
       r(6,15,2,22,'#c2a46de6');r(18,15,2,22,'#635f46');r(6,35,15,3,'#c6a975d9');r(8,40,13,2,'#8a8c68');
     });
     fine('player',28,36,(g,r)=>{
@@ -421,7 +421,8 @@ window.SeaArt = (() => {
       if(kind==='net'){r(5,8,3,30,palette.brass);r(32,8,3,30,palette.brass);for(let i=0;i<6;i++){r(8+i*4,13,1,24,'#af9261');r(8,13+i*4,25,1,'#987344');}r(17,22,9,4,palette.brass);r(14,20,3,8,palette.light);}
       // Lumen2: settle the wet timber bounce into the grain; retain ember glass.
       if(kind==='lamp'){r(23,35,7,1,'#b99a69');r(24,37,4,1,'#a3875d');r(14,37,3,1,'#a3875d');}
-      if(kind==='lamp'){r(18,14,4,25,'#af9261');r(12,3,18,16,'#987344');r(13,4,15,2,palette.brass);r(13,6,2,10,palette.brass);r(16,7,13,8,'#f5d999a6');r(21,9,3,4,'#fff2c7bf');r(12,19,17,3,palette.shade);}
+      // Flare2: quieter glass and core; preserve the lamp silhouette and brass frame.
+      if(kind==='lamp'){r(18,14,4,25,'#af9261');r(12,3,18,16,'#987344');r(13,4,15,2,palette.brass);r(13,6,2,10,palette.brass);r(16,7,13,8,'#f5d99994');r(21,9,3,4,'#fff2c7ad');r(12,19,17,3,palette.shade);}
       if(kind==='turret'){g.drawImage(art.turret,3,12,34,34);g.drawImage(art.barrel,18,18,24,10);}
     });
     make('island',96,80,(g,r)=>{poly(g,[[3,53],[22,34],[64,32],[91,52],[82,67],[39,75],[9,66]],'#638f86');poly(g,[[9,50],[29,30],[62,32],[86,50],[73,63],[29,66]],'#d3bb80');poly(g,[[18,46],[32,29],[61,31],[74,47],[52,57],[26,54]],'#637e53');r(44,17,5,30,'#9c794e');poly(g,[[44,19],[22,13],[11,22],[38,17],[31,5],[48,13],[62,7],[74,16],[52,16],[64,27]],'#426e58');r(44,18,2,25,'#dfc08a');r(25,49,12,6,'#83b9ad');

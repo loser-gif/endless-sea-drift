@@ -1,3 +1,9 @@
+## XI焰2 / v11-flare2
+
+- 灯火克制第二轮：降低既有吊灯与灯模块玻璃、火芯 alpha；保留暖色、轮廓、缓存尺寸与绘制次数，不增加粒子或滤镜。
+- 全部玩法、战斗、合成、存档、迁移、偏好保留；≥44px 触控、竖屏 notice +176px / HUD、30fps / ≤4 声部不变。
+- CACHE `endless-sea-drift-v11-flare2`；验证 `_v11flare2-validation.json`，浏览器成功时截图 `_shot-v11flare2.png` / `_shot-v11.png`；交接 `_v11flare2-handoff.md`。
+
 ## XI泊2 / v11-moor2
 
 - 系泊绳圈 AO 第二轮：压深既有圈间、内唇与绳尾接触阴影，收敛麻绳亮沿；44×36 缓存、25×20 显示尺寸、位置与绘制层数不变。

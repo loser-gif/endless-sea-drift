@@ -1,3 +1,9 @@
+## XI沫3 / v11-foam3
+
+- 泡沫尖端第三轮微暖：仅调整缓存泡沫中层与尖端颜色，保留喷溅尾迹、像素形状及绘制预算。
+- 全部玩法、战斗、合成、存档、迁移、偏好与竖屏 notice +176px 不变，保留触控 ≥44px、30fps 与 ≤4 声部预算。
+- CACHE `endless-sea-drift-v11-foam3`；验证 `_v11foam3-validation.json`，浏览器成功时截图 `_shot-v11foam3.png` / `_shot-v11.png`；交接 `_v11foam3-handoff.md`。
+
 ## XI沿 / v11-brink
 
 - 沿用 Brim 的两条 1px 色带，微调 HUD 眉题顶部黄铜亮边与暗缝，无新增效果层，标题几何不变。

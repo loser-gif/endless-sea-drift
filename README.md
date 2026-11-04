@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI沿 · v11-brink，CACHE：`endless-sea-drift-v11-brink`。微调 HUD 顶部黄铜沿口亮边与暗缝，保留标题几何、玩法及竖屏布局；验证见 `_v11brink-handoff.md`。
+XI沫3 · v11-foam3，CACHE：`endless-sea-drift-v11-foam3`。泡沫尖端第三轮微暖，仅调缓存颜色，保留喷溅尾迹、玩法及竖屏布局；验证见 `_v11foam3-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI沿; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI沫3; no build step.
 
 ## 本地预览
 

@@ -33,8 +33,8 @@ window.SeaArt = (() => {
     for(let j=0;j<4;j++){
       const x=3+j*11,y=4+(j+v)%3;
       fg.fillStyle='#45898d';fg.fillRect(x-1,y+1,8,3);
-      fg.fillStyle='#b8cdc4';fg.fillRect(x,y,5+j%2,1);
-      fg.fillStyle='#e4e1ca';fg.fillRect(x+1,y-1,3,1);
+      fg.fillStyle='#bfcec2';fg.fillRect(x,y,5+j%2,1);
+      fg.fillStyle='#e9dfc5';fg.fillRect(x+1,y-1,3,1);
     }
     foam.push(f);
   }

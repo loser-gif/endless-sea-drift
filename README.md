@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI库 · v11-vault，CACHE：`endless-sea-drift-v11-vault`。背包铭牌采用青灰黄铜斜面，分层呈现普通物资、加工物资与弹药；网格、触控及竖屏 notice +176px 保留，验证见 `_v11vault-handoff.md`。
+XI窗 · v11-pane，CACHE：`endless-sea-drift-v11-pane`。暂停音频面板采用低亮青灰缎面与细黄铜边，保留控件、触控及竖屏 notice +176px；验证见 `_v11pane-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI库; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI窗; no build step.
 
 ## 本地预览
 

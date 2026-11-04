@@ -1,3 +1,9 @@
+## XI窗 / v11-pane
+
+- 暂停音频面板收敛为青灰缎面与低亮细边；音效开关采用内嵌底面，保留开／关文字、焦点与全部控件，无新增动画或滤镜。
+- CACHE `endless-sea-drift-v11-pane`；edition `XI窗`。玩法、战斗、合成、存档、迁移、偏好及竖屏 notice +176px 保留。
+- 验证报告 `_v11pane-validation.json`；浏览器成功时生成 `_shot-v11pane.png` / `_shot-v11.png`，详见 `_v11pane-handoff.md`。
+
 ## XI库 / v11-vault
 
 - 背包铭牌改为低亮黄铜斜面与青灰底面，加工物资提亮顶边、弹药使用暖铜面；保留空库存提示色、原有网格及尺寸，无新增动画或滤镜。

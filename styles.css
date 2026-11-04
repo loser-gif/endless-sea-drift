@@ -366,37 +366,37 @@ progress{height:5px;margin-top:5px;box-shadow:0 0 0 1px #d8c48a1c}
  #overlay[data-view="death"] #dialogText{padding:10px 8px}
 }
 
-/* XI闩 — metal faces replace existing shadows; geometry stays unchanged. */
+/* XI闩2 — satin metal presses into a cool recess; reuse layers and keep geometry. */
 .actions button,#overlay .card #newRun{
- border-color:#8c927d #495b58 #283e43 #66756b;
- background:linear-gradient(180deg,#35494a,#1a3038);
- box-shadow:inset 0 1px #e6dbb526,inset 0 -2px #07192266;
+ border-color:#969680 #4e5e59 #2b3f42 #707b6c;
+ background:linear-gradient(180deg,#3b4b49,#20343a);
+ box-shadow:inset 0 1px #e6dbb521,inset 0 -2px #07192266;
 }
 .actions button.primary,#overlay .card #resume{
- border-color:#eed7a2 #aa8e5e #806b48 #c9ae79;
- background:linear-gradient(180deg,#e2cc99,#b99d67);
+ border-color:#e3cca0 #a58d63 #786647 #c2aa7b;
+ background:linear-gradient(180deg,#dbc697,#b59c70);
  color:#243332;
- box-shadow:inset 0 1px #fff2cd80,inset 0 -2px #6c573c55;
+ box-shadow:inset 0 1px #fff2cd66,inset 0 -2px #6c573c55;
 }
 .actions button[aria-pressed="true"]{
- border-color:#d6bd83 #7e825e #526454 #9f9c71;
- background:linear-gradient(180deg,#59634b,#304840);
+ border-color:#c7b580 #7b805f #4b6053 #98966f;
+ background:linear-gradient(180deg,#535f4b,#30453e);
  color:#fff0bd;
- box-shadow:inset 3px 0 #d8bc7e,inset 0 1px #eee0b326;
+ box-shadow:inset 3px 0 #cdb784,inset 0 1px #eee0b326;
 }
 .actions button:not(:disabled):active,.actions button:not(:disabled).pressed,#overlay .card #newRun:not(:disabled):active{
- border-color:#263a3e #667568 #9b9d80 #435653;
- background:linear-gradient(180deg,#172d35,#304443);
- box-shadow:inset 0 2px 3px #05141c99;
+ border-color:#203238 #5b6c62 #a4a085 #3b514e;
+ background:linear-gradient(180deg,#14282f,#344743);
+ box-shadow:inset 0 2px 2px #05141cb3;
 }
 .actions button.primary:not(:disabled):active,.actions button.primary:not(:disabled).pressed,#overlay .card #resume:not(:disabled):active{
- border-color:#79643f #b19865 #e0c48c #9a8051;
- background:linear-gradient(180deg,#aa8e5d,#cbb17b);
- box-shadow:inset 0 2px 3px #49381d80;
+ border-color:#6b583a #ad956a #e2c995 #8d7752;
+ background:linear-gradient(180deg,#9b825a,#c7af80);
+ box-shadow:inset 0 2px 2px #49381d99;
 }
 .actions button[aria-pressed="true"]:not(:disabled):active,.actions button[aria-pressed="true"]:not(:disabled).pressed{
- background:linear-gradient(180deg,#2d443b,#4d5941);
- box-shadow:inset 3px 0 #d8bc7e,inset 0 2px 3px #05141c99;
+ background:linear-gradient(180deg,#263d35,#4b5743);
+ box-shadow:inset 3px 0 #cdb784,inset 0 2px 2px #05141cb3;
 }
 .actions button:disabled{transform:none}
 

@@ -1,3 +1,9 @@
+## XI闩2 / v11-latch2
+
+- 按钮金属面收敛亮边，按压时加深上沿凹影、反转冷暖斜面；选中态保留左侧黄铜标记。直接调整原有 CSS，不增特效层，尺寸不变。
+- 全部玩法数值、战斗、合成、存档、迁移、偏好、30fps 与四声部上限保留；44px 触控及竖屏 notice +176px 不变。
+- CACHE `endless-sea-drift-v11-latch2`；验证 `_v11latch2-validation.json`，浏览器成功时截图 `_shot-v11latch2.png` / `_shot-v11.png`；交接 `_v11latch2-handoff.md`。
+
 ## XI帆2 / v11-mast2
 
 - 商船、雾灯船与沉船帆褶加深冷色背光、收敛暖色亮面；缩短帆桁上缘亮边，保留原轮廓与缓存尺寸，不增绘制层。

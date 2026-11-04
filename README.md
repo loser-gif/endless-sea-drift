@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI霾 · v11-haze，CACHE：`endless-sea-drift-v11-haze`。晴朗午间加入克制暖灰薄霾，复用既有调色层与远景雾；验证见 `_v11haze-handoff.md`。
+XI缆 · v11-cord，CACHE：`endless-sea-drift-v11-cord`。筏板绑绳补窄接触 AO 与板缝遮蔽，尺寸与玩法不变；验证见 `_v11cord-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI霾; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI缆; no build step.
 
 ## 本地预览
 

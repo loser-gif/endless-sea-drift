@@ -173,8 +173,14 @@ window.SeaArt = (() => {
       // Stay inside the old opaque foot (and 80x104 cache); no silhouette or draw-cost growth.
       r(4,94,72,4,'#243b3d');r(6,94,68,1,'#36504b');
       r(4,98,72,2,'#192f34');r(4,100,72,2,'#10262e');
-      // Lashings are braided pixel strands, not thick vertical outlines.
-      for(const x of [3,73]){r(x,3,3,89,'#665c43');for(let y=4;y<92;y+=4){r(x,y,2,2,'#c9be8a');r(x+1,y+2,2,1,'#e1cf99');}}
+      // Cord: narrow contact AO baked under the existing three-pixel lashings.
+      // Same 80x104 cache, rope width and silhouette; no extra per-frame pass.
+      for(const x of [3,73]){
+        r(x-1,4,1,88,'#544932');r(x+3,4,1,88,'#413c2e');
+        for(let j=1;j<4;j++)r(x-1,j*18-2,5,3,'#38372b');
+        r(x,3,3,89,'#665c43');
+        for(let y=4;y<92;y+=4){r(x,y,2,2,'#c9be8a');r(x+1,y+2,2,1,'#e1cf99');}
+      }
     });
     fine('rope',22,18,(g,r)=>{
       // Moor: contact shade and twisted hemp baked into the existing 44x36 cache.

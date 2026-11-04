@@ -458,12 +458,12 @@ window.SeaArt = (() => {
       r(62,53,1,1,'#45665b');r(76,62,1,1,'#45665b');
     });
     make('wreck',96,80,(g,r)=>{poly(g,[[6,36],[24,46],[84,31],[75,61],[30,73],[13,59]],'#334c51');poly(g,[[9,34],[28,44],[84,29],[78,51],[30,64],[17,54]],'#946e48');
-      // Shard: keep each 3x17 timber footprint; wet feet share the reef opening's cool AO.
+      // Shard2: settle wet timber into cool contact AO; retain each 3x17 footprint.
       for(let i=0;i<5;i++){
         const x=23+i*11,y=43-i*2;
-        r(x,y,3,17,'#b49a70');
-        r(x+2,y+2,1,15,'#52615a');
-        r(x,y+13,2,4,'#395356');
+        r(x,y,3,17,'#aa936e');
+        r(x+2,y+2,1,15,'#485b56');
+        r(x,y+13,2,4,'#324c50');
       }
       r(45,8,4,42,'#c2a474');poly(g,[[49,10],[72,22],[57,26],[67,33],[49,35]],'#b5c1ab');r(22,50,53,3,'#483f35');r(52,39,14,8,'#395a61');
       // Mast2: weathered torn folds, with a subdued broken boom catch inside the old edge.

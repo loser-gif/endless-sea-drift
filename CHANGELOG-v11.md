@@ -1,3 +1,9 @@
+## XI片2 / v11-shard2
+
+- 沉船湿木 AO 第二轮：微调既有木肋亮面、冷色侧面与湿脚填色；3×17 木肋、96×80 精灵及绘制次数不变，无新增特效。
+- 全部玩法、战斗、合成、存档、迁移、偏好保留；≥44px 触控、竖屏 notice +176px / HUD、30fps / ≤4 声部不变。
+- CACHE `endless-sea-drift-v11-shard2`；验证 `_v11shard2-validation.json`，浏览器成功时截图 `_shot-v11shard2.png` / `_shot-v11.png`；交接 `_v11shard2-handoff.md`。
+
 ## XI符2 / v11-glyph2
 
 - 模块黄铜填色第二轮：雨棚、灶台、鱼网、灯架暖铜面与亮沿微调；完整保留舵轮、炮台、灯火透明度、精灵尺寸和绘制次数。

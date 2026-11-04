@@ -1,3 +1,9 @@
+## XI亮 / v11-gleam
+
+- 水面左肩微高光贴合断续浪冠，统一浪尖与白沫的柔象牙色，收弱背光侧亮边；复用六张浪形缓存，不增绘制层。
+- 全部玩法数值、战斗、合成、存档、迁移、偏好与竖屏 notice +176px 保留；维持触控 ≥44px、30fps 与 ≤4 声部预算。
+- CACHE `endless-sea-drift-v11-gleam`；验证 `_v11gleam-validation.json`，浏览器成功时截图 `_shot-v11gleam.png` / `_shot-v11.png`；交接 `_v11gleam-handoff.md`。
+
 ## XI静2 / v11-hush2
 
 - 暂停层第二轮降噪：纯色底面、减弱边框与单层阴影，隐去标题分隔线；保留暖色主 CTA、按钮尺寸及间距。

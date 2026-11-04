@@ -6,6 +6,7 @@ window.SeaArt = (() => {
   // Pixel-rasterized swells share the same small, broken clusters as the sprites.
   // Cusp: soft dawn brass and ivory rims; reuse existing sprite pixels and draw budget.
   const palette={brass:'#ddbe91',light:'#f6e2bd',shade:'#1b3037',wet:'#213634'};
+  const waterLight='#e4e3cf';
   const waves=[],foam=[];
   for(let v=0;v<6;v++){
     const c=surface(192,48),g=c.getContext('2d');
@@ -22,11 +23,11 @@ window.SeaArt = (() => {
       const a=Math.sin(x/192*Math.PI);
       g.globalAlpha=a*.35;g.fillStyle='#032439';g.fillRect(x,y+3,3,9);
       g.globalAlpha=a*.28;g.fillStyle='#328f94';g.fillRect(x,y,3,3);
-      if((x+v*7)%17<8){g.globalAlpha=a*.45;g.fillStyle='#8cc6b7';g.fillRect(x,y,2,1);}
-      // Crest: tiny specular flecks on the left shoulder, baked into the same six waves.
-      // Replace broad rim flecks; taper the cluster so it never becomes a white stripe.
-      const shoulder=Math.max(0,1-Math.abs(x-58)/34);
-      if((x*7+v)%31<4&&shoulder>0){g.globalAlpha=a*shoulder*.48;g.fillStyle='#e4e3cf';g.fillRect(x,y-1,2,1);}
+      // Gleam: the left shoulder and its micro glints share one broken crest.
+      // Keep the six cached swells; seat ivory pixels on the rim, with no extra pass.
+      const shoulder=Math.max(0,1-Math.abs(x-58)/34),crest=(x+v*7)%17<8;
+      if(crest){g.globalAlpha=a*(.32+shoulder*.13);g.fillStyle='#8cc6b7';g.fillRect(x,y,2,1);}
+      if(crest&&(x*7+v)%31<4&&shoulder>0){g.globalAlpha=a*shoulder*.44;g.fillStyle=waterLight;g.fillRect(x,y,2,1);}
     }
     waves.push(c);
     const f=surface(48,12),fg=f.getContext('2d');
@@ -34,7 +35,7 @@ window.SeaArt = (() => {
       const x=3+j*11,y=4+(j+v)%3;
       fg.fillStyle='#45898d';fg.fillRect(x-1,y+1,8,3);
       fg.fillStyle='#bfcec2';fg.fillRect(x,y,5+j%2,1);
-      fg.fillStyle='#e9dfc5';fg.fillRect(x+1,y-1,3,1);
+      fg.fillStyle=waterLight;fg.fillRect(x+1,y-1,3,1);
     }
     foam.push(f);
   }

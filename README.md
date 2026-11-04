@@ -4,7 +4,7 @@
 
 ## 近况 / Latest
 
-XI静2 · v11-hush2，CACHE：`endless-sea-drift-v11-hush2`。暂停层第二轮降噪：纯色底面、轻边框与单层阴影，保留 CTA 与触控间距；验证见 `_v11hush2-handoff.md`。
+XI亮 · v11-gleam，CACHE：`endless-sea-drift-v11-gleam`。水面左肩微高光贴合断续浪冠，统一柔象牙色，复用缓存与既有绘制预算；验证见 `_v11gleam-handoff.md`。
 
 摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI静2; no build step.
 

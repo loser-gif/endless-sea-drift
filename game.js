@@ -449,7 +449,15 @@
     SeaArt.glow(cx-45*scale,cy-58*scale,55*scale,.18);
     ctx.globalAlpha=weather().night?.18:1;ctx.drawImage(atmosphere,0,0,width,height);ctx.globalAlpha=1;SeaArt.finish(ctx,s.tiles,cx,cy,scale);SeaArt.atmosphere(ctx,width,height,time,weather(),countModule('lamp')>0,cx,cy,scale);
     if(s.phaseFlash>0&&!reducedMotion){ctx.globalAlpha=Math.min(1,s.phaseFlash/.65);ctx.fillStyle=edgeFlashes[s.phaseFlashKind];ctx.fillRect(0,0,width,height);ctx.globalAlpha=1;}
-    if(s.bossFlash>0){ctx.fillStyle='#ffddb2';ctx.font='bold 20px sans-serif';ctx.textAlign='center';ctx.fillText('潮汐王 · 深海来袭',cx,Math.max(240,cy-90));}
+    if(s.bossFlash>0){
+      const title='潮汐王 · 深海来袭',titleY=Math.max(240,cy-90);
+      ctx.save();ctx.font='bold 20px sans-serif';ctx.textAlign='center';ctx.lineJoin='round';
+      // Dark separation, a fine brass rim, then a warm ivory face.
+      ctx.shadowColor='#020b13';ctx.shadowBlur=8;ctx.shadowOffsetY=3;
+      ctx.strokeStyle='#071723';ctx.lineWidth=5;ctx.strokeText(title,cx,titleY);
+      ctx.shadowBlur=0;ctx.shadowOffsetY=0;ctx.strokeStyle='#a77e43';ctx.lineWidth=2;ctx.strokeText(title,cx,titleY);
+      ctx.fillStyle='#fff0cc';ctx.fillText(title,cx,titleY);ctx.restore();
+    }
     if(s.killFlash>0&&!reducedMotion){ctx.strokeStyle='#ffe2a6';ctx.lineWidth=2;ctx.strokeRect(cx-16,cy-16,32,32);}
   }
   function serialize() {trackHighlights();return JSON.stringify({v:10,state:{...s,tiles:[...s.tiles.entries()]},module:$('module').value,recipe:$('recipe').value});}

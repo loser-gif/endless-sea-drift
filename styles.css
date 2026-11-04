@@ -143,21 +143,25 @@ progress{height:5px;margin-top:5px;box-shadow:0 0 0 1px #d8c48a1c}
 .card>.eyebrow{font:9px Georgia,"Songti SC",serif;letter-spacing:2px;color:#cfb883}
 .card h2{font-size:30px;letter-spacing:5px;margin:9px 0 14px;color:#ffe1a5;text-shadow:0 2px 2px #0006;padding-bottom:8px;border-bottom:1px solid #c5a56b38}
 .card p{color:#d0d2bf;line-height:1.85}.card .muted{color:#a1afa8}
+/* XI finish — quiet dividers and steady numerals across start/pause/recap. */
+#dialogText{font-variant-numeric:tabular-nums;line-height:1.85;padding-bottom:12px;border-bottom:1px solid #c5a56b26}
+#dialogText p{margin:0 0 12px}#dialogText p:last-child{margin-bottom:0}
+#offline{padding-top:10px;border-top:1px solid #c5a56b1f}
 #resume{min-height:48px;font-weight:700;letter-spacing:2px;background:linear-gradient(120deg,#ffe8b5,#d4ad69 65%,#b88b4b);border-color:#ffe7ae;box-shadow:inset 0 1px #fff5d4,0 4px 16px #0005}
 #muteToggle{background:#07182040;border-color:#b6b59c33;color:#acbcb5;box-shadow:none;font-size:12px;margin:8px 0 0}
 #muteToggle[aria-pressed="true"]{opacity:1;color:#d6b88d;border-color:#c2a16a66;background:#b58c4314}
 #newRun{margin-top:8px;background:transparent;border-color:#ba8c6d80;color:#e1b39b;box-shadow:none;font-size:12px}
 .actions button{color:#dedac4;background:linear-gradient(150deg,#273d40f5,#10252ff5);border-color:#bbac8059;box-shadow:inset 0 1px #fce5b418,0 3px 9px #0004}
-.actions [data-action="repair"],.actions [data-action="eat"],.actions [data-action="drink"]{background:linear-gradient(145deg,#3a4a45f5,#1b3239f5);border-color:#c4bd8e70;color:#f0e2c3}
-.actions [data-action="craft"],.actions [data-action="build"]{background:linear-gradient(#182c34f5,#0c202bf5);color:#b9c4bc}
+.actions [data-action="repair"],.actions [data-action="eat"],.actions [data-action="drink"],.actions [data-action="fish"],.actions [data-action="dock"]{background:linear-gradient(145deg,#20343bf5,#10252ff5);border-color:#9fb5ac40;color:#c3cec3;box-shadow:inset 0 1px #dce7d50c,0 3px 9px #0003}
+.actions [data-action="craft"],.actions [data-action="build"]{background:linear-gradient(#3b443bf5,#1c3035f5);border-color:#c5a66e88;color:#efdbb4}
 .actions .primary{color:#2d251c;font-weight:750;border-color:#fff0bf;background:linear-gradient(125deg,#ffebba,#d6ac65 70%,#bd8e4d);box-shadow:inset 0 1px #fff8db,0 0 15px #e5b86126,0 4px 10px #0005}
 .actions button[aria-pressed="true"]{color:#fff0bd;border-color:#edcc87;background:linear-gradient(130deg,#6a6040,#354b46);box-shadow:inset 3px 0 #f5d48c,inset 0 1px #fff1c333}
 .actions button.pressed,.actions button:active{border-color:#fff0bf;box-shadow:inset 0 2px 10px #0006,inset 0 0 12px #f1d19a30}
 .tool{color:#c4b284;letter-spacing:.5px}
 .tool select{color:#f1dfb9;background:linear-gradient(135deg,#303b37,#142832);border-color:#c1a66e66;padding:5px;font-size:13px;box-shadow:inset 0 1px #f6dcad14;letter-spacing:0}
 .tool select:focus-visible{outline:2px solid #e2c38a;outline-offset:2px}
-#stick{border:1px solid #ddbd7d99;background:radial-gradient(circle at 40% 32%,#35505a99,#091d2bcc 70%);box-shadow:0 0 0 3px #07192399,inset 0 0 0 4px #cfad5f17,inset 0 0 0 7px #05162455,0 5px 18px #0005}
-#thumb{background:radial-gradient(circle at 32% 23%,#f3ddb4dc,#9a9673cc 38%,#38515bd9 82%);border-color:#f0d398b3;box-shadow:inset 0 1px #fff4d299,0 3px 8px #0006}
+#stick{border:1px solid #ddbd7dcc;background:radial-gradient(circle at 40% 32%,#35505a99,#091d2bcc 70%);box-shadow:0 0 0 3px #07192399,inset 0 0 0 4px #cfad5f17,inset 0 0 0 7px #05162455,0 5px 18px #0005}
+#thumb{background:radial-gradient(circle at 32% 23%,#f8e5bfff,#aaa180f2 38%,#3c5660f5 82%);border-color:#f0d398;box-shadow:inset 0 1px #fff4d2cc,0 0 0 2px #071923b3,0 3px 8px #0006}
 #stick small{color:#cfc9ae;text-shadow:0 1px 3px #000}
 @media(orientation:landscape) and (max-height:480px){
  #hud{width:253px;padding:8px 10px}#hud h1{font-size:19px}

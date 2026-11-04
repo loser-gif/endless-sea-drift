@@ -1,3 +1,12 @@
+## XI◆ / v11-finish
+
+- 首领入场标题：深色隔离描边、细黄铜边与暖象牙字面，柔和阴影；绘制状态局部保存/恢复。
+- 动作层级：打捞保持金色主操作，合成/扩建为黄铜次级，吃喝/修理/钓鱼/停靠收敛为冷色工具。
+- 摇杆黄铜外缘与实心感拇指提亮；开始/暂停/终章卡片增加轻分隔、段落节奏与等宽数字。
+- CACHE `endless-sea-drift-v11-finish`；edition `XI◆`。玩法、战斗、合成、v10 存档、v9 偏好、30fps、四声部上限不变；44px 目标、安全区与竖屏 notice 228px 偏移保留。
+- Validation: `node _selftest-v10.mjs` → 122/122；`_v11finish-validation.json` ok:true；`_shot-v11finish.png` / `_shot-v11.png`。
+- Cut: sea/raft micro, HUD changes, additional particles or lighting layers. No commit/push.
+
 ## XI★ / v11-polish
 
 - 外缘木板下补 1px 冷青水线；仅暴雨时略提高现有筏边泡沫透明度，不增粒子。

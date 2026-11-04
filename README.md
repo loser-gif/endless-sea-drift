@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI★ · v11-polish，CACHE：`endless-sea-drift-v11-polish`。筏边冷青水线、暴雨泡沫与弹层细节收尾，夜航展示更新；玩法、v10 存档、v9 偏好与 v11 架构不变。在线游玩：https://loser-gif.github.io/endless-sea-drift/ 。
+XI◆ · v11-finish，CACHE：`endless-sea-drift-v11-finish`。首领标题黄铜描边、动作层级、摇杆与弹层排版收尾；玩法、v10 存档、v9 偏好与 v11 架构不变。在线游玩：https://loser-gif.github.io/endless-sea-drift/ 。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI★; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI◆; no build step.
 
 ## 本地预览
 

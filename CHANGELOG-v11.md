@@ -1,3 +1,9 @@
+## XI珠光 / v11-pearl
+
+- 空弹药徽标底面细化为暖赭色，微调斜边与薄高光；保留桃橙警告文字、左侧提示线和冷却条色相，不增加特效层。
+- 全部玩法、战斗、合成、存档、迁移、偏好不变；保留触控尺寸、竖屏 notice +176px、30fps / ≤4 声部逻辑。
+- CACHE `endless-sea-drift-v11-pearl`；edition `XI珠光`；验证与交接见 `_v11pearl-validation.json`、`_v11pearl-handoff.md`。
+
 ## XI箱 / v11-crate
 
 - 货箱缓存精灵补充木板接缝、压条接触 AO 与黄铜锁扣；保留 64×64 缓存、unit=2 及原轮廓，不增加逐帧特效。

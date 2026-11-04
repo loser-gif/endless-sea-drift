@@ -219,7 +219,8 @@ progress{height:5px;margin-top:5px;box-shadow:0 0 0 1px #d8c48a1c}
 #muteToggle:focus-visible{outline:2px solid #ddc693;outline-offset:2px}
 #newRun{border-color:#ae967066;color:#cdbb9d}
 #ammoChip[data-mode="loaded"]{color:#f3dba3;border-color:#b59a6c #756343 #756343 #a78b5d;background:linear-gradient(180deg,#3e4538,#1c3032);box-shadow:inset 2px 0 #b99b61,inset 0 1px #ffe3ac20,inset 0 -2px #020e1966}
-#ammoChip[data-mode="empty"]{color:#ffd0b1;border-color:#c08b6c #825c49 #825c49 #b87c5e;background:linear-gradient(180deg,#513b30,#2b292a);box-shadow:inset 2px 0 #e0a17d,inset 0 1px #ffd5b31a,inset 0 -2px #020e1966}
+/* XI / Pearl — warm ochre face; retain the peach warning ink and edge. */
+#ammoChip[data-mode="empty"]{color:#ffd0b1;border-color:#b99a70 #796047 #796047 #ab865f;background:linear-gradient(180deg,#514331,#302b25);box-shadow:inset 2px 0 #e0a17d,inset 0 1px #f3dfb51a,inset 0 -2px #020e1966}
 .tool select{border-top-color:#c9ab73;border-left-color:#a78b5d;border-right-color:#675c46;border-bottom-color:#675c46;box-shadow:inset 0 1px #ffe3ac29,inset 1px 0 #ffe3ac12,inset 0 -3px #020e1966;background-color:#182d33}
 .tool select option{color:#f1dfb9;background-color:#182d33}
 .actions [data-action="craft"],.actions [data-action="build"]{box-shadow:inset 0 1px #e9ce9826,inset 0 -2px #020e1959,0 3px 9px #0003}

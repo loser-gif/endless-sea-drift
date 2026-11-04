@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI窗 · v11-pane，CACHE：`endless-sea-drift-v11-pane`。暂停音频面板采用低亮青灰缎面与细黄铜边，保留控件、触控及竖屏 notice +176px；验证见 `_v11pane-handoff.md`。
+XI隙 · v11-rift，CACHE：`endless-sea-drift-v11-rift`。面板以内阴影加深凹入接缝、收低亮边，保留触控与竖屏 notice +176px；验证见 `_v11rift-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI窗; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI隙; no build step.
 
 ## 本地预览
 

@@ -1,3 +1,9 @@
+## XI隙 / v11-rift
+
+- 替换 HUD 与卡片既有内阴影，加深窄接缝 AO、压低内框亮边；阴影层数及布局不变，无新增动画、滤镜或依赖。
+- CACHE `endless-sea-drift-v11-rift`；edition `XI隙`。保留玩法、战斗、合成、存档、迁移、偏好与竖屏 notice +176px。
+- 验证报告 `_v11rift-validation.json`；浏览器成功时生成 `_shot-v11rift.png` / `_shot-v11.png`，详见 `_v11rift-handoff.md`。
+
 ## XI窗 / v11-pane
 
 - 暂停音频面板收敛为青灰缎面与低亮细边；音效开关采用内嵌底面，保留开／关文字、焦点与全部控件，无新增动画或滤镜。

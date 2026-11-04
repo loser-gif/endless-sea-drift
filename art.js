@@ -245,6 +245,12 @@ window.SeaArt = (() => {
     });
     art.bottle.unit=2;
     make('merchant',96,80,(g,r)=>{poly(g,[[8,48],[83,43],[72,65],[28,70]],'#334e54');poly(g,[[10,45],[83,40],[74,56],[27,61]],'#a17b4d');r(26,56,45,2,'#e4c28a');r(44,6,4,44,'#bfa272');poly(g,[[42,8],[16,38],[42,35]],'#e1d2a6');poly(g,[[49,10],[74,34],[49,36]],'#548e88');r(27,32,12,2,'#f5e6bc');r(50,31,15,2,'#9bc0a7');r(32,47,11,8,'#c79960');r(54,43,13,9,'#776e4d');r(44,7,3,30,'#f2d59b');poly(g,[[48,6],[63,9],[48,14]],'#ce9061');
+      // Reef: cached contact AO beneath cargo/mast; tiny brass rim fittings.
+      r(32,54,12,2,palette.shade);r(54,51,14,2,palette.shade);
+      r(44,46,6,3,'#5c553d');r(33,47,9,1,palette.brass);
+      r(55,43,10,1,'#bca476');r(34,48,1,2,palette.light);
+      poly(g,[[31,62],[69,57],[68,59],[32,64]],'#294246');
+      r(29,57,2,1,palette.light);r(64,54,2,1,palette.brass);
       // Night: broken brass gunwale catchlight and cool wet hull foot.
       poly(g,[[10,45],[35,43],[35,44],[12,47]],palette.brass);r(12,47,1,3,palette.light);
       poly(g,[[29,67],[72,62],[72,65],[29,70]],palette.wet);
@@ -273,12 +279,25 @@ window.SeaArt = (() => {
       if(kind==='turret'){g.drawImage(art.turret,3,12,34,34);g.drawImage(art.barrel,18,18,24,10);}
     });
     make('island',96,80,(g,r)=>{poly(g,[[3,53],[22,34],[64,32],[91,52],[82,67],[39,75],[9,66]],'#638f86');poly(g,[[9,50],[29,30],[62,32],[86,50],[73,63],[29,66]],'#d3bb80');poly(g,[[18,46],[32,29],[61,31],[74,47],[52,57],[26,54]],'#637e53');r(44,17,5,30,'#9c794e');poly(g,[[44,19],[22,13],[11,22],[38,17],[31,5],[48,13],[62,7],[74,16],[52,16],[64,27]],'#426e58');r(44,18,2,25,'#dfc08a');r(25,49,12,6,'#83b9ad');
+      // Reef: damp sand shelf and palm/stone contact AO, inside the old outline.
+      poly(g,[[29,64],[52,61],[73,60],[73,63],[39,68],[29,67]],'#7f9270');
+      poly(g,[[40,46],[48,44],[56,47],[49,50],[40,49]],'#405d4d');
+      r(25,54,12,2,'#456e65');r(27,49,7,1,'#b8d1b0');
+      r(44,43,2,3,'#bca06c');r(21,43,3,1,palette.brass);
+      r(17,47,2,1,'#edcf93');r(32,61,5,1,'#b5b585');
       // Night: a restrained sandy catchlight above the cool shoreline foot.
       poly(g,[[10,49],[28,31],[29,32],[12,51]],palette.brass);r(12,48,2,2,palette.light);
       poly(g,[[39,72],[81,64],[82,67],[39,75]],palette.wet);
       poly(g,[[48,71],[72,67],[72,68],[48,72]],'#467573');
     });
     make('wreck',96,80,(g,r)=>{poly(g,[[6,36],[24,46],[84,31],[75,61],[30,73],[13,59]],'#334c51');poly(g,[[9,34],[28,44],[84,29],[78,51],[30,64],[17,54]],'#946e48');for(let i=0;i<5;i++)r(23+i*11,43-i*2,3,17,'#d0ac73');r(45,8,4,42,'#c2a474');poly(g,[[49,10],[72,22],[57,26],[67,33],[49,35]],'#b5c1ab');r(22,50,53,3,'#483f35');r(52,39,14,8,'#395a61');
+      // Reef: waterlogged opening and mast seat; broken brass nail/rim glints.
+      r(50,39,2,9,palette.shade);r(52,46,14,2,palette.wet);
+      r(53,40,10,1,'#548081');r(44,48,7,2,palette.shade);
+      poly(g,[[31,64],[70,54],[69,57],[32,67]],'#294246');
+      r(24,44,1,2,palette.light);r(46,40,1,2,palette.brass);
+      poly(g,[[66,34],[78,31],[78,32],[66,35]],palette.brass);
+      r(68,35,2,1,'#b7a073');
       // Night: exposed upper-left timber and submerged lower hull bevel.
       poly(g,[[9,34],[28,44],[28,46],[10,36]],palette.brass);r(10,36,1,4,palette.light);
       poly(g,[[30,70],[75,58],[75,61],[30,73]],palette.wet);

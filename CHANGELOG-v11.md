@@ -1,3 +1,9 @@
+## XI⬡ / v11-reef
+
+- 仅岛屿、沉船、商船缓存精灵补湿润接触阴影、湿木缝与断续黄铜边缘微光；保留 96×80 尺寸，无新增逐帧效果。
+- CACHE `endless-sea-drift-v11-reef`；edition `XI⬡`。玩法、战斗、合成、存档、迁移、偏好及竖屏提示布局不变。
+- 验证见 `_v11reef-validation.json`、`_v11reef-handoff.md`；浏览器成功时生成 `_shot-v11reef.png` / `_shot-v11.png`。
+
 ## XI✧ / v11-ember
 
 - 仅 art.js 透明度微调：灯芯 / 炉火收敛，夜间灯晕减弱、原暗角略加深，改善 HUD 背景对比；无新增层。

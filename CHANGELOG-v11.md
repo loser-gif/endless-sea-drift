@@ -1,3 +1,9 @@
+## XI檐 / v11-brim
+
+- HUD eyebrow 增添细黄铜檐线；暂停按钮改为明暗金属斜边，按下时底面与阴影内凹。纯 CSS，不改变尺寸或新增动画、滤镜。
+- CACHE `endless-sea-drift-v11-brim`；edition `XI檐`。保留 44px 触控、竖屏 notice +176px，以及全部玩法、存档、迁移和偏好。
+- 验证见 `_v11brim-validation.json`、`_v11brim-handoff.md`；浏览器成功时输出 `_shot-v11brim.png` / `_shot-v11.png`。
+
 ## XI港 / v11-port2
 
 - 竖屏 HUD 二次压缩读数间距，保留字号、全部物资、44px 触控及 notice +176px，公告间距至少 8px。

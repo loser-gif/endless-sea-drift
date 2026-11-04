@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI港 · v11-port2，CACHE：`endless-sea-drift-v11-port2`。竖屏 HUD 二次收紧读数留白，保留 44px 触控与 notice +176px / 间距≥8px；验证见 `_v11port2-handoff.md`。
+XI檐 · v11-brim，CACHE：`endless-sea-drift-v11-brim`。HUD 细黄铜檐线与暂停按钮金属按压，保留 44px 触控与 notice +176px / 间距≥8px；验证见 `_v11brim-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI港; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI檐; no build step.
 
 ## 本地预览
 

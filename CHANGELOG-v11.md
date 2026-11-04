@@ -1,3 +1,9 @@
+## XI珠2 / v11-bead2
+
+- 生存条珠光第二轮细化：收紧亮心与晕边，淡水采用冷白珠光，压低上沿亮线；直接调整既有 CSS，不增加效果层。
+- 轨道尺寸与填充位置、HUD、44px 触控及竖屏 notice +176px 不变；全部玩法、存档、迁移、偏好、30fps 与四声部上限保留。
+- CACHE `endless-sea-drift-v11-bead2`；验证 `_v11bead2-validation.json`，浏览器成功时截图 `_shot-v11bead2.png` / `_shot-v11.png`；交接 `_v11bead2-handoff.md`。
+
 ## XI碑2 / v11-slate2
 
 - 死亡碑面第二轮扫读微调：收敛石面亮光、横纹与边框，突出首行暖色与正文；沿用 silk 框及 28px 行距，不增效果层。

@@ -4,7 +4,7 @@
 
 ## 近况 / Latest
 
-XI碑2 · v11-slate2，CACHE：`endless-sea-drift-v11-slate2`。死亡碑面扫读第二轮细化，保留 silk 框、玩法与竖屏 notice +176px；验证见 `_v11slate2-handoff.md`。
+XI珠2 · v11-bead2，CACHE：`endless-sea-drift-v11-bead2`。收紧饱腹 / 淡水珠光并区分冷暖，保留轨道几何、玩法与竖屏 notice +176px；验证见 `_v11bead2-handoff.md`。
 
 摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI隙2; no build step.
 

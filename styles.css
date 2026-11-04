@@ -434,13 +434,13 @@ progress{height:5px;margin-top:5px;box-shadow:0 0 0 1px #d8c48a1c}
  #notice{right:max(16px,env(safe-area-inset-right))}
 }
 
-/* XI珠: static bead at the fill tip, recessed vital tracks; keep HUD geometry. */
+/* XI珠2: tighter static bead highlight; retain fill-tip placement and track geometry. */
 .vitals progress{appearance:none;-webkit-appearance:none;background:#10292d;box-shadow:inset 0 1px 2px #030e13b3,0 1px 0 #d8c48a29}
 .vitals progress::-webkit-progress-bar{background:#10292d;box-shadow:inset 0 1px 2px #030e13b3}
-.vitals progress{--vital-fill:linear-gradient(90deg,#a96337,#f6ce7b)}
-.vitals #thirst{--vital-fill:linear-gradient(90deg,#508c9d,#9bcac6)}
-.vitals progress::-webkit-progress-value,.vitals #thirst::-webkit-progress-value{background:radial-gradient(circle at center,#fff4d9 0 1px,#fff4d955 1.5px,transparent 2.5px) right center/5px 5px no-repeat,var(--vital-fill);box-shadow:inset 0 1px 0 #fff4d933}
-.vitals progress::-moz-progress-bar,.vitals #thirst::-moz-progress-bar{background:radial-gradient(circle at center,#fff4d9 0 1px,#fff4d955 1.5px,transparent 2.5px) right center/5px 5px no-repeat,var(--vital-fill);box-shadow:inset 0 1px 0 #fff4d933}
+.vitals progress{--vital-fill:linear-gradient(90deg,#a96337,#f6ce7b);--vital-bead:#fff0d0;--vital-halo:#fff0d038}
+.vitals #thirst{--vital-fill:linear-gradient(90deg,#508c9d,#9bcac6);--vital-bead:#e3f3ec;--vital-halo:#e3f3ec38}
+.vitals progress::-webkit-progress-value,.vitals #thirst::-webkit-progress-value{background:radial-gradient(circle at center,var(--vital-bead) 0 .7px,var(--vital-halo) 1.25px,transparent 2px) right center/5px 5px no-repeat,var(--vital-fill);box-shadow:inset 0 1px 0 #fff4d926}
+.vitals progress::-moz-progress-bar,.vitals #thirst::-moz-progress-bar{background:radial-gradient(circle at center,var(--vital-bead) 0 .7px,var(--vital-halo) 1.25px,transparent 2px) right center/5px 5px no-repeat,var(--vital-fill);box-shadow:inset 0 1px 0 #fff4d926}
 
 /* XI航 / Warp — mono voyage plaque and distance recap; retain line boxes and gilt digits. */
 #hud #voyage,

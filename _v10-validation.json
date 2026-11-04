@@ -1,7 +1,7 @@
 {
   "ok": true,
-  "cache": "endless-sea-drift-v11-rift",
-  "session_id": "01a1a75e-bfd8-7c23-a840-adecc857a788",
+  "cache": "endless-sea-drift-v11-port2",
+  "session_id": "01a1a761-90fa-7cd2-84c1-9c042222a316",
   "features": [
     {
       "id": "cache",
@@ -631,19 +631,21 @@
     {
       "id": "screenshot",
       "ok": true,
-      "note": "已生成 _shot-v11rift.png / _shot-v11.png"
+      "note": "已生成 _shot-v11port2.png / _shot-v11.png"
     }
   ],
   "errors": [],
   "session_hint": "node _selftest-v10.mjs；120秒昼夜，95秒起风雨，28秒小岛/93秒沉船，180秒潮汐王。158秒商船；第2/4/6…夜雾灯船。每2秒自动存档；v8/v9验证后迁移至v10；保留v9静音偏好。",
   "portraitLayout": {
     "portrait": {
-      "height": 159,
-      "gap": 17
+      "height": 151,
+      "gap": 25,
+      "offset": 176
     },
     "small-portrait": {
-      "height": 159,
-      "gap": 17
+      "height": 151,
+      "gap": 25,
+      "offset": 176
     }
   }
 }

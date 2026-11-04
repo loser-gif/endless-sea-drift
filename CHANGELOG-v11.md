@@ -1,3 +1,9 @@
+## XI港 / v11-port2
+
+- 竖屏 HUD 二次压缩读数间距，保留字号、全部物资、44px 触控及 notice +176px，公告间距至少 8px。
+- CACHE `endless-sea-drift-v11-port2`；edition `XI港`。玩法数值、战斗、合成、存档、迁移、偏好不变，无新增特效或依赖。
+- 验证与截图：`_v11port2-validation.json`、`_shot-v11port2.png` / `_shot-v11.png`；交接见 `_v11port2-handoff.md`。
+
 ## XI隙 / v11-rift
 
 - 替换 HUD 与卡片既有内阴影，加深窄接缝 AO、压低内框亮边；阴影层数及布局不变，无新增动画、滤镜或依赖。

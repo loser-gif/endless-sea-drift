@@ -244,7 +244,7 @@ progress{height:5px;margin-top:5px;box-shadow:0 0 0 1px #d8c48a1c}
 .actions #place:disabled{border-color:#6c7669;color:#a7b4a5}
 .actions #build[aria-pressed="true"]{border-color:#e4c68b;box-shadow:inset 3px 0 #e4c68b,inset 0 1px #ffebbd26}
 
-/* XI / Port — compact portrait readouts; retain full-size touch targets. */
+/* XI / Port2 — tighten readout spacing without shrinking text or touch targets. */
 @media(orientation:portrait){
  #hud{line-height:1.2;padding:4px 9px}
  #hud .heading{min-height:44px}
@@ -252,12 +252,12 @@ progress{height:5px;margin-top:5px;box-shadow:0 0 0 1px #d8c48a1c}
  #hud .edition{padding:1px 4px}
  #hud h1{line-height:22px;margin:0;font-size:19px}
  #hud .heading button{min-width:44px;min-height:44px}
- #hud #voyage{line-height:12px;margin-bottom:2px;padding-bottom:2px}
- #hud .ammo-status{margin-bottom:3px;line-height:12px}
- #hud #ammoChip{padding:2px 5px}
+ #hud #voyage{line-height:12px;margin-bottom:1px;padding-bottom:1px}
+ #hud .ammo-status{margin-bottom:2px;line-height:12px}
+ #hud #ammoChip{padding:1px 5px}
  #hud .vitals{line-height:13px}
  #hud progress{margin-top:3px}
- #hud #inventory{margin-top:3px;padding-top:3px;row-gap:2px}
+ #hud #inventory{margin-top:2px;padding-top:2px;row-gap:1px}
  #hud #inventory>span{padding:1px 2px;line-height:14px}
  #notice{top:calc(max(12px,env(safe-area-inset-top)) + 176px)}
 }

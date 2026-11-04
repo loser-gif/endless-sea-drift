@@ -30,7 +30,7 @@ window.SeaArt = (() => {
       const x=3+j*11,y=4+(j+v)%3;
       fg.fillStyle='#328f94';fg.fillRect(x-1,y+1,8,3);
       fg.fillStyle='#a6cfc0';fg.fillRect(x,y,5+j%2,1);
-      fg.fillStyle='#e0e4c4';fg.fillRect(x+1,y-1,3,1);
+      fg.fillStyle='#ccdebe';fg.fillRect(x+1,y-1,3,1);
     }
     foam.push(f);
   }

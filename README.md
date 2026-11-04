@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI✦ · v11-gilt，CACHE：`endless-sea-drift-v11-gilt`。终章统计留白、暂停卡片降噪，航程 / 弹药数字与库存值更清晰；停靠点、商船报价与首领标题加强暗描边和暖色字面。沿用 dawn 光色与 depth 海面预算，玩法、存档、HUD 尺寸与竖屏 notice +215px 不变。
+XI∽ · v11-tide，CACHE：`endless-sea-drift-v11-tide`。白浪尖端收敛为尾流环同系暖灰绿，外侧木板下现有 1px 水线微增透明度；沿用 gilt 界面与 dawn / depth 光色。白浪最多 18 次绘制，静水区、风暴泡沫、尾流、泛光、玩法、存档与竖屏 notice +215px 不变。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI✦; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI∽; no build step.
 
 ## 本地预览
 

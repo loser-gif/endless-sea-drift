@@ -1,3 +1,11 @@
+## XI∽ / v11-tide
+
+- 白浪尖端由 `#e0e4c4` 收敛为尾流环同系 `#ccdebe`（204,222,190）；保留静水区跳过与最多 18 次绘制。
+- 外侧木板下现有 1px 冷色水线 `#548e8c80` → `#548e8c99`，仅微增透明度以补偿 dawn slate wash。
+- 风暴泡沫、尾流环、CSS、notice +215px、粒子 / 绘制预算、泛光、玩法、战斗与存档均不变。
+- CACHE `endless-sea-drift-v11-tide`；edition `XI∽`，避免复用 wake 的 `XI≋`。
+- 验证见 `_v11tide-validation.json`、`_v11tide-handoff.md`；浏览器可用时生成 `_shot-v11tide.png`。
+
 ## XI✦ / v11-gilt
 
 - 终章正文增加上下留白与行距，统计与高光更易扫读；暂停内框与顶轨降噪，主 CTA 层级保留。

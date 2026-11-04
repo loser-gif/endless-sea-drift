@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI弹 · v11-spark，CACHE：`endless-sea-drift-v11-spark`。弹药铭牌与冷却槽统一青灰黄铜面，保留空弹药暖铜警示；玩法、存档及竖屏 notice +176px 保留，验证见 `_v11spark-handoff.md`。
+XI库 · v11-vault，CACHE：`endless-sea-drift-v11-vault`。背包铭牌采用青灰黄铜斜面，分层呈现普通物资、加工物资与弹药；网格、触控及竖屏 notice +176px 保留，验证见 `_v11vault-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI弹; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI库; no build step.
 
 ## 本地预览
 

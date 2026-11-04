@@ -136,10 +136,11 @@ button[hidden]{display:none}
 .vitals label.vital-low,.vitals label.vital-low span{color:#ffc09c}
 progress{height:5px;margin-top:5px;box-shadow:0 0 0 1px #d8c48a1c}
 #inventory{grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;margin-top:8px;padding-top:7px;border-color:#d8b67c38;font-size:10px}
-#inventory>span{display:flex;align-items:baseline;justify-content:space-between;gap:2px;padding:3px 4px;background:#020e1966;border:1px solid #bbad7b16;border-radius:2px;white-space:nowrap;color:#acbab5;font-weight:500;letter-spacing:.1px}
+/* XI / Vault — satin brass faces; bevels stay inside the existing chip boxes. */
+#inventory>span{display:flex;align-items:baseline;justify-content:space-between;gap:2px;padding:3px 4px;background:linear-gradient(180deg,#293b39,#142a31);border:1px solid;border-color:#95815c #485147 #3c4942 #786d51;border-radius:2px;box-shadow:inset 0 1px #ffe3ac18,inset 0 -1px #020e1966;white-space:nowrap;color:#bcc5b7;font-weight:500;letter-spacing:.1px}
 #inventory b{color:#ffebbf;font-size:13px;margin:0;font-weight:600;letter-spacing:0}
-#inventory>span:nth-child(n+6){border-bottom-color:#cfad6955}
-#inventory>span:last-child{background:#9c73351c;border-color:#cfad6944}
+#inventory>span:nth-child(n+6){border-top-color:#b09a6b}
+#inventory>span:last-child{background:linear-gradient(180deg,#3b4032,#202f2f);border-color:#baa071 #706347 #60563f #99845b}
 #notice{border-color:#c4a46b45;background:#0b202ce6;box-shadow:inset 2px 0 #d4b57880,0 3px 12px #0003;color:#f0dfbc;text-shadow:0 1px 2px #020b13e6}
 .card{padding:24px;border-color:#b8965d9e;border-top:3px solid #f6d69a;background:linear-gradient(100deg,#b7945710,transparent 45%),repeating-linear-gradient(0deg,transparent 0 5px,#e9c88b03 6px 7px),linear-gradient(145deg,#34362efc,#18292dfc 55%,#101e29fc);box-shadow:0 24px 70px #000b,0 0 0 3px #05121c80,inset 0 1px #fff1c342,inset 0 0 36px #050e1938}
 .card>.eyebrow{display:block;font:9px Georgia,"Songti SC",serif;line-height:1.5;letter-spacing:2px;color:#cfb883}
@@ -175,7 +176,7 @@ progress{height:5px;margin-top:5px;box-shadow:0 0 0 1px #d8c48a1c}
  #hud{padding:6px 10px}#hud h1{font-size:19px;margin:2px 0 4px}
  #hud #voyage{margin-bottom:5px;padding-bottom:4px;font-size:9px;color:#d0d9d4}
  #hud #inventory{grid-template-columns:repeat(5,minmax(0,1fr));gap:3px;margin-top:6px;padding-top:5px;font-size:10px}
- #inventory>span{padding:2px 3px;border-color:#bbad7b40}#inventory>span:nth-child(n+6){border-bottom-color:#cfad6955}#inventory>span:last-child{border-color:#cfad6966}#inventory b{font-size:12px}
+ #inventory>span{padding:2px 3px}#inventory b{font-size:12px}
  .ammo-status{margin-bottom:5px;font-size:10px}#ammoChip{padding:2px 5px}
  #notice{top:calc(max(12px,env(safe-area-inset-top)) + 228px)}
  .tool select{font-size:12px;padding:3px}

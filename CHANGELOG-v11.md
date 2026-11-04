@@ -1,3 +1,9 @@
+## XI库 / v11-vault
+
+- 背包铭牌改为低亮黄铜斜面与青灰底面，加工物资提亮顶边、弹药使用暖铜面；保留空库存提示色、原有网格及尺寸，无新增动画或滤镜。
+- CACHE `endless-sea-drift-v11-vault`；edition `XI库`。玩法、战斗、合成、存档、迁移、偏好及竖屏 notice +176px 保留。
+- 验证报告 `_v11vault-validation.json`；浏览器成功时生成 `_shot-v11vault.png` / `_shot-v11.png`，详见 `_v11vault-handoff.md`。
+
 ## XI弹 / v11-spark
 
 - 弹药铭牌改为青灰黄铜面与明暗斜边，冷却条复用凹槽和低亮黄铜填充；保留空弹药暖铜警示，无新增动画或滤镜。

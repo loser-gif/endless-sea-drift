@@ -62,10 +62,10 @@ window.SeaArt = (() => {
     mg.bezierCurveTo(118,50,119,39,128,37);mg.bezierCurveTo(134,36,136,25,143,23);
     mg.bezierCurveTo(150,18,154,33,160,34);mg.bezierCurveTo(169,34,170,46,184,55);
     mg.closePath();mg.fill();
-    // Gale: replace the flat storm wash with the dawn slate family, cached on resize.
+    // Ash: muted ash-blue sky over the retained gale slate base, cached on resize.
     // Same single overlay pass and opacity; no extra clouds, filters or rain.
     stormSky=surface(96,64);const sg=stormSky.getContext('2d'),sky=sg.createLinearGradient(0,0,0,64);
-    sky.addColorStop(0,'#202e38');sky.addColorStop(.55,'#293c45');sky.addColorStop(1,'#20363d');
+    sky.addColorStop(0,'#202e38');sky.addColorStop(.55,'#3b454b');sky.addColorStop(1,'#303e43');
     sg.fillStyle=sky;sg.fillRect(0,0,96,64);
     vignette=surface(96,64);const vg=vignette.getContext('2d'),vr=vg.createRadialGradient(48,32,12,48,32,55);
     // Slate-teal shadow keeps the warm rims in the same light family as the HUD brass.
@@ -428,7 +428,8 @@ window.SeaArt = (() => {
     if(weather.night&&lamp){g.globalAlpha=.48;g.drawImage(halo,cx-110*scale,cy-110*scale,220*scale,220*scale);}
     if(weather.storm){
       g.globalAlpha=weather.night?.22:.26;g.drawImage(stormSky,0,0,w,h);
-      g.globalAlpha=.29;g.fillStyle='#bdc9ce';
+      // Ash-grey rain shares the sky's subdued slate family and existing pixel strokes.
+      g.globalAlpha=.29;g.fillStyle='#c3c7c8';
       for(let i=0;i<52;i++){
         const x=Math.round((i*79+t*130)%w),y=Math.round((i*113+t*210)%h);
         g.fillRect(x,y,1,3);g.fillRect(x-1,y+4,1,2);

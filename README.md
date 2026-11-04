@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI珠光 · v11-pearl，CACHE：`endless-sea-drift-v11-pearl`。空弹药徽标细化暖赭底面，保留警告色、原尺寸及全部玩法；验证见 `_v11pearl-handoff.md`。
+XI灰 · v11-ash，CACHE：`endless-sea-drift-v11-ash`。风暴天空与雨线统一灰蓝色系，保留 gale slate 暗部及全部玩法；验证见 `_v11ash-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI珠光; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI灰; no build step.
 
 ## 本地预览
 

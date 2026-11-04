@@ -414,7 +414,8 @@ window.SeaArt = (() => {
       // Keep the helm hub/spokes and all sprite bounds for the existing build preview.
       if(kind==='helm'){r(18,19,5,19,'#987344');r(8,7,25,23,palette.brass);r(12,11,17,15,palette.shade);r(9,8,23,2,palette.light);r(18,4,4,30,palette.brass);r(5,17,31,3,palette.brass);r(17,16,6,5,'#987344');r(18,16,4,1,palette.light);}
       if(kind==='canopy'){r(5,14,3,27,'#af9261');r(32,14,3,27,'#af9261');poly(g,[[2,15],[11,3],[28,3],[38,15],[35,20],[4,20]],palette.brass);r(9,6,22,3,palette.light);r(4,16,31,3,'#987344');r(13,8,2,8,'#af9261');}
-      if(kind==='stove'){r(9,16,23,23,'#af9261');r(9,15,23,3,palette.brass);r(23,3,6,14,'#987344');r(23,3,7,2,palette.light);r(13,25,14,11,palette.shade);r(15,28,10,6,'#d5884de6');r(18,26,4,7,'#ffe1a0d9');}
+      // Ember2: soften cached ember spill, retaining the brighter hearth core.
+      if(kind==='stove'){r(9,16,23,23,'#af9261');r(9,15,23,3,palette.brass);r(23,3,6,14,'#987344');r(23,3,7,2,palette.light);r(13,25,14,11,palette.shade);r(15,28,10,6,'#d5884dcc');r(18,26,4,7,'#ffe1a0c7');}
       if(kind==='net'){r(5,8,3,30,palette.brass);r(32,8,3,30,palette.brass);for(let i=0;i<6;i++){r(8+i*4,13,1,24,'#af9261');r(8,13+i*4,25,1,'#987344');}r(17,22,9,4,palette.brass);r(14,20,3,8,palette.light);}
       // Retain the subdued flare glass and cached timber bounce.
       if(kind==='lamp'){r(23,35,7,1,'#c4a36b');r(24,37,4,1,'#ad905e');r(14,37,3,1,'#ad905e');}

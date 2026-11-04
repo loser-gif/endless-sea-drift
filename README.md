@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI坞 · v11-dock，CACHE：`endless-sea-drift-v11-dock`。小岛码头木板加入细缝、湿边与微量接触阴影，沿用 Cove 配色与 96×80 精灵；玩法及竖屏布局不变，验证见 `_v11dock-handoff.md`。
+XI烬 · v11-ember2，CACHE：`endless-sea-drift-v11-ember2`。仅收敛灶台余烬透明度，保留炉芯暖意与既有灯晕；玩法及竖屏布局不变，验证见 `_v11ember2-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI坞; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI烬; no build step.
 
 ## 本地预览
 

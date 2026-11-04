@@ -1,3 +1,9 @@
+## XI烬 / v11-ember2
+
+- 灶台余烬第二轮收敛：仅降低缓存精灵两级炉火透明度，保留暖色炉芯、尺寸与既有灯晕，无新增效果层。
+- 全部玩法、战斗、合成、存档、迁移、偏好及竖屏 notice +176px 不变，保留触控 ≥44px、30fps 与 ≤4 声部预算。
+- CACHE `endless-sea-drift-v11-ember2`；验证 `_v11ember2-validation.json`，浏览器成功时截图 `_shot-v11ember2.png` / `_shot-v11.png`；交接 `_v11ember2-handoff.md`。
+
 ## XI坞 / v11-dock
 
 - 小岛右下岸边加入短木栈桥，板缝、湿木反光与微量接触阴影沿用 Cove 色系，仍烘焙于 96×80 精灵，无新增逐帧效果或依赖。

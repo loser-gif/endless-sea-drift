@@ -412,17 +412,18 @@ window.SeaArt = (() => {
       // Bolt: two inset nail heads; tiny upper-left glints baked into the foot.
       r(8,34,2,2,palette.shade);r(8,34,1,1,palette.light);
       r(31,38,2,2,palette.shade);r(31,38,1,1,palette.brass);
-      // Glyph: solid brass faces share the turret palette; dark cuts retain each silhouette.
+      // Glyph2: warmer brass fill and restrained ivory edges on canopy, stove, net and lamp.
+      // Preserve helm/turret, dark cutouts, flame alpha and cached draw geometry.
       // Keep the helm hub/spokes and all sprite bounds for the existing build preview.
       if(kind==='helm'){r(18,19,5,19,'#987344');r(8,7,25,23,palette.brass);r(12,11,17,15,palette.shade);r(9,8,23,2,palette.light);r(18,4,4,30,palette.brass);r(5,17,31,3,palette.brass);r(17,16,6,5,'#987344');r(18,16,4,1,palette.light);}
-      if(kind==='canopy'){r(5,14,3,27,'#af9261');r(32,14,3,27,'#af9261');poly(g,[[2,15],[11,3],[28,3],[38,15],[35,20],[4,20]],palette.brass);r(9,6,22,3,palette.light);r(4,16,31,3,'#987344');r(13,8,2,8,'#af9261');}
+      if(kind==='canopy'){r(5,14,3,27,'#b59763');r(32,14,3,27,'#b59763');poly(g,[[2,15],[11,3],[28,3],[38,15],[35,20],[4,20]],'#cbaa73');r(9,6,22,3,'#e5cf9e');r(4,16,31,3,'#8d6c43');r(13,8,2,8,'#b59763');}
       // Ember2: soften cached ember spill, retaining the brighter hearth core.
-      if(kind==='stove'){r(9,16,23,23,'#af9261');r(9,15,23,3,palette.brass);r(23,3,6,14,'#987344');r(23,3,7,2,palette.light);r(13,25,14,11,palette.shade);r(15,28,10,6,'#d5884dcc');r(18,26,4,7,'#ffe1a0c7');}
-      if(kind==='net'){r(5,8,3,30,palette.brass);r(32,8,3,30,palette.brass);for(let i=0;i<6;i++){r(8+i*4,13,1,24,'#af9261');r(8,13+i*4,25,1,'#987344');}r(17,22,9,4,palette.brass);r(14,20,3,8,palette.light);}
+      if(kind==='stove'){r(9,16,23,23,'#b59763');r(9,15,23,3,'#cbaa73');r(23,3,6,14,'#8d6c43');r(23,3,7,2,'#e5cf9e');r(13,25,14,11,palette.shade);r(15,28,10,6,'#d5884dcc');r(18,26,4,7,'#ffe1a0c7');}
+      if(kind==='net'){r(5,8,3,30,'#cbaa73');r(32,8,3,30,'#cbaa73');for(let i=0;i<6;i++){r(8+i*4,13,1,24,'#b59763');r(8,13+i*4,25,1,'#8d6c43');}r(17,22,9,4,'#cbaa73');r(14,20,3,8,'#e5cf9e');}
       // Lumen2: settle the wet timber bounce into the grain; retain ember glass.
       if(kind==='lamp'){r(23,35,7,1,'#b99a69');r(24,37,4,1,'#a3875d');r(14,37,3,1,'#a3875d');}
       // Flare2: quieter glass and core; preserve the lamp silhouette and brass frame.
-      if(kind==='lamp'){r(18,14,4,25,'#af9261');r(12,3,18,16,'#987344');r(13,4,15,2,palette.brass);r(13,6,2,10,palette.brass);r(16,7,13,8,'#f5d99994');r(21,9,3,4,'#fff2c7ad');r(12,19,17,3,palette.shade);}
+      if(kind==='lamp'){r(18,14,4,25,'#b59763');r(12,3,18,16,'#8d6c43');r(13,4,15,2,'#cbaa73');r(13,6,2,10,'#cbaa73');r(16,7,13,8,'#f5d99994');r(21,9,3,4,'#fff2c7ad');r(12,19,17,3,palette.shade);}
       if(kind==='turret'){g.drawImage(art.turret,3,12,34,34);g.drawImage(art.barrel,18,18,24,10);}
     });
     make('island',96,80,(g,r)=>{poly(g,[[3,53],[22,34],[64,32],[91,52],[82,67],[39,75],[9,66]],'#638f86');poly(g,[[9,50],[29,30],[62,32],[86,50],[73,63],[29,66]],'#d3bb80');poly(g,[[18,46],[32,29],[61,31],[74,47],[52,57],[26,54]],'#637e53');r(44,17,5,30,'#9c794e');poly(g,[[44,19],[22,13],[11,22],[38,17],[31,5],[48,13],[62,7],[74,16],[52,16],[64,27]],'#426e58');r(44,18,2,25,'#dfc08a');r(25,49,12,6,'#83b9ad');

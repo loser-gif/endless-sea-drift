@@ -1,3 +1,9 @@
+## XI符2 / v11-glyph2
+
+- 模块黄铜填色第二轮：雨棚、灶台、鱼网、灯架暖铜面与亮沿微调；完整保留舵轮、炮台、灯火透明度、精灵尺寸和绘制次数。
+- 全部玩法、战斗、合成、存档、迁移、偏好保留；≥44px 触控、竖屏 notice +176px / HUD、30fps / ≤4 声部不变。
+- CACHE `endless-sea-drift-v11-glyph2`；验证 `_v11glyph2-validation.json`，浏览器成功时截图 `_shot-v11glyph2.png` / `_shot-v11.png`；交接 `_v11glyph2-handoff.md`。
+
 ## XI焰2 / v11-flare2
 
 - 灯火克制第二轮：降低既有吊灯与灯模块玻璃、火芯 alpha；保留暖色、轮廓、缓存尺寸与绘制次数，不增加粒子或滤镜。

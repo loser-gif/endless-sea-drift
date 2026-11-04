@@ -1,3 +1,9 @@
+## XI金2 / v11-gilt2
+
+- 航程与已装弹读数微调暖金色，复用单层暗色文字阴影；保留空弹警示、Warp 等宽数字与原有尺寸。
+- 竖屏 notice +176px、触控 ≥44px 与全部玩法、存档、迁移、偏好不变，无新增绘制效果或依赖。
+- CACHE `endless-sea-drift-v11-gilt2`；验证 `_v11gilt2-validation.json`，浏览器成功时截图 `_shot-v11gilt2.png` / `_shot-v11.png`；交接 `_v11gilt2-handoff.md`。
+
 ## XI锁 / v11-lock2
 
 - 暂停按钮改用 CSS 黄铜锁图标，卡片边缘增加小型静态金属铰链，无动画、滤镜或新依赖。

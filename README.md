@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI锁 · v11-lock2，CACHE：`endless-sea-drift-v11-lock2`。暂停锁图标与卡片铰链采用静态黄铜材质，保留 ≥44px CTA 与全部玩法；验证见 `_v11lock2-handoff.md`。
+XI金2 · v11-gilt2，CACHE：`endless-sea-drift-v11-gilt2`。航程与弹药数字第二轮暖金细化，保留 Warp 等宽数字、竖屏布局及全部玩法；验证见 `_v11gilt2-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI锁; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI金2; no build step.
 
 ## 本地预览
 

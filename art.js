@@ -13,13 +13,13 @@ window.SeaArt = (() => {
       const y=Math.round(15+Math.sin(x/43+v)*5+Math.sin(x/19+v)*2),a=Math.sin(x/192*Math.PI);
       for(let k=0;k<18;k++){
         g.globalAlpha=a*Math.sin(k/18*Math.PI)*.16;
-        g.fillStyle=k<7?'#70b9ac':'#05283d';g.fillRect(x,y+k-5,1,1);
+        g.fillStyle=k<7?'#78b6a8':'#032238';g.fillRect(x,y+k-5,1,1);
       }
     }
     for(let x=0;x<190;x+=2){
       const y=Math.round(15+Math.sin(x/43+v)*5+Math.sin(x/19+v)*2);
       const a=Math.sin(x/192*Math.PI);
-      g.globalAlpha=a*.32;g.fillStyle='#032b3d';g.fillRect(x,y+3,3,9);
+      g.globalAlpha=a*.35;g.fillStyle='#032439';g.fillRect(x,y+3,3,9);
       g.globalAlpha=a*.28;g.fillStyle='#328f94';g.fillRect(x,y,3,3);
       if((x+v*7)%17<8){g.globalAlpha=a*.45;g.fillStyle='#8cc6b7';g.fillRect(x,y,2,1);}
       if((x*7+v)%31<4){g.globalAlpha=a*.32;g.fillStyle='#c9d8b1';g.fillRect(x,y-1,3,1);}
@@ -67,7 +67,9 @@ window.SeaArt = (() => {
     // Broken caustics, confined to the lit left shoulder of the focal plane.
     for(let i=0;i<32;i++){
       const x=(i*97.13+t*4)%w,y=h*.27+(i*43.77)%(h*.55);
-      const a=.06+.04*Math.sin(t*.7+i);g.globalAlpha=a;g.fillStyle='#8ed4b7';
+      // Reuse each caustic: warm shoulder, quieter cool troughs; no extra layer.
+      const shoulder=Math.max(0,1-Math.abs(x-(w*.29+y*.17))/(w*.24));
+      const a=(.06+.04*Math.sin(t*.7+i))*(.65+.35*shoulder);g.globalAlpha=a;g.fillStyle=shoulder>.45?'#c6cca0':'#69b5b1';
       for(let j=0;j<13;j++){const xx=x+j*3,yy=y+Math.round(Math.sin(j*.55+i+t*.3)*5);g.fillRect(Math.round(xx),Math.round(yy),3,1);if(j>4&&j<11)g.fillRect(Math.round(xx+3),Math.round(yy+9-j*.4),2,1);}
     }
     for(let i=0;i<75;i++){
@@ -109,8 +111,8 @@ window.SeaArt = (() => {
         for(const x of [9,68]){r(x,y+5,3,4,'#493c30');r(x,y+5,2,2,'#e4cc97');r(x+1,y+7,1,1,'#849083');}
       }
       // End grain, salt stain, and reflected teal on the wet vertical edge.
-      for(let y=75;y<98;y+=4){r(4,y,71,2,y<84?'#795535':'#284647');r(9+v*3,y,44-v*5,1,y<84?'#b79460':'#467573');}
-      r(2,74,74,1,'#d9c08a');r(1,2,2,70,'#f0d394');r(77,2,2,94,'#213634');r(4,98,72,4,palette.shade);
+      for(let y=75;y<98;y+=4){r(4,y,71,2,y<84?'#735133':'#203c43');r(9+v*3,y,44-v*5,1,y<84?'#b79460':'#3b6568');}
+      r(2,74,74,1,'#d9c08a');r(1,2,2,70,'#f0d394');r(77,2,2,94,'#1c3036');r(4,98,72,4,'#142831');
       // Lashings are braided pixel strands, not thick vertical outlines.
       for(const x of [3,73]){r(x,3,3,89,'#665c43');for(let y=4;y<92;y+=4){r(x,y,2,2,'#c9be8a');r(x+1,y+2,2,1,'#e1cf99');}}
     });
@@ -257,10 +259,10 @@ window.SeaArt = (() => {
     });
     for(const kind of ['helm','canopy','stove','net','lamp','turret'])make('module_'+kind,40,48,(g,r)=>{
       // Shared timber foot, lit from upper left, with a cool wet lower bevel.
-      r(5,33,31,10,palette.shade);r(6,33,29,6,'#987344');
+      r(5,33,31,10,'#142831');r(6,33,29,6,'#987344');
       r(6,33,28,1,palette.brass);r(6,34,1,5,palette.light);
       r(8,36,24,1,'#bd955e');r(10,38,19,1,'#6d5138');
-      r(6,40,29,2,palette.wet);r(8,40,23,1,'#467573');
+      r(6,40,29,2,'#1c3036');r(8,40,23,1,'#3b6568');
       r(8,34,2,2,palette.brass);r(31,38,2,2,palette.shade);
       if(kind==='helm'){r(18,19,5,19,'#987344');g.strokeStyle=palette.brass;g.lineWidth=3;g.strokeRect(9,8,23,21);r(18,4,4,30,palette.brass);r(5,17,31,3,palette.light);r(17,16,6,5,'#46646c');}
       if(kind==='canopy'){r(5,14,3,27,'#af9261');r(32,14,3,27,'#af9261');poly(g,[[2,15],[11,3],[28,3],[38,15],[35,20],[4,20]],'#487d80');r(9,6,22,3,'#b9d2bd');r(4,16,31,3,'#d5caa0');r(13,8,2,8,'#86afa5');}

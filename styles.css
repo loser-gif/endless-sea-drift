@@ -182,3 +182,15 @@ progress{height:5px;margin-top:5px;box-shadow:0 0 0 1px #d8c48a1c}
  #hud #inventory{grid-template-columns:repeat(5,minmax(0,1fr));gap:2px}#inventory>span{padding:2px}#inventory b{font-size:11px}
  .tool select{font-size:11px}.card{padding:18px}.card>.eyebrow{letter-spacing:1.3px}
 }
+
+/* XI▽ — recessed timber panels and compact brass instruments. */
+.card{background:repeating-linear-gradient(0deg,#c5a16a04 0 1px,transparent 1px 5px),linear-gradient(115deg,#303b35,#10232e 76%);box-shadow:0 25px 60px #0009,inset 0 1px #ffe3ac38,inset 0 0 0 5px #081923,inset 0 0 0 6px #b4935c40,inset 0 -9px 18px #020e1940}
+#ammoChip{border-color:#c2a16a75;background:linear-gradient(135deg,#3b4031,#142832);box-shadow:inset 0 1px #ffe3ac25,inset 0 -2px #020e1966}
+.tool select{border-color:#c2a16a80;border-bottom-color:#796543;box-shadow:inset 0 1px #ffe3ac29,inset 1px 0 #ffe3ac0c,inset 0 -2px #020e1966}
+@media(orientation:portrait){
+ #hud{padding:4px 9px}
+ #hud #voyage{margin-bottom:3px;padding-bottom:3px}
+ #hud #inventory{margin-top:4px;padding-top:3px;row-gap:2px}
+ .ammo-status{margin-bottom:4px;gap:7px}
+ #notice{top:calc(max(12px,env(safe-area-inset-top)) + 215px)}
+}

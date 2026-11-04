@@ -138,15 +138,27 @@ window.SeaArt = (() => {
         }
         for(let k=0;k<5;k++){
           const sx=15+k*10+(j+v)%3;
-          r(sx,y+13,4+(k+v)%4,1,'#90673f');
-          r(sx+2,y+14,3+(k+j)%3,1,'#614631');
+          r(sx,y+12,4+(k+v)%4,2,'#766344');
+          r(sx+2,y+14,3+(k+j)%3,1,'#384c46');
+          if((k+j+v)%3===0)r(sx+1,y+12,3,1,'#8caa94');
         }
         const x=19+(v*17+j*13)%39;
         r(x,y+7,9,4,'#986d40');r(x+2,y+8,5,2,'#5c422d');r(x-4,y+6,12,1,'#dfb97b');r(x+3,y+11,10,1,'#dbb375');
         for(const x of [9,68]){r(x,y+5,3,4,'#493c30');r(x,y+5,2,2,'#e4cc97');r(x+1,y+7,1,1,'#849083');}
       }
-      // End grain, salt stain, and reflected teal on the wet vertical edge.
-      for(let y=75;y<98;y+=4){r(4,y,71,2,y<84?'#735133':'#203c43');r(9+v*3,y,44-v*5,1,y<84?'#bca77e':'#507270');}
+      // Brine: dry end grain above a broken salt tide mark, teal-soaked foot below.
+      // Baked into the four existing boards; no new surface or per-frame marks.
+      for(let y=75;y<98;y+=4){
+        r(4,y,71,2,y<84?'#735133':'#203c43');
+        r(9+v*3,y,44-v*5,1,y<84?'#968365':'#416361');
+      }
+      for(let k=0;k<8;k++){
+        const x=8+k*8, y=84+(k+v)%3, len=3+(k+v)%3;
+        r(x,y-1,len+1,3,'#40534b');
+        r(x,y,len,1,'#9caa8f');
+        if((k+v)%3===0)r(x+1,y-1,2,1,'#c9d8b1');
+        r(x+2,y+4,2,2,'#294b50');
+      }
       r(2,74,74,1,'#d9c08a');r(1,2,2,70,'#f0d394');r(77,2,2,94,'#1c3036');r(4,98,72,4,'#142831');
       // Lashings are braided pixel strands, not thick vertical outlines.
       for(const x of [3,73]){r(x,3,3,89,'#665c43');for(let y=4;y<92;y+=4){r(x,y,2,2,'#c9be8a');r(x+1,y+2,2,1,'#e1cf99');}}
@@ -289,6 +301,8 @@ window.SeaArt = (() => {
       poly(g,[[10,45],[35,43],[35,44],[12,47]],palette.brass);r(12,47,1,3,palette.light);
       poly(g,[[29,67],[72,62],[72,65],[29,70]],palette.wet);
       poly(g,[[36,67],[64,64],[64,65],[36,68]],'#467573');
+      // Sparse salt flecks sit above the wet foot, in the sea's muted foam family.
+      for(let k=0;k<5;k++){const x=34+k*7,y=65-Math.floor(k*.8);r(x,y,3,1,'#9caa8f');if(k%2===0)r(x+1,y-1,1,1,'#c9d8b1');}
     });
     make('scrap',32,32,(g,r)=>{poly(g,[[4,19],[12,6],[25,9],[29,23],[18,29]],'#304d58');r(9,13,17,7,'#8d9990');r(10,12,16,2,'#e1d3a3');r(13,20,5,6,'#b67b52');r(20,9,3,18,'#53747c');});
     for(const kind of ['gnaw','flank','spit','tideking'])make(kind,64,40,(g,r)=>{
@@ -336,6 +350,7 @@ window.SeaArt = (() => {
       poly(g,[[9,34],[28,44],[28,46],[10,36]],palette.brass);r(10,36,1,4,palette.light);
       poly(g,[[30,70],[75,58],[75,61],[30,73]],palette.wet);
       poly(g,[[37,69],[65,62],[65,63],[37,70]],'#467573');
+      for(let k=0;k<5;k++){const x=35+k*7,y=68-k*2;r(x,y,3,1,'#9caa8f');if(k%2===0)r(x+1,y-1,1,1,'#c9d8b1');}
     });
   }
   function atmosphere(g,w,h,t,weather,lamp,cx,cy,scale){

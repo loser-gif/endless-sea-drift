@@ -1,3 +1,9 @@
+## XI盐 / v11-brine
+
+- 木板接缝湿木微反光、断续盐壳水线及商船 / 沉船盐斑烘焙进现有精灵；沿用青灰海色与淡盐绿，不增加逐帧图层、粒子或滤镜。
+- CACHE `endless-sea-drift-v11-brine`；edition `XI盐`。玩法、战斗、合成、存档、迁移、偏好及竖屏 notice +176px 保留。
+- 自测使用原生 WebSocket（兼容系统 undici），无新依赖；报告 `_v11brine-validation.json`，成功截图 `_shot-v11brine.png` / `_shot-v11.png`。详见 `_v11brine-handoff.md`。
+
 ## XI远 / v11-loom
 
 - 复用远海雾幕缓存：低对比远岛柔边、岛脚渐隐与远海雾色层次；不增精灵、逐帧绘制、滤镜或粒子。

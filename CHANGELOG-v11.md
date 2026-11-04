@@ -1,3 +1,9 @@
+## XI珠 / v11-bead
+
+- 饱腹、淡水进度条加入末端静态珠光与内凹轨道，保留暖金 / 青蓝填充和 5px 高度；纯 CSS，无新增动画、滤镜或依赖。
+- 保留全部玩法、战斗、合成、存档、迁移、偏好，44px 触控与竖屏 notice +176px 不变。
+- CACHE `endless-sea-drift-v11-bead`；edition `XI珠`；验证与交接见 `_v11bead-validation.json`、`_v11bead-handoff.md`。
+
 ## XI刘 / v11-notch
 
 - 音效提示改为克制的黄铜铭牌，限制安全区宽度、允许换行；未解锁时卡片为提示留空，横屏通知避开右侧刘海。

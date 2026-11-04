@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI刘 · v11-notch，CACHE：`endless-sea-drift-v11-notch`。完善刘海安全区与音效解锁提示，保留竖屏 notice +176px 及全部玩法；验证见 `_v11notch-handoff.md`。
+XI珠 · v11-bead，CACHE：`endless-sea-drift-v11-bead`。生命补给进度条新增静态珠光与凹槽，保留全部玩法和竖屏布局；验证见 `_v11bead-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI刘; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI珠; no build step.
 
 ## 本地预览
 

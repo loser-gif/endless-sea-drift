@@ -1,3 +1,9 @@
+## XI碑2 / v11-slate2
+
+- 死亡碑面第二轮扫读微调：收敛石面亮光、横纹与边框，突出首行暖色与正文；沿用 silk 框及 28px 行距，不增效果层。
+- 全部玩法、战斗、合成、存档、迁移、偏好、30fps 与四声部上限保留；44px 触控、竖屏 notice +176px 与 HUD 几何不变。
+- CACHE `endless-sea-drift-v11-slate2`；验证 `_v11slate2-validation.json`，浏览器成功时截图 `_shot-v11slate2.png` / `_shot-v11.png`；交接 `_v11slate2-handoff.md`。
+
 ## XI闩2 / v11-latch2
 
 - 按钮金属面收敛亮边，按压时加深上沿凹影、反转冷暖斜面；选中态保留左侧黄铜标记。直接调整原有 CSS，不增特效层，尺寸不变。

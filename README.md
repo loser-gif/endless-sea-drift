@@ -4,7 +4,7 @@
 
 ## 近况 / Latest
 
-XI闩2 · v11-latch2，CACHE：`endless-sea-drift-v11-latch2`。按钮金属按压态第二轮细化，尺寸、玩法与竖屏 notice +176px 不变；验证见 `_v11latch2-handoff.md`。
+XI碑2 · v11-slate2，CACHE：`endless-sea-drift-v11-slate2`。死亡碑面扫读第二轮细化，保留 silk 框、玩法与竖屏 notice +176px；验证见 `_v11slate2-handoff.md`。
 
 摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI隙2; no build step.
 

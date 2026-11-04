@@ -4,7 +4,7 @@
 
 ## 近况 / Latest
 
-XI隙2 · v11-rift2，CACHE：`endless-sea-drift-v11-rift2`。加深面板内凹接缝 AO，保留布局、44px 触控与竖屏 notice +176px；验证见 `_v11rift2-handoff.md`。
+XI帆2 · v11-mast2，CACHE：`endless-sea-drift-v11-mast2`。帆褶冷暖明暗与帆桁短亮边第二轮细化，尺寸、玩法与竖屏 notice +176px 不变；验证见 `_v11mast2-handoff.md`。
 
 摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI隙2; no build step.
 

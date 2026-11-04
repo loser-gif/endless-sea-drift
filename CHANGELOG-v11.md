@@ -1,3 +1,9 @@
+## XI帆2 / v11-mast2
+
+- 商船、雾灯船与沉船帆褶加深冷色背光、收敛暖色亮面；缩短帆桁上缘亮边，保留原轮廓与缓存尺寸，不增绘制层。
+- 全部玩法数值、战斗、合成、存档、迁移、偏好与布局不变；44px 触控及竖屏 notice +176px 保留。
+- CACHE `endless-sea-drift-v11-mast2`；验证 `_v11mast2-validation.json`，浏览器成功时截图 `_shot-v11mast2.png` / `_shot-v11.png`；交接 `_v11mast2-handoff.md`。
+
 ## XI隙2 / v11-rift2
 
 - 加深 HUD 与卡片内凹接缝 AO，直接调整 CSS inset 阴影；保留布局，不增滤镜、动画或依赖。

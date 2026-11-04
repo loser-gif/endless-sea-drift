@@ -292,7 +292,7 @@ progress{height:5px;margin-top:5px;box-shadow:0 0 0 1px #d8c48a1c}
 /* XI / Rail — directional brass bevels reuse the satin frame; geometry stays fixed. */
 /* XI / Silk — quiet satin cards and a ruled voyage recap; layout stays scrollable. */
 /* XI / Crown — reuse the top brass rule and scale title tracking with type. */
-/* XI釉 / Glaze — replace satin with a static thin sheen; no backdrop sampling or new layers. */
+/* XI缎 / Satin — soften the existing sheen and top glint; no extra layers. */
 #overlay .card{
  position:relative;
  border-radius:4px;
@@ -300,10 +300,10 @@ progress{height:5px;margin-top:5px;box-shadow:0 0 0 1px #d8c48a1c}
  border-left-color:#b59a6c;
  border-right-color:#756448;
  border-bottom-color:#806b49;
- background:linear-gradient(125deg,#e3eee014,transparent 38%,#c5dcd005 68%,transparent),linear-gradient(160deg,#293b37f5,#122630f7 78%);
+ background:linear-gradient(125deg,#e3eee008,transparent 52%,#c5dcd003 78%,transparent),linear-gradient(160deg,#293b37f5,#122630f7 78%);
  -webkit-backdrop-filter:none;
  backdrop-filter:none;
- box-shadow:0 18px 48px #0008,inset 0 1px #e4edda30,inset 0 -1px #020e1966,inset 0 0 0 5px #081a23,inset 0 0 0 6px #bca37530;
+ box-shadow:0 18px 48px #0008,inset 0 1px #e4edda18,inset 0 -1px #020e1966,inset 0 0 0 5px #081a23,inset 0 0 0 6px #bca37530;
  scrollbar-color:#8d805f #10232c;
 }
 /* Paired hinge barrels sit inside the frame gutter, clear of text and CTAs. */
@@ -337,8 +337,8 @@ progress{height:5px;margin-top:5px;box-shadow:0 0 0 1px #d8c48a1c}
  border-left-color:#96988b;
  border-right-color:#535f63;
  border-bottom-color:#657071;
- background:linear-gradient(125deg,#e0e8e414,transparent 38%,#c2d3d705 68%,transparent),linear-gradient(160deg,#354047f5,#1c2b34f7 78%);
- box-shadow:0 18px 48px #0008,inset 0 1px #dfe8e030,inset 0 -1px #07121b66,inset 0 0 0 5px #14232c,inset 0 0 0 6px #aeb4ad30;
+ background:linear-gradient(125deg,#e0e8e408,transparent 52%,#c2d3d703 78%,transparent),linear-gradient(160deg,#354047f5,#1c2b34f7 78%);
+ box-shadow:0 18px 48px #0008,inset 0 1px #dfe8e018,inset 0 -1px #07121b66,inset 0 0 0 5px #14232c,inset 0 0 0 6px #aeb4ad30;
 }
 #overlay[data-view="death"] .card>.eyebrow{color:#b9beb5}
 #overlay[data-view="death"] .card h2{margin-bottom:14px;color:#e2d3b5;border-bottom-color:#b6b6a638}

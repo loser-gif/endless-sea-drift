@@ -1,3 +1,9 @@
+## XI缎 / v11-satin
+
+- 卡片与结算卡片降低既有斜向高光和顶部反光，缎面比 Glaze 更柔和；无新增图层、动画、滤镜或依赖。
+- 全部玩法、战斗、合成、存档、迁移、偏好与竖屏 notice +176px 不变，保留触控 ≥44px、30fps 与 ≤4 声部预算。
+- CACHE `endless-sea-drift-v11-satin`；验证 `_v11satin-validation.json`，浏览器成功时截图 `_shot-v11satin.png` / `_shot-v11.png`；交接 `_v11satin-handoff.md`。
+
 ## XI尾 / v11-wake2
 
 - 船尾既有 3×1 泡沫尖端由暖象牙改为低饱和冷青白，保留 Spray 的数量、尺寸、透明度与节奏，无新增效果层。

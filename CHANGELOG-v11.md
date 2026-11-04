@@ -1,3 +1,11 @@
+## XI▣ / v11-chrome
+
+- 首启 / 暂停卡片眉题改为独立行并微调行高；静音上方增加细弱分隔，启航 / 继续仍为卡片唯一亮色主按钮。
+- 仅竖屏提高物资 chip 边框与航程文字对比，含短竖屏；字号、布局、安全区、≥44px 目标与 notice +228px 不变。
+- 摇杆标签夜间对比略提亮，暂停边框匹配 HUD 黄铜轨；manifest theme_color / background_color 与 HTML theme-color 统一 `#0b202c`。
+- CACHE `endless-sea-drift-v11-chrome`；edition `XI▣`。game.js / art.js 未改；玩法、战斗、迁移、v10 存档、v9 偏好、30fps 与四声部上限不变。
+- Validation: `node _selftest-v10.mjs` → 122/122；`_v11chrome-validation.json` ok:true；`_shot-v11chrome.png` / `_shot-v11.png`。
+
 ## XI☾ / v11-night
 
 - 小岛 / 沉船 / 商船在既有 make() 内增加克制的左上黄铜高光与冷色湿边，沿用 module / crate 材质；96×80、unit 与显示尺寸不变。

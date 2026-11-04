@@ -1,3 +1,9 @@
+## XI远2 / v11-loom2
+
+- 远岛在雾幕缓存内以半分辨率绘制后平滑回采，柔化山脊、收敛对比；保留 loom 雾色与岛脚渐隐，无新增逐帧绘制、滤镜或粒子。
+- 全部玩法数值、战斗、合成、存档、迁移、偏好及竖屏 notice +176px 保持不变。
+- CACHE `endless-sea-drift-v11-loom2`；验证 `_v11loom2-validation.json`，浏览器成功时截图 `_shot-v11loom2.png` / `_shot-v11.png`；交接 `_v11loom2-handoff.md`。
+
 ## XI露 / v11-dew
 
 - 甲板既有湿纹亮点改为低透明度暖象牙晨露，烘焙进原贴图；保留 cusp 黎明，不增加绘制、粒子或滤镜。

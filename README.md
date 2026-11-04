@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI露 · v11-dew，CACHE：`endless-sea-drift-v11-dew`。甲板既有湿纹微光改为低透明度晨露象牙色，保留 cusp 黎明；验证见 `_v11dew-handoff.md`。
+XI远2 · v11-loom2，CACHE：`endless-sea-drift-v11-loom2`。远岛缓存半分辨率柔化山脊、降低轮廓对比，保留 loom 雾幕；验证见 `_v11loom2-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI露; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI远2; no build step.
 
 ## 本地预览
 

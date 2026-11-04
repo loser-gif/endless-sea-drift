@@ -55,13 +55,16 @@ window.SeaArt = (() => {
     mist.addColorStop(.46,'#8fafa51c');mist.addColorStop(.70,'#315e6810');mist.addColorStop(1,'#315e6800');
     mg.fillStyle=mist;mg.fillRect(0,0,192,128);
     // One distant landform baked into the same wash, never a gameplay site/sprite.
-    // Low-resolution interpolation softens its ridge; the foot dissolves into sea haze.
-    const land=mg.createLinearGradient(0,19,0,56);
-    land.addColorStop(0,'#557a792e');land.addColorStop(.48,'#557a7938');land.addColorStop(1,'#557a7900');
-    mg.fillStyle=land;mg.beginPath();mg.moveTo(108,55);
-    mg.bezierCurveTo(118,50,119,39,128,37);mg.bezierCurveTo(134,36,136,25,143,23);
-    mg.bezierCurveTo(150,18,154,33,160,34);mg.bezierCurveTo(169,34,170,46,184,55);
-    mg.closePath();mg.fill();
+    // Loom2: soften the ridge at cache time; preserve the loom mist underneath.
+    // Half-resolution land is interpolated once, with no new per-frame pass/filter.
+    const island=surface(96,64),ig=island.getContext('2d');ig.scale(.5,.5);
+    const land=ig.createLinearGradient(0,19,0,56);
+    land.addColorStop(0,'#5e807e26');land.addColorStop(.48,'#5e807e30');land.addColorStop(1,'#5e807e00');
+    ig.fillStyle=land;ig.beginPath();ig.moveTo(108,55);
+    ig.bezierCurveTo(118,50,119,39,128,37);ig.bezierCurveTo(134,36,136,25,143,23);
+    ig.bezierCurveTo(150,18,154,33,160,34);ig.bezierCurveTo(169,34,170,46,184,55);
+    ig.closePath();ig.fill();
+    mg.imageSmoothingEnabled=true;mg.drawImage(island,0,0,192,128);
     // Aurora: a very soft cool horizon within the existing night wash.
     // Cache gradient on resize; keep veil mist, focal tint and per-frame pass count.
     nightWash=mg.createLinearGradient(0,0,0,Math.max(1,h*(focus-.20)));

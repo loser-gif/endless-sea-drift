@@ -1,3 +1,9 @@
+## XI符 / v11-glyph
+
+- 模块图标统一黄铜实心面、暗色凹槽与克制高光，沿用炮塔色系；保留舵轮轮廓、建造预览、原缓存尺寸与灯芯透明度。
+- 全部玩法、战斗、合成、存档、迁移、偏好不变；保留触控 ≥44px、竖屏 notice +176px、30fps / ≤4 声部。
+- CACHE `endless-sea-drift-v11-glyph`；edition `XI符`；验证与交接见 `_v11glyph-validation.json`、`_v11glyph-handoff.md`。
+
 ## XI焰 / v11-flare
 
 - 吊灯与灯模块降低玻璃亮部透明度、缩小暖色火芯；沿用缓存尺寸和绘制次数，不新增粒子、滤镜或动画。

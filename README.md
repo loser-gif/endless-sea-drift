@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI焰 · v11-flare，CACHE：`endless-sea-drift-v11-flare`。灯具收敛玻璃透明度与暖色火芯，无新增粒子，保留全部玩法；验证见 `_v11flare-handoff.md`。
+XI符 · v11-glyph，CACHE：`endless-sea-drift-v11-glyph`。模块图标统一黄铜填色，保留舵轮预览与全部玩法；验证见 `_v11glyph-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI焰; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI符; no build step.
 
 ## 本地预览
 

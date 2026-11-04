@@ -1,3 +1,9 @@
+## XI昏 / v11-dusk2
+
+- 暮色罩染由赭沙金微调为柔沙金，统一 cusp 柔金、暖象牙晨光家族；复用原有 15% 单层罩染，不增加特效或绘制次数。
+- 晨光、玩法、战斗、合成、存档、迁移、偏好与布局保持不变；保留竖屏 notice +176px、触控 ≥44px、30fps / ≤4 声部。
+- CACHE `endless-sea-drift-v11-dusk2`；edition `XI昏`；验证与交接见 `_v11dusk2-validation.json`、`_v11dusk2-handoff.md`。
+
 ## XI欧 / v11-opal
 
 - 背包炖菜增加暖琥珀专属底色与黄铜边色，沿用 vault 斜边、内阴影和尺寸；仅 CSS 调色，无新增动画或特效。

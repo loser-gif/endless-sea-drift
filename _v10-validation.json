@@ -1,7 +1,7 @@
 {
   "ok": false,
-  "cache": "endless-sea-drift-v11-opal",
-  "session_id": "01a1a805-ecd2-77b0-84e5-160a2e828659",
+  "cache": "endless-sea-drift-v11-dusk2",
+  "session_id": "01a1a811-5cc3-7e10-9905-ff73a9fd710e",
   "features": [
     {
       "id": "cache",
@@ -671,7 +671,7 @@
     {
       "id": "screenshot",
       "ok": true,
-      "note": "已生成 _shot-v11opal.png / _shot-v11.png"
+      "note": "已生成 _shot-v11dusk2.png / _shot-v11.png"
     }
   ],
   "errors": [

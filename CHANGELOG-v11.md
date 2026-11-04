@@ -1,3 +1,9 @@
+## XI终 / v11-final
+
+- 晨间最终封版：更新版签与离线缓存，不追加视觉效果。
+- 全部玩法数值、战斗、合成、存档、迁移、偏好与竖屏 notice +176px 保持不变。
+- CACHE `endless-sea-drift-v11-final`；自测输出转至 `_v11final-validation.json` 与 `_shot-v11final.png`（成功时同步 `_shot-v11.png`）；验证结果见 `_v11final-handoff.md`。
+
 ## XI沫2 / v11-spray
 
 - 船首既有浪花尖端微调暖象牙色，共用 waterRing 略暖灰绿，与 art 泡沫色系衔接；不增加绘制、粒子或滤镜。

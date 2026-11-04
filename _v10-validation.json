@@ -1,7 +1,7 @@
 {
   "ok": false,
-  "cache": "endless-sea-drift-v11-compass",
-  "session_id": "01a1a82c-649d-7001-9d77-c9a5cc1d483c",
+  "cache": "endless-sea-drift-v11-rivet",
+  "session_id": "01a1a837-a742-7ab2-9ab2-a61d2704d1d4",
   "features": [
     {
       "id": "cache",
@@ -676,7 +676,7 @@
     {
       "id": "screenshot",
       "ok": true,
-      "note": "已生成 _shot-v11compass.png / _shot-v11.png"
+      "note": "已生成 _shot-v11rivet.png / _shot-v11.png"
     }
   ],
   "errors": [

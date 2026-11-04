@@ -1,3 +1,9 @@
+## XI铆 / v11-rivet
+
+- HUD 原黄铜导轨两端加入 4px 静态 CSS radial 铆钉；保留导轨，不新增动画、滤镜或布局占位。
+- 玩法数值、战斗、合成、存档、迁移、偏好及竖屏 notice +176px 不变。
+- CACHE `endless-sea-drift-v11-rivet`；验证与交接见 `_v11rivet-validation.json`、`_v11rivet-handoff.md`。
+
 ## XI罗 / v11-compass
 
 - 航行等宽栏左侧留白加入静态单色罗盘针，沿用黄铜色；不占文字宽度、不增行高、动画或滤镜。

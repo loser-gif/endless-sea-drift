@@ -1,3 +1,9 @@
+## XI墨 / v11-ink
+
+- CSS 微调眉题、航程与库存标签字距 / 字重，数字保持等宽与独立字距；不改字号、行高、盒尺寸或特效。
+- CACHE `endless-sea-drift-v11-ink`；edition `XI墨`。玩法、战斗、合成、存档、迁移、偏好及竖屏 notice +176px 保留。
+- 验证与限制见 `_v11ink-validation.json`、`_v11ink-handoff.md`；浏览器成功时生成 `_shot-v11ink.png` / `_shot-v11.png`。
+
 ## XI栏 / v11-rail
 
 - CSS 微调 HUD 与卡片黄铜栏框：上左暖亮、下右收暗，复用内框与阴影；布局尺寸及竖屏 notice +176px 不变，无新增滤镜或动画。

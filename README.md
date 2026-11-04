@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI栏 · v11-rail，CACHE：`endless-sea-drift-v11-rail`。HUD 与卡片黄铜栏框斜面微调，仅改 CSS 视觉；尺寸、玩法、存档与竖屏 notice +176px 保留，验证见 `_v11rail-handoff.md`。
+XI墨 · v11-ink，CACHE：`endless-sea-drift-v11-ink`。眉题、航程与库存标签字距 / 字重微调；字号、行高、玩法、存档及竖屏 notice +176px 保留，验证见 `_v11ink-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI栏; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI墨; no build step.
 
 ## 本地预览
 

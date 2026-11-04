@@ -1,7 +1,19 @@
-# X / v10-deep
+# X+ / v10-plus
 
-纯静态 Canvas PWA；无构建步骤、无新增运行依赖。CACHE：`endless-sea-drift-v10-deep`。
+纯静态 Canvas PWA；无构建步骤、无新增运行依赖。CACHE：`endless-sea-drift-v10-plus`。
 Static Canvas PWA; no build step or new runtime dependencies.
+
+## Plus pass
+
+- 高光追加当前连击、连击纪录、最远成功停靠（`|x|+|y|`）和雾灯船次数；连续8秒无击杀清空当前连击，暂停不计时。终章保留全部原有统计。
+- 第2、4、6…天的夜晚出现一次雾灯船，最多停留38秒且不跨入白昼；独立于原停靠点轮换。冷蓝帆船、琥珀小灯与「雾灯船 · G」，免费领取1废铁+1布或1弹药+1淡水；每船仅一次，出现日期和奖励次数随存档保留。
+- 音效邀请一次柔和脉冲，真正开启后每会话提示一次「音效已开启」；动作按钮120ms按下反馈。竖屏HUD再压缩6px，所有交互目标保持≥44px；减少动态效果偏好停用脉冲、位移和阶段闪光。
+- 潮汐王二/三阶段分别出现短琥珀/红色屏幕边缘渐隐；渐变在resize时缓存。对王炮口线从38加长至50、线宽1→1.8。弹药耗尽提示一次，重新补弹后可再次提示；伤害、射速及声部上限不变。
+- 小岛、沉船各增加两条风味文案，瓶中提示增加两条；已有灶台烹饪教程保留。
+- 终章卡片限制视口高度，内部可滚动，短屏可看完整统计并触达重新启航。
+- 继续使用v10存档键/`v:10`、v9静音偏好和2秒自动存档；旧v10缺失plus字段补默认值，现存错误值仍拒绝。v8/v9迁移路径保留。
+- `node _selftest-v10.mjs`：73项通过（包含原58项），`_v10-validation.json`及`_v10plus-validation.json`均为`ok:true`。新增夜间生成/消失、一次停靠、两种奖励、连击边界、兼容存档、弹药提示、真实按钮反馈和三个视口终章滚动检查。
+- 截图覆盖`_shot-v10.png`，同时输出`_shot-v10plus.png`：第2夜雾灯船、二阶段潮汐王和多炮展示场景。已目视检查小竖屏及展示图；未做真机iOS验证。
 
 ## 已完成 / Shipped
 
@@ -34,11 +46,11 @@ Validated v9/v8 saves migrate only when no v10 key exists. Originals remain unto
 
 `node _selftest-v10.mjs` → `_v10-validation.json`（`ok:true`）。保留 v9 测试并增加防误触边界、长按真实鼠标序列、音频真实手势、阶段绘制、高光、三种交易、迁移/损坏保护、弹药UI。Chrome 使用 `--no-sandbox`；844×390、390×844、320×568 检查运行、重载、按钮尺寸和摇杆避让。
 
-`_shot-v10.png` 是浏览器生成的可控展示场景（第二阶段王、商船、瓶子、多炮），不是长局成绩证明。浏览器截图已目视检查。`window.testAPI` 仅在 `?test` 下暴露相关状态和帮助函数。
+`_shot-v10.png` 是浏览器生成的可控展示场景（第二阶段王、雾灯船、瓶子、多炮），不是长局成绩证明。浏览器截图已目视检查。`window.testAPI` 仅在 `?test` 下暴露相关状态和帮助函数。
 
 ## 未做与限制 / Cut and known
 
-- 未加雾灯船、最远站点或击杀连击；使用累计击退。没有振动、原生包装、弹药类型系统、海面重绘或新大型资源。
+- 没有振动、原生包装、弹药类型系统、海面重绘或新大型资源。
 - 未进行真机 iOS/Safari 测试；已验证 Chrome 移动视口和 WebAudio 手势。系统暂停音频后提示可再次出现，等待下一次手势恢复。
 - 极小竖屏维持可操作区域，海面视野较小；长死亡总结可滚动。
 - Legacy historical peaks are approximate as described above; physical iOS validation remains outstanding. No known failing selftest checks.

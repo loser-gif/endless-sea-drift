@@ -1,6 +1,6 @@
 {
   "ok": true,
-  "cache": "endless-sea-drift-v10-deep",
+  "cache": "endless-sea-drift-v10-plus",
   "features": [
     {
       "id": "cache",
@@ -183,12 +183,47 @@
       "note": "通过"
     },
     {
+      "id": "plus-streak-timeout-roundtrip",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "plus-fogship-night-dock-save",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "plus-v10-additive-defaults-validation",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "plus-phase-and-empty-ammo-cues",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "plus-audio-announcement-once",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "plus-fogship-automatic-and-expiry",
+      "ok": true,
+      "note": "通过"
+    },
+    {
       "id": "browser-boot-landscape",
       "ok": true,
       "note": "通过"
     },
     {
       "id": "browser-audio-unlock-landscape",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-pressed-landscape",
       "ok": true,
       "note": "通过"
     },
@@ -213,7 +248,17 @@
       "note": "通过"
     },
     {
+      "id": "browser-pressed-cleared-landscape",
+      "ok": true,
+      "note": "通过"
+    },
+    {
       "id": "browser-save-reload-landscape",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-death-scroll-landscape",
       "ok": true,
       "note": "通过"
     },
@@ -224,6 +269,11 @@
     },
     {
       "id": "browser-audio-unlock-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-pressed-portrait",
       "ok": true,
       "note": "通过"
     },
@@ -248,7 +298,17 @@
       "note": "通过"
     },
     {
+      "id": "browser-pressed-cleared-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
       "id": "browser-save-reload-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-death-scroll-portrait",
       "ok": true,
       "note": "通过"
     },
@@ -259,6 +319,11 @@
     },
     {
       "id": "browser-audio-unlock-small-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-pressed-small-portrait",
       "ok": true,
       "note": "通过"
     },
@@ -283,7 +348,17 @@
       "note": "通过"
     },
     {
+      "id": "browser-pressed-cleared-small-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
       "id": "browser-save-reload-small-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-death-scroll-small-portrait",
       "ok": true,
       "note": "通过"
     },
@@ -294,5 +369,5 @@
     }
   ],
   "errors": [],
-  "session_hint": "node _selftest-v10.mjs；120秒昼夜，95秒起风雨，28秒小岛/93秒沉船，180秒潮汐王。158秒商船。每2秒自动存档；v8/v9验证后迁移至v10；保留v9静音偏好。"
+  "session_hint": "node _selftest-v10.mjs；120秒昼夜，95秒起风雨，28秒小岛/93秒沉船，180秒潮汐王。158秒商船；第2/4/6…夜雾灯船。每2秒自动存档；v8/v9验证后迁移至v10；保留v9静音偏好。"
 }

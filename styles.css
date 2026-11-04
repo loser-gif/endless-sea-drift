@@ -96,3 +96,11 @@ button[hidden]{display:none}
 #dialogText{white-space:pre-line;font-size:13px;line-height:1.8}
 @media(orientation:portrait){#hud{padding:7px 10px}#hud h1{font-size:18px;margin:1px 0 3px}#hud #voyage{font-size:9px;letter-spacing:0;margin-bottom:7px}#hud #inventory{grid-template-columns:repeat(5,minmax(0,1fr));gap:3px 5px;font-size:10px;padding-top:5px;margin-top:6px}#inventory b{font-size:12px;margin-left:2px}.vitals{gap:12px}.vitals label{font-size:10px}.ammo-status{margin:0 0 5px}#notice{top:calc(max(12px,env(safe-area-inset-top)) + 174px);padding:6px 9px;font-size:10px;letter-spacing:0}}
 @media(orientation:portrait) and (max-height:700px){.actions{grid-template-columns:repeat(3,minmax(44px,1fr));gap:4px}.actions .tool:first-child{grid-column:span 2}.actions button{font-size:11px}.tool select{font-size:11px}#notice{font-size:10px}#controls{bottom:max(10px,env(safe-area-inset-bottom))}}
+
+/* X+ — one gentle invitation, tactile actions and bounded recap scrolling. */
+#audioUnlock{border-color:#ffe1a5;color:#fff0c9;animation:audio-invitation 1.2s ease-out 1}
+@keyframes audio-invitation{50%{box-shadow:0 0 22px #f6cf8170;border-color:#fff4d7}}
+.actions button.pressed{transform:translateY(1px);border-color:#ffe1a5;box-shadow:inset 0 0 14px #f1d19a38}
+.card{max-height:calc(100% - 8px);max-height:calc(100dvh - 40px);overflow-y:auto;overscroll-behavior:contain;-webkit-overflow-scrolling:touch}
+@media(orientation:portrait){#hud{padding-top:5px;padding-bottom:5px}.ammo-status{margin-bottom:3px}}
+@media(prefers-reduced-motion:reduce){#audioUnlock{animation:none}.actions button.pressed{transform:none}}

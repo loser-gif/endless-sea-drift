@@ -116,3 +116,64 @@ button[hidden]{display:none}
 .card{max-height:calc(100% - 8px);max-height:calc(100dvh - max(16px,env(safe-area-inset-top)) - max(16px,env(safe-area-inset-bottom)) - 8px)}
 #notice{overflow:hidden;overflow-wrap:anywhere;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;max-height:5em}
 @media(orientation:portrait){#notice{left:max(16px,env(safe-area-inset-left));right:max(16px,env(safe-area-inset-right))}}
+
+/* XI / UI — brass expedition instruments and warm timber panels. */
+#hud{padding:10px 12px;border-color:#bd96576b;border-top:2px solid #e6c181;background:linear-gradient(115deg,#142b30f5,#091e29e8);box-shadow:0 6px 20px #0005,inset 0 1px #fff0bd18,inset 3px 0 #d2a7650a}
+#hud h1{margin:3px 0 5px;color:#ffe6b7;letter-spacing:3px;font-size:22px}
+#hud .eyebrow{font-size:8px;letter-spacing:1.8px;color:#bda879}
+.edition{color:#ffe4aa;border-color:#dbb77980;background:#cfa25412;padding:2px 5px}
+#pause{color:#d7c9aa;border-color:#c7ad7166;background:linear-gradient(#35413e,#1b2c31);box-shadow:inset 0 1px #f9e1b61a;font-size:11px}
+#voyage{margin-bottom:8px;padding-bottom:6px;border-bottom:1px solid #c8ad6c26;color:#bdcacc;letter-spacing:.4px;font-size:10px}
+.ammo-status{margin:0 0 8px;gap:9px;font-size:11px}
+#ammoChip{min-width:76px;padding:3px 6px;border:1px solid #d8b66b4d;background:#caa35412;color:#ffe0a0;border-radius:2px;font-weight:600}
+#ammoChip[data-mode="empty"]{color:#ffc1a0;border-color:#c58a655c;background:#8d48351c}
+.ammo-track{height:5px;width:64px;border-radius:2px;background:#020e19;box-shadow:0 0 0 1px #d8c48a33}
+#ammoCooldown{background:linear-gradient(90deg,#b18346,#ffe0a0)}
+#ammoChip[data-mode="empty"] + .ammo-track #ammoCooldown{background:linear-gradient(90deg,#a6644c,#eab196)}
+.vitals{gap:14px}.vitals label{color:#b4c4bd;font-size:10px}.vitals span{color:#f5e3bf;font:11px ui-monospace,monospace}
+.vitals label.vital-low,.vitals label.vital-low span{color:#ffc09c}
+progress{height:5px;margin-top:5px;box-shadow:0 0 0 1px #d8c48a1c}
+#inventory{grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;margin-top:8px;padding-top:7px;border-color:#d8b67c38;font-size:10px}
+#inventory>span{display:flex;align-items:baseline;justify-content:space-between;gap:2px;padding:3px 4px;background:#020e1966;border:1px solid #bbad7b16;border-radius:2px;white-space:nowrap;color:#acbab5}
+#inventory b{color:#ffebbf;font-size:13px;margin:0;font-weight:600}
+#inventory>span:nth-child(n+6){border-bottom-color:#cfad6955}
+#inventory>span:last-child{background:#9c73351c;border-color:#cfad6944}
+#notice{border-color:#c4a46b45;background:#0b202ce6;box-shadow:inset 2px 0 #d4b57880,0 3px 12px #0003;color:#e5d9bb}
+.card{padding:24px;border-color:#b8965d9e;border-top:3px solid #f1ce8b;background:linear-gradient(100deg,#b7945710,transparent 45%),repeating-linear-gradient(0deg,transparent 0 5px,#e9c88b03 6px 7px),linear-gradient(145deg,#34362efc,#18292dfc 55%,#101e29fc);box-shadow:0 24px 70px #000b,0 0 0 3px #05121c80,inset 0 1px #fff1c329,inset 0 0 36px #050e1938}
+.card>.eyebrow{font:9px Georgia,"Songti SC",serif;letter-spacing:2px;color:#cfb883}
+.card h2{font-size:30px;letter-spacing:5px;margin:9px 0 14px;color:#ffe1a5;text-shadow:0 2px 2px #0006}
+.card p{color:#d0d2bf;line-height:1.85}.card .muted{color:#a1afa8}
+#resume{min-height:48px;font-weight:700;letter-spacing:2px;background:linear-gradient(120deg,#ffe8b5,#d4ad69 65%,#b88b4b);border-color:#ffe7ae;box-shadow:inset 0 1px #fff5d4,0 4px 16px #0005}
+#muteToggle{background:#07182040;border-color:#b6b59c33;color:#acbcb5;box-shadow:none;font-size:12px;margin:8px 0 0}
+#muteToggle[aria-pressed="true"]{opacity:1;color:#d6b88d;border-color:#c2a16a66;background:#b58c4314}
+#newRun{background:transparent;border-color:#ba8c6d80;color:#e1b39b;box-shadow:none;font-size:12px}
+.actions button{color:#dedac4;background:linear-gradient(150deg,#273d40f5,#10252ff5);border-color:#bbac8059;box-shadow:inset 0 1px #fce5b418,0 3px 9px #0004}
+.actions [data-action="repair"],.actions [data-action="eat"],.actions [data-action="drink"]{background:linear-gradient(145deg,#3a4a45f5,#1b3239f5);border-color:#c4bd8e70;color:#f0e2c3}
+.actions [data-action="craft"],.actions [data-action="build"]{background:linear-gradient(#182c34f5,#0c202bf5);color:#b9c4bc}
+.actions .primary{color:#2d251c;font-weight:750;border-color:#fff0bf;background:linear-gradient(125deg,#ffebba,#d6ac65 70%,#bd8e4d);box-shadow:inset 0 1px #fff8db,0 0 15px #e5b86126,0 4px 10px #0005}
+.actions button[aria-pressed="true"]{color:#fff0bd;border-color:#edcc87;background:linear-gradient(130deg,#6a6040,#354b46);box-shadow:inset 3px 0 #f5d48c,inset 0 1px #fff1c333}
+.actions button.pressed,.actions button:active{border-color:#fff0bf;box-shadow:inset 0 2px 10px #0006,inset 0 0 12px #f1d19a30}
+.tool{color:#c4b284;letter-spacing:.5px}
+.tool select{color:#f1dfb9;background:linear-gradient(135deg,#303b37,#142832);border-color:#c1a66e66;padding:5px;font-size:13px;box-shadow:inset 0 1px #f6dcad14;letter-spacing:0}
+.tool select:focus-visible{outline:2px solid #e2c38a;outline-offset:2px}
+#stick{border:1px solid #ddbd7d99;background:radial-gradient(circle at 40% 32%,#35505a99,#091d2bcc 70%);box-shadow:0 0 0 3px #07192399,inset 0 0 0 4px #cfad5f17,inset 0 0 0 7px #05162455,0 5px 18px #0005}
+#thumb{background:radial-gradient(circle at 32% 23%,#f3ddb4dc,#9a9673cc 38%,#38515bd9 82%);border-color:#f0d398b3;box-shadow:inset 0 1px #fff4d299,0 3px 8px #0006}
+#stick small{color:#cfc9ae;text-shadow:0 1px 3px #000}
+@media(orientation:landscape) and (max-height:480px){
+ #hud{width:253px;padding:8px 10px}#hud h1{font-size:19px}
+ #inventory{margin-top:6px;padding-top:5px;gap:3px}#inventory>span{padding:2px 3px}
+ .ammo-status{margin-bottom:6px}.card{padding:16px 22px;max-width:530px}.card h2{font-size:24px;margin:6px 0 8px}.card p{line-height:1.7}
+}
+@media(orientation:portrait){
+ #hud{padding:6px 10px}#hud h1{font-size:19px;margin:2px 0 4px}
+ #hud #voyage{margin-bottom:5px;padding-bottom:4px;font-size:9px}
+ #hud #inventory{grid-template-columns:repeat(5,minmax(0,1fr));gap:3px;margin-top:6px;padding-top:5px;font-size:10px}
+ #inventory>span{padding:2px 3px}#inventory b{font-size:12px}
+ .ammo-status{margin-bottom:5px;font-size:10px}#ammoChip{padding:2px 5px}
+ #notice{top:calc(max(12px,env(safe-area-inset-top)) + 228px)}
+ .tool select{font-size:12px;padding:3px}
+}
+@media(orientation:portrait) and (max-width:350px){
+ #hud #inventory{grid-template-columns:repeat(5,minmax(0,1fr));gap:2px}#inventory>span{padding:2px}#inventory b{font-size:11px}
+ .tool select{font-size:11px}.card{padding:18px}.card>.eyebrow{letter-spacing:1.3px}
+}

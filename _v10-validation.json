@@ -1,7 +1,7 @@
 {
   "ok": true,
-  "cache": "endless-sea-drift-v10-lock",
-  "session_id": "01a1a649-d9a2-79f2-aab9-f284c49b1722",
+  "cache": "endless-sea-drift-v11-ui",
+  "session_id": "01a1a6d9-c732-7172-a967-96376dc76efe",
   "features": [
     {
       "id": "cache",
@@ -115,6 +115,11 @@
     },
     {
       "id": "helm-pull-canopy-storm",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "v11-storage-contract",
       "ok": true,
       "note": "通过"
     },
@@ -369,6 +374,16 @@
       "note": "通过"
     },
     {
+      "id": "v11-instruments-landscape",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "v11-reduced-motion-landscape",
+      "ok": true,
+      "note": "通过"
+    },
+    {
       "id": "browser-pressed-cleared-landscape",
       "ok": true,
       "note": "通过"
@@ -439,6 +454,16 @@
       "note": "通过"
     },
     {
+      "id": "v11-instruments-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "v11-reduced-motion-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
       "id": "browser-pressed-cleared-portrait",
       "ok": true,
       "note": "通过"
@@ -505,6 +530,16 @@
     },
     {
       "id": "touch-layout-small-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "v11-instruments-small-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "v11-reduced-motion-small-portrait",
       "ok": true,
       "note": "通过"
     },

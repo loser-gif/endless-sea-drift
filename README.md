@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-X★ · v10-lock，CACHE：`endless-sea-drift-v10-lock`。在线游玩：https://loser-gif.github.io/endless-sea-drift/ 。本轮修复混合打捞提示与最近停靠，补充启航说明和柔和收集水环；保留 v10 存档与 v9 静音偏好。
+XI · v11-ui，CACHE：`endless-sea-drift-v11-ui`。黄铜仪表 HUD、木质面板与触控层级更新；玩法、v10 存档和 v9 静音偏好不变。Brass HUD, timber panels and clearer controls; gameplay and saves preserved. 在线游玩：https://loser-gif.github.io/endless-sea-drift/ 。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition X★; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI; no build step.
 
 ## 本地预览
 

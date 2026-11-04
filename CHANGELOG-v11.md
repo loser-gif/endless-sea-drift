@@ -1,3 +1,9 @@
+## XI玺 / v11-seal2
+
+- 黎明前封版自审：同步 CACHE、edition 与自检产物路径，不新增画面特效。
+- 玩法、战斗、合成、存档、迁移、偏好与布局全部保留，竖屏 notice +176px、30fps / ≤4 声部实现不变。
+- CACHE `endless-sea-drift-v11-seal2`；验证结果见 `_v11seal2-validation.json`、`_v11seal2-handoff.md`。
+
 ## XI昏 / v11-dusk2
 
 - 暮色罩染由赭沙金微调为柔沙金，统一 cusp 柔金、暖象牙晨光家族；复用原有 15% 单层罩染，不增加特效或绘制次数。

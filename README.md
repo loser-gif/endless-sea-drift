@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI昏 · v11-dusk2，CACHE：`endless-sea-drift-v11-dusk2`。暮色罩染二次收敛为柔沙金，衔接 cusp 暖象牙晨光；验证见 `_v11dusk2-handoff.md`。
+XI玺 · v11-seal2，CACHE：`endless-sea-drift-v11-seal2`。黎明前封版自审，仅同步版本与验证路径；验证见 `_v11seal2-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI昏; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI玺; no build step.
 
 ## 本地预览
 

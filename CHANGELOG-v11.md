@@ -1,3 +1,9 @@
+## XI栏 / v11-rail
+
+- CSS 微调 HUD 与卡片黄铜栏框：上左暖亮、下右收暗，复用内框与阴影；布局尺寸及竖屏 notice +176px 不变，无新增滤镜或动画。
+- CACHE `endless-sea-drift-v11-rail`；edition `XI栏`。全部玩法、战斗、合成、存档、迁移、偏好保留。
+- 验证见 `_v11rail-validation.json`、`_v11rail-handoff.md`；浏览器成功时生成 `_shot-v11rail.png` / `_shot-v11.png`。
+
 ## XI木 / v11-grain
 
 - 木筏 4 张缓存板材精灵加密端部木纹与断续板缝 AO，保留中部明度、绳索及钉头；unit=2、40×52 显示尺寸不变，无新增逐帧效果。

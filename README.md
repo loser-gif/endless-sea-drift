@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI潮 · v11-tide3，CACHE：`endless-sea-drift-v11-tide3`。统一 brine 盐痕与 tide2 水线的灰绿、柔象牙色系，保留既有像素形状与绘制预算；验证见 `_v11tide3-handoff.md`。
+XI缆2 · v11-cord2，CACHE：`endless-sea-drift-v11-cord2`。加深木筏绑绳、绳圈湿润接触阴影，保留尺寸与绘制预算；验证见 `_v11cord2-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI潮; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI缆2; no build step.
 
 ## 本地预览
 

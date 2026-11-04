@@ -1,3 +1,9 @@
+## XI缆2 / v11-cord2
+
+- 加深木筏绑绳背光侧、板缝与绳圈内缘的湿润接触阴影，下段绳股转为灰绿；复用既有像素与缓存，尺寸不变。
+- 全部玩法、战斗、合成、存档、迁移、偏好与竖屏 notice +176px 保留；无新增绘制层、粒子或滤镜。
+- CACHE `endless-sea-drift-v11-cord2`；验证 `_v11cord2-validation.json`，浏览器成功时截图 `_shot-v11cord2.png` / `_shot-v11.png`；交接 `_v11cord2-handoff.md`。
+
 ## XI潮 / v11-tide3
 
 - 统一 brine 盐痕与 tide2 水线：木筏、商船、沉船盐斑收敛为灰绿与浅象牙，尾沫衔接远处浪尖；仅改色，不增绘制层。

@@ -190,39 +190,39 @@ window.SeaArt = (() => {
       // Stay inside the old opaque foot (and 80x104 cache); no silhouette or draw-cost growth.
       r(4,94,72,4,'#1d3337');r(6,94,68,1,'#304842');
       r(4,98,72,2,'#12262d');r(4,100,72,2,'#0a1c25');
-      // Cord: narrow contact AO baked under the existing three-pixel lashings.
+      // Cord2: denser cool wet AO under the existing three-pixel lashings.
       // Same 80x104 cache, rope width and silhouette; no extra per-frame pass.
       for(const x of [3,73]){
-        r(x-1,4,1,88,'#544932');r(x+3,4,1,88,'#413c2e');
-        for(let j=1;j<4;j++)r(x-1,j*18-2,5,3,'#38372b');
-        r(x,3,3,89,'#665c43');
-        for(let y=4;y<92;y+=4){r(x,y,2,2,'#c9be8a');r(x+1,y+2,2,1,'#e1cf99');}
+        r(x-1,4,1,88,'#414333');r(x+3,4,1,88,'#29352f');
+        for(let j=1;j<4;j++)r(x-1,j*18-2,5,3,'#25312c');
+        r(x,3,3,89,'#53533e');
+        for(let y=4;y<92;y+=4){r(x,y,2,2,y<72?'#b5ae80':'#7d8b70');r(x+1,y+2,2,1,y<72?'#d3c692':'#a5b096');}
       }
     });
     fine('rope',22,18,(g,r)=>{
-      // Moor: contact shade and twisted hemp baked into the existing 44x36 cache.
+      // Cord2: wet contact shade and twisted hemp in the existing 44x36 cache.
       // Keep the coil footprint and deck draw unchanged; no extra frame-time pass.
       for(let y=0;y<27;y++)for(let x=0;x<39;x++){
         const dx=(x-20)/1.3,dy=y-14,d=Math.sqrt(dx*dx+dy*dy);
         if(d>4&&d<13){
-          r(x+2,y+7,1,1,'#28332bd9');
+          r(x+2,y+7,1,1,'#192e29e6');
         }
       }
       for(let y=0;y<27;y++)for(let x=0;x<39;x++){
         const dx=(x-20)/1.3,dy=y-14,d=Math.sqrt(dx*dx+dy*dy);
         if(d>4&&d<13){
           const ring=Math.floor(d)%4,twist=(x+y*2)%7;
-          const hemp=dy>4?['#4b4431','#927d51','#bda573','#706345']:['#544832','#ac925f','#dec28a','#84704c'];
-          r(x+2,y+6,1,1,ring===2&&twist<2?'#a18a59':hemp[ring]);
+          const hemp=dy>4?['#303e31','#727650','#a4a17a','#515e43']:['#414331','#a28c5d','#d4bd88','#756b49'];
+          r(x+2,y+6,1,1,ring===2&&twist<2?'#8d8559':hemp[ring]);
         }
       }
       for(let i=0;i<15;i++){
         const y=27+Math.floor(Math.sin(i*.25)*3);
-        r(5+i,y+1,2,2,'#34392cd9');
-        r(5+i,y,2,1,i%3?'#b59b67':'#dfc38b');
+        r(5+i,y+1,2,2,'#23332be6');
+        r(5+i,y,2,1,i%3?'#92946b':'#c1bc8a');
       }
       // Recessed inner lip replaces the old flat blue slit.
-      r(15,14,10,2,'#343c2e');r(17,14,6,1,'#746344');
+      r(15,14,10,2,'#22352b');r(17,14,6,1,'#5b6446');
     });
     fine('lantern',14,24,(g,r)=>{
       r(8,1,12,2,'#d5be82');r(7,3,2,6,'#d5be82');r(19,3,2,6,'#485c59');

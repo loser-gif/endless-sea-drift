@@ -1,3 +1,9 @@
+## XI浪 / v11-crest
+
+- 既有六张浪纹缓存的亮点收束至左肩，改为短小、渐隐的暖色镜面高光；不增加逐帧绘制、缓存、粒子、滤镜或依赖。
+- 全部玩法、战斗、合成、存档、迁移、偏好不变；保留 44px 触控、竖屏 notice +176px、30fps / ≤4 声部逻辑。
+- CACHE `endless-sea-drift-v11-crest`；edition `XI浪`；验证与交接见 `_v11crest-validation.json`、`_v11crest-handoff.md`。
+
 ## XI纱 / v11-veil
 
 - 下调既有夜色、暗角与夜间风雨罩染 alpha，保留冷海色与灯光，让夜雾薄而不泛乳白；不新增图层、粒子、滤镜或依赖。

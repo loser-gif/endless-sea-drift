@@ -3,7 +3,7 @@ import vm from 'node:vm';
 import assert from 'node:assert/strict';
 import {spawn} from 'node:child_process';
 const game=fs.readFileSync('game.js','utf8'),art=fs.readFileSync('art.js','utf8'),sw=fs.readFileSync('sw.js','utf8');
-const report={ok:false,cache:'endless-sea-drift-v11-veil',session_id:process.env.CODEX_THREAD_ID||process.env.CODEX_SESSION_ID||'local',features:[],errors:[],session_hint:'node _selftest-v10.mjs；120秒昼夜，95秒起风雨，28秒小岛/93秒沉船，180秒潮汐王。158秒商船；第2/4/6…夜雾灯船。每2秒自动存档；v8/v9验证后迁移至v10；保留v9静音偏好。'};
+const report={ok:false,cache:'endless-sea-drift-v11-crest',session_id:process.env.CODEX_THREAD_ID||process.env.CODEX_SESSION_ID||'local',features:[],errors:[],session_hint:'node _selftest-v10.mjs；120秒昼夜，95秒起风雨，28秒小岛/93秒沉船，180秒潮汐王。158秒商船；第2/4/6…夜雾灯船。每2秒自动存档；v8/v9验证后迁移至v10；保留v9静音偏好。'};
 function test(id,fn){try{fn();report.features.push({id,ok:true,note:'通过'});}catch(e){report.features.push({id,ok:false,note:e.message});report.errors.push(id+': '+e.message);}}
 test('cache',()=>assert(sw.includes("const CACHE = '"+report.cache+"'")));
 for(const [id,words] of Object.entries({weather:['night','storm','dusk'],modules:['helm','canopy','stove','net','lamp','turret'],resources:['scrap','rope','nail','ammo','craft','fish'],monsters:['gnaw','flank','spit','tideking'],sites:['island','wreck']}))test(id,()=>{for(const word of words)assert(game.includes(word));if(['modules','monsters','sites'].includes(id))for(const word of words)assert(art.includes(word));});
@@ -117,7 +117,7 @@ if(chrome&&WebSocket){
    await cdp('Page.navigate',{url:'http://127.0.0.1:18747/index.html?test'});
    await new Promise(r=>setTimeout(r,1000));
    const boot=await cdp('Runtime.evaluate',{expression:'JSON.stringify({hint:!document.getElementById("audioUnlock").hidden,edition:document.querySelector(".edition").textContent,api:!!window.testAPI})',returnByValue:true});
-   test('browser-boot-'+orientation,()=>{const b=JSON.parse(boot.result.value);assert(b.hint);assert(b.api);assert.equal(b.edition,'XI纱');});
+   test('browser-boot-'+orientation,()=>{const b=JSON.parse(boot.result.value);assert(b.hint);assert(b.api);assert.equal(b.edition,'XI浪');});
    await cdp('Runtime.evaluate',{expression:"document.getElementById('resume').scrollIntoView({block:'nearest'})"});
    const visibleStart=await cdp('Runtime.evaluate',{expression:"(()=>{const b=document.getElementById('resume').getBoundingClientRect(),c=document.querySelector('.card').getBoundingClientRect();return b.top>=c.top&&b.bottom<=c.bottom&&b.top>=0&&b.bottom<=innerHeight})()",returnByValue:true});test('browser-lock-start-reachable-'+orientation,()=>assert.equal(visibleStart.result.value,true));
    const resumeRect=await cdp('Runtime.evaluate',{expression:'JSON.stringify((()=>{const r=document.getElementById("resume").getBoundingClientRect();return {x:r.x+r.width/2,y:r.y+r.height/2};})())',returnByValue:true});
@@ -153,11 +153,11 @@ if(chrome&&WebSocket){
    test('v11-reduced-motion-'+orientation,()=>assert.equal(reduced.result.value,'none'));
    await cdp('Emulation.setEmulatedMedia',{features:[]});
    const released=await cdp('Runtime.evaluate',{expression:`document.querySelector('[data-action="eat"]').classList.contains('pressed')`,returnByValue:true});test('browser-pressed-cleared-'+orientation,()=>assert.equal(released.result.value,false));
-   if(orientation!=='landscape'){const shot=await cdp('Page.captureScreenshot',{format:'png'});fs.writeFileSync('/tmp/v10-'+orientation+'.png',Buffer.from(shot.data,'base64'));fs.writeFileSync('_shot-v11veil-'+orientation+'.png',Buffer.from(shot.data,'base64'));}
+   if(orientation!=='landscape'){const shot=await cdp('Page.captureScreenshot',{format:'png'});fs.writeFileSync('/tmp/v10-'+orientation+'.png',Buffer.from(shot.data,'base64'));fs.writeFileSync('_shot-v11crest-'+orientation+'.png',Buffer.from(shot.data,'base64'));}
    await cdp('Runtime.evaluate',{expression:"testAPI.s.hunger=20;testAPI.updateVital('hunger');testAPI.pause()"});
    const clarity=await cdp('Runtime.evaluate',{expression:`JSON.stringify((()=>{const label=document.getElementById('hungerLabel');const c=document.querySelector('.card');c.scrollTop=c.scrollHeight;const r=c.getBoundingClientRect(),b=document.getElementById('resume').getBoundingClientRect();return {pulse:label.classList.contains('vital-pulse'),duration:getComputedStyle(label).animationDuration,text:document.getElementById('dialogText').textContent,button:b.top>=r.top&&b.bottom<=r.bottom,mute:!document.getElementById('muteToggle').hidden};})())`,returnByValue:true});
    test('browser-final-clarity-'+orientation,()=>{const v=JSON.parse(clarity.result.value);assert(v.pulse);assert.equal(v.duration,'1.2s');assert.match(v.text,/高光.*最大木筏.*连击纪录.*潮汐王.*雾灯船/);assert(v.button&&v.mute);});
-   const riftShot=await cdp('Page.captureScreenshot',{format:'png'});fs.writeFileSync('_shot-v11veil-pause-'+orientation+'.png',Buffer.from(riftShot.data,'base64'));
+   const riftShot=await cdp('Page.captureScreenshot',{format:'png'});fs.writeFileSync('_shot-v11crest-pause-'+orientation+'.png',Buffer.from(riftShot.data,'base64'));
    await new Promise(r=>setTimeout(r,1300));
    const pulseDone=await cdp('Runtime.evaluate',{expression:"document.getElementById('hungerLabel').classList.contains('vital-pulse')",returnByValue:true});
    test('browser-final-pulse-ends-'+orientation,()=>assert.equal(pulseDone.result.value,false));
@@ -173,21 +173,21 @@ if(chrome&&WebSocket){
     const showcase=await cdp('Runtime.evaluate',{expression:`JSON.stringify({night:testAPI.weather().night,king:testAPI.s.monsters.some(m=>m.kind==='tideking'&&m.phase>=2),fogship:testAPI.s.sites.some(s=>s.kind==='fogship'),bottle:testAPI.s.cargo.some(c=>c.kind==='bottle'),crate:testAPI.s.cargo.some(c=>c.kind==='crate'),turret:[...testAPI.s.tiles.values()].some(t=>t.module==='turret')})`,returnByValue:true});
     test('polish-showcase',()=>{for(const [key,value] of Object.entries(JSON.parse(showcase.result.value)))assert(value,key);});
     // Veil: retain the validated night / fogship showcase for the main capture.
-    const shot=await cdp('Page.captureScreenshot',{format:'png'});fs.writeFileSync('_shot-v10.png',Buffer.from(shot.data,'base64'));fs.copyFileSync('_shot-v10.png','_shot-v11veil.png');fs.copyFileSync('_shot-v10.png','_shot-v11.png');}
+    const shot=await cdp('Page.captureScreenshot',{format:'png'});fs.writeFileSync('_shot-v10.png',Buffer.from(shot.data,'base64'));fs.copyFileSync('_shot-v10.png','_shot-v11crest.png');fs.copyFileSync('_shot-v10.png','_shot-v11.png');}
    if(orientation==='landscape'){
     for(const [phase,time] of [['night',100],['day',130]]){
      await cdp('Runtime.evaluate',{expression:`testAPI.s.paused=true;testAPI.s.time=${time};testAPI.draw()`});
      const storm=await cdp('Runtime.evaluate',{expression:'testAPI.weather().storm',returnByValue:true});
      test('gale-storm-'+phase,()=>assert.equal(storm.result.value,true));
      const shot=await cdp('Page.captureScreenshot',{format:'png'});
-     fs.writeFileSync('_shot-v11veil-storm-'+phase+'.png',Buffer.from(shot.data,'base64'));
+     fs.writeFileSync('_shot-v11crest-storm-'+phase+'.png',Buffer.from(shot.data,'base64'));
     }
    }
    if(orientation==='landscape'){
     for(const [phase,time] of [['dawn',0],['dusk',65]]){
      await cdp('Runtime.evaluate',{expression:`testAPI.s.paused=true;testAPI.s.time=${time};testAPI.draw()`});
      const shot=await cdp('Page.captureScreenshot',{format:'png'});
-     fs.writeFileSync('_shot-v11veil-'+phase+'.png',Buffer.from(shot.data,'base64'));
+     fs.writeFileSync('_shot-v11crest-'+phase+'.png',Buffer.from(shot.data,'base64'));
     }
    }
    // Synthetic notch/home-indicator values exercise the same CSS formulas in Chromium.
@@ -204,7 +204,7 @@ if(chrome&&WebSocket){
    const notch=await cdp('Runtime.evaluate',{expression:`JSON.stringify((()=>{const a=document.getElementById('audioUnlock'),r=a.getBoundingClientRect(),c=document.querySelector('.card').getBoundingClientRect(),n=document.getElementById('notice').getBoundingClientRect();return {top:r.top,bottom:r.bottom,left:r.left,right:r.right,gap:c.top-r.bottom,noticeRight:n.right,animation:getComputedStyle(a).animationName,pointer:getComputedStyle(a).pointerEvents,clipped:a.scrollWidth>a.clientWidth};})())`,returnByValue:true});
    const notchValue=JSON.parse(notch.result.value);(report.notchLayout??={})[orientation]=notchValue;
    test('notch-audio-chrome-'+orientation,()=>{const v=notchValue;assert(v.top>=insets.top+8);assert(v.left>=Math.max(16,insets.left));assert(v.right<=width-Math.max(16,insets.right));assert(v.gap>=8,'audio/card gap '+v.gap);assert(v.noticeRight<=width-Math.max(16,insets.right));assert.equal(v.animation,'none');assert.equal(v.pointer,'none');assert(!v.clipped);});
-   const notchShot=await cdp('Page.captureScreenshot',{format:'png'});fs.writeFileSync('_shot-v11veil-safe-'+orientation+'.png',Buffer.from(notchShot.data,'base64'));
+   const notchShot=await cdp('Page.captureScreenshot',{format:'png'});fs.writeFileSync('_shot-v11crest-safe-'+orientation+'.png',Buffer.from(notchShot.data,'base64'));
    await cdp('Runtime.evaluate',{expression:"document.getElementById('audioUnlock').hidden=true"});
    await cdp('Runtime.evaluate',{expression:`(()=>{for(const [i,k] of ['helm','canopy','stove','net','lamp','turret'].entries())[...testAPI.s.tiles.values()].filter(t=>t.x||t.y)[i].module=k;testAPI.finish('海风记得每一次远航。'.repeat(15));})()`});
    const recap=await cdp('Runtime.evaluate',{expression:`JSON.stringify((()=>{const c=document.querySelector('.card');c.scrollTop=0;const r=c.getBoundingClientRect(),text=document.getElementById('dialogText').textContent;const top=r.top;c.scrollTop=c.scrollHeight;const b=document.getElementById('resume').getBoundingClientRect();return {top,bottom:r.bottom,scroll:c.scrollTop,overflow:getComputedStyle(c).overflowY,text,button:b.bottom<=r.bottom&&b.top>=r.top};})())`,returnByValue:true});
@@ -212,11 +212,11 @@ if(chrome&&WebSocket){
    // Capture a normal recap after the long-text scrolling stress case.
    await cdp('Runtime.evaluate',{expression:"testAPI.finish('海风记得每一次远航。');document.querySelector('.card').scrollTop=0"});
    const slateShot=await cdp('Page.captureScreenshot',{format:'png'});
-   fs.writeFileSync('_shot-v11veil-death-'+orientation+'.png',Buffer.from(slateShot.data,'base64'));
+   fs.writeFileSync('_shot-v11crest-death-'+orientation+'.png',Buffer.from(slateShot.data,'base64'));
    await cdp('Runtime.evaluate',{expression:'localStorage.removeItem(testAPI.SAVE_KEY)'});
   }
-  report.features.push({id:'screenshot',ok:true,note:'已生成 _shot-v11veil.png / _shot-v11.png'});
+  report.features.push({id:'screenshot',ok:true,note:'已生成 _shot-v11crest.png / _shot-v11.png'});
  }catch(e){test('browser-runtime',()=>{throw e;});}
  finally{socket?.close();browser.kill();server.kill();await new Promise(r=>setTimeout(r,500));fs.rmSync(profile,{force:true,recursive:true});}
 }else test('browser-required',()=>{throw Error('Chrome or WebSocket unavailable');});
-report.ok=report.errors.length===0;fs.writeFileSync('_v10-validation.json',JSON.stringify(report,null,2)+'\n');fs.copyFileSync('_v10-validation.json','_v11veil-validation.json');console.log(JSON.stringify(report,null,2));if(!report.ok)process.exitCode=1;
+report.ok=report.errors.length===0;fs.writeFileSync('_v10-validation.json',JSON.stringify(report,null,2)+'\n');fs.copyFileSync('_v10-validation.json','_v11crest-validation.json');console.log(JSON.stringify(report,null,2));if(!report.ok)process.exitCode=1;

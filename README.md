@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI纱 · v11-veil，CACHE：`endless-sea-drift-v11-veil`。夜色、暗角与夜间风雨罩染透明度收敛，薄纱不泛白；保留全部玩法及竖屏布局，验证见 `_v11veil-handoff.md`。
+XI浪 · v11-crest，CACHE：`endless-sea-drift-v11-crest`。既有缓存浪纹左肩收束微小暖色高光，不增加逐帧绘制；保留全部玩法及竖屏布局，验证见 `_v11crest-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI纱; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI浪; no build step.
 
 ## 本地预览
 

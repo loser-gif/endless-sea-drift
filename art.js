@@ -23,7 +23,10 @@ window.SeaArt = (() => {
       g.globalAlpha=a*.35;g.fillStyle='#032439';g.fillRect(x,y+3,3,9);
       g.globalAlpha=a*.28;g.fillStyle='#328f94';g.fillRect(x,y,3,3);
       if((x+v*7)%17<8){g.globalAlpha=a*.45;g.fillStyle='#8cc6b7';g.fillRect(x,y,2,1);}
-      if((x*7+v)%31<4){g.globalAlpha=a*.32;g.fillStyle='#c9d8b1';g.fillRect(x,y-1,3,1);}
+      // Crest: tiny specular flecks on the left shoulder, baked into the same six waves.
+      // Replace broad rim flecks; taper the cluster so it never becomes a white stripe.
+      const shoulder=Math.max(0,1-Math.abs(x-58)/34);
+      if((x*7+v)%31<4&&shoulder>0){g.globalAlpha=a*shoulder*.48;g.fillStyle='#e3dfbc';g.fillRect(x,y-1,2,1);}
     }
     waves.push(c);
     const f=surface(48,12),fg=f.getContext('2d');

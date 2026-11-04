@@ -1,3 +1,9 @@
+## XI焰 / v11-flare
+
+- 吊灯与灯模块降低玻璃亮部透明度、缩小暖色火芯；沿用缓存尺寸和绘制次数，不新增粒子、滤镜或动画。
+- 全部玩法、战斗、合成、存档、迁移、偏好不变；保留触控 ≥44px、竖屏 notice +176px、30fps / ≤4 声部逻辑。
+- CACHE `endless-sea-drift-v11-flare`；edition `XI焰`；验证与交接见 `_v11flare-validation.json`、`_v11flare-handoff.md`。
+
 ## XI泊 / v11-moor
 
 - 木筏绳圈细化麻绳编织、内圈遮蔽与贴板接触阴影；沿用原缓存、位置与绘制次数，无新增系船柱或逐帧特效。

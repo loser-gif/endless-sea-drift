@@ -439,6 +439,18 @@ window.SeaArt = (() => {
       poly(g,[[10,49],[28,31],[29,32],[12,51]],palette.brass);r(12,48,2,2,palette.light);
       poly(g,[[39,72],[81,64],[82,67],[39,75]],palette.wet);
       poly(g,[[48,71],[72,67],[72,68],[48,72]],'#467573');
+      // Dock: short wet-timber pier, baked into Cove's 96x80 sprite.
+      // Tight cool contact AO stays beneath the boards, inside the shoreline.
+      poly(g,[[59,54],[68,51],[84,64],[80,69],[72,70],[59,57]],'#45665b');
+      poly(g,[[60,52],[67,50],[82,63],[82,66],[75,68],[60,55]],'#4d6257');
+      for(let i=0;i<4;i++){
+        const x=60+i*4,y=51+i*3;
+        poly(g,[[x,y],[x+7,y-2],[x+10,y+1],[x+3,y+3]],i%2?'#8c8564':'#9b8e6b');
+        // One-pixel seam and broken wet catchlight; no gloss layer or blur.
+        poly(g,[[x+3,y+2],[x+10,y],[x+10,y+1],[x+3,y+3]],'#53695e');
+        r(x+4,y,3,1,'#b5b585');
+      }
+      r(62,53,1,1,'#45665b');r(76,62,1,1,'#45665b');
     });
     make('wreck',96,80,(g,r)=>{poly(g,[[6,36],[24,46],[84,31],[75,61],[30,73],[13,59]],'#334c51');poly(g,[[9,34],[28,44],[84,29],[78,51],[30,64],[17,54]],'#946e48');
       // Shard: keep each 3x17 timber footprint; wet feet share the reef opening's cool AO.

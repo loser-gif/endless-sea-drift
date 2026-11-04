@@ -1,3 +1,9 @@
+## XI坞 / v11-dock
+
+- 小岛右下岸边加入短木栈桥，板缝、湿木反光与微量接触阴影沿用 Cove 色系，仍烘焙于 96×80 精灵，无新增逐帧效果或依赖。
+- 全部玩法、战斗、合成、存档、迁移、偏好及竖屏 notice +176px 不变，保留触控 ≥44px、30fps 与 ≤4 声部预算。
+- CACHE `endless-sea-drift-v11-dock`；验证 `_v11dock-validation.json`，浏览器成功时截图 `_shot-v11dock.png` / `_shot-v11.png`；交接 `_v11dock-handoff.md`。
+
 ## XI缎 / v11-satin
 
 - 卡片与结算卡片降低既有斜向高光和顶部反光，缎面比 Glaze 更柔和；无新增图层、动画、滤镜或依赖。

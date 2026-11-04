@@ -1,3 +1,9 @@
+## XI纱 / v11-veil
+
+- 下调既有夜色、暗角与夜间风雨罩染 alpha，保留冷海色与灯光，让夜雾薄而不泛乳白；不新增图层、粒子、滤镜或依赖。
+- 全部玩法、战斗、合成、存档、迁移、偏好不变；保留 44px 触控、竖屏 notice +176px、30fps / ≤4 声部逻辑。
+- CACHE `endless-sea-drift-v11-veil`；edition `XI纱`；验证与交接见 `_v11veil-validation.json`、`_v11veil-handoff.md`。
+
 ## XI埠 / v11-quay
 
 - 无独立栈桥，调整商船甲板：静态板缝 AO、冷色湿木边及桅杆接触阴影，保持原 96×80 尺寸与缓存；无新增运行时特效、滤镜或依赖。

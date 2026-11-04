@@ -400,13 +400,13 @@ window.SeaArt = (() => {
   }
   function atmosphere(g,w,h,t,weather,lamp,cx,cy,scale){
     g.save();
-    // Cusp: dusk shares the sandy dawn rim family; preserve wash opacity and night.
-    g.fillStyle=weather.night?'#202e38':'#b58e68';g.globalAlpha=weather.night?(lamp?.29:.40):weather.dusk?.15:0;g.fillRect(0,0,w,h);
-    if(weather.night){g.globalAlpha=.54;g.drawImage(vignette,0,0,w,h);}
+    // Veil: thinner night wash and edge shade, without adding a pale fog layer.
+    g.fillStyle=weather.night?'#202e38':'#b58e68';g.globalAlpha=weather.night?(lamp?.25:.35):weather.dusk?.15:0;g.fillRect(0,0,w,h);
+    if(weather.night){g.globalAlpha=.48;g.drawImage(vignette,0,0,w,h);}
     // Restrain the existing deck bounce; keep the ember hue and halo footprint.
     if(weather.night&&lamp){g.globalAlpha=.48;g.drawImage(halo,cx-110*scale,cy-110*scale,220*scale,220*scale);}
     if(weather.storm){
-      g.globalAlpha=.26;g.drawImage(stormSky,0,0,w,h);
+      g.globalAlpha=weather.night?.22:.26;g.drawImage(stormSky,0,0,w,h);
       g.globalAlpha=.29;g.fillStyle='#bdc9ce';
       for(let i=0;i<52;i++){
         const x=Math.round((i*79+t*130)%w),y=Math.round((i*113+t*210)%h);

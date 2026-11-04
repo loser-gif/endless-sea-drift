@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI埠 · v11-quay，CACHE：`endless-sea-drift-v11-quay`。商船甲板加入克制板缝 AO 与冷色湿边，保留尺寸、全部玩法和竖屏布局；验证见 `_v11quay-handoff.md`。
+XI纱 · v11-veil，CACHE：`endless-sea-drift-v11-veil`。夜色、暗角与夜间风雨罩染透明度收敛，薄纱不泛白；保留全部玩法及竖屏布局，验证见 `_v11veil-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI埠; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI纱; no build step.
 
 ## 本地预览
 

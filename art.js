@@ -45,7 +45,8 @@ window.SeaArt = (() => {
     a.addColorStop(0,'#000');a.addColorStop(Math.max(.03,focus-.36),'#0006');a.addColorStop(Math.max(.05,focus-.20),'#0000');
     a.addColorStop(Math.min(.85,focus+.21),'#0000');a.addColorStop(Math.min(.96,focus+.43),'#0006');a.addColorStop(1,'#000e');m.fillStyle=a;m.fillRect(0,0,mask.width,mask.height);
     vignette=surface(96,64);const vg=vignette.getContext('2d'),vr=vg.createRadialGradient(48,32,12,48,32,55);
-    vr.addColorStop(0,'#10243b00');vr.addColorStop(.55,'#10243b18');vr.addColorStop(1,'#10243bbb');vg.fillStyle=vr;vg.fillRect(0,0,96,64);
+    // Slate-teal shadow keeps the warm rims in the same light family as the HUD brass.
+    vr.addColorStop(0,'#202e3800');vr.addColorStop(.55,'#202e3818');vr.addColorStop(1,'#202e38bb');vg.fillStyle=vr;vg.fillRect(0,0,96,64);
   }
   function glow(x,y,size,alpha=.4) {bg.globalAlpha=alpha;bg.drawImage(halo,(x-size)/8,(y-size*.6)/8,size/4,size*.15);}
   function ocean(g,w,h,t) {
@@ -286,12 +287,13 @@ window.SeaArt = (() => {
   }
   function atmosphere(g,w,h,t,weather,lamp,cx,cy,scale){
     g.save();
-    g.fillStyle=weather.night?'#10243b':'#bd7946';g.globalAlpha=weather.night?(lamp?.26:.40):weather.dusk?.17:0;g.fillRect(0,0,w,h);
+    // Existing wash only: muted amber dusk, slate-teal night, deeper storm below.
+    g.fillStyle=weather.night?'#202e38':'#b68a58';g.globalAlpha=weather.night?(lamp?.26:.40):weather.dusk?.15:0;g.fillRect(0,0,w,h);
     if(weather.night){g.globalAlpha=.48;g.drawImage(vignette,0,0,w,h);}
     if(weather.night&&lamp){g.globalAlpha=.8;g.drawImage(halo,cx-110*scale,cy-110*scale,220*scale,220*scale);}
     if(weather.storm){
-      g.globalAlpha=.26;g.fillStyle='#14283f';g.fillRect(0,0,w,h);
-      g.globalAlpha=.29;g.fillStyle='#b1cfca';
+      g.globalAlpha=.26;g.fillStyle='#192d35';g.fillRect(0,0,w,h);
+      g.globalAlpha=.29;g.fillStyle='#bdcfc4';
       for(let i=0;i<52;i++){
         const x=Math.round((i*79+t*130)%w),y=Math.round((i*113+t*210)%h);
         g.fillRect(x,y,1,3);g.fillRect(x-1,y+4,1,2);

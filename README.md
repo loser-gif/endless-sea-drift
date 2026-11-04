@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI▤ · v11-frame，CACHE：`endless-sea-drift-v11-frame`。卡片加厚黄铜内框、开始 / 暂停 / 终章标题分级，弹药与建造仪表统一斜边；玩法、存档与海面预算不变。
+XI☀ · v11-dawn，CACHE：`endless-sea-drift-v11-dawn`。暮色琥珀、夜色灰青与风暴深青统一，雾灯船冷色与黄铜侧光协调；沿用原有绘制层、海面预算与 reduced-motion 冻结。玩法、存档、HUD 布局与竖屏 notice +215px 不变。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI▤; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI☀; no build step.
 
 ## 本地预览
 

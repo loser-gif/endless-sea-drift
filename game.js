@@ -33,7 +33,7 @@
     const base=art[source],c=document.createElement('canvas');c.width=base.width;c.height=base.height;c.unit=base.unit;
     const g=c.getContext('2d');g.drawImage(base,0,0);g.globalCompositeOperation='source-atop';g.globalAlpha=alpha;g.fillStyle=color;g.fillRect(0,0,c.width,c.height);art[name]=c;
   }
-  tintStamp('merchant','fogship','#82b9de',.40);
+  tintStamp('merchant','fogship','#98bcbf',.40);
   {const g=art.fogship.getContext('2d');g.globalCompositeOperation='source-over';g.globalAlpha=1;g.fillStyle='#283944';g.fillRect(39,32,10,13);g.fillStyle='#e2bb78';g.fillRect(39,32,10,1);g.fillRect(39,33,1,10);g.fillStyle='#d8a453';g.fillRect(40,34,8,9);g.fillStyle='#fff0b0';g.fillRect(42,35,4,6);}
   tintStamp('tideking','tideking2','#ed9e38',.24);tintStamp('tideking','tideking3','#ed4934',.38);
   for(const kind of ['island','wreck']){tintStamp(kind,kind+'1','#e7ba69',.12);tintStamp(kind,kind+'2','#8ecbc3',.16);}
@@ -343,7 +343,7 @@
     seaBase=document.createElement('canvas');seaBase.width=canvas.width;seaBase.height=canvas.height;
     const g=seaBase.getContext('2d'), ocean=g.createLinearGradient(0,0,width*.35,height);
     g.scale(seaBase.width/width,seaBase.height/height);
-    ocean.addColorStop(0,'#7e9d8e');ocean.addColorStop(.22,'#367e80');ocean.addColorStop(.58,'#145365');ocean.addColorStop(1,'#061b30');
+    ocean.addColorStop(0,'#7e9d8e');ocean.addColorStop(.22,'#367e80');ocean.addColorStop(.58,'#145365');ocean.addColorStop(1,'#102630');
     g.fillStyle=ocean;g.fillRect(0,0,width,height);
     const pool=g.createRadialGradient(cx-width*.12,cy-height*.05,0,cx-width*.12,cy-height*.05,width*.48);
     pool.addColorStop(0,'#4fb2a13d');pool.addColorStop(.45,'#207d8220');pool.addColorStop(1,'#062b3a00');g.fillStyle=pool;g.fillRect(0,0,width,height);
@@ -362,7 +362,7 @@
     }
     a.restore();
     const edge=a.createRadialGradient(cx,cy,Math.min(width,height)*.22,cx,cy,Math.max(width,height)*.75);
-    edge.addColorStop(0,'#102b4200');edge.addColorStop(.55,'#03152b24');edge.addColorStop(1,'#010716c0');a.fillStyle=edge;a.fillRect(0,0,width,height);
+    edge.addColorStop(0,'#202e3800');edge.addColorStop(.55,'#14252d24');edge.addColorStop(1,'#0b151cc0');a.fillStyle=edge;a.fillRect(0,0,width,height);
   }
   function rect(x,y,w,h,c){ctx.fillStyle=c;ctx.fillRect(Math.round(x),Math.round(y),w,h);}
   function stamp(name,x,y,w,h) {const a=art[name];ctx.drawImage(a,Math.round(x),Math.round(y),w||a.width/(a.unit||1),h||a.height/(a.unit||1));}

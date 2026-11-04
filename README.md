@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI片 · v11-shard，CACHE：`endless-sea-drift-v11-shard`。沉船断木收敛亮面、加入 reef 同系湿暗接触阴影，保留原尺寸与全部玩法；验证见 `_v11shard-handoff.md`。
+XI哑 · v11-mute，CACHE：`endless-sea-drift-v11-mute`。卡片辅助文字统一为共享灰绿色，保留对比度与全部玩法；验证见 `_v11mute-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI片; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI哑; no build step.
 
 ## 本地预览
 

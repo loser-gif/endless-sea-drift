@@ -1,3 +1,9 @@
+## XI哑 / v11-mute
+
+- 卡片辅助文字统一使用 `--text-muted` 灰绿色，提亮以保留深色卡片上的阅读对比度；不新增特效或改变布局。
+- 全部玩法、战斗、合成、存档、迁移、偏好不变；保留触控 ≥44px、竖屏 notice +176px、30fps / ≤4 声部。
+- CACHE `endless-sea-drift-v11-mute`；edition `XI哑`；验证与交接见 `_v11mute-validation.json`、`_v11mute-handoff.md`。
+
 ## XI片 / v11-shard
 
 - 沉船五根断木保留原 3×17 轮廓，收敛木色亮面、加入窄侧阴影与冷青湿暗木脚，与 reef 水浸暗部统一；沿用 96×80 缓存。

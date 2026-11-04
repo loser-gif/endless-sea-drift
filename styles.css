@@ -48,3 +48,12 @@ button.primary{color:#241e19;background:linear-gradient(130deg,#ffe0a0,#bd8645);
 progress{height:4px;border-radius:1px;overflow:hidden}
 .actions button{border-color:#b2ccc43d}.actions .primary{background:linear-gradient(130deg,#f3d89c,#bc925a);box-shadow:inset 0 1px #fff0c1,0 3px 12px #071e2840}
 @media(orientation:landscape) and (max-height:480px){#hud h1{font-size:19px}}
+
+/* VII — compact tools, keeping the brass expedition palette. */
+#inventory{display:grid;grid-template-columns:repeat(4,1fr);gap:6px 8px}
+.actions{grid-template-columns:repeat(3,108px);max-width:360px}
+.tool{display:flex;flex-direction:column;gap:3px;font-size:10px;color:#b8c7b9;min-width:0}
+.tool select{width:100%;min-height:38px;border:1px solid #b2ccc43d;border-radius:2px;background:#102c39;color:#efdbb2;font:11px system-ui;padding:3px;touch-action:manipulation}
+.actions .tool:first-child{grid-column:span 2}
+@media(orientation:portrait){#notice{top:calc(max(12px,env(safe-area-inset-top)) + 195px)}.actions{grid-template-columns:repeat(3,minmax(0,1fr));max-width:300px;gap:5px}.actions button{padding:5px 3px;font-size:11px;min-height:44px}#stick{width:82px;height:82px}#controls{gap:10px;left:max(10px,env(safe-area-inset-left));right:max(10px,env(safe-area-inset-right))}}
+@media(orientation:landscape) and (max-height:480px){.actions{grid-template-columns:repeat(3,96px);gap:4px}.actions button{min-height:40px;padding:5px}#inventory{gap:4px}#notice{left:44%;max-width:52%;transform:none}}

@@ -1,0 +1,83 @@
+{
+  "ok": true,
+  "cache": "endless-sea-drift-v7-play",
+  "features": [
+    {
+      "id": "cache",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "weather",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "modules",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "resources",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "monsters",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "sites",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "craft-and-modules",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "weather-fishing-net",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "encounters-and-death",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "combat-and-boss-loot",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "board-limit-and-module-guard",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "long-simulation",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-landscape",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "browser-portrait",
+      "ok": true,
+      "note": "通过"
+    },
+    {
+      "id": "screenshot",
+      "ok": true,
+      "note": "已生成 _shot-v7.png"
+    }
+  ],
+  "errors": [],
+  "session_hint": "node _selftest-v7.mjs；120秒昼夜，95秒起风雨，28秒小岛/93秒沉船，180秒潮汐王。无存档。"
+}

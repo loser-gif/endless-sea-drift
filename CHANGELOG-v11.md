@@ -1,3 +1,9 @@
+## XI闩 / v11-latch
+
+- 主次按钮采用黄铜 / 青灰金属斜边，按压时反转明暗并收紧为内凹阴影；保留扩建选中态与焦点提示，尺寸不变。
+- 纯 CSS，无新增动画、滤镜或依赖；全部玩法、存档、迁移、偏好及竖屏 notice +176px 保留。
+- CACHE `endless-sea-drift-v11-latch`；edition `XI闩`；验证与交接见 `_v11latch-validation.json`、`_v11latch-handoff.md`，浏览器成功时输出 `_shot-v11latch.png` / `_shot-v11.png`。
+
 ## XI帆 / v11-mast
 
 - 商船与沉船帆面增加暖光褶脊、冷色折面和帆桁细边，保留原轮廓及 96×80 缓存尺寸；无新增逐帧特效、滤镜或依赖。

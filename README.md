@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI栏2 · v11-rail2，CACHE：`endless-sea-drift-v11-rail2`。卡片黄铜栏轨倒角第二轮微调，保留丝绸柔光与既有布局；验证见 `_v11rail2-handoff.md`。
+XI龙2 · v11-keel2，CACHE：`endless-sea-drift-v11-keel2`。船底接触 AO 加深，保留单位尺寸与既有绘制预算；验证见 `_v11keel2-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI栏2; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI龙2; no build step.
 
 ## 本地预览
 

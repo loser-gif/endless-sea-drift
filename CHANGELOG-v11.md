@@ -1,3 +1,9 @@
+## XI龙2 / v11-keel2
+
+- 船底接触 AO 第二轮加深：仅调整缓存船板底部四条既有色带，收暗湿木过渡与接触边，保留轮廓、单位尺寸及绘制次数。
+- 全部玩法、战斗、合成、存档、迁移、偏好与竖屏 notice +176px 不变，保留触控 ≥44px、30fps 与 ≤4 声部预算。
+- CACHE `endless-sea-drift-v11-keel2`；验证 `_v11keel2-validation.json`，浏览器成功时截图 `_shot-v11keel2.png` / `_shot-v11.png`；交接 `_v11keel2-handoff.md`。
+
 ## XI栏2 / v11-rail2
 
 - 卡片黄铜栏轨倒角第二轮：微调上左亮边、右下暗边与既有内框色阶，保留丝绸柔光；不新增效果层或改变布局。

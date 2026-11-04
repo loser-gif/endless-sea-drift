@@ -185,10 +185,10 @@ window.SeaArt = (() => {
         r(x+2,y+4,2,2,'#294b50');
       }
       r(2,74,74,1,'#d9c08a');r(1,2,2,70,'#f0d394');r(77,2,2,94,'#1c3036');
-      // Keel: cached wet timber rolls into cool under-hull AO and a narrow contact edge.
+      // Keel2: denser cool contact AO, with a restrained wet-timber transition.
       // Stay inside the old opaque foot (and 80x104 cache); no silhouette or draw-cost growth.
-      r(4,94,72,4,'#243b3d');r(6,94,68,1,'#36504b');
-      r(4,98,72,2,'#192f34');r(4,100,72,2,'#10262e');
+      r(4,94,72,4,'#1d3337');r(6,94,68,1,'#304842');
+      r(4,98,72,2,'#12262d');r(4,100,72,2,'#0a1c25');
       // Cord: narrow contact AO baked under the existing three-pixel lashings.
       // Same 80x104 cache, rope width and silhouette; no extra per-frame pass.
       for(const x of [3,73]){

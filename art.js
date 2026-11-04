@@ -201,29 +201,29 @@ window.SeaArt = (() => {
       }
     });
     fine('rope',22,18,(g,r)=>{
-      // Cord2: wet contact shade and twisted hemp in the existing 44x36 cache.
+      // Moor2: tighter coil occlusion and quieter hemp in the existing 44x36 cache.
       // Keep the coil footprint and deck draw unchanged; no extra frame-time pass.
       for(let y=0;y<27;y++)for(let x=0;x<39;x++){
         const dx=(x-20)/1.3,dy=y-14,d=Math.sqrt(dx*dx+dy*dy);
         if(d>4&&d<13){
-          r(x+2,y+7,1,1,'#192e29e6');
+          r(x+2,y+7,1,1,'#172923e6');
         }
       }
       for(let y=0;y<27;y++)for(let x=0;x<39;x++){
         const dx=(x-20)/1.3,dy=y-14,d=Math.sqrt(dx*dx+dy*dy);
         if(d>4&&d<13){
           const ring=Math.floor(d)%4,twist=(x+y*2)%7;
-          const hemp=dy>4?['#303e31','#727650','#a4a17a','#515e43']:['#414331','#a28c5d','#d4bd88','#756b49'];
-          r(x+2,y+6,1,1,ring===2&&twist<2?'#8d8559':hemp[ring]);
+          const hemp=dy>4?['#29392e','#6c704e','#9b9873','#4b5840']:['#373d2e','#9b875b','#c8b382','#6e6546'];
+          r(x+2,y+6,1,1,ring===2&&twist<2?'#817b53':hemp[ring]);
         }
       }
       for(let i=0;i<15;i++){
         const y=27+Math.floor(Math.sin(i*.25)*3);
-        r(5+i,y+1,2,2,'#23332be6');
-        r(5+i,y,2,1,i%3?'#92946b':'#c1bc8a');
+        r(5+i,y+1,2,2,'#1c2c24e6');
+        r(5+i,y,2,1,i%3?'#898c65':'#b3b082');
       }
       // Recessed inner lip replaces the old flat blue slit.
-      r(15,14,10,2,'#22352b');r(17,14,6,1,'#5b6446');
+      r(15,14,10,2,'#1c2d24');r(17,14,6,1,'#505b3e');
     });
     fine('lantern',14,24,(g,r)=>{
       r(8,1,12,2,'#d5be82');r(7,3,2,6,'#d5be82');r(19,3,2,6,'#485c59');

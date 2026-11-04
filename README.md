@@ -4,9 +4,9 @@
 
 ## 近况 / Latest
 
-XI灰2 · v11-ash2，CACHE：`endless-sea-drift-v11-ash2`。风暴灰烬天空与雨色第二轮：收敛灰蓝中段与灰白雨线，保留 gale 风势、层数和透明度；验证见 `_v11ash2-handoff.md`。
+XI泊2 · v11-moor2，CACHE：`endless-sea-drift-v11-moor2`。系泊绳圈 AO 第二轮：压深圈间与绳尾接触阴影、收敛麻绳亮沿，保留缓存与显示尺寸；验证见 `_v11moor2-handoff.md`。
 
-摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI灰2; no build step.
+摇杆 / WASD 移动，E 打捞、G 停靠、B 扩建；长按动作按钮看提示，暂停可静音。Move with joystick / WASD; E collect, G dock, B build. Hold an action for help; mute in pause. Static Canvas PWA, edition XI泊2; no build step.
 
 ## 本地预览
 
